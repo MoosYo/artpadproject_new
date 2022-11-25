@@ -11,13 +11,14 @@ import TelegramProfileIcon from "../../components/Icons/TelegramProfile";
 
 // Data
 import profileRoutes from "../../routes/profile";
+import CopyIcon from "../../components/Icons/Copy";
 
 const {
-    profilePage,
     profilePage__layout,
     profilePage__layout_vertical,
     profilePage__mainBlock,
     profilePage__rightBlock,
+    profilePage__rightBlockHeader,
     profilePage__userAvatar,
     profilePage__userInfoBlock,
     profilePage__userName,
@@ -28,7 +29,10 @@ const {
     profilePage__userLink,
     profilePage__userLink_marginBottom,
     profilePage__userLinkIcon,
-    profilePage__userLinkText
+    profilePage__userLinkText,
+    profilePage__copyBlock,
+    profilePage__copyBlockText,
+    profilePage__copyBlockIcon
 } = classes;
 
 const {
@@ -48,6 +52,10 @@ const {
 };
 
 export default function ProfilePage (props) {
+
+    const copy = (text) => {
+        navigator.clipboard.writeText(text);
+    };
 
     return (
         <>
@@ -80,12 +88,26 @@ export default function ProfilePage (props) {
                     </div>
                 </Container>
 
-                <div className={profilePage__layout_vertical}>
+                <div className={profilePage__layout + " " +profilePage__layout_vertical}>
                     <Container className={profilePage__rightBlock}>
-                        Block 2
+                        <h2 className={profilePage__rightBlockHeader}>Wallet</h2>
+                        <p className={profilePage__copyBlock}>
+                            <span className={profilePage__copyBlockText}>{wallet}</span>
+                            <CopyIcon
+                                className={profilePage__copyBlockIcon} 
+                                onClick={()=>copy(wallet)}
+                            />
+                        </p>
                     </Container>
                     <Container className={profilePage__rightBlock}>
-                        Block 3
+                        <h2 className={profilePage__rightBlockHeader}>Invitation link</h2>
+                        <p className={profilePage__copyBlock}>
+                            <span className={profilePage__copyBlockText}>{inviteLink}</span>
+                            <CopyIcon
+                                className={profilePage__copyBlockIcon} 
+                                onClick={()=>copy(inviteLink)}
+                            />
+                        </p>
                     </Container>
                 </div>
             </div>
