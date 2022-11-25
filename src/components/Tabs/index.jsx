@@ -25,6 +25,7 @@ export default function Tabs (props) {
                             href={href}
                             className={className}
                             title={text}
+                            key={i}
                         >
                             {text}
                         </a>
