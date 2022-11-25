@@ -1,6 +1,9 @@
+import ButtonLink from "../ButtonLink";
 import Medium from "../Icons/Medium";
 import Telegram from "../Icons/Telegram";
 import Twitter from "../Icons/Twitter";
+import AuditBy from "../../assets/quillaudits.png";
+
 import classes from "./index.module.scss";
 
 const {
@@ -18,6 +21,8 @@ const {
    links_list__link,
    links_list__link_active,
    community,
+   audit,
+   audit__link,
 } = classes;
 
 export default function Footer() {
@@ -45,6 +50,17 @@ export default function Footer() {
       {
          text: "NFT Marketplace",
          href: "/nft-marketplace",
+      },
+   ];
+
+   const comm = [
+      {
+         text: "Telegram",
+         href: "#",
+      },
+      {
+         text: "DEM",
+         href: "#",
       },
    ];
 
@@ -94,18 +110,19 @@ export default function Footer() {
                <div className={community}>
                   <h3 className={footer__title}>Community:</h3>
                   <ul className={links_list}>
-                     <li className={links_list__item}>
-                        <a href="" className="community__link"></a>
-                     </li>
-                     <li className={links_list__item}>
-                        <a href="" className="community__link"></a>
-                     </li>
+                     {comm.map(({ text, href }, key) => (
+                        <li className={links_list__item} key={key}>
+                           <ButtonLink text={text} href={href} />
+                        </li>
+                     ))}
                   </ul>
                </div>
             </div>
-            <div className="audit">
-               <h3 className="footer__title">Audited by:</h3>
-               <a href="#" className="audit__link"></a>
+            <div className={audit}>
+               <h3 className={footer__title}>Audited by:</h3>
+               <a href="https://audits.quillhash.com/smart-contract-audit" target="_blank" className={audit__link}>
+                  <img src={AuditBy} alt="Audited by QuillAudits" />
+               </a>
             </div>
          </div>
       </footer>
