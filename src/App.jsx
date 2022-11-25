@@ -2,13 +2,16 @@ import classes from './App.module.scss';
 
 // Components
 import Header from './components/Header';
+import MyProjectsPage from './pages/my-projects';
 
 // Pages
 import ProfilePage from './pages/profile';
+import SteakingPage from './pages/steaking';
 import TeamPage from './pages/team';
 
 const {
-  app
+  app,
+  pageWrapper
 } = classes;
 
 export default function App() {
@@ -18,16 +21,28 @@ export default function App() {
   return (
     <div className={app}>
       <Header />
-      {
-        path === "/profile" || path === "/profile/" ? (
-          <ProfilePage />
-        ) : ""
-      }
-      {
-        path === "/team" || path === "/team/" ? (
-          <TeamPage />
-        ) : ""
-      }
+      <main className={pageWrapper}>
+        {
+          path === "/profile" || path === "/profile/" ? (
+            <ProfilePage />
+          ) : ""
+        }
+        {
+          path === "/profile/steaking" || path === "/profile/steaking/" ? (
+            <SteakingPage />
+          ) : ""
+        }
+        {
+          path === "/profile/team" || path === "/profile/team/" ? (
+            <TeamPage />
+          ) : ""
+        }
+        {
+          path === "/profile/my-projects" || path === "/profile/my-projects/" ? (
+            <MyProjectsPage />
+          ) : ""
+        }
+      </main>
     </div>
   );
 }

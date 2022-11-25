@@ -6,11 +6,21 @@ import classes from "./styles.module.scss";
 import Logo from "../../assets/svg/logo";
 import CalendarIcon from "../Icons/Calendar";
 import PersonIcon from "../Icons/Person";
+import BurgerMenuIcon from "../Icons/BurgerMenu";
+import CloseIcon from "../Icons/Close";
+
+// Data
+import mainRoutes from "../../routes/main";
 
 const {
     header,
     header__logo,
     header__nav,
+    header__nav_shown,
+    header__navMobile,
+    header__navMobileIcon,
+    header__navMobileIcon_close,
+    header__mobileButton,
     header__navMenu,
     header__navMenuItem,
     header__navMenuLink,
@@ -20,44 +30,44 @@ const {
 } = classes;
 
 export default function Header (props) {
-
-    const menu = [
-        {
-            text: "Home",
-            href: "/"
-        },
-        {
-            text: "Projects",
-            href: "/profile"
-        },
-        {
-            text: "Levels",
-            href: "/levels"
-        },
-        {
-            text: "Swap",
-            href: "/swap"
-        },
-        {
-            text: "FAQ",
-            href: "/faq"
-        },
-        {
-            text: "NFT Marketplace",
-            href: "/nft-marketplace"
-        }
-    ];
-
     const path = window.location.pathname;
+
+    const [menuState, setMenuState] = useState(false);
 
     return (
         <header className={header}>
             <Logo className={header__logo} />
 
-            <nav className={header__nav}>
+            <button
+                className={header__mobileButton}
+                type="button"
+                onClick={()=>setMenuState(true)}
+            >
+                <BurgerMenuIcon />
+            </button>
+
+            <nav
+                className={header__nav + (menuState ? " " + header__nav_shown : "")}
+            >
+                <div className={header__navMobile}>
+                    <a href="/calendar" className={header__navMobileIcon}>
+                        <CalendarIcon />
+                    </a>
+                    <a href="/profile" className={header__navMobileIcon}>
+                        <PersonIcon />
+                    </a>
+                    <button
+                        className={header__navMobileIcon + " " + header__navMobileIcon_close}
+                        type="button"
+                        onClick={()=>setMenuState(false)}
+                    >
+                        <CloseIcon />
+                    </button>
+                </div>
+
                 <ul className={header__navMenu}>
                     {
-                        menu.map(({text, href}, i) => {
+                        mainRoutes.map(({text, href}, i) => {
 
                             let className = header__navMenuLink;
 
@@ -67,7 +77,11 @@ export default function Header (props) {
 
                             return (
                                 <li className={header__navMenuItem} key={i}>
-                                    <a href={href} className={className}>
+                                    <a
+                                        href={href}
+                                        className={className}
+                                        title={text}
+                                    >
                                         {text}
                                     </a>
                                 </li>
@@ -77,16 +91,24 @@ export default function Header (props) {
                 </ul>
 
                 <div className={header__navButtons}>
-                    <a href="#" className={header__navIcon}>
+                    <a
+                        href="/calendar"
+                        className={header__navIcon}
+                        title="Calendar"
+                    >
                         <CalendarIcon />
                     </a>
-                    <a href="#" className={header__navIcon}>
+                    <a
+                        href="/profile"
+                        className={header__navIcon}
+                        title="Profile"
+                    >
                         <PersonIcon />
                     </a>
-                    <a href="#" className="">
+                    <a href="/buy-atr" className="">
                         Buy ARTR
                     </a>
-                    <a href="#" className="">
+                    <a href="/connect-wallet" className="">
                         Connect Wallet                        
                     </a>
                 </div>

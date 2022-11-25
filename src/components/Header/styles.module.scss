@@ -8,6 +8,10 @@
     justify-content: space-between;
     margin: 0px auto;
 
+    width: 100vw;
+    height: vw(80px, 360px);
+    padding: 0px vw(12px, 360px);
+
     @media screen and (min-width: 920px) {
         width: vw(1600px);
         height: vw(128px);
@@ -21,6 +25,8 @@
     }
 
     &__logo {
+        width: vw(120px, 360px);
+        height: vw(40px, 360px);
         
         @media screen and (min-width: 920px) {
             width: vw(178px);
@@ -33,14 +39,50 @@
         }
     }
 
+    &__mobileButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        & svg {
+            width: vw(24px, 360px);
+            height: vw(24px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            display: none;
+        }
+    }
+
     &__nav {
-        display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        overflow-y: auto;
 
+        @media screen and (max-width: 919px) {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000000;
+            background-image: url("../../assets/svg/background.svg");
+            transition: transform 0.3s ease-in-out;
+
+            flex-direction: column;
+            padding: vw(35px, 360px) vw(15px, 360px);
+    
+            transform: translate3d(0px, -100vh, 0px);
+    
+            &_shown {
+                transform: translate3d(0px, 0px, 0px);
+            }
+        }
 
         @media screen and (min-width: 920px) {
+            display: flex;
+            transition: none;
             width: vw(962px);
         }
 
@@ -48,14 +90,43 @@
             width: 962px;
         }
 
-        &Menu {
+        &Mobile {
+            height: vw(80px, 360px);
             display: flex;
             flex-direction: row;
             align-items: center;
+            gap: vw(30px, 360px);
 
+            &Icon {
+                background: none;
+                border: none;
+                cursor: pointer;
+
+                & svg {
+                    width: vw(24px, 360px);
+                    height: vw(24px, 360px);
+                }
+
+                &_close {
+                    margin-left: auto;
+                }
+            }
 
             @media screen and (min-width: 920px) {
+                display: none;
+            }
+        }
+
+        &Menu {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: vw(30px, 360px);
+
+            @media screen and (min-width: 920px) {
+                flex-direction: row;
+                align-items: center;
                 gap: vw(16px);
+                margin-bottom: 0px;
             }
 
             @media screen and (min-width: 1600px) {
@@ -63,6 +134,7 @@
             }
     
             &Item {
+                padding: vw(18px, 360px) 0px;
 
                 @media screen and (min-width: 920px) {
                     padding: vw(10px);
@@ -78,6 +150,8 @@
                 color: $white;
                 text-decoration: none;
 
+                font-size: vw(24px, 360px);
+                line-height: vw(28px, 360px);
 
                 @media screen and (min-width: 920px) {
                     font-size: vw(16px);
@@ -97,11 +171,12 @@
 
         &Buttons {
             display: flex;
-            flex-direction: row;
-            align-items: center;
-
+            flex-direction: column;
+            gap: vw(24px, 360px);
 
             @media screen and (min-width: 920px) {
+                flex-direction: row;
+                align-items: center;
                 gap: vw(24px);
             }
 
@@ -128,9 +203,10 @@
         }
     
         &Icon {
-            
+            display: none;
 
             @media screen and (min-width: 920px) {
+                display: block;
                 width: vw(24px);
                 height: vw(24px);
             }
