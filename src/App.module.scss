@@ -1,3 +1,21 @@
+@import "./styles/colors.scss";
+@import "./styles/helpers.scss";
+
 .app {
   
+}
+
+.pageWrapper {
+    margin: 0px auto;
+    padding: vw(64px, 360px) vw(12px, 360px) 0px;
+
+    @media screen and (min-width: 920px) {
+        width: vw(1440px);
+        padding: vw(64px) vw(20px) 0px;
+    }
+
+    @media screen and (min-width: 1600px) {
+        width: 1440px;
+        padding: 64px 20px 0px;
+    }
 }
