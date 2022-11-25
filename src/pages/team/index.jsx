@@ -4,13 +4,11 @@ const {
     teamPage
 } = classes;
 
-let initState = window.initState;
-
-if (!initState) {
-    initState = {
-        data: "text"
-    };
-}
+const {
+    data
+} = window.initState ? window.initState : {
+    data: "text"
+};
 
 export default function TeamPage (props) {
     return (
