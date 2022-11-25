@@ -1,0 +1,14 @@
+@import "../../styles/helpers.scss";
+
+.avatar {
+    border-radius: vw(10px, 360px);
+    object-fit: cover;
+
+    @media screen and (min-width: 920px) {
+        border-radius: vw(10px);
+    }
+
+    @media screen and (min-width: 1440px) {
+        border-radius: 10px;
+    }
+}

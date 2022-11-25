@@ -8,13 +8,16 @@
     flex-wrap: wrap;
 
     gap: vw(14px, 360px);
+    margin-bottom: vw(64px, 360px);
 
     @media screen and (min-width: 920px) {
         gap: vw(14px);
+        margin-bottom: vw(64px);
     }
 
     @media screen and (min-width: 1600px) {
         gap: 14px;
+        margin-bottom: 64px;
     }
 
     &__item {
@@ -33,10 +36,6 @@
         font-size: vw(16px, 360px);
         line-height: vw(19px, 360px);
 
-        // &:nth-child(1),&:nth-child(2) {
-        //     margin-bottom: vw(14px, 360px);
-        // }
-
         @media screen and (min-width: 920px) {
             border-radius: vw(8px);
             border-width: vw(2px);
@@ -44,10 +43,6 @@
             padding: 0px vw(36px);
             font-size: vw(16px);
             line-height: vw(19px);
-
-            &:nth-child(1),&:nth-child(2) {
-                margin-bottom: 0px;
-            }
         }
 
         @media screen and (min-width: 1600px) {
