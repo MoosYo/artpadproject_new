@@ -1,4 +1,5 @@
-import classes from './App.module.scss';
+import classes from "./App.module.scss";
+import Footer from "./components/Footer";
 
 // Components
 import Header from './components/Header';
@@ -15,9 +16,7 @@ const {
 } = classes;
 
 export default function App() {
-
-  const path = window.location.pathname;
-
+   const path = window.location.pathname;
   return (
     <div className={app}>
       <Header />
@@ -42,7 +41,9 @@ export default function App() {
             <MyProjectsPage />
           ) : ""
         }
+        
       </main>
+      <Footer />
     </div>
   );
 }
