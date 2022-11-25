@@ -21,11 +21,12 @@ export default function App() {
       {
         path === "/profile" || path === "/profile/" ? (
           <ProfilePage />
-        ) : (
-          path === "/team" || path === "/team/" ? (
-            <TeamPage />
-          ) : ""
-        )
+        ) : ""
+      }
+      {
+        path === "/team" || path === "/team/" ? (
+          <TeamPage />
+        ) : ""
       }
     </div>
   );
