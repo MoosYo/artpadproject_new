@@ -1,5 +1,11 @@
 import classes from "./styles.module.scss";
 
+// Components
+import Tabs from "../../components/Tabs";
+
+// Data
+import profileRoutes from "../../routes/profile";
+
 const {
     profilePage
 } = classes;
@@ -11,9 +17,10 @@ const {
 };
 
 export default function ProfilePage (props) {
+
     return (
-        <div className={profilePage}>
-            Profile page
-        </div>
-    )
+        <>
+            <Tabs tabs={profileRoutes} />
+        </>
+    );
 }

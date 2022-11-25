@@ -7,7 +7,7 @@ import Tabs from "../../components/Tabs";
 import profileRoutes from "../../routes/profile";
 
 const {
-    teamPage
+    myProjectsPage
 } = classes;
 
 const {
@@ -16,7 +16,7 @@ const {
     data: "text"
 };
 
-export default function TeamPage (props) {
+export default function MyProjectsPage (props) {
 
     return (
         <>

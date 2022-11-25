@@ -6,3 +6,17 @@
     box-sizing: border-box;
     font-family: Rubik, sans-serif;
 }
+
+body {
+    background: #000000;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    @media screen and (min-width: 920px) {
+        background-image: url("./assets/svg/background.svg");
+        background-position: center bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
