@@ -8,7 +8,7 @@ export default function Medium(props) {
          xmlns="http://www.w3.org/2000/svg"
          fill="none"
       >
-         <g clip-path="url(#a)">
+         <g clipPath="url(#a)">
             <path fill="#2E2C2B" d="M48 0H0v48h48V0Z" />
             <path
                fill="#fff"

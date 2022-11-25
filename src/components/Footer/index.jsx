@@ -23,6 +23,7 @@ const {
    community,
    audit,
    audit__link,
+   asside,
 } = classes;
 
 export default function Footer() {
@@ -88,7 +89,7 @@ export default function Footer() {
                </a>
             </div>
          </div>
-         <div className={column}>
+         <div className={asside}>
             <div className={column__group}>
                <div className={navigation}>
                   <ul className={links_list}>
