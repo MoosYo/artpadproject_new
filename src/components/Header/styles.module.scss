@@ -1,3 +1,158 @@
+@import "../../styles/helpers.scss";
+@import "../../styles/colors.scss";
+
 .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px auto;
+
+    @media screen and (min-width: 920px) {
+        width: vw(1600px);
+        height: vw(128px);
+        padding: 0px vw(80px);
+    }
+
+    @media screen and (min-width: 1600px) {
+        width: 1600px;
+        height: 128px;
+        padding: 0px 80px;
+    }
+
+    &__logo {
+        
+        @media screen and (min-width: 920px) {
+            width: vw(178px);
+            height: vw(60px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 178px;
+            height: 60px;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+
+        @media screen and (min-width: 920px) {
+            width: vw(962px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 962px;
+        }
+
+        &Menu {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+
+            @media screen and (min-width: 920px) {
+                gap: vw(16px);
+            }
+
+            @media screen and (min-width: 1600px) {
+                gap: 16px;
+            }
     
+            &Item {
+
+                @media screen and (min-width: 920px) {
+                    padding: vw(10px);
+                }
+
+                @media screen and (min-width: 1600px) {
+                    padding: 10px;
+                }
+
+            }
+        
+            &Link {
+                color: $white;
+                text-decoration: none;
+
+
+                @media screen and (min-width: 920px) {
+                    font-size: vw(16px);
+                    line-height: vw(19px);
+                }
+
+                @media screen and (min-width: 1600px) {
+                    font-size: 16px;
+                    line-height: 19px;
+                }
+
+                &_active, &:hover {
+                    color: $accent;
+                }
+            }
+        }
+
+        &Buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+
+            @media screen and (min-width: 920px) {
+                gap: vw(24px);
+            }
+
+            @media screen and (min-width: 1600px) {
+                gap: 24px;
+            }
+
+            a {
+                color: $white;
+                text-decoration: none;
+
+
+                @media screen and (min-width: 920px) {
+                    font-size: vw(16px);
+                    line-height: vw(19px);
+                }
+
+                @media screen and (min-width: 1600px) {
+                    font-size: 16px;
+                    line-height: 19px;
+                }
+
+            }
+        }
+    
+        &Icon {
+            
+
+            @media screen and (min-width: 920px) {
+                width: vw(24px);
+                height: vw(24px);
+            }
+
+            @media screen and (min-width: 1600px) {
+                width: 24px;
+                height: 24px;
+            }
+
+            svg {
+
+
+                @media screen and (min-width: 920px) {
+                    width: vw(24px);
+                    height: vw(24px);
+                }
+    
+                @media screen and (min-width: 1600px) {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
 }
