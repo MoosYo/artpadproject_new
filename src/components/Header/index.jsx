@@ -11,6 +11,7 @@ import CloseIcon from "../Icons/Close";
 
 // Data
 import mainRoutes from "../../routes/main";
+import Button from "../Button";
 
 const {
     header,
@@ -105,12 +106,12 @@ export default function Header (props) {
                     >
                         <PersonIcon />
                     </a>
-                    <a href="/buy-artr" className="">
+                    <Button href="/buy-artr" className="">
                         Buy ARTR
-                    </a>
-                    <a href="/connect-wallet" className="">
-                        Connect Wallet                        
-                    </a>
+                    </Button>
+                    <Button href="/connect-wallet" className="">
+                        Connect Wallet
+                    </Button>
                 </div>
             </nav>
         </header>
