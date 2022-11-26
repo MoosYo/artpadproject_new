@@ -1,3 +1,316 @@
-.steakingPage {
-    
+@import "../../styles/colors.scss";
+@import "../../styles/helpers.scss";
+
+.steaking {
+   &__layout {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: stretch;
+   }
+
+   &__content {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: stretch;
+      gap: vw(24px, 360px);
+      color: $white;
+      margin-bottom: vw(40px, 360px);
+
+      @media screen and (min-width: 414px) {
+         gap: vw(24px, 414px);
+         margin-bottom: vw(40px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         gap: vw(24px);
+         margin-bottom: vw(40px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         gap: 24px;
+         margin-bottom: 40px;
+      }
+   }
+
+   &__title {
+      font-family: Rubik;
+      font-size: vw(24px, 360px);
+      font-weight: 600;
+      line-height: vw(28px, 360px);
+      letter-spacing: 0em;
+      text-align: left;
+
+      @media screen and (min-width: 414px) {
+         font-size: vw(24px, 414px);
+         line-height: vw(28px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         font-size: vw(24px);
+         line-height: vw(28px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
+   }
+
+   &__subtext {
+      font-family: Rubik;
+      font-size: vw(24px, 360px);
+      font-weight: 400;
+      line-height: vw(28px, 360px);
+      letter-spacing: 0em;
+      text-align: left;
+
+      @media screen and (min-width: 414px) {
+         font-size: vw(24px, 414px);
+         line-height: vw(28px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         font-size: vw(24px);
+         line-height: vw(28px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
+
+      &_magenta {
+         color: $accent;
+      }
+   }
+
+   &__text {
+      font-family: Rubik;
+      font-size: vw(24px, 360px);
+      font-weight: 400;
+      line-height: vw(28px, 360px);
+      letter-spacing: 0em;
+      text-align: left;
+
+      @media screen and (min-width: 414px) {
+         font-size: vw(24px, 414px);
+         line-height: vw(28px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         font-size: vw(24px);
+         line-height: vw(28px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
+   }
+
+   &__cards {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      gap: vw(40px, 360px);
+      margin-bottom: vw(64px, 360px);
+
+      @media screen and (min-width: 414px) {
+         gap: vw(40px, 414px);
+         margin-bottom: vw(64px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         gap: vw(40px);
+         margin-bottom: vw(64px);
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         align-items: center;
+      }
+
+      @media screen and (min-width: 1600px) {
+         gap: 40px;
+         margin-bottom: 64px;
+      }
+   }
+}
+
+.card {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   justify-content: center;
+   align-items: flex-start;
+   gap: vw(32px, 360px);
+   color: $text;
+
+   padding: vw(30px, 360px) vw(53px, 360px);
+
+   @media screen and (min-width: 414px) {
+      padding: vw(30px, 414px) vw(53px, 414px);
+      gap: vw(32px, 414px);
+   }
+
+   @media screen and (min-width: 920px) {
+      padding: vw(30px) vw(53px);
+      gap: vw(32px);
+      max-width: vw(661px);
+      width: 100%;
+      max-height: 95px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+   }
+
+   @media screen and (min-width: 1600px) {
+      padding: 30px 53px;
+      gap: 32px;
+      max-width: 661px;
+      width: 100%;
+   }
+
+   &__title {
+      font-family: Rubik;
+      font-size: vw(24px, 360px);
+      font-weight: 600;
+      line-height: vw(28px, 360px);
+      letter-spacing: 0em;
+      text-align: left;
+
+      @media screen and (min-width: 414px) {
+         font-size: vw(24px, 414px);
+         line-height: vw(28px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         font-size: vw(24px);
+         line-height: vw(28px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
+   }
+
+   &__subtext {
+      font-family: Rubik;
+      font-size: vw(24px, 360px);
+      font-weight: 400;
+      line-height: vw(28px, 360px);
+      letter-spacing: 0em;
+      text-align: left;
+
+      @media screen and (min-width: 414px) {
+         font-size: vw(24px, 414px);
+         line-height: vw(28px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         font-size: vw(24px);
+         line-height: vw(28px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
+   }
+
+   &__label {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: vw(8px, 360px);
+
+      p {
+         font-family: Rubik;
+         font-size: vw(24px, 360px);
+         font-weight: 400;
+         line-height: vw(28px, 360px);
+         letter-spacing: 0em;
+         text-align: center;
+
+         color: $white;
+
+         @media screen and (min-width: 414px) {
+            font-size: vw(24px, 414px);
+            line-height: vw(28px, 414px);
+         }
+
+         @media screen and (min-width: 920px) {
+            font-size: vw(24px);
+            line-height: vw(28px);
+         }
+
+         @media screen and (min-width: 1600px) {
+            font-size: 24px;
+            line-height: 28px;
+         }
+      }
+
+      @media screen and (min-width: 414px) {
+         gap: vw(8px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         gap: vw(8px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         gap: 8px;
+      }
+   }
+
+   &__chips {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+
+      background-color: $text;
+      color: $white;
+
+      padding: vw(8px, 360px) vw(24px, 360px);
+
+      font-family: Rubik;
+      font-size: vw(16px, 360px);
+      font-weight: 400;
+      line-height: vw(19px, 360px);
+      letter-spacing: 0em;
+      text-align: center;
+
+      border-radius: vw(4px, 360px);
+
+      @media screen and (min-width: 414px) {
+         padding: vw(8px, 414px) vw(24px, 414px);
+         font-size: vw(19px, 414px);
+         line-height: vw(16px, 414px);
+         border-radius: vw(4px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         padding: vw(8px) vw(24px);
+         font-size: vw(19px);
+         line-height: vw(16px);
+         border-radius: vw(4px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         padding: 8px 24px;
+         font-size: 16px;
+         line-height: 19px;
+         border-radius: 4px;
+      }
+   }
 }
