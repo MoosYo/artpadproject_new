@@ -2,42 +2,6 @@
 @import "../../styles/helpers.scss";
 
 .profilePage {
-    
-
-    &__layout {
-        display: flex;
-        flex-direction: column;
-
-        gap: vw(40px, 360px);
-        margin-bottom: vw(64px, 360px);
-
-        @media screen and (min-width: 920px) {
-            gap: vw(40px);
-            margin-bottom: vw(64px);
-            flex-direction: row;
-        }
-
-        @media screen and (min-width: 1600px) {
-            gap: 40px;
-            margin-bottom: 64px;
-        }
-
-        &_vertical {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 0px;
-
-            gap: vw(40px, 360px);
-    
-            @media screen and (min-width: 920px) {
-                gap: vw(40px);
-            }
-    
-            @media screen and (min-width: 1600px) {
-                gap: 40px;
-            }
-        }
-    }
 
     &__mainBlock {
         width: 100%;

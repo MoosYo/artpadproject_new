@@ -105,7 +105,7 @@ export default function Header (props) {
                     >
                         <PersonIcon />
                     </a>
-                    <a href="/buy-atr" className="">
+                    <a href="/buy-artr" className="">
                         Buy ARTR
                     </a>
                     <a href="/connect-wallet" className="">

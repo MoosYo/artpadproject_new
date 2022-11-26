@@ -8,14 +8,13 @@ import Avatar from "../../components/Avatar";
 import EditIcon from "../../components/Icons/Edit";
 import EmailIcon from "../../components/Icons/Email";
 import TelegramProfileIcon from "../../components/Icons/TelegramProfile";
+import Layout from "../../components/Layout";
 
 // Data
 import profileRoutes from "../../routes/profile";
 import CopyIcon from "../../components/Icons/Copy";
 
 const {
-    profilePage__layout,
-    profilePage__layout_vertical,
     profilePage__mainBlock,
     profilePage__rightBlock,
     profilePage__rightBlockHeader,
@@ -61,7 +60,7 @@ export default function ProfilePage (props) {
         <>
             <Tabs tabs={profileRoutes} />
             <PageHeader>Profile</PageHeader>
-            <div className={profilePage__layout}>
+            <Layout>
                 <Container className={profilePage__mainBlock}>
                     <Avatar img={avatar} className={profilePage__userAvatar} />
                     <div className={profilePage__userInfoBlock}>
@@ -88,7 +87,7 @@ export default function ProfilePage (props) {
                     </div>
                 </Container>
 
-                <div className={profilePage__layout + " " +profilePage__layout_vertical}>
+                <Layout direction="vertical">
                     <Container className={profilePage__rightBlock}>
                         <h2 className={profilePage__rightBlockHeader}>Wallet</h2>
                         <p className={profilePage__copyBlock}>
@@ -109,8 +108,8 @@ export default function ProfilePage (props) {
                             />
                         </p>
                     </Container>
-                </div>
-            </div>
+                </Layout>
+            </Layout>
         </>
     );
 }
