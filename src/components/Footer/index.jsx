@@ -1,4 +1,4 @@
-import ButtonLink from "../ButtonLink";
+import Button from "../Button";
 import Medium from "../Icons/Medium";
 import Telegram from "../Icons/Telegram";
 import Twitter from "../Icons/Twitter";
@@ -113,7 +113,7 @@ export default function Footer() {
                   <ul className={links_list}>
                      {comm.map(({ text, href }, key) => (
                         <li className={links_list__item} key={key}>
-                           <ButtonLink text={text} href={href} />
+                           <Button variant={"outline"} text={text} href={href} />
                         </li>
                      ))}
                   </ul>
