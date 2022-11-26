@@ -7,6 +7,7 @@ import Tabs from "../../components/Tabs";
 import profileRoutes from "../../routes/profile";
 import PageHeader from "../../components/PageHeader";
 import Container from "../../components/Container";
+import Button from "../../components/Button";
 
 const {
    steaking__layout,
@@ -16,11 +17,14 @@ const {
    steaking__subtext_magenta,
    steaking__text,
    steaking__cards,
+   steaking__wrapper,
    card,
    card__title,
    card__subtext,
    card__label,
    card__chips,
+   card__button,
+   curd__buttonText,
 } = classes;
 
 const { data, level, staked, balance } = window.initState
@@ -29,7 +33,10 @@ const { data, level, staked, balance } = window.initState
         data: "text",
         level: 7,
         staked: "750,000",
-        balance: [{ summ: 0 }, { summ: 0 }],
+        balance: [
+           { summ: 0, state: true },
+           { summ: 0, state: false },
+        ],
      };
 
 export default function SteakingPage(props) {
@@ -48,16 +55,27 @@ export default function SteakingPage(props) {
                <p className={steaking__text}>Your token are unlocked</p>
             </div>
             <div className={steaking__cards}>
-               {balance.map(({ summ }, key) => (
-                  <Container className={card} key={key}>
-                     <span className={card__title}>
-                        Balance: <span className={card__subtext}>{summ} wARTR</span>
-                     </span>
-                     <div className={card__label}>
-                        <span className={card__chips}>Max</span>
-                        <p>WARTR</p>
-                     </div>
-                  </Container>
+               {balance.map(({ summ, state }, key) => (
+                  <div className={steaking__wrapper} key={key}>
+                     <Container className={card}>
+                        <span className={card__title}>
+                           Balance: <span className={card__subtext}>{summ} wARTR</span>
+                        </span>
+                        <div className={card__label}>
+                           <span className={card__chips}>Max</span>
+                           <p>WARTR</p>
+                        </div>
+                     </Container>
+                     <Button
+                        className={card__button}
+                        variant={"solid"}
+                        onClick={() => {
+                           console.log("Click");
+                        }}
+                     >
+                        <span className={curd__buttonText}>{state ? "Stake" : "Unstake"}</span>
+                     </Button>
+                  </div>
                ))}
             </div>
          </div>

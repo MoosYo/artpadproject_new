@@ -140,6 +140,29 @@
          margin-bottom: 64px;
       }
    }
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: vw(20px, 360px);
+
+      width: 100%;
+
+      @media screen and (min-width: 414px) {
+         gap: vw(20px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         gap: vw(20px);
+         justify-content: flex-start;
+         align-items: flex-end;
+      }
+
+      @media screen and (min-width: 1600px) {
+         gap: 20px;
+      }
+   }
 }
 
 .card {
@@ -161,7 +184,6 @@
    @media screen and (min-width: 920px) {
       padding: vw(30px) vw(53px);
       gap: vw(32px);
-      max-width: vw(661px);
       width: 100%;
       max-height: 95px;
       flex-direction: row;
@@ -172,7 +194,6 @@
    @media screen and (min-width: 1600px) {
       padding: 30px 53px;
       gap: 32px;
-      max-width: 661px;
       width: 100%;
    }
 
@@ -310,6 +331,22 @@
          padding: 8px 24px;
          font-size: 16px;
          line-height: 19px;
+         border-radius: 4px;
+      }
+   }
+
+   &__button {
+      border-radius: vw(4px, 360px);
+
+      @media screen and (min-width: 414px) {
+         border-radius: vw(4px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         border-radius: vw(4px);
+      }
+
+      @media screen and (min-width: 1600px) {
          border-radius: 4px;
       }
    }
