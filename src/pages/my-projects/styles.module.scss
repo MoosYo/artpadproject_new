@@ -5,8 +5,10 @@
    &__layout {
       display: flex;
       flex-direction: column;
-      width: 100%;
+      width: 100vw;
 
+      margin: 0px vw(-12px, 360px);
+      padding: 0px vw(12px, 360px);
       padding-bottom: vw(24px, 360px);
       margin-bottom: vw(40px, 360px);
 
@@ -34,15 +36,17 @@
       }
 
       @media screen and (min-width: 414px) {
+         margin: 0px vw(-12px, 414px);
+         padding: 0px vw(12px, 414px);
          margin-bottom: vw(40px, 414px);
          padding-bottom: vw(24px, 414px);
-         // width: vw(1400px, 414px);
       }
 
       @media screen and (min-width: 920px) {
+         margin: 0px;
+         padding: 0px;
          margin-bottom: vw(40px);
          padding-bottom: vw(24px);
-         // width: vw(1400px);
       }
 
       @media screen and (min-width: 1600px) {
