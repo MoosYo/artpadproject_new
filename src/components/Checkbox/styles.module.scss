@@ -1,0 +1,64 @@
+@import "../../styles/colors.scss";
+@import "../../styles/helpers.scss";
+
+.checkbox {
+    border: solid $accent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease-in-out;
+
+    width: vw(17px, 360px);
+    height: vw(17px, 360px);
+    border-radius: vw(3px, 360px);
+    border-width: vw(2px, 360px);
+
+    @media screen and (min-width: 920px) {
+        width: vw(17px);
+        height: vw(17px);
+        border-radius: vw(3px);
+        border-width: vw(2px);
+    }
+
+    @media screen and (min-width: 1600px) {
+        width: 17px;
+        height: 17px;
+        border-radius: 3px;
+        border-width: 2px;
+    }
+
+    &__input {
+        display: none;
+    }
+    
+    &__input:checked + & {
+        background: $accent;
+    }
+
+    &__icon {
+        opacity: 0;
+        transition: transform 0.3s ease-in-out,
+                    opacity 0.3s ease-in-out;
+        
+        width: vw(12px, 360px);
+        height: vw(12px, 360px);
+        transform: translateY(vw(4px, 360px));
+        
+        @media screen and (min-width: 920px) {
+            width: vw(12px);
+            height: vw(12px);
+            transform: translateY(vw(4px));
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 12px;
+            height: 12px;
+            transform: translateY(4px);
+        }
+    }
+    
+    &__input:checked + & > &__icon {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

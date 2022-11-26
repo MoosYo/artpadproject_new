@@ -5,12 +5,13 @@ import Footer from "./components/Footer";
 // Components
 import Header from './components/Header';
 import Modal from "./components/Modal";
-import MyProjectsPage from './pages/my-projects';
 
 // Pages
 import ProfilePage from './pages/profile';
 import SteakingPage from './pages/steaking';
 import TeamPage from './pages/team';
+import MyProjectsPage from './pages/my-projects';
+import LoginSignupPage from "./pages/login-signup";
 
 const {
   app,
@@ -75,6 +76,11 @@ export default function App() {
         {
           path === "/profile/my-projects" || path === "/profile/my-projects/" ? (
             <MyProjectsPage />
+          ) : ""
+        }
+        {
+          path === "/sign-in" || path === "/sign-in/" || path === "/sign-up" || path === "/sign-up/" ? (
+            <LoginSignupPage />
           ) : ""
         }
         

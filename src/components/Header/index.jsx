@@ -60,7 +60,7 @@ export default function Header (props) {
                     <a href="/calendar" className={header__navMobileIcon}>
                         <CalendarIcon />
                     </a>
-                    <a href="/profile" className={header__navMobileIcon}>
+                    <a href="/sign-in" className={header__navMobileIcon}>
                         <PersonIcon />
                     </a>
                     <button
@@ -106,7 +106,7 @@ export default function Header (props) {
                         <CalendarIcon />
                     </a>
                     <a
-                        href="/profile"
+                        href="/sign-in"
                         className={header__navIcon}
                         title="Profile"
                     >
