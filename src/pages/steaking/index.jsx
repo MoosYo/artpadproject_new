@@ -23,12 +23,13 @@ const {
    card__chips,
 } = classes;
 
-const { data, level, staked } = window.initState
+const { data, level, staked, balance } = window.initState
    ? window.initState
    : {
         data: "text",
         level: 7,
         staked: "750,000",
+        balance: [{ summ: 0 }, { summ: 0 }],
      };
 
 export default function SteakingPage(props) {
@@ -47,24 +48,17 @@ export default function SteakingPage(props) {
                <p className={steaking__text}>Your token are unlocked</p>
             </div>
             <div className={steaking__cards}>
-               <Container className={card}>
-                  <span className={card__title}>
-                     Balance: <span className={card__subtext}>0 wARTR</span>
-                  </span>
-                  <div className={card__label}>
-                     <span className={card__chips}>Max</span>
-                     <p>WARTR</p>
-                  </div>
-               </Container>
-               <Container className={card}>
-                  <span className={card__title}>
-                     Balance: <span className={card__subtext}>0 wARTR</span>
-                  </span>
-                  <div className={card__label}>
-                     <span className={card__chips}>Max</span>
-                     <p>WARTR</p>
-                  </div>
-               </Container>
+               {balance.map(({ summ }, key) => (
+                  <Container className={card} key={key}>
+                     <span className={card__title}>
+                        Balance: <span className={card__subtext}>{summ} wARTR</span>
+                     </span>
+                     <div className={card__label}>
+                        <span className={card__chips}>Max</span>
+                        <p>WARTR</p>
+                     </div>
+                  </Container>
+               ))}
             </div>
          </div>
       </>
