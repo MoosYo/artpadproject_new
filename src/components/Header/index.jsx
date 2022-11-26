@@ -8,10 +8,11 @@ import CalendarIcon from "../Icons/Calendar";
 import PersonIcon from "../Icons/Person";
 import BurgerMenuIcon from "../Icons/BurgerMenu";
 import CloseIcon from "../Icons/Close";
+import Button from "../Button";
+import ConnectWalletModal from "../ConnectWalleteModal";
 
 // Data
 import mainRoutes from "../../routes/main";
-import Button from "../Button";
 
 const {
     header,
@@ -36,8 +37,8 @@ export default function Header (props) {
     const [menuState, setMenuState] = useState(false);
 
     const connectWallet = () => {
-        const a = (props) => <h3 onClick={props.onClose}>Connect wallet</h3>;
-        props.setModal(a);
+        setMenuState(false);
+        props.setModal((props) => <ConnectWalletModal {...props} />);
     }
 
     return (
