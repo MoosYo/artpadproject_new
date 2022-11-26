@@ -6,10 +6,13 @@ import Tabs from "../../components/Tabs";
 // Data
 import profileRoutes from "../../routes/profile";
 import PageHeader from "../../components/PageHeader";
+import React, { useMemo, useState } from "react";
+import Pagination from "../../components/Pagination";
 
-const { my_project__layout, table, table__header, table__title, table__body, table__row, table__cel } = classes;
+const { my_project__layout, table, table__header, table__title, table__body, table__row, table__cel, pagination_bar } =
+   classes;
 
-const { data } = window.initState
+let { data, pagination } = window.initState
    ? window.initState
    : {
         data: [
@@ -62,6 +65,10 @@ const { data } = window.initState
               link: "#",
            },
         ],
+        pagination: {
+           current: 1,
+           totalPagesCount: 5,
+        },
      };
 
 export default function MyProjectsPage(props) {
@@ -100,7 +107,7 @@ export default function MyProjectsPage(props) {
                         <span>{token}</span>
                         <span>{status}</span>
                         <span>
-                           <a href={link} target={"_blank"}>
+                           <a href={link} target={"_blank"} rel={"noreferrer"}>
                               Click
                            </a>
                         </span>
@@ -109,6 +116,11 @@ export default function MyProjectsPage(props) {
                </div>
             </div>
          </div>
+         <Pagination
+            curentPage={pagination.current}
+            totalPages={pagination.totalPagesCount}
+            href="/profile/my-projects"
+         />
       </>
    );
 }
