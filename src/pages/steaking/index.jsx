@@ -73,7 +73,7 @@ export default function SteakingPage(props) {
                            console.log("Click");
                         }}
                      >
-                        <span className={curd__buttonText}>{state ? "Stake" : "Unstake"}</span>
+                        <span>{state ? "Stake" : "Unstake"}</span>
                      </Button>
                   </div>
                ))}
