@@ -1,3 +1,355 @@
+@import "../../styles/colors.scss";
+@import "../../styles/helpers.scss";
+
 .teamPage {
     
+    &__memberContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        padding: vw(30px, 360px);
+        width: 100%;
+        gap: vw(30px, 360px);
+
+        @media screen and (min-width: 920px) {
+            flex-direction: row;
+            align-items: center;
+
+            padding: vw(60px);
+            width: vw(800px);
+            gap: vw(30px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            padding: 60px;
+            width: 800px;
+            gap: 30px;
+        }
+    }
+
+    &__memberAvatar {
+        width: vw(202px, 360px);
+        height: vw(202px, 360px);
+        margin: 0px auto;
+
+        @media screen and (min-width: 920px) {
+            margin: 0px;
+            width: vw(202px);
+            height: vw(202px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 202px;
+            height: 202px;
+        }
+    }
+
+    &__memberInfoBlock {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__memberNameBlock {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+            
+        gap: vw(24px, 360px);
+        margin-bottom: vw(24px, 360px);
+
+        @media screen and (min-width: 920px) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            
+            gap: vw(24px);
+            margin-bottom: vw(24px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__memberName {
+        color: $white;
+        font-weight: 600;
+        
+        font-size: vw(24px, 360px);
+        line-height: vw(28px, 360px);
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(32px);
+            line-height: vw(38px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 32px;
+            line-height: 38px;
+        }
+    }
+
+    &__memberExpireIn {
+        
+
+        @media screen and (min-width: 920px) {
+            
+        }
+
+        @media screen and (min-width: 1600px) {
+            
+        }
+    }
+
+    &__memberLevel {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        height: vw(37px, 360px);
+        margin-bottom: vw(24px, 360px);
+        
+        @media screen and (min-width: 920px) {
+            height: auto;
+            
+            gap: vw(8px);
+            margin-bottom: vw(36px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            gap: 8px;
+            margin-bottom: 36px;
+        }
+    }
+
+    &__memberLevelName {
+        background: $gradient;
+        background-clip: text;
+        color: transparent;
+        font-weight: 600;
+        
+        margin-top: 0px;
+        font-size: vw(14px, 360px);
+        line-height: vw(17px, 360px);
+
+        @media screen and (min-width: 920px) {
+            margin-top: vw(16px);
+            font-size: vw(20px);
+            line-height: vw(24px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            margin-top: 16px;
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+
+    &__memberLevelProgress {
+        width: 100%;
+
+        position: absolute;
+
+        @media screen and (min-width: 920px) {
+            position: static;
+        }
+
+        @media screen and (min-width: 1600px) {
+            
+        }
+    }
+
+    &__memberInvitedBy {
+        color: rgba($color: $white, $alpha: 0.5);
+        
+        font-size: vw(18px, 360px);
+        line-height: vw(21px, 360px);
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(18px);
+            line-height: vw(21px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+
+    &__numbersDataBlock {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        gap: vw(24px, 360px);
+        padding: vw(22px, 360px) vw(22px, 360px) vw(22px, 360px) vw(30px, 360px);
+
+        @media screen and (min-width: 920px) {
+            flex-direction: row;
+            align-items: center;
+
+            width: vw(560px);
+            gap: vw(24px);
+
+            padding: vw(22px) vw(22px) vw(22px) vw(30px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 560px;
+            gap: 24px;
+
+            padding: 22px 22px 22px 30px;
+        }
+    }
+
+    &__numbersDataTitle {
+        color: $white;
+        font-weight: 500;
+        
+        font-size: vw(18px, 360px);
+        line-height: vw(21px, 360px);
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(18px);
+            line-height: vw(21px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+
+    &__numbersDataValue {
+        color: $white;
+        font-weight: 600;
+        
+        font-size: vw(32px, 360px);
+        line-height: vw(38px, 360px);
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(32px);
+            line-height: vw(38px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 32px;
+            line-height: 38px;
+        }
+
+        &_small {
+            color: $white;
+            font-weight: 600;
+            
+            font-size: vw(18px, 360px);
+            line-height: vw(21px, 360px);
+
+            @media screen and (min-width: 920px) {
+                font-size: vw(18px);
+                line-height: vw(21px);
+            }
+    
+            @media screen and (min-width: 1600px) {
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+    }
+
+    &__listHeader {
+        text-transform: none;
+        
+        margin-bottom: vw(24px, 360px);
+
+        @media screen and (min-width: 920px) {
+            margin-bottom: vw(24px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__listPreText {
+        color: $white;
+        font-weight: 600;
+        
+        font-size: vw(24px, 360px);
+        line-height: vw(28px, 360px);
+        margin-bottom: vw(24px, 360px);
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(24px);
+            line-height: vw(28px);
+            margin-bottom: vw(24px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 24px;
+            line-height: 28px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__listNav {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        
+        gap: vw(14px, 360px);
+        margin-bottom: vw(64px, 360px);
+
+        @media screen and (min-width: 920px) {
+            width: 100%;
+            gap: vw(14px);
+            margin-bottom: vw(128px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            gap: 14px;
+            margin-bottom: 128px;
+        }
+
+        &Links {
+            color: $white;
+            display: flex;
+            flex-direction: row;
+            
+            font-size: vw(18px, 360px);
+            line-height: vw(21px, 360px);
+
+            @media screen and (min-width: 920px) {
+                font-size: vw(18px);
+                line-height: vw(21px);
+            }
+    
+            @media screen and (min-width: 1600px) {
+                font-size: 18px;
+                line-height: 21px;
+            }
+
+            &Text {
+                width: max-content;
+                display:inline-block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+
+                max-width: vw(70px, 360px);
+
+                @media screen and (min-width: 920px) {
+                    max-width: none;
+                }
+            }
+
+            &_active {
+                color: $accent;
+            }
+        }
+    }
 }

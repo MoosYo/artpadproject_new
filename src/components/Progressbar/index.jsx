@@ -1,7 +1,10 @@
 import classes from "./styles.module.scss";
 
 const {
-    progressbar
+    progressbar,
+    progressbar__percents,
+    progressbar__wrapper,
+    progressbar__bar,
 } = classes;
 
 export default function Progressbar (props) {
@@ -15,11 +18,11 @@ export default function Progressbar (props) {
         <div className={progressbar + (className ? " " + className : "")}>
             {
                 showPercents ? (
-                    <p className="">{value}%</p>
+                    <p className={progressbar__percents}>{value}%</p>
                 ) : ""
             }
-            <div className="">
-                <div className="" style={{width: value + "%"}} />
+            <div className={progressbar__wrapper}>
+                <div className={progressbar__bar} style={{maxWidth: value + "%"}} />
             </div>
         </div>
     )

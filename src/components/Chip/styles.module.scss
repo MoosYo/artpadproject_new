@@ -1,0 +1,38 @@
+@import "../../styles/helpers.scss";
+@import "../../styles/colors.scss";
+
+.chip {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: $accent;
+    border: solid $accent;
+    background-color: rgba($color: $accent, $alpha: 0.1);
+    
+    height: vw(38px, 360px);
+    border-radius: vw(10px, 360px);
+    padding: 0px vw(16px, 360px);
+    font-size: vw(12px, 360px);
+    line-height: vw(14px, 360px);
+    border-width: vw(2px, 360px);
+
+    @media screen and (min-width: 920px) {
+        height: vw(38px);
+        border-radius: vw(10px);
+        padding: 0px vw(16px);
+        font-size: vw(12px);
+        line-height: vw(14px);
+        border-width: vw(2px);
+    }
+
+    @media screen and (min-width: 1600px) {
+        height: 38px;
+        border-radius: 10px;
+        padding: 0px 16px;
+        font-size: 12px;
+        line-height: 14px;
+        border-width: 2px;
+    }
+}
