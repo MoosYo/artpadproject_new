@@ -1,0 +1,43 @@
+@import "../../styles/colors.scss";
+@import "../../styles/helpers.scss";
+
+.modal {
+    position: absolute;
+    transform: translateY(100px);
+    transition: transform 0.3s ease-in-out;
+
+    &_shown {
+        transform: translateY(0px);
+    }
+
+    &__wrapper {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+
+        &_shown {
+            opacity: 1;
+        }
+    }
+
+    &__background {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(7.5px);
+
+        opacity: inherit;
+        transition: inherit;
+    }
+}

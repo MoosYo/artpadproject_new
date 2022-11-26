@@ -35,6 +35,11 @@ export default function Header (props) {
 
     const [menuState, setMenuState] = useState(false);
 
+    const connectWallet = () => {
+        const a = (props) => <h3 onClick={props.onClose}>Connect wallet</h3>;
+        props.setModal(a);
+    }
+
     return (
         <header className={header}>
             <Logo className={header__logo} />
@@ -109,7 +114,7 @@ export default function Header (props) {
                     <Button href="/buy-artr" className="">
                         Buy ARTR
                     </Button>
-                    <Button href="/connect-wallet" className="">
+                    <Button onClick={connectWallet} className="">
                         Connect Wallet
                     </Button>
                 </div>
