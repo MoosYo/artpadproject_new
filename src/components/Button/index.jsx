@@ -5,7 +5,7 @@ const {
    button_outline
 } = classes;
 
-export default function Button({ text, variant, href, onClick, type, className }) {
+export default function Button({ children, variant, href, onClick, type, className }) {
 
    let newClassName = button;
 
@@ -17,7 +17,7 @@ export default function Button({ text, variant, href, onClick, type, className }
       return (
          <>
             <a href={href ? href : "#"} className={newClassName}>
-               {text ? text : "Кнопка"}
+               {children ? children : "Кнопка"}
             </a>
          </>
       );
@@ -26,7 +26,7 @@ export default function Button({ text, variant, href, onClick, type, className }
       return (
          <>
             <button type={type ? type : "button"} onClick={onClick} className={newClassName}>
-               {text ? text : "Кнопка"}
+               {children ? children : "Кнопка"}
             </button>
          </>
       );

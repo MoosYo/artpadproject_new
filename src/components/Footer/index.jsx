@@ -113,7 +113,7 @@ export default function Footer() {
                   <ul className={links_list}>
                      {comm.map(({ text, href }, key) => (
                         <li className={links_list__item} key={key}>
-                           <Button variant={"outline"} text={text} href={href} />
+                           <Button variant={"outline"} href={href}>{text}</Button>
                         </li>
                      ))}
                   </ul>
