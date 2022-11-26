@@ -55,7 +55,7 @@
 
    &_solid {
       position: relative;
-      background: $accent;
+      background: rgba($color: $accent, $alpha: 0.3);
       overflow: hidden;
 
       &::before {
