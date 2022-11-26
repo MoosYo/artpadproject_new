@@ -1,0 +1,241 @@
+@import "../../styles/colors.scss";
+@import "../../styles/helpers.scss";
+
+.block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+        width: vw(336px, 360px);
+        margin-bottom: vw(64px, 360px);
+
+        @media screen and (min-width: 920px) {
+            width: vw(440px);
+            margin-bottom: vw(64px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 440px;
+            margin-bottom: 64px;
+        }
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+
+        height: vw(39px, 360px);
+        margin-bottom: vw(40px, 360px);
+
+        @media screen and (min-width: 920px) {
+            height: vw(39px);
+            margin-bottom: vw(40px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            height: 39px;
+            margin-bottom: 40px;
+        }
+
+        &Button {
+            color: $white;
+            background: none;
+            border: none;
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            padding: vw(8px, 360px);
+            font-size: vw(24px, 360px);
+            line-height: vw(28px, 360px);
+
+            @media screen and (min-width: 920px) {
+                padding: vw(8px);
+                font-size: vw(24px);
+                line-height: vw(28px);
+            }
+
+            @media screen and (min-width: 1600px) {
+                padding: 8px;
+                font-size: 24px;
+                line-height: 28px;
+            }
+        }
+
+        &Indicator {
+            width: 50%;
+            background: $gradient;
+            transition: transform 0.3s ease-in-out;
+
+            height: vw(3px, 360px);
+
+            @media screen and (min-width: 920px) {
+                height: vw(3px);
+            }
+
+            @media screen and (min-width: 1600px) {
+                height: 3px;
+            }
+        }
+    }
+
+    &__tabsWrapper {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &__tab {
+        display: inline-block;
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+.content {
+    &__infoText {
+        text-align: center;
+        white-space: break-spaces;
+        color: $white;
+
+        font-size: vw(18px, 360px);
+        line-height: vw(25px, 360px);
+        margin-bottom: vw(14px, 360px);
+            
+        @media screen and (min-width: 920px) {
+            font-size: vw(18px);
+            line-height: vw(25px);
+            margin-bottom: vw(14px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 18px;
+            line-height: 25px;
+            margin-bottom: 14px;
+        }
+    }
+
+    &__infoLink {
+        text-align: center;
+
+        margin-bottom: vw(40px, 360px);
+            
+        @media screen and (min-width: 920px) {
+            margin-bottom: vw(40px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            margin-bottom: 40px;
+        }
+
+        & a {
+            color: $accent;
+
+            font-size: vw(18px, 360px);
+            line-height: vw(21px, 360px);
+            
+            @media screen and (min-width: 920px) {
+                font-size: vw(18px);
+                line-height: vw(21px);
+            }
+
+            @media screen and (min-width: 1600px) {
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        
+        gap: vw(20px, 360px);
+
+        @media screen and (min-width: 920px) {
+            gap: vw(20px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            gap: 20px;
+        }
+
+        &Button {
+            width: 100%;
+            
+            height: vw(52px, 360px);
+            font-size: vw(24px, 360px);
+            line-height: vw(24px, 360px);
+            border-radius: vw(10px, 360px);
+            margin-top: vw(20px, 360px);
+
+            @media screen and (min-width: 920px) {
+                height: vw(52px);
+                font-size: vw(24px);
+                line-height: vw(24px);
+                border-radius: vw(10px);
+                margin-top: vw(20px);
+            }
+
+            @media screen and (min-width: 1600px) {
+                height: 52px;
+                font-size: 24px;
+                line-height: 24px;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+        }
+
+        &Checkbox {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            cursor: pointer;
+
+            margin-top: vw(10px, 360px);
+            gap: vw(8px, 360px);
+
+            @media screen and (min-width: 920px) {
+                margin-top: vw(10px);
+                gap: vw(8px);
+            }
+    
+            @media screen and (min-width: 1600px) {
+                margin-top: 10px;
+                gap: 8px;
+            }
+
+            &Input {
+
+            }
+
+            &Text {
+                color: $white;
+
+                font-size: vw(14px, 360px);
+                line-height: vw(17px, 360px);
+
+                @media screen and (min-width: 920px) {
+                    font-size: vw(14px);
+                    line-height: vw(17px);
+                }
+        
+                @media screen and (min-width: 1600px) {
+                    font-size: 14px;
+                    line-height: 17px;
+                }
+
+                & a {
+                    color: $accent;
+                }
+            }
+        }
+    }
+}
