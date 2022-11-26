@@ -7,7 +7,7 @@ import Tabs from "../../components/Tabs";
 import profileRoutes from "../../routes/profile";
 import PageHeader from "../../components/PageHeader";
 
-const { my_project__layout, table, table__header, table__title, table__body, table__row } = classes;
+const { my_project__layout, table, table__header, table__title, table__body, table__row, table__cel } = classes;
 
 const { data } = window.initState
    ? window.initState
@@ -16,7 +16,7 @@ const { data } = window.initState
            {
               project: {
                  name: "ARTERY",
-                 icon: "",
+                 icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/11104.png",
               },
               round: "IDO",
               pool: "200$",
@@ -28,7 +28,7 @@ const { data } = window.initState
            {
               project: {
                  name: "EYWA",
-                 icon: "",
+                 icon: "https://forklog.com/wp-content/uploads/EYWA-min.png",
               },
               round: "SEED",
               pool: "2000$",
@@ -40,7 +40,7 @@ const { data } = window.initState
            {
               project: {
                  name: "ART Wallet",
-                 icon: "",
+                 icon: "https://cdn-images-1.medium.com/max/1200/1*KO-VZFZL_EhIaQMvW2aI5w.png",
               },
               round: "PRIVATE",
               pool: "0$",
@@ -52,7 +52,7 @@ const { data } = window.initState
            {
               project: {
                  name: "ARTERY",
-                 icon: "",
+                 icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/11104.png",
               },
               round: "IDO",
               pool: "200$",
@@ -90,14 +90,19 @@ export default function MyProjectsPage(props) {
                <div className={table__body}>
                   {data.map(({ project, round, pool, price, token, status, link }, key) => (
                      <div className={table__row} key={key}>
-                        <span>{project.name}</span>
+                        <div className={table__cel}>
+                           <img src={project.icon} alt="" />
+                           <span>{project.name}</span>
+                        </div>
                         <span>{round}</span>
                         <span>{pool}</span>
                         <span>{price}</span>
                         <span>{token}</span>
                         <span>{status}</span>
                         <span>
-                           <a href={link}>Click</a>
+                           <a href={link} target={"_blank"}>
+                              Click
+                           </a>
                         </span>
                      </div>
                   ))}

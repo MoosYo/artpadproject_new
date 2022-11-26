@@ -21,6 +21,7 @@
       justify-content: flex-start;
 
       padding: 0px;
+      padding-bottom: vw(58px);
       gap: vw(120px);
 
       width: vw(1440px);
@@ -30,6 +31,7 @@
    @media screen and (min-width: 1600px) {
       gap: 120px;
       width: 1440px;
+      padding-bottom: 58px;
    }
 
    &__title {
