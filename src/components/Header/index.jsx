@@ -8,10 +8,11 @@ import CalendarIcon from "../Icons/Calendar";
 import PersonIcon from "../Icons/Person";
 import BurgerMenuIcon from "../Icons/BurgerMenu";
 import CloseIcon from "../Icons/Close";
+import Button from "../Button";
+import ConnectWalletModal from "../ConnectWalleteModal";
 
 // Data
 import mainRoutes from "../../routes/main";
-import Button from "../Button";
 
 const {
     header,
@@ -34,6 +35,11 @@ export default function Header (props) {
     const path = window.location.pathname;
 
     const [menuState, setMenuState] = useState(false);
+
+    const connectWallet = () => {
+        setMenuState(false);
+        props.setModal((props) => <ConnectWalletModal {...props} />);
+    }
 
     return (
         <header className={header}>
@@ -109,7 +115,7 @@ export default function Header (props) {
                     <Button href="/buy-artr" className="">
                         Buy ARTR
                     </Button>
-                    <Button href="/connect-wallet" className="">
+                    <Button onClick={connectWallet} className="">
                         Connect Wallet
                     </Button>
                 </div>

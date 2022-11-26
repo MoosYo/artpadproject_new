@@ -9,7 +9,7 @@ export default function Button({ children, variant, href, onClick, type, classNa
 
    let newClassName = button;
 
-   newClassName += variant === "outline" ? " " + button_outline : "";
+   newClassName += variant ? " " + classes["button_"+variant] : "";
 
    newClassName += className ? " " + className : "";
 
