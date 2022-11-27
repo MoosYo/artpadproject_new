@@ -5,13 +5,14 @@ import Footer from "./components/Footer";
 // Components
 import Header from "./components/Header";
 import Modal from "./components/Modal";
-import MyProjectsPage from "./pages/my-projects";
 
 // Pages
-import ProfilePage from "./pages/profile";
 import ProjectPage from "./pages/project";
-import SteakingPage from "./pages/steaking";
-import TeamPage from "./pages/team";
+import ProfilePage from './pages/profile';
+import SteakingPage from './pages/steaking';
+import TeamPage from './pages/team';
+import MyProjectsPage from './pages/my-projects';
+import LoginSignupPage from "./pages/login-signup";
 
 const { app, pageWrapper } = classes;
 
@@ -50,18 +51,38 @@ export default function App() {
    }, [modalContent]);
 
    const ModalContent = (props) => modalContent.content(props);
-
-   return (
-      <div className={app}>
-         <Header setModal={showModal} />
-         <main className={pageWrapper}>
-            {path === "/profile" || path === "/profile/" ? <ProfilePage /> : ""}
-            {path === "/profile/steaking" || path === "/profile/steaking/" ? <SteakingPage /> : ""}
-            {path === "/profile/team" || path === "/profile/team/" ? <TeamPage /> : ""}
-            {path === "/profile/my-projects" || path === "/profile/my-projects/" ? <MyProjectsPage /> : ""}
-            {path === "/projects" || path === "/projects/" ? <ProjectPage /> : ""}
-         </main>
-         <Footer />
+  return (
+    <div className={app}>
+      <Header setModal={showModal} />
+      <main className={pageWrapper}>
+        {
+          path === "/profile" || path === "/profile/" ? (
+            <ProfilePage />
+          ) : ""
+        }
+        {
+          path === "/profile/steaking" || path === "/profile/steaking/" ? (
+            <SteakingPage />
+          ) : ""
+        }
+        {
+          path === "/profile/team" || path === "/profile/team/" ? (
+            <TeamPage />
+          ) : ""
+        }
+        {
+          path === "/profile/my-projects" || path === "/profile/my-projects/" ? (
+            <MyProjectsPage />
+          ) : ""
+        }
+        {
+          path === "/sign-in" || path === "/sign-in/" || path === "/sign-up" || path === "/sign-up/" ? (
+            <LoginSignupPage />
+          ) : ""
+        }
+        {path === "/projects" || path === "/projects/" ? <ProjectPage /> : ""}
+      </main>
+      <Footer />
 
          <Modal shown={modalContent.shown} onClose={onModalClose}>
             <ModalContent onClose={onModalClose} />

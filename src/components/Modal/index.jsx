@@ -25,10 +25,12 @@ export default function Modal (props) {
     useEffect(() => {
         if (shown) {
             setModalState(shown);
+            document.querySelector("body").style.overflow = "hidden";
         }
         else {
             const timer = setTimeout(()=>{
                 setModalState(shown);
+                document.querySelector("body").style.overflow = null;
                 clearTimeout(timer);
             }, 500);
         }

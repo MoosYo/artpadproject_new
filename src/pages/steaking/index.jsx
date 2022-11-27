@@ -8,6 +8,8 @@ import profileRoutes from "../../routes/profile";
 import PageHeader from "../../components/PageHeader";
 import Container from "../../components/Container";
 import Button from "../../components/Button";
+import RangeSlider from "../../components/RangeSlider";
+import { useState } from "react";
 
 const {
    steaking__layout,
@@ -18,6 +20,11 @@ const {
    steaking__text,
    steaking__cards,
    steaking__wrapper,
+   steaking__time,
+   steaking__timeHeader,
+   steaking__timeTitle,
+   steaking__timeValue,
+
    card,
    card__title,
    card__subtext,
@@ -27,7 +34,7 @@ const {
    curd__buttonText,
 } = classes;
 
-const { level, staked, balance } = window.initState
+const { level, staked, balance, timeRange, selectedTime } = window.initState
    ? window.initState
    : {
         level: 7,
@@ -36,9 +43,19 @@ const { level, staked, balance } = window.initState
            { summ: 0, state: true },
            { summ: 0, state: false },
         ],
+        timeRange: [
+            "1 month",
+            "3 month’s",
+            "6 month’s",
+            "12 month’s"
+        ],
+        selectedTime: 1
      };
 
 export default function SteakingPage(props) {
+
+   const [selected, setSelected] = useState(selectedTime);
+
    return (
       <>
          <Tabs tabs={profileRoutes} />
@@ -72,10 +89,21 @@ export default function SteakingPage(props) {
                            console.log("Click");
                         }}
                      >
-                        <span className={curd__buttonText}>{state ? "Stake" : "Unstake"}</span>
+                        <span>{state ? "Stake" : "Unstake"}</span>
                      </Button>
                   </div>
                ))}
+            </div>
+            <div className={steaking__time}>
+               <div className={steaking__timeHeader}>
+                  <h2 className={steaking__timeTitle}>Steaking time</h2>
+                  <p className={steaking__timeValue}>{timeRange[selected]}</p>
+               </div>
+               <RangeSlider
+                  values={timeRange}
+                  selected={selected}
+                  onChange={setSelected}
+               />
             </div>
          </div>
       </>

@@ -36,8 +36,18 @@ export default function Header (props) {
 
     const [menuState, setMenuState] = useState(false);
 
-    const connectWallet = () => {
+    const showMenu = () => {
+        setMenuState(true);
+        document.querySelector("body").style.overflow = "hidden";
+    }
+
+    const hideMenu = () => {
         setMenuState(false);
+        document.querySelector("body").style.overflow = null;
+    }
+
+    const connectWallet = () => {
+        hideMenu();
         props.setModal((props) => <ConnectWalletModal {...props} />);
     }
 
@@ -48,7 +58,7 @@ export default function Header (props) {
             <button
                 className={header__mobileButton}
                 type="button"
-                onClick={()=>setMenuState(true)}
+                onClick={showMenu}
             >
                 <BurgerMenuIcon />
             </button>
@@ -60,13 +70,13 @@ export default function Header (props) {
                     <a href="/calendar" className={header__navMobileIcon}>
                         <CalendarIcon />
                     </a>
-                    <a href="/profile" className={header__navMobileIcon}>
+                    <a href="/sign-in" className={header__navMobileIcon}>
                         <PersonIcon />
                     </a>
                     <button
                         className={header__navMobileIcon + " " + header__navMobileIcon_close}
                         type="button"
-                        onClick={()=>setMenuState(false)}
+                        onClick={hideMenu}
                     >
                         <CloseIcon />
                     </button>
@@ -106,7 +116,7 @@ export default function Header (props) {
                         <CalendarIcon />
                     </a>
                     <a
-                        href="/profile"
+                        href="/sign-in"
                         className={header__navIcon}
                         title="Profile"
                     >
