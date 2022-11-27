@@ -1,5 +1,6 @@
 import Button from "../../components/Button";
 import Container from "../../components/Container";
+import Error from "../../components/Icons/error";
 import ProgressbarTimestamp from "../../components/ProgressbarTimestamp";
 import classes from "./index.module.scss";
 
@@ -11,12 +12,21 @@ const {
    project__body,
    project__info,
    project__container,
+   project__container_magenta,
+   project__container_lowPadding,
+   project__container_left,
    project__cards,
    project__info__items,
    project__info__items__title,
    project__info__items__result,
    project__progress,
    project__progress__title,
+   card__title,
+   card__attantions,
+   card__rejected,
+   card__timer,
+   card__block,
+   container__alert,
 } = classes;
 
 const { data, heder, links, info } = window.initState
@@ -154,7 +164,41 @@ export default function ProjectPage(props) {
                      </div>
                   </aside>
                </Container>
-               <div className={project__cards}></div>
+               <div className={project__cards}>
+                  <Container className={project__container + " " + project__container_left}>
+                     <h3 className={card__title}>SWAP</h3>
+                     <div className={card__attantions}>
+                        <div className={card__rejected}>
+                           <Error />
+                           <p>You did not apply IDO of your application was rejected</p>
+                        </div>
+                        <div className={card__timer}>
+                           <h3 className={card__title}>SWAP ENDS AFTER</h3>
+                           <div className={card__block}></div>
+                        </div>
+                     </div>
+                     <Container
+                        className={
+                           project__container +
+                           " " +
+                           project__container_magenta +
+                           " " +
+                           project__container_lowPadding +
+                           " " +
+                           container__alert +
+                           " " +
+                           project__container_left
+                        }
+                     >
+                        <p>Dear investor!</p>
+                        <p>
+                           Pay your attension that SPORTPZCHAIN token (SPN) deposit is availible on several blockchain
+                           networks: BNB Chain, Polygon.
+                        </p>
+                        <p>The distribution of SPORTPZCHAIN token will carried out in polygon ony!</p>
+                     </Container>
+                  </Container>
+               </div>
             </div>
          </div>
       </>
