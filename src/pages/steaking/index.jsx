@@ -8,6 +8,7 @@ import profileRoutes from "../../routes/profile";
 import PageHeader from "../../components/PageHeader";
 import Container from "../../components/Container";
 import Button from "../../components/Button";
+import RangeSlider from "../../components/RangeSlider";
 
 const {
    steaking__layout,
@@ -27,16 +28,23 @@ const {
    curd__buttonText,
 } = classes;
 
-const { data, level, staked, balance } = window.initState
+const { level, staked, balance, timeRange, selectedTime } = window.initState
    ? window.initState
    : {
-        data: "text",
         level: 7,
         staked: "750,000",
         balance: [
            { summ: 0, state: true },
            { summ: 0, state: false },
         ],
+        timeRange: [
+            "1 month",
+            "3 month’s",
+            // "PUSSY",
+            "6 month’s",
+            "12 month’s"
+        ],
+        selectedTime: 1
      };
 
 export default function SteakingPage(props) {
@@ -77,6 +85,16 @@ export default function SteakingPage(props) {
                      </Button>
                   </div>
                ))}
+            </div>
+            <div className="">
+               <div className="">
+                  <h2 className="">Steaking time</h2>
+                  <p className="">3 month</p>
+               </div>
+               <RangeSlider
+                  values={timeRange}
+                  selected={selectedTime}
+               />
             </div>
          </div>
       </>
