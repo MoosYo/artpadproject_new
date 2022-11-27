@@ -489,17 +489,19 @@
 
    &__block {
       width: 100%;
-      height: 61px;
-      background-color: $text;
-      border-radius: 5px;
+      height: vw(61px, 360px);
+
       @media screen and (min-width: 414px) {
          width: vw(279px, 414px);
+         height: vw(61px, 414px);
       }
       @media screen and (min-width: 920px) {
          width: vw(279px);
+         height: vw(61px);
       }
       @media screen and (min-width: 1600px) {
          width: 279px;
+         height: 61px;
       }
    }
 }

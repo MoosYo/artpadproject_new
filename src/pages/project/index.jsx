@@ -1,5 +1,6 @@
 import Button from "../../components/Button";
 import Container from "../../components/Container";
+import Countdown from "../../components/Countdown";
 import Error from "../../components/Icons/error";
 import ProgressbarTimestamp from "../../components/ProgressbarTimestamp";
 import TabControl from "../../components/TabControl";
@@ -61,7 +62,7 @@ const { data, heder, links, info, news } = window.initState
               title: "Polygon",
               img: "https://icodrops.com/wp-content/uploads/2022/07/yycZmh7_400x400.png",
            },
-           swapEnd: "07 september, 2022 19:00",
+           swapEnd: 1670428800000,
            progress: 10,
            coin: {
               total: 496.0,
@@ -234,7 +235,7 @@ export default function ProjectPage(props) {
                         </div>
                         <div className={card__timer}>
                            <h3 className={card__title}>SWAP ENDS AFTER</h3>
-                           <div className={card__block}></div>
+                           <Countdown className={card__block} timestamp={info.swapEnd} />
                         </div>
                      </div>
                      <Container
