@@ -6,11 +6,10 @@ import Tabs from "../../components/Tabs";
 // Data
 import profileRoutes from "../../routes/profile";
 import PageHeader from "../../components/PageHeader";
-import React, { useMemo, useState } from "react";
+import React from "react";
 import Pagination from "../../components/Pagination";
 
-const { my_project__layout, table, table__header, table__title, table__body, table__row, table__cel, pagination_bar } =
-   classes;
+const { my_project__layout, table, table__header, table__title, table__body, table__row, table__cel } = classes;
 
 let { data, pagination } = window.initState
    ? window.initState

@@ -27,10 +27,9 @@ const {
    curd__buttonText,
 } = classes;
 
-const { data, level, staked, balance } = window.initState
+const { level, staked, balance } = window.initState
    ? window.initState
    : {
-        data: "text",
         level: 7,
         staked: "750,000",
         balance: [

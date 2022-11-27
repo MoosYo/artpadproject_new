@@ -1,15 +1,11 @@
 import classes from "./index.module.scss";
 
-const {
-   button,
-   button_outline
-} = classes;
+const { button, button_outline } = classes;
 
 export default function Button({ children, variant, href, onClick, type, className }) {
-
    let newClassName = button;
 
-   newClassName += variant ? " " + classes["button_"+variant] : "";
+   newClassName += variant ? " " + classes["button_" + variant] : "";
 
    newClassName += className ? " " + className : "";
 
@@ -21,8 +17,7 @@ export default function Button({ children, variant, href, onClick, type, classNa
             </a>
          </>
       );
-   }
-   else {
+   } else {
       return (
          <>
             <button type={type ? type : "button"} onClick={onClick} className={newClassName}>

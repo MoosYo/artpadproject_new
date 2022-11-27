@@ -1,0 +1,210 @@
+@import "../../styles/colors.scss";
+@import "../../styles/helpers.scss";
+
+.progressbar {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+   gap: vw(8px, 360px);
+
+   @media screen and (min-width: 920px) {
+      gap: vw(4px);
+   }
+
+   @media screen and (min-width: 1600px) {
+      gap: 4px;
+   }
+
+   &__head {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+      margin-bottom: vw(12px, 360px);
+
+      @media screen and (min-width: 414px) {
+         margin-bottom: vw(12px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         margin-bottom: vw(12px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         margin-bottom: 12px;
+      }
+   }
+
+   &__timestamp {
+      font-family: Rubik;
+      font-size: vw(14px, 360px);
+      font-weight: 400;
+      line-height: vw(17px, 360px);
+      letter-spacing: 0em;
+      text-align: left;
+
+      color: $text-title;
+
+      width: 60%;
+
+      @media screen and (min-width: 414px) {
+         font-size: vw(14px, 414px);
+         line-height: vw(17px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         font-size: vw(14px);
+         line-height: vw(17px);
+         width: 100%;
+      }
+
+      @media screen and (min-width: 1600px) {
+         font-size: 14px;
+         line-height: 17px;
+      }
+   }
+
+   &__percents {
+      font-weight: 600;
+      text-align: right;
+      color: $accent;
+
+      font-size: vw(14px, 360px);
+      line-height: vw(17px, 360px);
+
+      @media screen and (min-width: 920px) {
+         font-size: vw(14px);
+         line-height: vw(17px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         font-size: 14px;
+         line-height: 17px;
+      }
+   }
+
+   &__wrapper {
+      background-color: rgba($color: #d9d9d9, $alpha: 0.1);
+      width: 100%;
+      overflow: hidden;
+
+      height: vw(12px, 360px);
+      border-radius: vw(4px, 360px);
+
+      @media screen and (min-width: 920px) {
+         height: vw(12px);
+         border-radius: vw(4px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         height: 12px;
+         border-radius: 4px;
+      }
+   }
+
+   &__bar {
+      background: $gradient;
+      width: 100%;
+      height: 100%;
+      transition: max-width 0.3s ease-in-out;
+   }
+
+   &__footer {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: vw(12px, 360px);
+      @media screen and (min-width: 414px) {
+         margin-top: vw(12px, 414px);
+      }
+      @media screen and (min-width: 920px) {
+         margin-top: vw(12px);
+      }
+      @media screen and (min-width: 1600px) {
+         margin-top: 12px;
+      }
+   }
+
+   &__coin {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: vw(8px, 360px);
+
+      font-family: Rubik;
+      font-size: vw(14px, 360px);
+      font-weight: 400;
+      line-height: vw(17px, 360px);
+      letter-spacing: 0em;
+      text-align: right;
+
+      p {
+         text-overflow: ellipsis;
+         overflow: hidden;
+         white-space: nowrap;
+         width: 70%;
+
+         @media screen and (min-width: 414px) {
+            fwidth: 70%;
+         }
+         @media screen and (min-width: 920px) {
+            width: 100%;
+         }
+      }
+
+      @media screen and (min-width: 414px) {
+         font-size: vw(14px, 414px);
+         line-height: vw(17px, 414px);
+         gap: vw(8px, 414px);
+      }
+      @media screen and (min-width: 920px) {
+         font-size: vw(14px);
+         line-height: vw(17px);
+         gap: vw(8px);
+      }
+      @media screen and (min-width: 1600px) {
+         font-size: 14px;
+         line-height: 17px;
+         gap: 8px;
+      }
+
+      &_minGap {
+         gap: vw(4px, 360px);
+         @media screen and (min-width: 414px) {
+            gap: vw(4px, 414px);
+         }
+         @media screen and (min-width: 920px) {
+            gap: vw(4px);
+         }
+         @media screen and (min-width: 1600px) {
+            gap: 4px;
+         }
+      }
+
+      img {
+         width: vw(18px, 360px);
+         height: auto;
+
+         border-radius: 100%;
+
+         @media screen and (min-width: 414px) {
+            width: vw(18px, 414px);
+         }
+         @media screen and (min-width: 920px) {
+            width: vw(18px);
+         }
+         @media screen and (min-width: 1600px) {
+            width: 18px;
+         }
+      }
+   }
+}
