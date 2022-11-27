@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from "./index.module.scss";
 
-const { tab__layout, tab__header, tab__button, tab__button_active, tab__body, tab__footer, tab__link, vl } = classes;
+const { tab__layout, tab__header, tab__button, tab__button_active, tab__body, tab__footer, vl } = classes;
 
 function TabControl({ array }) {
    const [currentTab, setCurrentTab] = useState(0);
@@ -11,7 +11,6 @@ function TabControl({ array }) {
    const selectTab = (id, text, socials) => {
       setCurrentTab(id);
       setCurrentContent(text);
-      console.log(socials);
       setCurrentSocials(socials);
    };
 
@@ -35,12 +34,9 @@ function TabControl({ array }) {
          <div className={tab__footer}>
             {currentSocials
                ? currentSocials.map(({ title, href }, key) => (
-                    <>
-                       <a href={href} key={key}>
-                          {title}
-                       </a>
-                       <div className={vl}></div>
-                    </>
+                    <a href={href} key={key}>
+                       {title}
+                    </a>
                  ))
                : null}
          </div>

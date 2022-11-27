@@ -2,6 +2,7 @@ import Button from "../../components/Button";
 import Container from "../../components/Container";
 import Error from "../../components/Icons/error";
 import ProgressbarTimestamp from "../../components/ProgressbarTimestamp";
+import StoryBoard from "../../components/StoryBoard";
 import TabControl from "../../components/TabControl";
 import classes from "./index.module.scss";
 
@@ -30,7 +31,7 @@ const {
    container__alert,
 } = classes;
 
-const { data, heder, links, info, news } = window.initState
+const { data, heder, links, info, news, story } = window.initState
    ? window.initState
    : {
         data: "text",
@@ -132,6 +133,56 @@ const { data, heder, links, info, news } = window.initState
               ],
            },
         ],
+        story: [
+           {
+              title: "Upcoming",
+              active: false,
+              points: [
+                 {
+                    title: "Whitelist start —",
+                    time: 1672121180,
+                 },
+                 {
+                    title: "Whitelist end —",
+                    time: 1669529116,
+                 },
+              ],
+           },
+           {
+              title: "Swap",
+              active: true,
+              points: [
+                 {
+                    title: "Whitelist start —",
+                    time: 1672121180,
+                 },
+                 {
+                    title: "Whitelist end —",
+                    time: 1669529116,
+                 },
+              ],
+           },
+           {
+              title: "Filled",
+              active: false,
+              points: [],
+           },
+           {
+              title: "Claimable",
+              active: false,
+              points: [
+                 {
+                    title: "Next claim —",
+                    time: 1672121180,
+                 },
+              ],
+           },
+           {
+              title: "Ended",
+              active: false,
+              points: [],
+           },
+        ],
      };
 
 export default function ProjectPage(props) {
@@ -171,6 +222,7 @@ export default function ProjectPage(props) {
                   </li>
                ))}
             </ul>
+            <StoryBoard steps={story} />
             <div className={project__body}>
                <Container className={project__container}>
                   <aside className={project__info}>

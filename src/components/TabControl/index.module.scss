@@ -155,22 +155,19 @@
       flex-wrap: nowrap;
       justify-content: flex-start;
       align-items: center;
-      gap: vw(7px, 360px);
 
-      @media screen and (min-width: 414px) {
-         gap: vw(7px, 414px);
+      a::after {
+         content: "|";
+         padding: 0 4px;
+         color: $text-title;
       }
 
-      @media screen and (min-width: 920px) {
-         gap: vw(7px);
-      }
-
-      @media screen and (min-width: 1600px) {
-         gap: 7px;
-      }
-
-      .vl:last-child {
+      a:last-child::after {
          display: none;
+      }
+
+      div {
+         display: flex;
       }
 
       a {
@@ -201,26 +198,4 @@
          }
       }
    }
-}
-
-.vl {
-   width: vw(1px, 360px);
-   height: vw(20px, 360px);
-
-   @media screen and (min-width: 414px) {
-      width: vw(1px, 414px);
-      height: vw(20px, 414px);
-   }
-
-   @media screen and (min-width: 920px) {
-      width: vw(1px);
-      height: vw(20px);
-   }
-
-   @media screen and (min-width: 1600px) {
-      width: 1px;
-      height: 20px;
-   }
-
-   background: $text-title;
 }
