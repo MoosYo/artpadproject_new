@@ -120,14 +120,24 @@
 
       &_magenta {
          background-color: rgba(205, 62, 208, 0.1);
+         margin: 0px !important;
       }
 
       &_left {
          width: 100% !important;
+         margin-bottom: vw(40px, 360px);
+
+         @media screen and (min-width: 414px) {
+            margin-bottom: vw(40px, 414px);
+         }
+
          @media screen and (min-width: 920px) {
+            margin-bottom: vw(40px);
             width: 100%;
          }
+
          @media screen and (min-width: 1600px) {
+            margin-bottom: 40px;
             width: 100%;
          }
       }

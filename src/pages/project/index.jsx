@@ -2,6 +2,7 @@ import Button from "../../components/Button";
 import Container from "../../components/Container";
 import Error from "../../components/Icons/error";
 import ProgressbarTimestamp from "../../components/ProgressbarTimestamp";
+import TabControl from "../../components/TabControl";
 import classes from "./index.module.scss";
 
 const {
@@ -29,7 +30,7 @@ const {
    container__alert,
 } = classes;
 
-const { data, heder, links, info } = window.initState
+const { data, heder, links, info, news } = window.initState
    ? window.initState
    : {
         data: "text",
@@ -72,6 +73,65 @@ const { data, heder, links, info } = window.initState
               img: "https://icodrops.com/wp-content/uploads/2022/07/yycZmh7_400x400.png",
            },
         },
+        news: [
+           {
+              id: 0,
+              date: "now",
+              text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. <br><br> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.`,
+              socials: [
+                 {
+                    title: "Web",
+                    href: "#",
+                 },
+                 {
+                    title: "Twitter",
+                    href: "#",
+                 },
+                 {
+                    title: "Telegramm",
+                    href: "#",
+                 },
+              ],
+           },
+           {
+              id: 1,
+              date: "29 Aug",
+              text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+              socials: [
+                 {
+                    title: "Web",
+                    href: "#",
+                 },
+                 {
+                    title: "Twitter",
+                    href: "#",
+                 },
+                 {
+                    title: "Telegramm",
+                    href: "#",
+                 },
+              ],
+           },
+           {
+              id: 2,
+              date: "28 Aug",
+              text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+              socials: [
+                 {
+                    title: "Web",
+                    href: "#",
+                 },
+                 {
+                    title: "Twitter",
+                    href: "#",
+                 },
+                 {
+                    title: "Telegramm",
+                    href: "#",
+                 },
+              ],
+           },
+        ],
      };
 
 export default function ProjectPage(props) {
@@ -197,6 +257,10 @@ export default function ProjectPage(props) {
                         </p>
                         <p>The distribution of SPORTPZCHAIN token will carried out in polygon ony!</p>
                      </Container>
+                  </Container>
+                  <Container className={project__container + " " + project__container_left}>
+                     <h3 className={card__title}>PROJECT DESCREPTION</h3>
+                     <TabControl array={news} />
                   </Container>
                </div>
             </div>
