@@ -173,6 +173,59 @@
          gap: 20px;
       }
    }
+
+   &__time {
+
+
+      &Header {
+         display: flex;
+         flex-direction: row;
+         align-items: baseline;
+         
+         margin-bottom: vw(32px, 360px);
+
+         @media screen and (min-width: 920px) {
+            margin-bottom: vw(40px);
+         }
+
+         @media screen and (min-width: 1600px) {
+            margin-bottom: 40px;
+         }
+      }
+
+      &Title {
+         font-weight: 600;
+         color: $white;
+         width: 100%;
+
+         font-size: vw(24px, 360px);
+         line-height: vw(28px, 360px);
+
+         @media screen and (min-width: 920px) {
+            font-size: vw(24px);
+            line-height: vw(28px);
+         }
+
+         @media screen and (min-width: 1600px) {
+            font-size: 24px;
+            line-height: 28px;
+         }
+      }
+
+      &Value {
+         color: $white;
+         font-weight: 600;
+         white-space: nowrap;
+         text-decoration: underline;
+
+         font-size: vw(18px, 360px);
+         line-height: vw(21px, 360px);
+
+         @media screen and (min-width: 920px) {
+            display: none;
+         }
+      }
+   }
 }
 
 .card {

@@ -16,13 +16,17 @@ const {
     rangeSlider__indicator,
 } = classes;
 
-export default function RangeSlider ({values, selected}) {
+let rendered = false;
+
+export default function RangeSlider ({values, selected, onChange}) {
 
     const bar = useRef();
     const barProgress = useRef();
     const indicator = useRef();
 
     const [current, setCurrent] = useState(selected);
+
+    const [cnt, forceUpdate] = useState(0);
 
     const [moveX, setMoveX] = useState(null);
     const [diffX, setDiffX] = useState(null);
@@ -43,15 +47,29 @@ export default function RangeSlider ({values, selected}) {
             }
         }
     }
+
+    document.querySelector("body").onresize = () => {
+        forceUpdate(cnt+1);
+    }
+
+    if (!rendered) {
+        const timer = setTimeout(() => {
+            forceUpdate(cnt+1);
+            clearTimeout(timer);
+            rendered = true;
+        }, 1);
+    }
     
     const halfWidth = 1 / (values.length - 1) * getWidth();
     let posX = 1 / (values.length - 1) * (getWidth()) * current;
 
-    if (current < values.length - 1 && current > 0) {
-        posX -= 17.5;
-    }
-    else if (current > 0) {
-        posX -= indicator.current.getClientRects()[0].width - 2;
+    if (indicator.current) {
+        if (current < values.length - 1 && current > 0) {
+            posX -= indicator.current.getClientRects()[0].width / 2;
+        }
+        else if (current > 0) {
+            posX -= indicator.current.getClientRects()[0].width - 2;
+        }
     }
 
     const currentMoving = Math.ceil((posX + diffX) / halfWidth - 0.5);
@@ -81,7 +99,11 @@ export default function RangeSlider ({values, selected}) {
         e.preventDefault();
         setMoveX(null);
         setDiffX(null);
-        setCurrent(currentMoving)
+        setCurrent(Math.abs(currentMoving));
+
+        if (onChange) {
+            onChange(Math.abs(currentMoving));
+        }
 
         if (barProgress.current) {
             barProgress.current.style.transition = null;

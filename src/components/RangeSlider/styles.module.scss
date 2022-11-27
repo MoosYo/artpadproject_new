@@ -19,7 +19,20 @@
             width: 100%;
             position: relative;
             background: #363838;
-            height: 20px;
+            overflow: hidden;
+
+            height: vw(20px, 360px);
+            border-radius: vw(3px, 360px);
+
+            @media screen and (min-width: 920px) {
+                height: vw(20px);
+                border-radius: vw(3px);
+            }
+
+            @media screen and (min-width: 1600px) {
+                height: 20px;
+                border-radius: 3px;
+            }
         }
 
         &Sections {
@@ -27,7 +40,16 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            transform: translateY(-28px);
+
+            transform: translateY(vw(-28px, 360px));
+
+            @media screen and (min-width: 920px) {
+                transform: translateY(vw(-28px));
+            }
+
+            @media screen and (min-width: 1600px) {
+                transform: translateY(-28px);
+            }
         }
 
         &Item {
@@ -36,25 +58,66 @@
             align-items: center;
             justify-content: flex-start;
 
-            width: 100px;
-            gap: 18px;
+            width: vw(100px, 360px);
+            gap: vw(18px, 360px);
+
+            @media screen and (min-width: 920px) {
+                width: vw(100px);
+                gap: vw(18px);
+            }
+    
+            @media screen and (min-width: 1600px) {
+                width: 100px;
+                gap: 18px;
+            }
 
             &:first-of-type {
-                margin-left: -50px;
-                transform: translateX(50px);
+                margin-left: vw(-50px, 360px);
+                transform: translateX(vw(50px, 360px));
+
+                @media screen and (min-width: 920px) {
+                    margin-left: vw(-50px);
+                    transform: translateX(vw(50px));
+                }
+        
+                @media screen and (min-width: 1600px) {
+                    margin-left: -50px;
+                    transform: translateX(50px);
+                }
             }
 
             &:last-of-type {
-                margin-right: -50px;
-                transform: translateX(-50px);
+                margin-right: vw(-50px, 360px);
+                transform: translateX(vw(-50px, 360px));
+
+                @media screen and (min-width: 920px) {
+                    margin-right: vw(-50px);
+                    transform: translateX(vw(-50px));
+                }
+        
+                @media screen and (min-width: 1600px) {
+                    margin-right: -50px;
+                    transform: translateX(-50px);
+                }
             }
 
             &Line {
-                width: 3px;
-                height: 28px;
                 background: $white;
                 margin: 0px auto;
                 transition: opacity 0.3s ease-in-out;
+                
+                width: vw(3px, 360px);
+                height: vw(28px, 360px);
+
+                @media screen and (min-width: 920px) {
+                    width: vw(3px);
+                    height: vw(28px);
+                }
+        
+                @media screen and (min-width: 1600px) {
+                    width: 3px;
+                    height: 28px;
+                }
 
                 &_selected {
                     opacity: 0;
@@ -82,8 +145,20 @@
                 width: 100%;
                 opacity: 0.3;
                 text-align: center;
-
                 transition: opacity 0.3s ease-in-out;
+
+                display: none;
+
+                @media screen and (min-width: 920px) {
+                    display: inline;
+                    font-size: vw(18px);
+                    line-height: vw(23px);
+                }
+
+                @media screen and (min-width: 1600px) {
+                    font-size: 18px;
+                    line-height: 23px;
+                }
 
                 &_selected {
                     opacity: 1;
@@ -94,14 +169,27 @@
 
     &__indicator {
         position: absolute;
-        width: 36px;
-        height: 36px;
-        top: -8px;
-        border-radius: 18px;
         cursor: grab;
-
         transition: transform 0.3s ease-in-out;
-        
         background: $white;
+        
+        width: vw(36px, 360px);
+        height: vw(36px, 360px);
+        top: vw(-8px, 360px);
+        border-radius: vw(18px, 360px);
+
+        @media screen and (min-width: 920px) {
+            width: vw(36px);
+            height: vw(36px);
+            top: vw(-8px);
+            border-radius: vw(18px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 36px;
+            height: 36px;
+            top: -8px;
+            border-radius: 18px;
+        }
     }
 }

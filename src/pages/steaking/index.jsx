@@ -9,6 +9,7 @@ import PageHeader from "../../components/PageHeader";
 import Container from "../../components/Container";
 import Button from "../../components/Button";
 import RangeSlider from "../../components/RangeSlider";
+import { useState } from "react";
 
 const {
    steaking__layout,
@@ -19,6 +20,11 @@ const {
    steaking__text,
    steaking__cards,
    steaking__wrapper,
+   steaking__time,
+   steaking__timeHeader,
+   steaking__timeTitle,
+   steaking__timeValue,
+
    card,
    card__title,
    card__subtext,
@@ -40,7 +46,6 @@ const { level, staked, balance, timeRange, selectedTime } = window.initState
         timeRange: [
             "1 month",
             "3 month’s",
-            // "PUSSY",
             "6 month’s",
             "12 month’s"
         ],
@@ -48,6 +53,9 @@ const { level, staked, balance, timeRange, selectedTime } = window.initState
      };
 
 export default function SteakingPage(props) {
+
+   const [selected, setSelected] = useState(selectedTime);
+
    return (
       <>
          <Tabs tabs={profileRoutes} />
@@ -86,14 +94,15 @@ export default function SteakingPage(props) {
                   </div>
                ))}
             </div>
-            <div className="">
-               <div className="">
-                  <h2 className="">Steaking time</h2>
-                  <p className="">3 month</p>
+            <div className={steaking__time}>
+               <div className={steaking__timeHeader}>
+                  <h2 className={steaking__timeTitle}>Steaking time</h2>
+                  <p className={steaking__timeValue}>{timeRange[selected]}</p>
                </div>
                <RangeSlider
                   values={timeRange}
-                  selected={selectedTime}
+                  selected={selected}
+                  onChange={setSelected}
                />
             </div>
          </div>
