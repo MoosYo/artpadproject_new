@@ -153,7 +153,7 @@ export default function LoginSignupPage (props) {
                                     className={content__formCheckboxInput}
                                 />
                                 <span className={content__formCheckboxText}>
-                                    I agree with the <a href="/privacy-policy">privacy policy</a> and <a href="/user-agreement">user agreement</a>
+                                    I agree with the <a href="/privacy-policy">privacy policy</a> and&nbsp;<a href="/user-agreement">user agreement</a>
                                 </span>
                             </label>
                         </form>
