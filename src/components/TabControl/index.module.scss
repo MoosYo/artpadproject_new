@@ -1,0 +1,226 @@
+@import "../../styles/helpers.scss";
+@import "../../styles/colors.scss";
+
+.tab {
+   &__layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+      grid-column-gap: 0px;
+      grid-row-gap: vw(30px, 360px);
+
+      @media screen and (min-width: 414px) {
+         grid-row-gap: vw(30px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         grid-row-gap: vw(30px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         grid-row-gap: 30px;
+      }
+   }
+   &__header {
+      width: calc(100% + 30px);
+      overflow-x: auto;
+      white-space: nowrap;
+
+      /* ===== Scrollbar CSS ===== */
+      /* Firefox */
+
+      overflow-x: scroll;
+      scrollbar-width: thin;
+      scrollbar-color: $accent $background;
+
+      /* Chrome, Edge, and Safari */
+      &::-webkit-scrollbar {
+         width: 0px;
+         height: 0px;
+      }
+
+      &::-webkit-scrollbar-track {
+         background: #0e0e0e00;
+      }
+
+      &::-webkit-scrollbar-thumb {
+         background-color: $accent;
+         border-radius: 0px;
+         border: 0px solid $background;
+      }
+
+      @media screen and (min-width: 414px) {
+         gap: vw(14px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         gap: vw(14px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         gap: 14px;
+      }
+   }
+   &__button {
+      box-sizing: border-box;
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background: #252525;
+      border: none;
+
+      border-radius: vw(4px, 360px);
+      padding: vw(8px, 360px) vw(24px, 360px);
+
+      &:not(:last-child) {
+         margin-right: 14px;
+      }
+
+      cursor: pointer;
+
+      transition: background-color ease-in-out 0.3s;
+
+      &:hover {
+         background-color: #6b1495;
+      }
+
+      &_active {
+         background: $gradient;
+      }
+
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 400;
+
+      text-transform: capitalize;
+
+      font-size: vw(16px, 360px);
+      line-height: vw(19px, 360px);
+
+      color: $white;
+
+      @media screen and (min-width: 414px) {
+         border-radius: vw(4px, 414px);
+         padding: vw(8px, 414px) vw(24px, 414px);
+         font-size: vw(16px, 414px);
+         line-height: vw(19px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         border-radius: vw(4px);
+         padding: vw(8px) vw(24px);
+         font-size: vw(16px);
+         line-height: vw(19px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         border-radius: 4px;
+         padding: 8px 24px;
+         font-size: 16px;
+         line-height: 19px;
+      }
+   }
+
+   &__body {
+      font-family: Rubik;
+      font-weight: 400;
+      letter-spacing: 0em;
+      text-align: left;
+
+      color: $white;
+
+      font-size: vw(14px, 360px);
+      line-height: vw(17px, 360px);
+
+      @media screen and (min-width: 414px) {
+         font-size: vw(14px, 414px);
+         line-height: vw(17px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         font-size: vw(14px);
+         line-height: vw(17px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         font-size: 14px;
+         line-height: 17px;
+      }
+   }
+
+   &__footer {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: vw(7px, 360px);
+
+      @media screen and (min-width: 414px) {
+         gap: vw(7px, 414px);
+      }
+
+      @media screen and (min-width: 920px) {
+         gap: vw(7px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         gap: 7px;
+      }
+
+      .vl:last-child {
+         display: none;
+      }
+
+      a {
+         font-family: Rubik;
+         font-size: vw(14px, 360px);
+         font-weight: 400;
+         line-height: vw(18px, 360px);
+         letter-spacing: 0em;
+         text-align: left;
+         text-transform: capitalize;
+
+         text-decoration-line: underline;
+         color: $accent;
+
+         @media screen and (min-width: 414px) {
+            font-size: vw(14px, 414px);
+            line-height: vw(18px, 414px);
+         }
+
+         @media screen and (min-width: 920px) {
+            font-size: vw(14px);
+            line-height: vw(18px);
+         }
+
+         @media screen and (min-width: 1600px) {
+            font-size: 14px;
+            line-height: 18px;
+         }
+      }
+   }
+}
+
+.vl {
+   width: vw(1px, 360px);
+   height: vw(20px, 360px);
+
+   @media screen and (min-width: 414px) {
+      width: vw(1px, 414px);
+      height: vw(20px, 414px);
+   }
+
+   @media screen and (min-width: 920px) {
+      width: vw(1px);
+      height: vw(20px);
+   }
+
+   @media screen and (min-width: 1600px) {
+      width: 1px;
+      height: 20px;
+   }
+
+   background: $text-title;
+}

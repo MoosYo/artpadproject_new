@@ -3,57 +3,54 @@ import classes from "./App.module.scss";
 import Footer from "./components/Footer";
 
 // Components
-import Header from './components/Header';
+import Header from "./components/Header";
 import Modal from "./components/Modal";
 
 // Pages
+import ProjectPage from "./pages/project";
 import ProfilePage from './pages/profile';
 import SteakingPage from './pages/steaking';
 import TeamPage from './pages/team';
 import MyProjectsPage from './pages/my-projects';
 import LoginSignupPage from "./pages/login-signup";
 
-const {
-  app,
-  pageWrapper
-} = classes;
+const { app, pageWrapper } = classes;
 
 export default function App() {
-  const path = window.location.pathname;
+   const path = window.location.pathname;
 
-  const [modalContent, setModalContent] = useState({
-    shown: false,
-    content: null
-  });
-
-  const onModalClose = () => {
-    setModalContent({
+   const [modalContent, setModalContent] = useState({
       shown: false,
-      content: modalContent.content
-    });
-  }
+      content: null,
+   });
 
-  const showModal = (content) => {
-    setModalContent({
-      shown: true,
-      content
-    });
-  }
+   const onModalClose = () => {
+      setModalContent({
+         shown: false,
+         content: modalContent.content,
+      });
+   };
 
-  useEffect(()=>{
-    if (!modalContent.shown && modalContent.content) {
-      const timer = setTimeout(()=>{
-        setModalContent({
-          shown: false,
-          content: null
-        });
-        clearTimeout(timer);
-      }, 500);
-    }
-  }, [modalContent]);
+   const showModal = (content) => {
+      setModalContent({
+         shown: true,
+         content,
+      });
+   };
 
-  const ModalContent = (props) => modalContent.content(props);
+   useEffect(() => {
+      if (!modalContent.shown && modalContent.content) {
+         const timer = setTimeout(() => {
+            setModalContent({
+               shown: false,
+               content: null,
+            });
+            clearTimeout(timer);
+         }, 500);
+      }
+   }, [modalContent]);
 
+   const ModalContent = (props) => modalContent.content(props);
   return (
     <div className={app}>
       <Header setModal={showModal} />
@@ -83,13 +80,13 @@ export default function App() {
             <LoginSignupPage />
           ) : ""
         }
-        
+        {path === "/projects" || path === "/projects/" ? <ProjectPage /> : ""}
       </main>
       <Footer />
 
-      <Modal shown={modalContent.shown} onClose={onModalClose}>
-        <ModalContent onClose={onModalClose} />
-      </Modal>
-    </div>
-  );
+         <Modal shown={modalContent.shown} onClose={onModalClose}>
+            <ModalContent onClose={onModalClose} />
+         </Modal>
+      </div>
+   );
 }
