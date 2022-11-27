@@ -36,8 +36,18 @@ export default function Header (props) {
 
     const [menuState, setMenuState] = useState(false);
 
-    const connectWallet = () => {
+    const showMenu = () => {
+        setMenuState(true);
+        document.querySelector("body").style.overflow = "hidden";
+    }
+
+    const hideMenu = () => {
         setMenuState(false);
+        document.querySelector("body").style.overflow = null;
+    }
+
+    const connectWallet = () => {
+        hideMenu();
         props.setModal((props) => <ConnectWalletModal {...props} />);
     }
 
@@ -48,7 +58,7 @@ export default function Header (props) {
             <button
                 className={header__mobileButton}
                 type="button"
-                onClick={()=>setMenuState(true)}
+                onClick={showMenu}
             >
                 <BurgerMenuIcon />
             </button>
@@ -66,7 +76,7 @@ export default function Header (props) {
                     <button
                         className={header__navMobileIcon + " " + header__navMobileIcon_close}
                         type="button"
-                        onClick={()=>setMenuState(false)}
+                        onClick={hideMenu}
                     >
                         <CloseIcon />
                     </button>
