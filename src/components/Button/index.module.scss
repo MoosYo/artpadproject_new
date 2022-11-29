@@ -39,7 +39,7 @@
    }
 
    &_outline {
-      background: none;
+      background: black;
       border: solid $button-link-border;
 
       border-width: vw(1px, 360px);
@@ -50,6 +50,11 @@
 
       @media screen and (min-width: 1600px) {
          border-width: 1px;
+      }
+
+      &:hover {
+         color: $accent;
+         border-color: $accent;
       }
    }
 
