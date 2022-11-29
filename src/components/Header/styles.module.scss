@@ -9,8 +9,13 @@
     margin: 0px auto;
 
     width: 100vw;
-    height: vw(80px, 360px);
-    padding: 0px vw(12px, 360px);
+    height: 80px;
+    padding: 0px 12px;
+
+    @media screen and (min-width: 500px) {
+        height: vw(80px, 360px);
+        padding: 0px vw(12px, 360px);
+    }
 
     @media screen and (min-width: 920px) {
         width: vw(1600px);
@@ -25,9 +30,14 @@
     }
 
     &__logo {
-        width: vw(120px, 360px);
-        height: vw(40px, 360px);
-        
+        width: 120px;
+        height: 40px;
+
+        @media screen and (min-width: 500px) {
+            width: vw(120px, 360px);
+            height: vw(40px, 360px);
+        }
+    
         @media screen and (min-width: 920px) {
             width: vw(178px);
             height: vw(60px);
@@ -45,10 +55,19 @@
         cursor: pointer;
 
         & svg {
-            width: vw(24px, 360px);
-            height: vw(24px, 360px);
+            width: 24px;
+            height: 24px;
         }
 
+        @media screen and (min-width: 500px) {
+    
+
+            & svg {
+                width: vw(24px, 360px);
+                height: vw(24px, 360px);
+            }
+        }
+    
         @media screen and (min-width: 920px) {
             display: none;
         }
@@ -59,7 +78,9 @@
         align-items: center;
         justify-content: space-between;
         overflow-y: auto;
-
+        
+        padding: 35px 15px;
+    
         @media screen and (max-width: 920px) {
             position: fixed;
             z-index: 1;
@@ -72,7 +93,6 @@
             transition: transform 0.3s ease-in-out;
 
             flex-direction: column;
-            padding: vw(35px, 360px) vw(15px, 360px);
     
             transform: translate3d(0px, -100vh, 0px);
     
@@ -81,7 +101,12 @@
             }
         }
 
+        @media screen and (min-width: 500px) {
+            padding: vw(35px, 360px) vw(15px, 360px);
+        }
+    
         @media screen and (min-width: 920px) {
+            padding: 0px;
             display: flex;
             transition: none;
             width: vw(962px);
@@ -92,11 +117,20 @@
         }
 
         &Mobile {
-            height: vw(80px, 360px);
+            height: 80px;
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: vw(30px, 360px);
+            gap: 30px;
+
+            @media screen and (min-width: 500px) {
+                height: vw(80px, 360px);
+                gap: vw(30px, 360px);
+            }
+
+            @media screen and (min-width: 920px) {
+                display: none;
+            }
 
             &Icon {
                 background: none;
@@ -104,25 +138,31 @@
                 cursor: pointer;
 
                 & svg {
-                    width: vw(24px, 360px);
-                    height: vw(24px, 360px);
+                    width: 24px;
+                    height: 24px;
+
+                    @media screen and (min-width: 500px) {
+                        width: vw(24px, 360px);
+                        height: vw(24px, 360px);
+                    }
                 }
 
                 &_close {
                     margin-left: auto;
                 }
             }
-
-            @media screen and (min-width: 920px) {
-                display: none;
-            }
         }
 
         &Menu {
             display: flex;
             flex-direction: column;
-            margin-bottom: vw(30px, 360px);
+            margin-bottom: 30px;
 
+            @media screen and (min-width: 500px) {
+                margin-bottom: vw(30px, 360px);
+                gap: 0px;
+            }
+        
             @media screen and (min-width: 920px) {
                 flex-direction: row;
                 align-items: center;
@@ -135,8 +175,12 @@
             }
     
             &Item {
-                padding: vw(18px, 360px) 0px;
+                padding: 12px 0px;
 
+                @media screen and (min-width: 500px) {
+                    padding: vw(12px, 360px) 0px;
+                }
+            
                 @media screen and (min-width: 920px) {
                     padding: vw(10px);
                 }
@@ -151,9 +195,14 @@
                 color: $white;
                 text-decoration: none;
 
-                font-size: vw(24px, 360px);
-                line-height: vw(28px, 360px);
+                font-size: 24px;
+                line-height: 28px;
 
+                @media screen and (min-width: 500px) {
+                    font-size: vw(24px, 360px);
+                    line-height: vw(28px, 360px);
+                }
+            
                 @media screen and (min-width: 920px) {
                     font-size: vw(16px);
                     line-height: vw(19px);
@@ -173,8 +222,12 @@
         &Buttons {
             display: flex;
             flex-direction: column;
-            gap: vw(24px, 360px);
+            gap: 24px;
 
+            @media screen and (min-width: 500px) {
+                gap: vw(24px, 360px);
+            }
+        
             @media screen and (min-width: 920px) {
                 flex-direction: row;
                 align-items: center;
@@ -189,7 +242,14 @@
                 color: $white;
                 text-decoration: none;
 
+                font-size: 16px;
+                line-height: 19px;
 
+                @media screen and (min-width: 500px) {
+                    font-size: vw(16px, 360px);
+                    line-height: vw(19px, 360px);
+                }
+            
                 @media screen and (min-width: 920px) {
                     font-size: vw(16px);
                     line-height: vw(19px);
@@ -205,7 +265,7 @@
     
         &Icon {
             display: none;
-
+        
             @media screen and (min-width: 920px) {
                 display: block;
                 width: vw(24px);
@@ -218,8 +278,7 @@
             }
 
             svg {
-
-
+            
                 @media screen and (min-width: 920px) {
                     width: vw(24px);
                     height: vw(24px);

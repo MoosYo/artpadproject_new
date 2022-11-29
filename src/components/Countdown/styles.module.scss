@@ -23,7 +23,11 @@
         flex-direction: column;
         align-items: center;
 
-        gap: vw(4px, 360px);
+        gap: 4px;
+
+        @media screen and (min-width: 920px) {
+            gap: vw(4px, 360px);
+        }
 
         @media screen and (min-width: 920px) {
             gap: vw(4px);
@@ -37,8 +41,13 @@
             color: $white;
             font-weight: 600;
 
-            font-size: vw(36px, 360px);
-            line-height: vw(43px, 360px);
+            font-size: 36px;
+            line-height: 43px;
+
+            @media screen and (min-width: 500px) {
+                font-size: vw(36px, 360px);
+                line-height: vw(43px, 360px);
+            }
 
             @media screen and (min-width: 920px) {
                 font-size: vw(36px);
@@ -56,8 +65,13 @@
             text-transform: uppercase;
             font-weight: 600;
 
-            font-size: vw(12px, 360px);
-            line-height: vw(14px, 360px);
+            font-size: 12px;
+            line-height: 14px;
+
+            @media screen and (min-width: 920px) {
+                font-size: vw(12px, 360px);
+                line-height: vw(14px, 360px);
+            }
 
             @media screen and (min-width: 920px) {
                 font-size: vw(12px);

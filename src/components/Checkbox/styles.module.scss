@@ -8,10 +8,17 @@
     justify-content: center;
     transition: background 0.3s ease-in-out;
 
-    width: vw(17px, 360px);
-    height: vw(17px, 360px);
-    border-radius: vw(3px, 360px);
-    border-width: vw(2px, 360px);
+    width: 17px;
+    height: 17px;
+    border-radius: 3px;
+    border-width: 2px;
+
+    @media screen and (min-width: 590px) {
+        width: vw(17px, 360px);
+        height: vw(17px, 360px);
+        border-radius: vw(3px, 360px);
+        border-width: vw(2px, 360px);
+    }
 
     @media screen and (min-width: 920px) {
         width: vw(17px);

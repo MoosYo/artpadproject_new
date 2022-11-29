@@ -7,7 +7,11 @@
     align-items: center;
     justify-content: center;
     
-    gap: vw(8px, 360px);
+    gap: 8px;
+
+    @media screen and (min-width: 500px) {
+        gap: vw(8px, 360px);
+    }
 
     @media screen and (min-width: 920px) {
         gap: vw(4px);
@@ -21,8 +25,13 @@
         font-weight: 600;
         color: $accent;
     
-        font-size: vw(14px, 360px);
-        line-height: vw(17px, 360px);
+        font-size: 14px;
+        line-height: 17px;
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(14px, 360px);
+            line-height: vw(17px, 360px);
+        }
 
         @media screen and (min-width: 920px) {
             font-size: vw(14px);
@@ -40,8 +49,13 @@
         width: 100%;
         overflow: hidden;
 
-        height: vw(12px, 360px);
-        border-radius: vw(4px, 360px);
+        height: 12px;
+        border-radius: 4px;
+
+        @media screen and (min-width: 500px) {
+            height: vw(12px, 360px);
+            border-radius: vw(4px, 360px);
+        }
 
         @media screen and (min-width: 920px) {
             height: vw(12px);

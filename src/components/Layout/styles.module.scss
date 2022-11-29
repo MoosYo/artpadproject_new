@@ -4,8 +4,13 @@
     display: flex;
     flex-direction: column;
 
-    gap: vw(40px, 360px);
-    margin-bottom: vw(64px, 360px);
+    gap: 40px;
+    margin-bottom: 64px;
+
+    @media screen and (min-width: 500px) {
+        gap: vw(40px, 360px);
+        margin-bottom: vw(64px, 360px);
+    }
 
     @media screen and (min-width: 920px) {
         gap: vw(40px);
@@ -23,7 +28,11 @@
         flex-direction: column;
         margin-bottom: 0px;
 
-        gap: vw(40px, 360px);
+        gap: 40px;
+
+        @media screen and (min-width: 920px) {
+            gap: vw(40px, 360px);
+        }
 
         @media screen and (min-width: 920px) {
             gap: vw(40px);

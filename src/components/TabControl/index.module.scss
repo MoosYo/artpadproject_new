@@ -7,10 +7,10 @@
       grid-template-columns: 1fr;
       grid-template-rows: auto 1fr;
       grid-column-gap: 0px;
-      grid-row-gap: vw(30px, 360px);
+      grid-row-gap: 30px;
 
-      @media screen and (min-width: 414px) {
-         grid-row-gap: vw(30px, 414px);
+      @media screen and (min-width: 500px) {
+         grid-row-gap: vw(30px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -27,6 +27,8 @@
       padding: 0px 30px;
       overflow-x: auto;
       white-space: nowrap;
+      
+      gap: 14px;
 
       /* ===== Scrollbar CSS ===== */
       /* Firefox */
@@ -51,8 +53,8 @@
          border: 0px solid $background;
       }
 
-      @media screen and (min-width: 414px) {
-         gap: vw(14px, 414px);
+      @media screen and (min-width: 500px) {
+         gap: vw(14px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -72,8 +74,8 @@
       background: #252525;
       border: none;
 
-      border-radius: vw(4px, 360px);
-      padding: vw(8px, 360px) vw(24px, 360px);
+      border-radius: 4px;
+      padding: 8px 24px;
 
       &:not(:last-child) {
          margin-right: 14px;
@@ -97,16 +99,16 @@
 
       text-transform: capitalize;
 
-      font-size: vw(16px, 360px);
-      line-height: vw(19px, 360px);
+      font-size: 16px;
+      line-height: 19px;
 
       color: $white;
 
-      @media screen and (min-width: 414px) {
-         border-radius: vw(4px, 414px);
-         padding: vw(8px, 414px) vw(24px, 414px);
-         font-size: vw(16px, 414px);
-         line-height: vw(19px, 414px);
+      @media screen and (min-width: 500px) {
+         border-radius: vw(4px, 360px);
+         padding: vw(8px, 360px) vw(24px, 360px);
+         font-size: vw(16px, 360px);
+         line-height: vw(19px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -132,12 +134,12 @@
 
       color: $white;
 
-      font-size: vw(14px, 360px);
-      line-height: vw(17px, 360px);
+      font-size: 14px;
+      line-height: 17px;
 
-      @media screen and (min-width: 414px) {
-         font-size: vw(14px, 414px);
-         line-height: vw(17px, 414px);
+      @media screen and (min-width: 500px) {
+         font-size: vw(14px, 360px);
+         line-height: vw(17px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -174,9 +176,9 @@
 
       a {
          font-family: Rubik;
-         font-size: vw(14px, 360px);
+         font-size: 14px;
          font-weight: 400;
-         line-height: vw(18px, 360px);
+         line-height: 18px;
          letter-spacing: 0em;
          text-align: left;
          text-transform: capitalize;
@@ -184,9 +186,9 @@
          text-decoration-line: underline;
          color: $accent;
 
-         @media screen and (min-width: 414px) {
-            font-size: vw(14px, 414px);
-            line-height: vw(18px, 414px);
+         @media screen and (min-width: 500px) {
+            font-size: vw(14px, 360px);
+            line-height: vw(18px, 360px);
          }
 
          @media screen and (min-width: 920px) {
