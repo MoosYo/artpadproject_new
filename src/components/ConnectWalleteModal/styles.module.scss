@@ -5,9 +5,15 @@
     display: flex;
     flex-direction: column;
 
-    width: vw(276px, 360px);
-    height: vw(290px, 360px);
-    gap: vw(24px, 360px);
+    width: 276px;
+    height: 290px;
+    gap: 24px;
+
+    @media screen and (min-width: 920px) {
+        width: vw(276px, 360px);
+        height: vw(290px, 360px);
+        gap: vw(24px, 360px);
+    }
 
     @media screen and (min-width: 920px) {
         width: vw(380px);

@@ -9,13 +9,12 @@
    justify-content: space-between;
    align-items: flex-start;
 
-   min-height: vw(91px, 360px);
+   min-height: 91px;
+   margin-bottom: 60px;
 
-   margin-bottom: vw(60px, 360px);
-
-   @media screen and (min-width: 414px) {
-      min-height: vw(91px, 414px);
-      margin-bottom: vw(60px, 414px);
+   @media screen and (min-width: 500px) {
+      min-height: vw(91px, 360px);
+      margin-bottom: vw(60px, 360px);
    }
    @media screen and (min-width: 920px) {
       min-height: vw(91px);
@@ -35,9 +34,9 @@
       width: 100%;
 
       font-family: Rubik;
-      font-size: vw(16px, 360px);
+      font-size: 16px;
       font-weight: 600;
-      line-height: vw(19px, 360px);
+      line-height: 19px;
       letter-spacing: 0em;
       text-align: center;
       text-transform: uppercase;
@@ -50,25 +49,25 @@
       &:not(:last-child)::after {
          position: absolute;
          content: "";
-         width: vw(2px, 360px);
-         height: vw(32px, 360px);
+         width: 2px;
+         height: 32px;
          top: 120%;
          background-color: $text-title;
       }
 
-      margin-bottom: vw(56px, 360px);
+      margin-bottom: 56px;
 
       &:last-child {
-         margin-bottom: vw(0px, 360px);
+         margin-bottom: 0px;
       }
 
-      @media screen and (min-width: 414px) {
-         font-size: vw(16px, 414px);
-         line-height: vw(19px, 414px);
-         margin-bottom: vw(56px, 414px);
+      @media screen and (min-width: 500px) {
+         font-size: vw(16px, 360px);
+         line-height: vw(19px, 360px);
+         margin-bottom: vw(56px, 360px);
          &:not(:last-child)::after {
-            width: vw(2px, 414px);
-            height: vw(32px, 414px);
+            width: vw(2px, 360px);
+            height: vw(32px, 360px);
          }
       }
       @media screen and (min-width: 920px) {
@@ -93,12 +92,12 @@
    }
 
    &__title {
-      padding: vw(8px, 360px);
-      border-radius: vw(4px, 360px);
+      padding: 8px;
+      border-radius: 4px;
 
-      @media screen and (min-width: 414px) {
-         padding: vw(8px, 414px);
-         border-radius: vw(4px, 414px);
+      @media screen and (min-width: 500px) {
+         padding: vw(8px, 360px);
+         border-radius: vw(4px, 360px);
       }
       @media screen and (min-width: 920px) {
          padding: vw(8px);
@@ -116,10 +115,10 @@
 
    &__sublist {
       list-style: none;
-      margin-top: vw(6px, 360px);
+      margin-top: 6px;
 
-      @media screen and (min-width: 414px) {
-         margin-top: vw(6px, 414px);
+      @media screen and (min-width: 500px) {
+         margin-top: vw(6px, 360px);
       }
       @media screen and (min-width: 920px) {
          margin-top: vw(6px);
@@ -131,9 +130,9 @@
 
    &__sublist_item {
       width: 100%;
-      margin-top: vw(8px, 360px);
-      @media screen and (min-width: 414px) {
-         margin-top: vw(8px, 414px);
+      margin-top: 8px;
+      @media screen and (min-width: 500px) {
+         margin-top: vw(8px, 360px);
       }
       @media screen and (min-width: 920px) {
          margin-top: vw(8px);
@@ -145,16 +144,17 @@
 
    &__sublist_text {
       font-family: Rubik;
-      font-size: vw(14px, 360px);
       font-weight: 400;
-      line-height: vw(17px, 360px);
       letter-spacing: 0em;
       text-align: left;
       color: $text;
+      
+      font-size: 14px;
+      line-height: 17px;
 
-      @media screen and (min-width: 414px) {
-         font-size: vw(14px, 414px);
-         line-height: vw(17px, 414px);
+      @media screen and (min-width: 500px) {
+         font-size: vw(14px, 360px);
+         line-height: vw(17px, 360px);
       }
       @media screen and (min-width: 920px) {
          font-size: vw(14px);
@@ -173,11 +173,11 @@
 
 .line {
    display: none;
-   height: vw(2px, 360px);
+   height: 2px;
    width: 100%;
    background-color: $text-title;
-   @media screen and (min-width: 414px) {
-      height: vw(2px, 414px);
+   @media screen and (min-width: 500x) {
+      height: vw(2px, 360px);
    }
    @media screen and (min-width: 920px) {
       height: vw(2px);

@@ -9,11 +9,19 @@
     color: rgba($color: $white, $alpha: 0.4);
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
     
-    height: vw(52px, 360px);
-    padding: 0px vw(14px, 360px);
-    border-radius: vw(10px, 360px);
-    font-size: vw(24px, 360px);
-    line-height: vw(24px, 360px);
+    height: 52px;
+    padding: 0px 14px;
+    border-radius: 10px;
+    font-size: 24px;
+    line-height: 24px;
+
+    @media screen and (min-width: 500px) {
+        height: vw(52px, 360px);
+        padding: 0px vw(14px, 360px);
+        border-radius: vw(10px, 360px);
+        font-size: vw(24px, 360px);
+        line-height: vw(24px, 360px);
+    }
 
     @media screen and (min-width: 920px) {
         height: vw(52px);

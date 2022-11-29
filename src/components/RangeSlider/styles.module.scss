@@ -21,8 +21,13 @@
             background: #363838;
             overflow: hidden;
 
-            height: vw(20px, 360px);
-            border-radius: vw(3px, 360px);
+            height: 20px;
+            border-radius: 3px;
+
+            @media screen and (min-width: 500px) {
+                height: vw(20px, 360px);
+                border-radius: vw(3px, 360px);
+            }
 
             @media screen and (min-width: 920px) {
                 height: vw(20px);
@@ -41,7 +46,11 @@
             align-items: center;
             justify-content: space-between;
 
-            transform: translateY(vw(-28px, 360px));
+            transform: translateY(-28px);
+
+            @media screen and (min-width: 920px) {
+                transform: translateY(vw(-28px, 360px));
+            }
 
             @media screen and (min-width: 920px) {
                 transform: translateY(vw(-28px));
@@ -58,8 +67,13 @@
             align-items: center;
             justify-content: flex-start;
 
-            width: vw(100px, 360px);
-            gap: vw(18px, 360px);
+            width: 100px;
+            gap: 18px;
+
+            @media screen and (min-width: 500px) {
+                width: vw(100px, 360px);
+                gap: vw(18px, 360px);
+            }
 
             @media screen and (min-width: 920px) {
                 width: vw(100px);
@@ -72,8 +86,13 @@
             }
 
             &:first-of-type {
-                margin-left: vw(-50px, 360px);
-                transform: translateX(vw(50px, 360px));
+                margin-left: -50px;
+                transform: translateX(50px);
+
+                @media screen and (min-width: 920px) {
+                    margin-left: vw(-50px, 360px);
+                    transform: translateX(vw(50px, 360px));
+                }
 
                 @media screen and (min-width: 920px) {
                     margin-left: vw(-50px);
@@ -87,8 +106,13 @@
             }
 
             &:last-of-type {
-                margin-right: vw(-50px, 360px);
-                transform: translateX(vw(-50px, 360px));
+                margin-right: -50px;
+                transform: translateX(-50px);
+
+                @media screen and (min-width: 500px) {
+                    margin-right: vw(-50px, 360px);
+                    transform: translateX(vw(-50px, 360px));
+                }
 
                 @media screen and (min-width: 920px) {
                     margin-right: vw(-50px);
@@ -106,8 +130,13 @@
                 margin: 0px auto;
                 transition: opacity 0.3s ease-in-out;
                 
-                width: vw(3px, 360px);
-                height: vw(28px, 360px);
+                width: 3px;
+                height: 28px;
+
+                @media screen and (min-width: 920px) {
+                    width: vw(3px, 360px);
+                    height: vw(28px, 360px);
+                }
 
                 @media screen and (min-width: 920px) {
                     width: vw(3px);
@@ -173,10 +202,17 @@
         transition: transform 0.3s ease-in-out;
         background: $white;
         
-        width: vw(36px, 360px);
-        height: vw(36px, 360px);
-        top: vw(-8px, 360px);
-        border-radius: vw(18px, 360px);
+        width: 36px;
+        height: 36px;
+        top: -8px;
+        border-radius: 18px;
+
+        @media screen and (min-width: 500px) {
+            width: vw(36px, 360px);
+            height: vw(36px, 360px);
+            top: vw(-8px, 360px);
+            border-radius: vw(18px, 360px);
+        }
 
         @media screen and (min-width: 920px) {
             width: vw(36px);

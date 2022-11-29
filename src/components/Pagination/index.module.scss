@@ -9,12 +9,12 @@
    align-items: center;
    list-style: none;
 
-   margin-bottom: vw(64px, 360px);
-   gap: vw(8px, 360px);
+   margin-bottom: 64px;
+   gap: 8px;
 
-   @media screen and (min-width: 414px) {
-      margin-bottom: vw(64px, 414px);
-      gap: vw(8px, 414px);
+   @media screen and (min-width: 500px) {
+      margin-bottom: vw(64px, 360px);
+      gap: vw(8px, 360px);
    }
 
    @media screen and (min-width: 920px) {

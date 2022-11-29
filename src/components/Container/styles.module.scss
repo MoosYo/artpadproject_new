@@ -5,9 +5,15 @@
     background-color: $background;
     border: solid $accent;
 
-    padding: vw(30px, 360px);
-    border-width: vw(2px, 360px);
-    border-radius: vw(10px, 360px);
+    padding: 30px;
+    border-width: 2px;
+    border-radius: 10px;
+
+    @media screen and (min-width: 500px) {
+        padding: vw(30px, 360px);
+        border-width: vw(2px, 360px);
+        border-radius: vw(10px, 360px);
+    }
 
     @media screen and (min-width: 920px) {
         padding: vw(30px);

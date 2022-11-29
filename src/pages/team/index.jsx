@@ -80,9 +80,9 @@ export default function TeamPage(props) {
                      </Chip>
                   </div>
                   <div className={teamPage__memberLevel}>
-                     <p className={teamPage__memberLevelName}>Lucky</p>
+                     <p className={teamPage__memberLevelName}>Bonus</p>
                      <Progressbar value={level} showPercents={true} className={teamPage__memberLevelProgress} />
-                     <p className={teamPage__memberLevelName}>Leader</p>
+                     <p className={teamPage__memberLevelName}>Coins</p>
                   </div>
                   <p className={teamPage__memberInvitedBy}>Вас пригласил {invitedBy}</p>
                </div>

@@ -6,9 +6,15 @@
     font-weight: 600;
     text-transform: uppercase;
     
-    font-size: vw(36px, 360px);
-    line-height: vw(43px, 360px);
-    margin-bottom: vw(40px, 360px);
+    font-size: 36px;
+    line-height: 43px;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 920px) {
+        font-size: vw(36px, 360px);
+        line-height: vw(43px, 360px);
+        margin-bottom: vw(40px, 360px);
+    }
 
     @media screen and (min-width: 920px) {
         font-size: vw(36px);
