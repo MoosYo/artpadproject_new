@@ -34,11 +34,11 @@ const {
    curd__buttonText,
 } = classes;
 
-const { level, staked, balance, timeRange, selectedTime } = window.initState
-   ? window.initState
+const { level, staked, balance, timeRange, selectedTime, isTokenUnlocked } = window.initState?.staking
+   ? window.initState?.staking
    : {
         level: 7,
-        staked: "750,000",
+        staked: 750000,
         balance: [
            { summ: 0, state: true },
            { summ: 0, state: false },
@@ -49,7 +49,8 @@ const { level, staked, balance, timeRange, selectedTime } = window.initState
             "6 month’s",
             "12 month’s"
         ],
-        selectedTime: 1
+        selectedTime: 1,
+        isTokenUnlocked: true
      };
 
 export default function SteakingPage(props) {
@@ -59,23 +60,27 @@ export default function SteakingPage(props) {
    return (
       <>
          <Tabs tabs={profileRoutes} />
-         <PageHeader>Steacking</PageHeader>
+         <PageHeader>Stacking</PageHeader>
          <div className={steaking__layout}>
             <div className={steaking__content}>
                <h3 className={steaking__title}>
-                  level: <span className={steaking__subtext}>tier {level}</span>
+                  level: <span className={steaking__subtext}>{level}</span>
                </h3>
                <h3 className={steaking__title}>
-                  staked: <span className={steaking__subtext + " " + steaking__subtext_magenta}>{staked} wARTR</span>
+                  staked: <span className={steaking__subtext + " " + steaking__subtext_magenta}>{staked.toLocaleString()} wARTR</span>
                </h3>
-               <p className={steaking__text}>Your token are unlocked</p>
+               {
+                  isTokenUnlocked !== null ? (
+                     <p className={steaking__text}>Your token are {isTokenUnlocked ? "un" : ""}locked</p>
+                  ) : ""
+               }
             </div>
             <div className={steaking__cards}>
                {balance.map(({ summ, state }, key) => (
                   <div className={steaking__wrapper} key={key}>
                      <Container className={card}>
                         <span className={card__title}>
-                           Balance: <span className={card__subtext}>{summ} wARTR</span>
+                           Balance: <span className={card__subtext}>{summ.toLocaleString()} wARTR</span>
                         </span>
                         <div className={card__label}>
                            <span className={card__chips}>Max</span>

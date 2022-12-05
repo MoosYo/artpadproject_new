@@ -32,11 +32,10 @@ const {
    container__alert,
 } = classes;
 
-const { data, heder, links, info, news, story } = window.initState
-   ? window.initState
+const { header, links, info, news, story } = window.initState?.project
+   ? window.initState?.project
    : {
-        data: "text",
-        heder: {
+        header: {
            img: "https://icodrops.com/wp-content/uploads/2022/07/yycZmh7_400x400.png",
            title: "SEOR",
         },
@@ -211,8 +210,8 @@ export default function ProjectPage(props) {
       <>
          <div className={project__layout}>
             <div className={project__head}>
-               <img src={heder.img} alt={heder.title} />
-               <h2 className={project__title}>{heder.title}</h2>
+               <img src={header.img} alt={header.title} />
+               <h2 className={project__title}>{header.title}</h2>
             </div>
             <ul className={project__links}>
                {links.map(({ title, href }, key) => (

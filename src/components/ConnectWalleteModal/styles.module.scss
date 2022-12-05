@@ -5,11 +5,17 @@
     display: flex;
     flex-direction: column;
 
-    width: 276px;
-    height: 290px;
-    gap: 24px;
+    width: vw(276px, 360px);
+    height: vw(290px, 360px);
+    gap: vw(24px, 360px);
 
-    @media screen and (min-width: 920px) {
+    @media screen and (min-width: 360px) {
+        width: 276px;
+        height: 290px;
+        gap: 24px;
+    }
+
+    @media screen and (min-width: 500px) {
         width: vw(276px, 360px);
         height: vw(290px, 360px);
         gap: vw(24px, 360px);
@@ -38,6 +44,18 @@
         border-width: vw(2px, 360px);
         margin-bottom: vw(6px, 360px);
         
+        @media screen and (min-width: 360px) {
+            padding-bottom: 18px;
+            border-width: 2px;
+            margin-bottom: 6px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            padding-bottom: vw(18px, 360px);
+            border-width: vw(2px, 360px);
+            margin-bottom: vw(6px, 360px);
+        }
+        
         @media screen and (min-width: 920px) {
             padding-bottom: vw(18px);
             border-width: vw(2px);
@@ -56,6 +74,16 @@
 
             font-size: vw(24px, 360px);
             line-height: vw(24px, 360px);
+            
+            @media screen and (min-width: 360px) {
+                font-size: 24px;
+                line-height: 24px;
+            }
+            
+            @media screen and (min-width: 500px) {
+                font-size: vw(24px, 360px);
+                line-height: vw(24px, 360px);
+            }
             
             @media screen and (min-width: 920px) {
                 font-size: vw(24px);
@@ -77,6 +105,16 @@
         width: vw(17px, 360px);
         height: vw(17px, 360px);
 
+        @media screen and (min-width: 360px) {
+            width: 17px;
+            height: 17px;
+        }
+
+        @media screen and (min-width: 500px) {
+            width: vw(17px, 360px);
+            height: vw(17px, 360px);
+        }
+
         @media screen and (min-width: 920px) {
             width: vw(17px);
             height: vw(17px);
@@ -90,6 +128,16 @@
         &Icon {
             width: vw(17px, 360px);
             height: vw(17px, 360px);
+        
+            @media screen and (min-width: 360px) {
+                width: 17px;
+                height: 17px;
+            }
+        
+            @media screen and (min-width: 500px) {
+                width: vw(17px, 360px);
+                height: vw(17px, 360px);
+            }
         
             @media screen and (min-width: 920px) {
                 width: vw(17px);
@@ -111,6 +159,16 @@
         height: vw(56px, 360px) !important;
         gap: vw(14px, 360px);
 
+        @media screen and (min-width: 360px) {
+            height: 56px !important;
+            gap: 14px;
+        }
+
+        @media screen and (min-width: 500px) {
+            height: vw(56px, 360px) !important;
+            gap: vw(14px, 360px);
+        }
+
         @media screen and (min-width: 920px) {
             height: vw(56px) !important;
             gap: vw(14px);
@@ -124,6 +182,16 @@
         &Icon {
             width: vw(28px, 360px);
             height: vw(28px, 360px);
+            
+            @media screen and (min-width: 360px) {
+                width: 28px;
+                height: 28px;
+            }
+            
+            @media screen and (min-width: 500px) {
+                width: vw(28px, 360px);
+                height: vw(28px, 360px);
+            }
             
             @media screen and (min-width: 920px) {
                 width: vw(28px);
@@ -139,6 +207,16 @@
         &Text {
             font-size: vw(24px, 360px);
             line-height: vw(28px, 360px);
+
+            @media screen and (min-width: 360px) {
+                font-size: 24px;
+                line-height: 28px;
+            }
+            
+            @media screen and (min-width: 500px) {
+                font-size: vw(24px, 360px);
+                line-height: vw(28px, 360px);
+            }
             
             @media screen and (min-width: 920px) {
                 font-size: vw(24px);

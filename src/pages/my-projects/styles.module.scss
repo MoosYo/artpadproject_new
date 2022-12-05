@@ -35,11 +35,18 @@
          border: 3px solid $background;
       }
 
-      @media screen and (min-width: 414px) {
-         margin: 0px vw(-12px, 414px);
-         padding: 0px vw(12px, 414px);
-         margin-bottom: vw(40px, 414px);
-         padding-bottom: vw(24px, 414px);
+      @media screen and (min-width: 360px) {
+         margin: 0px -12px;
+         padding: 0px 12px;
+         padding-bottom: 24px;
+         margin-bottom: 40px;
+      }
+
+      @media screen and (min-width: 500px) {
+         margin: 0px vw(-12px, 360px);
+         padding: 0px vw(12px, 360px);
+         padding-bottom: vw(24px, 360px);
+         margin-bottom: vw(40px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -60,15 +67,19 @@
 .table {
    display: grid;
    grid-template-columns: 1fr;
+   width: 1440px;
+
    grid-template-rows: vw(24px, 360px) 1fr;
    grid-row-gap: vw(18px, 360px);
 
-   width: 1440px;
+   @media screen and (min-width: 360px) {
+      grid-template-rows: 24px 1fr;
+      grid-row-gap: 18px;
+   }
 
-   @media screen and (min-width: 414px) {
-      grid-template-rows: vw(24px, 414px) 1fr;
-      grid-row-gap: vw(18px, 414px);
-      width: vw(1400px, 414px);
+   @media screen and (min-width: 500px) {
+      grid-template-rows: vw(24px, 360px) 1fr;
+      grid-row-gap: vw(18px, 360px);
    }
 
    @media screen and (min-width: 920px) {
@@ -85,14 +96,20 @@
 
    &__header {
       display: grid;
-      grid-template-columns: repeat(5, 0.9fr) 1fr vw(70px, 360px);
       grid-template-rows: auto;
       grid-column-gap: 0px;
+
+      grid-template-columns: repeat(5, 0.9fr) 1fr vw(70px, 360px);
       padding: 0px vw(18px, 360px);
 
-      @media screen and (min-width: 414px) {
-         padding: 0px vw(18px, 414px);
-         grid-template-columns: repeat(5, 0.9fr) 1fr vw(70px, 414px);
+      @media screen and (min-width: 360px) {
+         grid-template-columns: repeat(5, 0.9fr) 1fr 70px;
+         padding: 0px 18px;
+      }
+
+      @media screen and (min-width: 500px) {
+         grid-template-columns: repeat(5, 0.9fr) 1fr vw(70px, 360px);
+         padding: 0px vw(18px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -108,18 +125,24 @@
 
    &__title {
       font-family: Rubik;
-      font-size: vw(18px, 360px);
       font-weight: 600;
-      line-height: vw(18px, 360px);
       letter-spacing: 0em;
       text-align: left;
       text-transform: uppercase;
 
       color: $white;
+      
+      font-size: vw(18px, 360px);
+      line-height: vw(18px, 360px);
 
-      @media screen and (min-width: 414px) {
-         font-size: vw(18px, 414px);
-         line-height: vw(18px, 414px);
+      @media screen and (min-width: 360px) {
+         font-size: 18px;
+         line-height: 18px;
+      }
+
+      @media screen and (min-width: 500px) {
+         font-size: vw(18px, 360px);
+         line-height: vw(18px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -136,13 +159,19 @@
    &__body {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(4, vw(54px, 360px));
       grid-column-gap: 0px;
+
+      grid-template-rows: repeat(4, vw(54px, 360px));
       grid-row-gap: vw(16px, 360px);
 
-      @media screen and (min-width: 414px) {
-         grid-template-rows: repeat(4, vw(54px, 414px));
-         grid-row-gap: vw(16px, 414px);
+      @media screen and (min-width: 360px) {
+         grid-template-rows: repeat(4, 54px);
+         grid-row-gap: 16px;
+      }
+
+      @media screen and (min-width: 500px) {
+         grid-template-rows: repeat(4, vw(54px, 360px));
+         grid-row-gap: vw(16px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -158,23 +187,32 @@
 
    &__row {
       display: grid;
-      grid-template-columns: repeat(5, 0.9fr) 1fr vw(70px, 360px);
-      grid-template-rows: vw(54px, 360px);
       grid-column-gap: 0px;
-      grid-row-gap: vw(16px, 360px);
       align-items: center;
 
       border: 2px solid $accent;
-      border-radius: vw(10px, 360px);
       background: $background;
+      
+      grid-template-columns: repeat(5, 0.9fr) 1fr vw(70px, 360px);
+      grid-template-rows: vw(54px, 360px);
+      grid-row-gap: vw(16px, 360px);
+      border-radius: vw(10px, 360px);
       padding: 0px vw(18px, 360px);
 
-      @media screen and (min-width: 414px) {
-         grid-template-rows: vw(54px, 414px);
-         grid-row-gap: vw(16px, 414px);
-         border-radius: vw(10px, 414px);
-         padding: 0px vw(18px, 414px);
-         grid-template-columns: repeat(5, 0.9fr) 1fr vw(70px, 414px);
+      @media screen and (min-width: 360px) {
+         grid-template-columns: repeat(5, 0.9fr) 1fr 70px;
+         grid-template-rows: 54px;
+         grid-row-gap: 16px;
+         border-radius: 10px;
+         padding: 0px 18px;
+      }
+
+      @media screen and (min-width: 500px) {
+         grid-template-columns: repeat(5, 0.9fr) 1fr vw(70px, 360px);
+         grid-template-rows: vw(54px, 360px);
+         grid-row-gap: vw(16px, 360px);
+         border-radius: vw(10px, 360px);
+         padding: 0px vw(18px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -195,25 +233,31 @@
 
       span {
          font-family: Rubik;
-         font-size: vw(18px, 360px);
          font-weight: 400;
-         line-height: vw(18px, 360px);
          letter-spacing: 0em;
          text-align: left;
          text-transform: capitalize;
 
          color: $white;
+         
+         font-size: vw(18px, 360px);
+         line-height: vw(18px, 360px);
 
          a {
             text-decoration-line: underline;
             color: $accent;
          }
 
-         @media screen and (min-width: 414px) {
-            font-size: vw(18px, 414px);
-            line-height: vw(18px, 414px);
+         @media screen and (min-width: 360px) {
+            font-size: 18px;
+            line-height: 18px;
          }
-
+   
+         @media screen and (min-width: 500px) {
+            font-size: vw(18px, 360px);
+            line-height: vw(18px, 360px);
+         }
+   
          @media screen and (min-width: 920px) {
             font-size: vw(18px);
             line-height: vw(18px);
@@ -235,8 +279,12 @@
 
       gap: vw(4px, 360px);
 
-      @media screen and (min-width: 414px) {
-         gap: vw(4px, 414px);
+      @media screen and (min-width: 360px) {
+         gap: 4px;
+      }
+
+      @media screen and (min-width: 500px) {
+         gap: vw(4px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -254,11 +302,16 @@
          width: vw(18px, 360px);
          height: vw(18px, 360px);
 
-         @media screen and (min-width: 414px) {
-            width: vw(18px, 414px);
-            height: vw(18px, 414px);
+         @media screen and (min-width: 360px) {
+            width: 18px;
+            height: 18px;
          }
-
+   
+         @media screen and (min-width: 500px) {
+            width: vw(18px, 360px);
+            height: vw(18px, 360px);
+         }
+   
          @media screen and (min-width: 920px) {
             width: vw(18px);
             height: vw(18px);
@@ -272,20 +325,26 @@
 
       span {
          font-family: Rubik;
-         font-size: vw(18px, 360px);
          font-weight: 400;
-         line-height: vw(18px, 360px);
          letter-spacing: 0em;
          text-align: left;
          text-transform: uppercase;
 
          color: $white;
 
-         @media screen and (min-width: 414px) {
-            font-size: vw(18px, 414px);
-            line-height: vw(18px, 414px);
-         }
+         font-size: vw(18px, 360px);
+         line-height: vw(18px, 360px);
 
+         @media screen and (min-width: 360px) {
+            font-size: 18px;
+            line-height: 18px;
+         }
+   
+         @media screen and (min-width: 500px) {
+            font-size: vw(18px, 360px);
+            line-height: vw(18px, 360px);
+         }
+   
          @media screen and (min-width: 920px) {
             font-size: vw(18px);
             line-height: vw(18px);

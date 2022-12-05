@@ -76,6 +76,7 @@ export default function RangeSlider ({values, selected, onChange}) {
 
     const moveStart = (e) => {
         e.preventDefault();
+        document.querySelector("body").style.overflow = "hidden";
         setMoveX(e.touches ? e.touches[0].pageX : e.pageX);
 
         if (barProgress.current) {
@@ -89,14 +90,15 @@ export default function RangeSlider ({values, selected, onChange}) {
     }
 
     const move = (e) => {
+        e.preventDefault();
         if (moveX) {
-            e.preventDefault();
             setDiffX((e.touches ? e.touches[0].pageX : e.pageX) - moveX);
         }
     }
 
     const moveEnd = (e) => {
         e.preventDefault();
+        document.querySelector("body").style.overflow = null;
         setMoveX(null);
         setDiffX(null);
         setCurrent(Math.abs(currentMoving));

@@ -4,8 +4,8 @@ const profileRoutes = [
         href: "/profile"
     },
     {
-        text: "Steaking",
-        href: "/profile/steaking"
+        text: "Staking",
+        href: "/profile/staking"
     },
     {
         text: "Team",
