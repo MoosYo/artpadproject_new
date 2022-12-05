@@ -11,8 +11,8 @@ import Pagination from "../../components/Pagination";
 
 const { my_project__layout, table, table__header, table__title, table__body, table__row, table__cel } = classes;
 
-let { data, pagination } = window.initState
-   ? window.initState
+let { data, pagination } = window.initState?.projects
+   ? window.initState?.projects
    : {
         data: [
            {
@@ -106,7 +106,7 @@ export default function MyProjectsPage(props) {
                         <span>{token}</span>
                         <span>{status}</span>
                         <span>
-                           <a href={link} target={"_blank"} rel={"noreferrer"}>
+                           <a href={link}>
                               Click
                            </a>
                         </span>
@@ -115,11 +115,15 @@ export default function MyProjectsPage(props) {
                </div>
             </div>
          </div>
-         <Pagination
-            curentPage={pagination.current}
-            totalPages={pagination.totalPagesCount}
-            href="/profile/my-projects"
-         />
+         {
+            pagination.totalPagesCount > 1 ? (
+               <Pagination
+                  curentPage={pagination.current}
+                  totalPages={pagination.totalPagesCount}
+                  href="/profile/my-projects"
+               />
+            ) : ""
+         }
       </>
    );
 }

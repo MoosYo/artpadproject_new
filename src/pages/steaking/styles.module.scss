@@ -9,7 +9,15 @@
       justify-content: flex-start;
       align-items: stretch;
       
-      margin-bottom: vw(64px);
+      margin-bottom: vw(64px, 360px);
+
+      @media screen and (min-width: 360px) {
+         margin-bottom: v64px;
+      }
+
+      @media screen and (min-width: 500px) {
+         margin-bottom: vw(64px, 360px);
+      }
 
       @media screen and (min-width: 920px) {
          margin-bottom: vw(100px);
@@ -26,13 +34,19 @@
       flex-wrap: nowrap;
       justify-content: center;
       align-items: stretch;
-      gap: vw(24px, 360px);
       color: $white;
-      margin-bottom: vw(40px, 360px);
 
-      @media screen and (min-width: 414px) {
-         gap: vw(24px, 414px);
-         margin-bottom: vw(40px, 414px);
+      gap: vw(24px, 360px);
+      margin-bottom: vw(40px, 360px);
+      
+      @media screen and (min-width: 360px) {
+         gap: 24px;
+         margin-bottom: 40px;
+      }
+
+      @media screen and (min-width: 500px) {
+         gap: vw(24px, 360px);
+         margin-bottom: vw(40px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -48,15 +62,21 @@
 
    &__title {
       font-family: Rubik;
-      font-size: vw(24px, 360px);
       font-weight: 600;
-      line-height: vw(28px, 360px);
       letter-spacing: 0em;
       text-align: left;
+      
+      font-size: vw(24px, 360px);
+      line-height: vw(28px, 360px);
+      
+      @media screen and (min-width: 360px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
 
-      @media screen and (min-width: 414px) {
-         font-size: vw(24px, 414px);
-         line-height: vw(28px, 414px);
+      @media screen and (min-width: 500px) {
+         font-size: vw(24px, 360px);
+         line-height: vw(28px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -72,15 +92,21 @@
 
    &__subtext {
       font-family: Rubik;
-      font-size: vw(24px, 360px);
       font-weight: 400;
-      line-height: vw(28px, 360px);
       letter-spacing: 0em;
       text-align: left;
+      
+      font-size: vw(24px, 360px);
+      line-height: vw(28px, 360px);
+      
+      @media screen and (min-width: 360px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
 
-      @media screen and (min-width: 414px) {
-         font-size: vw(24px, 414px);
-         line-height: vw(28px, 414px);
+      @media screen and (min-width: 500px) {
+         font-size: vw(24px, 360px);
+         line-height: vw(28px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -100,15 +126,21 @@
 
    &__text {
       font-family: Rubik;
-      font-size: vw(24px, 360px);
       font-weight: 400;
-      line-height: vw(28px, 360px);
       letter-spacing: 0em;
       text-align: left;
 
-      @media screen and (min-width: 414px) {
-         font-size: vw(24px, 414px);
-         line-height: vw(28px, 414px);
+      font-size: vw(24px, 360px);
+      line-height: vw(28px, 360px);
+      
+      @media screen and (min-width: 360px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
+
+      @media screen and (min-width: 500px) {
+         font-size: vw(24px, 360px);
+         line-height: vw(28px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -128,12 +160,18 @@
       flex-wrap: nowrap;
       justify-content: flex-start;
       align-items: stretch;
+
       gap: vw(40px, 360px);
       margin-bottom: vw(64px, 360px);
+      
+      @media screen and (min-width: 360px) {
+         gap: 40px;
+         margin-bottom: 64px;
+      }
 
-      @media screen and (min-width: 414px) {
-         gap: vw(40px, 414px);
-         margin-bottom: vw(64px, 414px);
+      @media screen and (min-width: 500px) {
+         gap: vw(40px, 360px);
+         margin-bottom: vw(64px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -155,12 +193,16 @@
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
-      gap: vw(20px, 360px);
-
       width: 100%;
 
-      @media screen and (min-width: 414px) {
-         gap: vw(20px, 414px);
+      gap: vw(20px, 360px);
+      
+      @media screen and (min-width: 360px) {
+         gap: 20px;
+      }
+
+      @media screen and (min-width: 500px) {
+         gap: vw(20px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -183,7 +225,15 @@
          align-items: baseline;
          
          margin-bottom: vw(32px, 360px);
-
+      
+         @media screen and (min-width: 360px) {
+            margin-bottom: 32px;
+         }
+   
+         @media screen and (min-width: 500px) {
+            margin-bottom: vw(32px, 360px);
+         }
+   
          @media screen and (min-width: 920px) {
             margin-bottom: vw(40px);
          }
@@ -195,12 +245,22 @@
 
       &Title {
          font-weight: 600;
-         color: $white;
+         color: $white !important;
          width: 100%;
 
          font-size: vw(24px, 360px);
          line-height: vw(28px, 360px);
-
+      
+         @media screen and (min-width: 360px) {
+            font-size: 24px;
+            line-height: 28px;
+         }
+   
+         @media screen and (min-width: 500px) {
+            font-size: vw(24px, 360px);
+            line-height: vw(28px, 360px);
+         }
+   
          @media screen and (min-width: 920px) {
             font-size: vw(24px);
             line-height: vw(28px);
@@ -220,7 +280,17 @@
 
          font-size: vw(18px, 360px);
          line-height: vw(21px, 360px);
-
+      
+         @media screen and (min-width: 360px) {
+            font-size: 18px;
+            line-height: 21px;
+         }
+   
+         @media screen and (min-width: 500px) {
+            font-size: vw(18px, 360px);
+            line-height: vw(21px, 360px);
+         }
+   
          @media screen and (min-width: 920px) {
             display: none;
          }
@@ -234,14 +304,19 @@
    flex-wrap: nowrap;
    justify-content: center;
    align-items: flex-start;
-   gap: vw(32px, 360px);
    color: $text;
 
+   gap: vw(32px, 360px);
    padding: vw(30px, 360px) vw(53px, 360px);
+      
+   @media screen and (min-width: 360px) {
+      padding: 30px 53px;
+      gap: 32px;
+   }
 
-   @media screen and (min-width: 414px) {
-      padding: vw(30px, 414px) vw(53px, 414px);
-      gap: vw(32px, 414px);
+   @media screen and (min-width: 500px) {
+      padding: vw(30px, 360px) vw(53px, 360px);
+      gap: vw(32px, 360px);
    }
 
    @media screen and (min-width: 920px) {
@@ -262,15 +337,21 @@
 
    &__title {
       font-family: Rubik;
-      font-size: vw(24px, 360px);
       font-weight: 600;
-      line-height: vw(28px, 360px);
       letter-spacing: 0em;
       text-align: left;
 
-      @media screen and (min-width: 414px) {
-         font-size: vw(24px, 414px);
-         line-height: vw(28px, 414px);
+      font-size: vw(24px, 360px);
+      line-height: vw(28px, 360px);
+      
+      @media screen and (min-width: 360px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
+
+      @media screen and (min-width: 500px) {
+         font-size: vw(24px, 360px);
+         line-height: vw(28px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -286,15 +367,21 @@
 
    &__subtext {
       font-family: Rubik;
-      font-size: vw(24px, 360px);
       font-weight: 400;
-      line-height: vw(28px, 360px);
       letter-spacing: 0em;
       text-align: left;
 
-      @media screen and (min-width: 414px) {
-         font-size: vw(24px, 414px);
-         line-height: vw(28px, 414px);
+      font-size: vw(24px, 360px);
+      line-height: vw(28px, 360px);
+      
+      @media screen and (min-width: 360px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
+
+      @media screen and (min-width: 500px) {
+         font-size: vw(24px, 360px);
+         line-height: vw(28px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -314,21 +401,28 @@
       flex-wrap: nowrap;
       justify-content: flex-start;
       align-items: center;
+
       gap: vw(8px, 360px);
 
       p {
          font-family: Rubik;
-         font-size: vw(24px, 360px);
          font-weight: 400;
-         line-height: vw(28px, 360px);
          letter-spacing: 0em;
          text-align: center;
 
          color: $white;
 
-         @media screen and (min-width: 414px) {
-            font-size: vw(24px, 414px);
-            line-height: vw(28px, 414px);
+         font-size: vw(24px, 360px);
+         line-height: vw(28px, 360px);
+      
+         @media screen and (min-width: 360px) {
+            font-size: 24px;
+            line-height: 28px;
+         }
+
+         @media screen and (min-width: 500px) {
+            font-size: vw(24px, 360px);
+            line-height: vw(28px, 360px);
          }
 
          @media screen and (min-width: 920px) {
@@ -341,9 +435,13 @@
             line-height: 28px;
          }
       }
+      
+      @media screen and (min-width: 360px) {
+         gap: 8px;
+      }
 
-      @media screen and (min-width: 414px) {
-         gap: vw(8px, 414px);
+      @media screen and (min-width: 500px) {
+         gap: vw(8px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -365,22 +463,28 @@
       background-color: $text;
       color: $white;
 
-      padding: vw(8px, 360px) vw(24px, 360px);
-
       font-family: Rubik;
-      font-size: vw(16px, 360px);
       font-weight: 400;
-      line-height: vw(19px, 360px);
       letter-spacing: 0em;
       text-align: center;
 
+      padding: vw(8px, 360px) vw(24px, 360px);
+      font-size: vw(16px, 360px);
+      line-height: vw(19px, 360px);
       border-radius: vw(4px, 360px);
+      
+      @media screen and (min-width: 360px) {
+         padding: 8px 24px;
+         font-size: 16px;
+         line-height: 19px;
+         border-radius: 4px;
+      }
 
-      @media screen and (min-width: 414px) {
-         padding: vw(8px, 414px) vw(24px, 414px);
-         font-size: vw(19px, 414px);
-         line-height: vw(16px, 414px);
-         border-radius: vw(4px, 414px);
+      @media screen and (min-width: 500px) {
+         padding: vw(8px, 360px) vw(24px, 360px);
+         font-size: vw(16px, 360px);
+         line-height: vw(19px, 360px);
+         border-radius: vw(4px, 360px);
       }
 
       @media screen and (min-width: 920px) {
@@ -400,9 +504,13 @@
 
    &__button {
       border-radius: vw(4px, 360px);
+      
+      @media screen and (min-width: 360px) {
+         border-radius: 4px;
+      }
 
-      @media screen and (min-width: 414px) {
-         border-radius: vw(4px, 414px);
+      @media screen and (min-width: 500px) {
+         border-radius: vw(4px, 360px);
       }
 
       @media screen and (min-width: 920px) {

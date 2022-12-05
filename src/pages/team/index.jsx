@@ -39,8 +39,8 @@ const {
 } = classes;
 
 const { userName, avatar, expireIn, level, invitedBy, activeMembers, totalMembers, coinsCount, delegated } =
-   window.initState
-      ? window.initState
+window.initState?.team
+? window.initState?.team
       : {
            userName: "Maksnavin",
            avatar: "",
@@ -84,7 +84,11 @@ export default function TeamPage(props) {
                      <Progressbar value={level} showPercents={true} className={teamPage__memberLevelProgress} />
                      <p className={teamPage__memberLevelName}>Coins</p>
                   </div>
-                  <p className={teamPage__memberInvitedBy}>Вас пригласил {invitedBy}</p>
+                  {
+                     invitedBy !== null && invitedBy.length > 0 ? (
+                        <p className={teamPage__memberInvitedBy}>Вас пригласил {invitedBy}</p>
+                     ) : ""
+                  }
                </div>
             </Container>
             <Layout direction="vertical">

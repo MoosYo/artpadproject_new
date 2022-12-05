@@ -75,7 +75,7 @@ export default function LoginSignupPage (props) {
                         <p className={content__infoLink}>
                             <a href="/">art-pad.io</a>
                         </p>
-                        <form className={content__form} action="/profile">
+                        <form className={content__form} method="POST" action="/auth/login.php">
 
                             <Input
                                 type="text"
@@ -107,7 +107,7 @@ export default function LoginSignupPage (props) {
                             maxHeight: currentTab !== 1 ? "0px" : null
                         }}
                     >
-                        <form className={content__form} action="/profile">
+                        <form className={content__form} method="post" action="/auth/register.php">
 
                             <Input
                                 type="text"

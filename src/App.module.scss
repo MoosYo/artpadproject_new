@@ -2,16 +2,20 @@
 @import "./styles/helpers.scss";
 
 .app {
-   min-height: 100vh;
+   // min-height: 100vh;
    display: flex;
    flex-direction: column;
-   overflow-x: hidden;
+   // overflow-x: hidden;
 }
 
 .pageWrapper {
    width: 100%;
    margin: 0px auto auto;
-   padding: vw(64px, 360px) vw(12px, 360px) 0px;
+   padding: 64px 12px 0px;
+
+   @media screen and (min-width: 500px) {
+      padding: vw(64px, 360px) vw(12px, 360px) 0px;
+   }
 
    @media screen and (min-width: 920px) {
       width: vw(1440px);

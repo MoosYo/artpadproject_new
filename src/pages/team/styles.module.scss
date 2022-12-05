@@ -8,9 +8,19 @@
         flex-direction: column;
         justify-content: space-between;
         
-        padding: vw(30px, 360px);
         width: 100%;
+        padding: vw(30px, 360px);
         gap: vw(30px, 360px);
+
+        @media screen and (min-width: 360px) {
+            padding: 30px;
+            gap: 30px;
+        }
+
+        @media screen and (min-width: 500px) {
+            padding: vw(30px, 360px);
+            gap: vw(30px, 360px);
+        }
 
         @media screen and (min-width: 920px) {
             flex-direction: row;
@@ -32,6 +42,16 @@
         width: vw(202px, 360px);
         height: vw(202px, 360px);
         margin: 0px auto;
+
+        @media screen and (min-width: 360px) {
+            width: 202px;
+            height: 202px;
+        }
+
+        @media screen and (min-width: 500px) {
+            width: vw(202px, 360px);
+            height: vw(202px, 360px);
+        }
 
         @media screen and (min-width: 920px) {
             margin: 0px;
@@ -59,6 +79,16 @@
         gap: vw(24px, 360px);
         margin-bottom: vw(24px, 360px);
 
+        @media screen and (min-width: 360px) {
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        @media screen and (min-width: 500px) {
+            gap: vw(24px, 360px);
+            margin-bottom: vw(24px, 360px);
+        }
+
         @media screen and (min-width: 920px) {
             flex-direction: row;
             align-items: center;
@@ -75,11 +105,22 @@
     }
 
     &__memberName {
-        color: $white;
+        color: $white !important;
+        margin: 0px !important;
         font-weight: 600;
         
         font-size: vw(24px, 360px);
         line-height: vw(28px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 24px;
+            line-height: 28px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(24px, 360px);
+            line-height: vw(28px, 360px);
+        }
 
         @media screen and (min-width: 920px) {
             font-size: vw(32px);
@@ -112,7 +153,17 @@
 
         height: vw(37px, 360px);
         margin-bottom: vw(24px, 360px);
-        
+
+        @media screen and (min-width: 360px) {
+            height: 37px;
+            margin-bottom: 24px;
+        }
+
+        @media screen and (min-width: 500px) {
+            height: vw(37px, 360px);
+            margin-bottom: vw(24px, 360px);
+        }
+
         @media screen and (min-width: 920px) {
             height: auto;
             
@@ -135,6 +186,16 @@
         margin-top: 0px;
         font-size: vw(14px, 360px);
         line-height: vw(17px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 14px;
+            line-height: 17px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(14px, 360px);
+            line-height: vw(17px, 360px);
+        }
 
         @media screen and (min-width: 920px) {
             margin-top: vw(16px);
@@ -169,6 +230,16 @@
         font-size: vw(18px, 360px);
         line-height: vw(21px, 360px);
 
+        @media screen and (min-width: 360px) {
+            font-size: 18px;
+            line-height: 21px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(18px, 360px);
+            line-height: vw(21px, 360px);    
+        }
+
         @media screen and (min-width: 920px) {
             font-size: vw(18px);
             line-height: vw(21px);
@@ -189,6 +260,16 @@
         gap: vw(24px, 360px);
         padding: vw(22px, 360px) vw(22px, 360px) vw(22px, 360px) vw(30px, 360px);
 
+        @media screen and (min-width: 360px) {
+            gap: 24px;
+            padding: 22px 22px 22px 30px;
+        }
+
+        @media screen and (min-width: 500px) {
+            gap: vw(24px, 360px);
+            padding: vw(22px, 360px) vw(22px, 360px) vw(22px, 360px) vw(30px, 360px);
+        }
+
         @media screen and (min-width: 920px) {
             flex-direction: row;
             align-items: center;
@@ -208,11 +289,22 @@
     }
 
     &__numbersDataTitle {
-        color: $white;
+        color: $white !important;
         font-weight: 500;
+        margin: 0px !important;
         
         font-size: vw(18px, 360px);
         line-height: vw(21px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 18px;
+            line-height: 21px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(18px, 360px);
+            line-height: vw(21px, 360px);
+        }
 
         @media screen and (min-width: 920px) {
             font-size: vw(18px);
@@ -232,6 +324,16 @@
         font-size: vw(32px, 360px);
         line-height: vw(38px, 360px);
 
+        @media screen and (min-width: 360px) {
+            font-size: 32px;
+            line-height: 38px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(32px, 360px);
+            line-height: vw(38px, 360px);
+        }
+
         @media screen and (min-width: 920px) {
             font-size: vw(32px);
             line-height: vw(38px);
@@ -249,6 +351,16 @@
             font-size: vw(18px, 360px);
             line-height: vw(21px, 360px);
 
+            @media screen and (min-width: 360px) {
+                font-size: 18px;
+                line-height: 21px;
+            }
+    
+            @media screen and (min-width: 500px) {
+                font-size: vw(18px, 360px);
+                line-height: vw(21px, 360px);
+            }
+    
             @media screen and (min-width: 920px) {
                 font-size: vw(18px);
                 line-height: vw(21px);
@@ -266,6 +378,14 @@
         
         margin-bottom: vw(24px, 360px);
 
+        @media screen and (min-width: 360px) {
+            margin-bottom: 24px;
+        }
+
+        @media screen and (min-width: 500px) {
+            margin-bottom: vw(24px, 360px);
+        }
+
         @media screen and (min-width: 920px) {
             margin-bottom: vw(24px);
         }
@@ -282,6 +402,18 @@
         font-size: vw(24px, 360px);
         line-height: vw(28px, 360px);
         margin-bottom: vw(24px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 24px;
+            line-height: 28px;
+            margin-bottom: 24px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(24px, 360px);
+            line-height: vw(28px, 360px);
+            margin-bottom: vw(24px, 360px);
+        }
 
         @media screen and (min-width: 920px) {
             font-size: vw(24px);
@@ -304,6 +436,16 @@
         gap: vw(14px, 360px);
         margin-bottom: vw(64px, 360px);
 
+        @media screen and (min-width: 360px) {
+            gap: 14px;
+            margin-bottom: 64px;
+        }
+
+        @media screen and (min-width: 500px) {
+            gap: vw(14px, 360px);
+            margin-bottom: vw(64px, 360px);
+        }
+
         @media screen and (min-width: 920px) {
             width: 100%;
             gap: vw(14px);
@@ -319,10 +461,21 @@
             color: $white;
             display: flex;
             flex-direction: row;
+            text-decoration: underline !important;
             
             font-size: vw(18px, 360px);
             line-height: vw(21px, 360px);
 
+            @media screen and (min-width: 360px) {
+                font-size: 18px;
+                line-height: 21px;
+            }
+    
+            @media screen and (min-width: 500px) {
+                font-size: vw(18px, 360px);
+                line-height: vw(21px, 360px);
+            }
+    
             @media screen and (min-width: 920px) {
                 font-size: vw(18px);
                 line-height: vw(21px);
@@ -342,6 +495,18 @@
 
                 max-width: vw(70px, 360px);
 
+                @media screen and (min-width: 360px) {
+                    max-width: 70px;
+                }
+
+                @media screen and (min-width: 410px) {
+                    max-width: none;
+                }
+        
+                @media screen and (min-width: 500px) {
+                    max-width: vw(70px, 360px);
+                }
+        
                 @media screen and (min-width: 920px) {
                     max-width: none;
                 }

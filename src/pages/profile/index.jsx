@@ -35,20 +35,30 @@ const {
 } = classes;
 
 const {
-    userName,
+    login,
     avatar,
     email,
     telegram,
     wallet,
     inviteLink
-} = window.initState ? window.initState : {
-    userName: "Maksnavin",
+} = window.initState?.user ? window.initState?.user : {
+    login: "Maksnavin",
     avatar: "",
     email: "Electronnaja_Pchta@mail.com",
     telegram: "maksnavin",
     wallet: "ARTR-1111-1111-1111",
     inviteLink: "https://artr.link/maksnavin"
 };
+
+let shortWallet = "";
+
+if (wallet.length > 19) {
+    shortWallet = wallet.substring(0, 11) + "..." + wallet.substring(wallet.length - 4);
+}
+else {
+    shortWallet = wallet;
+}
+// shortWallet += 
 
 export default function ProfilePage (props) {
 
@@ -65,7 +75,7 @@ export default function ProfilePage (props) {
                     <Avatar img={avatar} className={profilePage__userAvatar} />
                     <div className={profilePage__userInfoBlock}>
                         <div className={profilePage__userName}>
-                            <p className={profilePage__userNameText}>{userName}</p>
+                            <p className={profilePage__userNameText}>{login}</p>
 
                             <a href="/profile/edit" className={profilePage__userNameEdit} type="button">
                                 <span className={profilePage__userNameEditText}>Edit</span>
@@ -91,7 +101,7 @@ export default function ProfilePage (props) {
                     <Container className={profilePage__rightBlock}>
                         <h2 className={profilePage__rightBlockHeader}>Wallet</h2>
                         <p className={profilePage__copyBlock}>
-                            <span className={profilePage__copyBlockText}>{wallet}</span>
+                            <span className={profilePage__copyBlockText}>{shortWallet}</span>
                             <CopyIcon
                                 className={profilePage__copyBlockIcon} 
                                 onClick={()=>copy(wallet)}
