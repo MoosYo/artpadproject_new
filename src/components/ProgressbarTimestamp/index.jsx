@@ -13,16 +13,30 @@ const {
 } = classes;
 
 export default function ProgressbarTimestamp({ value, timestamp, coin, total, current, showPercents, className }) {
+   const local = "ru-RU";
 
    const swapDate = new Date(timestamp);
 
-   const months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+   const months = [
+      "january",
+      "february",
+      "march",
+      "april",
+      "may",
+      "june",
+      "july",
+      "august",
+      "september",
+      "october",
+      "november",
+      "december",
+   ];
 
-   let swapEndString = ("0"+swapDate.getDate()).slice(-2) + " ";
+   let swapEndString = ("0" + swapDate.getDate()).slice(-2) + " ";
    swapEndString += months[swapDate.getMonth()] + ", ";
    swapEndString += swapDate.getFullYear() + " ";
-   swapEndString += ("0"+swapDate.getHours()).slice(-2) + ":";
-   swapEndString += ("0"+swapDate.getMinutes()).slice(-2);
+   swapEndString += ("0" + swapDate.getHours()).slice(-2) + ":";
+   swapEndString += ("0" + swapDate.getMinutes()).slice(-2);
 
    return (
       <div className={progressbar + (className ? " " + className : "")}>

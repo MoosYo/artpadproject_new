@@ -48,6 +48,8 @@ const { level, staked, balance, timeRange, selectedTime, isTokenUnlocked } = win
      };
 
 export default function SteakingPage(props) {
+   const local = "ru-RU";
+
    const [selected, setSelected] = useState(selectedTime);
 
    return (
