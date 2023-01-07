@@ -29,6 +29,7 @@ const {
 } = classes;
 
 export default function Footer() {
+   const local = "ru-RU";
    const navigationItems = [
       {
          text: "Home",
@@ -72,13 +73,13 @@ export default function Footer() {
    return (
       <footer className={footer}>
          <div className={column}>
-            {/* <div className={description}>
+            <div className={description}>
                <p className={description__text}>
                   ArtPad is a decentralized multi-chain fundraising platform enabling projects to raise capital and
                   promise safety to early stage investors. Stake ArtPad tokens to get priority-access to promising
                   projects.
                </p>
-            </div> */}
+            </div>
             <div className={socials_list}>
                <a href="#" title="medium" className={social}>
                   <svg width="33" height="27" viewBox="0 0 33 27" fill="none" xmlns="http://www.w3.org/2000/svg">

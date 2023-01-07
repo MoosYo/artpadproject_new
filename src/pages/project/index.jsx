@@ -190,17 +190,13 @@ export default function ProjectPage(props) {
       switch (cur) {
          case "usd": {
             return "$";
-            break;
          }
          case "eur": {
             return "€";
-            break;
          }
          case "rub": {
             return "₽";
-            break;
          }
-
          default:
             break;
       }

@@ -31,7 +31,6 @@ const {
    card__label,
    card__chips,
    card__button,
-   curd__buttonText,
 } = classes;
 
 const { level, staked, balance, timeRange, selectedTime, isTokenUnlocked } = window.initState?.staking
@@ -43,18 +42,12 @@ const { level, staked, balance, timeRange, selectedTime, isTokenUnlocked } = win
            { summ: 0, state: true },
            { summ: 0, state: false },
         ],
-        timeRange: [
-            "1 month",
-            "3 month’s",
-            "6 month’s",
-            "12 month’s"
-        ],
+        timeRange: ["1 month", "3 month’s", "6 month’s", "12 month’s"],
         selectedTime: 1,
-        isTokenUnlocked: true
+        isTokenUnlocked: true,
      };
 
 export default function SteakingPage(props) {
-
    const [selected, setSelected] = useState(selectedTime);
 
    return (
@@ -67,13 +60,16 @@ export default function SteakingPage(props) {
                   level: <span className={steaking__subtext}>{level}</span>
                </h3>
                <h3 className={steaking__title}>
-                  staked: <span className={steaking__subtext + " " + steaking__subtext_magenta}>{staked.toLocaleString()} wARTR</span>
+                  staked:{" "}
+                  <span className={steaking__subtext + " " + steaking__subtext_magenta}>
+                     {staked.toLocaleString()} wARTR
+                  </span>
                </h3>
-               {
-                  isTokenUnlocked !== null ? (
-                     <p className={steaking__text}>Your token are {isTokenUnlocked ? "un" : ""}locked</p>
-                  ) : ""
-               }
+               {isTokenUnlocked !== null ? (
+                  <p className={steaking__text}>Your token are {isTokenUnlocked ? "un" : ""}locked</p>
+               ) : (
+                  ""
+               )}
             </div>
             <div className={steaking__cards}>
                {balance.map(({ summ, state }, key) => (
@@ -104,11 +100,7 @@ export default function SteakingPage(props) {
                   <h2 className={steaking__timeTitle}>Steaking time</h2>
                   <p className={steaking__timeValue}>{timeRange[selected]}</p>
                </div>
-               <RangeSlider
-                  values={timeRange}
-                  selected={selected}
-                  onChange={setSelected}
-               />
+               <RangeSlider values={timeRange} selected={selected} onChange={setSelected} />
             </div>
          </div>
       </>
