@@ -53,7 +53,7 @@ export default function App() {
    const ModalContent = (props) => modalContent.content(props);
   return (
     <div className={app}>
-      {/* <Header setModal={showModal} /> */}
+      <Header setModal={showModal} />
       <main className={pageWrapper}>
         {
           path === "/profile" || path === "/profile/" ? (
@@ -82,7 +82,7 @@ export default function App() {
         }
         {path.match(/^\/projects\/.*$/) ? <ProjectPage /> : ""}
       </main>
-      {/* <Footer /> */}
+      <Footer />
 
          <Modal shown={modalContent.shown} onClose={onModalClose}>
             <ModalContent onClose={onModalClose} />
