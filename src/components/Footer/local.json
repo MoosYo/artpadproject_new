@@ -1,0 +1,14 @@
+{
+   "description": {
+      "ru-RU": "ArtPad — это децентрализованная мультицепочная платформа для сбора средств, позволяющая проектам привлекать капитал и гарантирующая безопасность инвесторам на ранних стадиях. Ставьте токены ArtPad, чтобы получить приоритетный доступ к перспективным проектам.",
+      "en-US": "ArtPad is a decentralized multi-chain fundraising platform enabling projects to raise capital and promise safety to early stage investors. Stake ArtPad tokens to get priority-access to promising projects."
+   },
+   "audit": {
+      "ru-RU": "Проверено",
+      "en-US": "Audited by"
+   },
+   "community": {
+      "ru-RU": "Сообщество",
+      "en-US": "Community"
+   }
+}

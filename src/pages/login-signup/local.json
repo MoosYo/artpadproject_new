@@ -1,0 +1,18 @@
+{
+   "sign_in": {
+      "ru-RU": "Войти",
+      "en-US": "Sign in"
+   },
+   "sign_up": {
+      "ru-RU": "Зарегистрироваться",
+      "en-US": "Sign up"
+   },
+   "info_text": {
+      "ru-RU": "Убедитесь, что вы используете&nbsp;правильный URL:",
+      "en-US": "Make sure you are using the&nbsp;correct URL:"
+   },
+   "form_checkbox_text": {
+      "ru-RU": "Я согласен с <a href='/privacy-policy'>политикой конфиденциальности</a> и&nbsp;<a href='/user-agreement'>пользовательским соглашением</a>",
+      "en-US": "I agree with the <a href='/privacy-policy'>privacy policy</a> and&nbsp;<a href='/user-agreement'>user agreement</a>"
+   }
+}

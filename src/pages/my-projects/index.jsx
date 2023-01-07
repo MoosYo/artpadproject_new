@@ -71,6 +71,8 @@ let { data, pagination } = window.initState?.projects
      };
 
 export default function MyProjectsPage(props) {
+   const local = "ru-RU";
+
    const thead = [
       { cname: "Project" },
       { cname: "Round" },
@@ -106,24 +108,22 @@ export default function MyProjectsPage(props) {
                         <span>{token}</span>
                         <span>{status}</span>
                         <span>
-                           <a href={link}>
-                              Click
-                           </a>
+                           <a href={link}>Click</a>
                         </span>
                      </div>
                   ))}
                </div>
             </div>
          </div>
-         {
-            pagination.totalPagesCount > 1 ? (
-               <Pagination
-                  curentPage={pagination.current}
-                  totalPages={pagination.totalPagesCount}
-                  href="/profile/my-projects"
-               />
-            ) : ""
-         }
+         {pagination.totalPagesCount > 1 ? (
+            <Pagination
+               curentPage={pagination.current}
+               totalPages={pagination.totalPagesCount}
+               href="/profile/my-projects"
+            />
+         ) : (
+            ""
+         )}
       </>
    );
 }

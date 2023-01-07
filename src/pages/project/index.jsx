@@ -186,21 +186,19 @@ const { header, links, info, news, story } = window.initState?.project
      };
 
 export default function ProjectPage(props) {
+   const local = "ru-RU";
+
    const getCurrency = (cur) => {
       switch (cur) {
          case "usd": {
             return "$";
-            break;
          }
          case "eur": {
             return "€";
-            break;
          }
          case "rub": {
             return "₽";
-            break;
          }
-
          default:
             break;
       }
