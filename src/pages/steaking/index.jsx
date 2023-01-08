@@ -15,8 +15,10 @@ const {
    steaking__layout,
    steaking__content,
    steaking__title,
+   steaking__titleMobDrop,
    steaking__subtext,
    steaking__subtext_magenta,
+   steaking__subtext_small,
    steaking__text,
    steaking__cards,
    steaking__wrapper,
@@ -24,6 +26,13 @@ const {
    steaking__timeHeader,
    steaking__timeTitle,
    steaking__timeValue,
+
+   steaking__timeTitleText,
+   steaking__timeTitleNote,
+   steaking__resultText,
+   steaking__resultValue,
+   steaking__resultLink,
+   steaking__timeNote,
 
    card,
    card__title,
@@ -33,11 +42,14 @@ const {
    card__button,
 } = classes;
 
-const { level, staked, balance, timeRange, selectedTime, isTokenUnlocked } = window.initState?.staking
+const { level, nextLevel, tierMultiplier, staked, stakedMultiplier, balance, timeRange, selectedTime, isTokenUnlocked, stakingResult } = window.initState?.staking
    ? window.initState?.staking
    : {
         level: 7,
+        nextLevel: 62000,
+        tierMultiplier: 15,
         staked: 750000,
+        stakedMultiplier: 15,
         balance: [
            { summ: 0, state: true },
            { summ: 0, state: false },
@@ -45,6 +57,7 @@ const { level, staked, balance, timeRange, selectedTime, isTokenUnlocked } = win
         timeRange: ["1 month", "3 month’s", "6 month’s", "12 month’s"],
         selectedTime: 1,
         isTokenUnlocked: true,
+        stakingResult: 12000
      };
 
 export default function SteakingPage(props) {
@@ -59,14 +72,31 @@ export default function SteakingPage(props) {
          <div className={steaking__layout}>
             <div className={steaking__content}>
                <h3 className={steaking__title}>
-                  level: <span className={steaking__subtext}>{level}</span>
+                  level: <span className={steaking__subtext}>tier {level}</span>&nbsp;<br className={steaking__titleMobDrop} />
+                         <span className={steaking__subtext + " " + steaking__subtext_small}><a href="###" className={steaking__subtext_magenta}>upgrade tier to {level + 1}</a> ({nextLevel.toLocaleString()} BonusCoin)</span>
                </h3>
+
                <h3 className={steaking__title}>
-                  staked:{" "}
+                  tier, Multiplier:&nbsp;
+                  <span className={steaking__subtext + " " + steaking__subtext_magenta}>
+                     x{tierMultiplier}
+                  </span>
+               </h3>
+
+               <h3 className={steaking__title}>
+                  staked:&nbsp;
                   <span className={steaking__subtext + " " + steaking__subtext_magenta}>
                      {staked.toLocaleString()} wARTR
                   </span>
                </h3>
+
+               <h3 className={steaking__title}>
+                  Staked, Multiplier:&nbsp;
+                  <span className={steaking__subtext + " " + steaking__subtext_magenta}>
+                     x{stakedMultiplier}
+                  </span>
+               </h3>
+
                {isTokenUnlocked !== null ? (
                   <p className={steaking__text}>Your token are {isTokenUnlocked ? "un" : ""}locked</p>
                ) : (
@@ -99,10 +129,25 @@ export default function SteakingPage(props) {
             </div>
             <div className={steaking__time}>
                <div className={steaking__timeHeader}>
-                  <h2 className={steaking__timeTitle}>Steaking time</h2>
+                  <h2 className={steaking__timeTitle}>
+                     <span className={steaking__timeTitleText}>Steaking time</span>
+                     <span className={steaking__timeTitleNote}>
+                        <span className={steaking__resultText}>for staking you get:</span>&nbsp;
+                        <span className={steaking__resultValue}>
+                           {stakingResult.toLocaleString()} <a href="###" className={steaking__resultLink}>BonusCoin</a>
+                        </span>
+                     </span>
+                  </h2>
                   <p className={steaking__timeValue}>{timeRange[selected]}</p>
                </div>
                <RangeSlider values={timeRange} selected={selected} onChange={setSelected} />
+
+               <div className={steaking__timeNote}>
+                  <span className={steaking__resultText}>for staking you get:</span>
+                  <span className={steaking__resultValue}>
+                     {stakingResult.toLocaleString()} <a href="###" className={steaking__resultLink}>BonusCoin</a>
+                  </span>
+               </div>
             </div>
          </div>
       </>
