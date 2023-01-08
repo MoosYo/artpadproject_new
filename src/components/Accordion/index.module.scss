@@ -1,0 +1,69 @@
+@import "../../styles/colors.scss";
+@import "../../styles/helpers.scss";
+
+.accordion {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   align-items: flex-start;
+   justify-content: flex-start;
+   background: transparent;
+
+   gap: 5px;
+   padding: 8px 16px;
+   border: 1px solid $accent;
+   border-radius: 15px;
+   margin-bottom: 32px;
+
+   @media screen and (min-width: 500px) {
+      gap: vw(10px, 360px);
+      padding: vw(8px, 360px) vw(16px, 360px);
+      border: vw(1px, 360px) solid $accent;
+      border-radius: vw(30px, 360px);
+      margin-bottom: vw(32px, 360px);
+   }
+
+   @media screen and (min-width: 920px) {
+      gap: vw(10px);
+      padding: vw(32px) vw(64px);
+      border: vw(1px) solid $accent;
+      border-radius: vw(30px);
+      margin-bottom: vw(32px);
+   }
+
+   @media screen and (min-width: 1600px) {
+      gap: 10px;
+      padding: 32px 64px;
+      border: 1px solid $accent;
+      border-radius: 30px;
+      margin-bottom: 32px;
+   }
+
+   &__title {
+      text-align: center;
+      color: $white;
+      width: 100%;
+
+      font-size: 30px;
+      line-height: 30px;
+
+      @media screen and (min-width: 500px) {
+         font-size: vw(30px, 360px);
+         line-height: vw(30px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         font-size: vw(30px);
+         line-height: vw(30px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         font-size: 30px;
+         line-height: 30px;
+      }
+   }
+
+   p {
+      color: #fff;
+   }
+}
