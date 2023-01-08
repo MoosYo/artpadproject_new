@@ -1,0 +1,15 @@
+{
+    "header": {
+       "ru-RU": "Введите Ваш промо-код",
+       "en-US": "Enter you’r promo code"
+    },
+    "placeholder": {
+       "ru-RU": "Промо-код",
+       "en-US": "Promo code"
+    },
+    "button": {
+       "ru-RU": "Отправить",
+       "en-US": "Enter"
+    }
+ }
+ 

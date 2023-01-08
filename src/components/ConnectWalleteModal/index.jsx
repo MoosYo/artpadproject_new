@@ -1,10 +1,15 @@
 import classes from "./styles.module.scss";
+import lang from "./local.json";
 
+// Components
 import Button from "../Button";
 import CloseIcon from "../Icons/Close";
 import MetaMaskLogo from "../Icons/MetaMaskLogo";
 import WalletConnectLogo from "../Icons/WalletConnectLogo";
 import TrustWalletLogo from "../Icons/TrustWalletLogo";
+
+// Helpers
+import getLocale from "../../helpers/getLoacale";
 
 const {
    block,
@@ -18,12 +23,13 @@ const {
 } = classes;
 
 export default function ConnectWalletModal(props) {
-   const local = "ru-RU";
+
+   const locale = getLocale();
 
    return (
       <div className={block}>
          <div className={block__header}>
-            <h2 className={block__headerTitle}>Select you’re wallet</h2>
+            <h2 className={block__headerTitle}>{lang.header[locale]}</h2>
 
             <button className={block__closeBtn} onClick={props.onClose}>
                <CloseIcon className={block__closeBtnIcon} />
@@ -33,7 +39,6 @@ export default function ConnectWalletModal(props) {
             className={block__button}
             variant={"solid"}
             onClick={() => {
-               console.log("MetaMask");
                props.onClose();
             }}
          >
@@ -44,7 +49,6 @@ export default function ConnectWalletModal(props) {
             className={block__button}
             variant={"solid"}
             onClick={() => {
-               console.log("WalletConnect");
                props.onClose();
             }}
          >
@@ -55,7 +59,6 @@ export default function ConnectWalletModal(props) {
             className={block__button}
             variant={"solid"}
             onClick={() => {
-               console.log("TrustWallet");
                props.onClose();
             }}
          >

@@ -8,6 +8,9 @@ import Button from "../../components/Button";
 import Input from "../../components/Input";
 import Checkbox from "../../components/Checkbox";
 
+// Helpers
+import getLocale from "../../helpers/getLoacale";
+
 const {
    block,
    block__container,
@@ -33,8 +36,9 @@ const { data } = window.initState
         data: "text",
      };
 
-export default function LoginSignupPage(props) {
-   const local = "ru-RU";
+export default function LoginSignupPage({}) {
+
+   const local = getLocale();
 
    const path = window.location.pathname;
 

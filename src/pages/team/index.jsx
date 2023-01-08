@@ -1,5 +1,5 @@
 import classes from "./styles.module.scss";
-import localize from "./local.json";
+import lang from "./local.json";
 
 // Components
 import Tabs from "../../components/Tabs";
@@ -15,6 +15,9 @@ import Progressbar from "../../components/Progressbar";
 import Chip from "../../components/Chip";
 import { useState } from "react";
 import Button from "../../components/Button";
+
+// Helpers
+import getLocale from "../../helpers/getLoacale";
 
 const {
    teamPage__memberContainer,
@@ -43,7 +46,7 @@ const {
    teamPage__listNavLinksText,
 } = classes;
 
-const { userName, avatar, expireIn, level, invitedBy, activeMembers, totalMembers, coinsCount, delegated } = window
+const { userName, avatar, expireIn, level, invitedBy, teamLevel, activeMembers, totalMembers, coinsCount, delegated } = window
    .initState?.team
    ? window.initState?.team
    : {
@@ -52,6 +55,7 @@ const { userName, avatar, expireIn, level, invitedBy, activeMembers, totalMember
         expireIn: 1663837440000,
         level: 10,
         invitedBy: "makeart",
+        teamLevel: 1,
         activeMembers: 6,
         totalMembers: 395,
         coinsCount: 1065127,
@@ -59,7 +63,8 @@ const { userName, avatar, expireIn, level, invitedBy, activeMembers, totalMember
      };
 
 export default function TeamPage({setModal}) {
-   const local = "ru-RU";
+
+   const locale = getLocale();
 
    const expireInDate = new Date(expireIn);
 
@@ -74,7 +79,7 @@ export default function TeamPage({setModal}) {
    return (
       <>
          <Tabs tabs={profileRoutes} />
-         <PageHeader>{localize.header_title[local]}</PageHeader>
+         <PageHeader>{lang.header_title[locale]}</PageHeader>
          <Layout>
             <Container className={teamPage__memberContainer}>
                <Avatar img={avatar} className={teamPage__memberAvatar} />
@@ -82,14 +87,14 @@ export default function TeamPage({setModal}) {
                   <div className={teamPage__memberNameBlock}>
                      <h2 className={teamPage__memberName}>
                         {invitedBy !== null && invitedBy.length > 0 ? (
-                           <p className={teamPage__memberInvitedBy}>Вас пригласил {invitedBy}</p>
+                           <p className={teamPage__memberInvitedBy}>{lang.invite[locale]} {invitedBy}</p>
                         ) : (
                         ""
                         )}
                         {userName}
                      </h2>
                      <Chip className={teamPage__memberExpireIn}>
-                        Стейкинг до {expireInDate.toLocaleDateString("ru-RU")} {expireInDate.getHours()}:
+                        {lang.stakingTo[locale]} {expireInDate.toLocaleDateString("ru-RU")} {expireInDate.getHours()}:
                         {("0" + expireInDate.getMinutes()).slice(-2)}
                      </Chip>
                   </div>
@@ -101,46 +106,46 @@ export default function TeamPage({setModal}) {
                   <div className={teamPage__memberInviteCodeBlock}>
                      <Button
                         className={teamPage__memberButtons}
-                     >Upgrate</Button>
+                     >{lang.upgrade[locale]}</Button>
                      <Button
                         className={teamPage__memberButtons}
                         variant="outline"
                         onClick={() => setModal((props) => <PromocodeModal {...props} />)}
-                     >Enter promo code</Button>
+                     >{lang.enterPromo[locale]}</Button>
                   </div>
                </div>
             </Container>
             <Layout direction="vertical">
                <Container className={teamPage__numbersDataBlock}>
-                  <h2 className={teamPage__numbersDataTitle}>Members (active)</h2>
+                  <h2 className={teamPage__numbersDataTitle}>{lang.mActivCount[locale]}</h2>
                   <p className={teamPage__numbersDataValue}>
-                     {totalMembers.toLocaleString("ru-RU")}
+                     {activeMembers.toLocaleString("ru-RU")}
                      <span className={teamPage__numbersDataValue_small}>
                         {" "}
-                        / {activeMembers.toLocaleString("ru-RU")}
+                        / {totalMembers.toLocaleString("ru-RU")}
                      </span>
                   </p>
                </Container>
                <Container className={teamPage__numbersDataBlock}>
-                  <h2 className={teamPage__numbersDataTitle}>Сoins in the team</h2>
+                  <h2 className={teamPage__numbersDataTitle}>{lang.coinsCount[locale]}</h2>
                   <p className={teamPage__numbersDataValue}>{coinsCount.toLocaleString("ru-RU")}</p>
                </Container>
                <Container className={teamPage__numbersDataBlock}>
-                  <h2 className={teamPage__numbersDataTitle}>Delegated by the team</h2>
+                  <h2 className={teamPage__numbersDataTitle}>{lang.delegatedCount[locale]}</h2>
                   <p className={teamPage__numbersDataValue}>{delegated.toLocaleString("ru-RU")}</p>
                </Container>
             </Layout>
          </Layout>
 
-         <PageHeader className={teamPage__listHeader}>Level 1</PageHeader>
-         <p className={teamPage__listPreText}>Invited members</p>
+         <PageHeader className={teamPage__listHeader}>{lang.level[locale]} {teamLevel}</PageHeader>
+         <p className={teamPage__listPreText}>{lang.invitedMembers[locale]}</p>
          <div className={teamPage__listNav}>
             <a
                href="#all"
                onClick={() => setActiveList("all")}
                className={teamPage__listNavLinks + (activeList === "all" ? " " + teamPage__listNavLinks_active : "")}
             >
-               <span className={teamPage__listNavLinksText}>All</span>&nbsp;({totalMembers.toLocaleString("ru-RU")})
+               <span className={teamPage__listNavLinksText}>{lang.all[locale]}</span>&nbsp;({totalMembers.toLocaleString("ru-RU")})
             </a>
             <a
                href="#activated"
@@ -149,7 +154,7 @@ export default function TeamPage({setModal}) {
                   teamPage__listNavLinks + (activeList === "activated" ? " " + teamPage__listNavLinks_active : "")
                }
             >
-               <span className={teamPage__listNavLinksText}>Activated</span>&nbsp;(
+               <span className={teamPage__listNavLinksText}>{lang.activated[locale]}</span>&nbsp;(
                {activeMembers.toLocaleString("ru-RU")})
             </a>
             <a
@@ -159,7 +164,7 @@ export default function TeamPage({setModal}) {
                   teamPage__listNavLinks + (activeList === "not-activated" ? " " + teamPage__listNavLinks_active : "")
                }
             >
-               <span className={teamPage__listNavLinksText}>Not activated</span>&nbsp;(
+               <span className={teamPage__listNavLinksText}>{lang.notActivated[locale]}</span>&nbsp;(
                {(totalMembers - activeMembers).toLocaleString("ru-RU")})
             </a>
          </div>

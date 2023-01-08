@@ -1,6 +1,6 @@
 {
-   "": {
-      "ru-RU": "",
-      "en-US": ""
+   "header": {
+      "ru-RU": "Выберите Ваш кошелёк",
+      "en-US": "Select you’re wallet"
    }
 }

@@ -17,6 +17,9 @@ import mainRoutes from "../../routes/main";
 import LocaleIcon from "../Icons/locale";
 import CopyOutlineIcon from "../Icons/CopyOutline";
 
+// Helpers
+import getLocale from "../../helpers/getLoacale";
+
 const {
    header,
    header__logo,
@@ -49,7 +52,7 @@ const {
 
 export default function Header(props) {
 
-   const locale = "ru-RU";
+   const locale = getLocale();
    const isLogedIn = false;
    const wallet = null;
 
@@ -191,7 +194,7 @@ export default function Header(props) {
                         </a>
                      </div>
                   ) : (
-                     <a href={isLogedIn ? "/profile" : "/sign-in"} className={header__navIcon} title={isLogedIn ? lang.profile[locale] : lang.signin[locale]}>
+                     <a href={isLogedIn ? "/profile" : "/sign-in"} className={header__navIcon + " " + hideOnMob} title={isLogedIn ? lang.profile[locale] : lang.signin[locale]}>
                         <PersonIcon />
                      </a>
                   )

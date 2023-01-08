@@ -10,6 +10,9 @@ import PageHeader from "../../components/PageHeader";
 import React from "react";
 import Pagination from "../../components/Pagination";
 
+// Helpers
+import getLocale from "../../helpers/getLoacale";
+
 const { my_project__layout, table, table__header, table__title, table__body, table__row, table__cel } = classes;
 
 let { data, pagination } = window.initState?.projects
@@ -71,8 +74,9 @@ let { data, pagination } = window.initState?.projects
         },
      };
 
-export default function MyProjectsPage(props) {
-   const local = "ru-RU";
+export default function MyProjectsPage({}) {
+
+   const local = getLocale();
 
    const thead = [
       { cname: localize.thead[local][0] },

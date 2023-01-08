@@ -1,7 +1,13 @@
+import classes from "./styles.module.scss";
+import lang from "./local.json";
+
+// Components
 import Button from "../Button";
 import CloseIcon from "../Icons/Close";
 import Input from "../Input";
-import classes from "./styles.module.scss";
+
+// Helpers
+import getLocale from "../../helpers/getLoacale";
 
 const {
     block,
@@ -14,11 +20,12 @@ const {
 } = classes;
 
 const PromocodeModal = ({onClose = () => {}}) => {
+    const locale = getLocale();
 
     return (
         <div className={block}>
            <div className={block__header}>
-              <h2 className={block__headerTitle}>Enter you’r promo code</h2>
+              <h2 className={block__headerTitle}>{lang.header[locale]}</h2>
   
               <button className={block__closeBtn} onClick={onClose}>
                  <CloseIcon className={block__closeBtnIcon} />
@@ -29,12 +36,12 @@ const PromocodeModal = ({onClose = () => {}}) => {
                     required={true}
                     name={"promocode"}
                     className={block__input}
-                    placeholder={"Promo code"}
+                    placeholder={lang.placeholder[locale]}
                 />
                 <Button
                     type={"submit"}
                     className={block__button}
-                >Enter</Button>
+                >{lang.button[locale]}</Button>
            </form>
         </div>
     );
