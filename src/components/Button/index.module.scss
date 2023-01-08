@@ -51,18 +51,18 @@
       background: black;
       border: solid $button-link-border;
 
-      border-width: 1px;
+      border-width: 2px;
 
       @media screen and (min-width: 500px) {
-         border-width: vw(1px, 360px);
+         border-width: vw(2px, 360px);
       }
 
       @media screen and (min-width: 920px) {
-         border-width: vw(1px);
+         border-width: vw(2px);
       }
 
       @media screen and (min-width: 1600px) {
-         border-width: 1px;
+         border-width: 2px;
       }
 
       &:hover {

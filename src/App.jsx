@@ -67,7 +67,7 @@ export default function App() {
         }
         {
           path === "/profile/team" || path === "/profile/team/" ? (
-            <TeamPage />
+            <TeamPage setModal={showModal} />
           ) : ""
         }
         {
