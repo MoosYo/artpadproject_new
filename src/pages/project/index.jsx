@@ -40,8 +40,6 @@ const { header, links, info, news, story } = window.initState?.project
            title: "SEOR",
         },
         links: [
-           { title: "Telegram", href: "#" },
-           { title: "Twitter", href: "#" },
            { title: "Whitepeper", href: "#" },
            { title: "Tokenomics", href: "#" },
         ],
@@ -149,8 +147,23 @@ const { header, links, info, news, story } = window.initState?.project
               ],
            },
            {
+              title: "REGISTRATION",
+              active: false,
+              points: [],
+           },
+           {
               title: "Swap",
               active: true,
+              points: [
+                 {
+                    title: "End of FCFS -",
+                    time: 1670929200,
+                 },
+              ],
+           },
+           {
+              title: "FCFS",
+              active: false,
               points: [
                  {
                     title: "Whitelist start —",
@@ -177,11 +190,6 @@ const { header, links, info, news, story } = window.initState?.project
                  },
               ],
            },
-           {
-              title: "Ended",
-              active: false,
-              points: [],
-           },
         ],
      };
 
@@ -207,23 +215,24 @@ export default function ProjectPage(props) {
    return (
       <>
          <div className={project__layout}>
-            <div className={project__head}>
-               <img src={header.img} alt={header.title} />
-               <h2 className={project__title}>{header.title}</h2>
-            </div>
-            <ul className={project__links}>
-               {links.map(({ title, href }, key) => (
-                  <li key={key}>
-                     <Button variant={"outline"} href={href}>
-                        {title}
-                     </Button>
-                  </li>
-               ))}
-            </ul>
             <StoryBoard steps={story} />
             <div className={project__body}>
                <Container className={project__container}>
                   <aside className={project__info}>
+                     <div className={project__head}>
+                        <img src={header.img} alt={header.title} />
+                        <h2 className={project__title}>{header.title}</h2>
+                     </div>
+                     <ul className={project__links}>
+                        {links.map(({ title, href }, key) => (
+                           <li key={key}>
+                              <Button variant={"grey"} href={href}>
+                                 {title}
+                              </Button>
+                           </li>
+                        ))}
+                     </ul>
+                     <hr />
                      <ul className={project__info__items}>
                         <li>
                            <span className={project__info__items__title}>Raise Currency</span>
