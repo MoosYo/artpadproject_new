@@ -35,16 +35,19 @@ const {
 } = classes;
 
 export default function Footer() {
-
    const locale = getLocale();
 
    const comm = [
       {
-         text: "Telegram",
+         text: "Telegram Ann",
          href: "#",
       },
       {
-         text: "DEM",
+         text: "Telegram En",
+         href: "#",
+      },
+      {
+         text: "Telegram Ru",
          href: "#",
       },
    ];
@@ -55,9 +58,7 @@ export default function Footer() {
       <footer className={footer}>
          <div className={column}>
             <div className={description}>
-               <p className={description__text}>
-                  {lang.description[locale]}
-               </p>
+               <p className={description__text}>{lang.description[locale]}</p>
             </div>
             <div className={socials_list}>
                <a href="#" title="Medium" className={social}>
@@ -125,9 +126,9 @@ export default function Footer() {
                   <ul className={links_list + " " + link_list_fix}>
                      {comm.map(({ text, href }, key) => (
                         <li className={links_list__item} key={key}>
-                           <Button variant={"outline"} className={font_fix} href={href}>
+                           <a href={href} className={font_fix} target="_blank" rel="noopener noreferrer">
                               {text}
-                           </Button>
+                           </a>
                         </li>
                      ))}
                   </ul>
@@ -136,7 +137,7 @@ export default function Footer() {
             <div className={audit}>
                <h3 className={footer__title}>{lang.audit[locale]}:</h3>
                <a href="/public/img/defimoon.png" target="_blank" className={audit__link}>
-                  <img src="/public/img/defimoon.png" alt={lang.audit[locale]+" QuillAudits"} />
+                  <img src="/public/img/defimoon.png" alt={lang.audit[locale] + " QuillAudits"} />
                </a>
             </div>
          </div>
