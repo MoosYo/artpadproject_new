@@ -1,6 +1,18 @@
 {
-   "": {
-      "ru-RU": "",
-      "en-US": ""
+   "calendar": {
+      "ru-RU": "Календарь",
+      "en-US": "Calendar"
+   },
+   "signin": {
+      "ru-RU": "Войти или зарегистрироваться",
+      "en-US": "Sign-in or sign-up"
+   },
+   "profile": {
+      "ru-RU": "Профиль",
+      "en-US": "Profile"
+   },
+   "buyARTR": {
+      "ru-RU": "Купить ARTR",
+      "en-US": "Buy ARTR"
    }
 }

@@ -1,26 +1,44 @@
 const mainRoutes = [
     {
-        text: "Home",
+        text: {
+            "en-US": "Home",
+            "ru-RU": "Главная"
+        },
         href: "/"
     },
     {
-        text: "Projects",
+        text: {
+            "en-US": "Projects",
+            "ru-RU": "Проекты"
+        },
         href: "/projects"
     },
     {
-        text: "Levels",
+        text: {
+            "en-US": "Levels",
+            "ru-RU": "Уровни"
+        },
         href: "/levels"
     },
     {
-        text: "Swap",
+        text: {
+            "en-US": "Swap",
+            "ru-RU": "Обмен"
+        },
         href: "/swap"
     },
     {
-        text: "FAQ",
+        text: {
+            "en-US": "FAQ",
+            "ru-RU": "Вопрос/ответ"
+        },
         href: "/faq"
     },
     {
-        text: "NFT Marketplace",
+        text: {
+            "en-US": "NFT Marketplace",
+            "ru-RU": "NFT Маркетплейс"
+        },
         href: "/nft-marketplace"
     }
 ];
