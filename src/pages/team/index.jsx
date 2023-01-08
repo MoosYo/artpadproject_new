@@ -1,4 +1,5 @@
 import classes from "./styles.module.scss";
+import localize from "./local.json";
 
 // Components
 import Tabs from "../../components/Tabs";
@@ -69,7 +70,7 @@ export default function TeamPage(props) {
    return (
       <>
          <Tabs tabs={profileRoutes} />
-         <PageHeader>Team</PageHeader>
+         <PageHeader>{localize.header_title[local]}</PageHeader>
          <Layout>
             <Container className={teamPage__memberContainer}>
                <Avatar img={avatar} className={teamPage__memberAvatar} />

@@ -1,6 +1,10 @@
 {
-   "": {
-      "ru-RU": "",
-      "en-US": ""
+   "header_title": {
+      "ru-RU": "Команда",
+      "en-US": "Team"
+   },
+   "wallet": {
+      "ru-RU": "Кошелёк",
+      "en-US": "Wallet"
    }
 }

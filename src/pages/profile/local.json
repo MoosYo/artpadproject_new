@@ -1,6 +1,18 @@
 {
-   "": {
-      "ru-RU": "",
-      "en-US": ""
+   "header_title": {
+      "ru-RU": "Профиль",
+      "en-US": "Profile"
+   },
+   "wallet": {
+      "ru-RU": "Кошелёк",
+      "en-US": "Wallet"
+   },
+   "link": {
+      "ru-RU": "Реферальня ссылка",
+      "en-US": "Invitation link"
+   },
+   "edit": {
+      "ru-RU": "Редактировать",
+      "en-US": "Edit"
    }
 }

@@ -1,10 +1,14 @@
 {
    "header_title": {
-      "ru-RU": "Мой проект",
-      "en-US": "My Project"
+      "ru-RU": "Мои проекты",
+      "en-US": "My Projects"
    },
    "thead": {
       "ru-RU": ["Проект", "Раунд", "Пул", "Цена", "Токен", "Статус", "Ссылка"],
       "en-US": ["Project", "Round", "Pool", "Price", "Token", "Status", "Link"]
+   },
+   "click": {
+      "ru-RU": "Перейти",
+      "en-US": "Click"
    }
 }

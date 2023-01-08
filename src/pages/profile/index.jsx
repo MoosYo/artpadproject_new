@@ -1,4 +1,5 @@
 import classes from "./styles.module.scss";
+import localize from "./local.json";
 
 // Components
 import Tabs from "../../components/Tabs";
@@ -64,7 +65,7 @@ export default function ProfilePage(props) {
    return (
       <>
          <Tabs tabs={profileRoutes} />
-         <PageHeader>Profile</PageHeader>
+         <PageHeader>{localize.header_title[local]}</PageHeader>
          <Layout>
             <Container className={profilePage__mainBlock}>
                <Avatar img={avatar} className={profilePage__userAvatar} />
@@ -73,7 +74,7 @@ export default function ProfilePage(props) {
                      <p className={profilePage__userNameText}>{login}</p>
 
                      <a href="/profile/edit" className={profilePage__userNameEdit} type="button">
-                        <span className={profilePage__userNameEditText}>Edit</span>
+                        <span className={profilePage__userNameEditText}>{localize.edit[local]}</span>
                         <EditIcon className={profilePage__userNameEditIcon} />
                      </a>
                   </div>
@@ -99,14 +100,14 @@ export default function ProfilePage(props) {
 
             <Layout direction="vertical">
                <Container className={profilePage__rightBlock}>
-                  <h2 className={profilePage__rightBlockHeader}>Wallet</h2>
+                  <h2 className={profilePage__rightBlockHeader}>{localize.wallet[local]}</h2>
                   <p className={profilePage__copyBlock}>
                      <span className={profilePage__copyBlockText}>{shortWallet}</span>
                      <CopyIcon className={profilePage__copyBlockIcon} onClick={() => copy(wallet)} />
                   </p>
                </Container>
                <Container className={profilePage__rightBlock}>
-                  <h2 className={profilePage__rightBlockHeader}>Invitation link</h2>
+                  <h2 className={profilePage__rightBlockHeader}>{localize.link[local]}</h2>
                   <p className={profilePage__copyBlock}>
                      <span className={profilePage__copyBlockText}>{inviteLink}</span>
                      <CopyIcon className={profilePage__copyBlockIcon} onClick={() => copy(inviteLink)} />

@@ -1,4 +1,5 @@
 import classes from "./styles.module.scss";
+import localize from "./local.json";
 
 // Components
 import Tabs from "../../components/Tabs";
@@ -55,20 +56,22 @@ export default function SteakingPage(props) {
    return (
       <>
          <Tabs tabs={profileRoutes} />
-         <PageHeader>Stacking</PageHeader>
+         <PageHeader>{localize.header_title[local]}</PageHeader>
          <div className={steaking__layout}>
             <div className={steaking__content}>
                <h3 className={steaking__title}>
-                  level: <span className={steaking__subtext}>{level}</span>
+                  {localize.level[local]}: <span className={steaking__subtext}>{level}</span>
                </h3>
                <h3 className={steaking__title}>
-                  staked:{" "}
+                  {localize.staced[local]}:{" "}
                   <span className={steaking__subtext + " " + steaking__subtext_magenta}>
                      {staked.toLocaleString()} wARTR
                   </span>
                </h3>
                {isTokenUnlocked !== null ? (
-                  <p className={steaking__text}>Your token are {isTokenUnlocked ? "un" : ""}locked</p>
+                  <p className={steaking__text}>
+                     {isTokenUnlocked ? localize.token_unlocked[local] : localize.token_locked[local]}
+                  </p>
                ) : (
                   ""
                )}
@@ -78,10 +81,11 @@ export default function SteakingPage(props) {
                   <div className={steaking__wrapper} key={key}>
                      <Container className={card}>
                         <span className={card__title}>
-                           Balance: <span className={card__subtext}>{summ.toLocaleString()} wARTR</span>
+                           {localize.balance[local]}:{" "}
+                           <span className={card__subtext}>{summ.toLocaleString()} wARTR</span>
                         </span>
                         <div className={card__label}>
-                           <span className={card__chips}>Max</span>
+                           <span className={card__chips}>{localize.max[local]}</span>
                            <p>WARTR</p>
                         </div>
                      </Container>
@@ -92,14 +96,14 @@ export default function SteakingPage(props) {
                            console.log("Click");
                         }}
                      >
-                        <span>{state ? "Stake" : "Unstake"}</span>
+                        <span>{state ? localize.stake[local] : localize.unstake[local]}</span>
                      </Button>
                   </div>
                ))}
             </div>
             <div className={steaking__time}>
                <div className={steaking__timeHeader}>
-                  <h2 className={steaking__timeTitle}>Steaking time</h2>
+                  <h2 className={steaking__timeTitle}>{localize.stacking_time[local]}</h2>
                   <p className={steaking__timeValue}>{timeRange[selected]}</p>
                </div>
                <RangeSlider values={timeRange} selected={selected} onChange={setSelected} />
