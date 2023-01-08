@@ -12,6 +12,9 @@ import Button from "../../components/Button";
 import RangeSlider from "../../components/RangeSlider";
 import { useState } from "react";
 
+// Helpers
+import getLocale from "../../helpers/getLoacale";
+
 const {
    steaking__layout,
    steaking__content,
@@ -61,8 +64,9 @@ const { level, nextLevel, tierMultiplier, staked, stakedMultiplier, balance, tim
         stakingResult: 12000
      };
 
-export default function SteakingPage(props) {
-   const local = "en-US";
+export default function SteakingPage({}) {
+
+   const local = getLocale();
 
    const [selected, setSelected] = useState(selectedTime);
 

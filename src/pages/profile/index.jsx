@@ -15,6 +15,9 @@ import Layout from "../../components/Layout";
 import profileRoutes from "../../routes/profile";
 import CopyIcon from "../../components/Icons/Copy";
 
+// Helpers
+import getLocale from "../../helpers/getLoacale";
+
 const {
    profilePage__mainBlock,
    profilePage__rightBlock,
@@ -55,8 +58,9 @@ if (wallet.length > 19) {
 }
 // shortWallet +=
 
-export default function ProfilePage(props) {
-   const local = "ru-RU";
+export default function ProfilePage({}) {
+
+   const local = getLocale();
 
    const copy = (text) => {
       navigator.clipboard.writeText(text);

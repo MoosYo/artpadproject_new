@@ -3,8 +3,52 @@
       "ru-RU": "Команда",
       "en-US": "Team"
    },
-   "wallet": {
-      "ru-RU": "Кошелёк",
-      "en-US": "Wallet"
+   "invite": {
+      "ru-RU": "Вас пригласил(а)",
+      "en-US": "You were invited by"
+   },
+   "stakingTo": {
+      "ru-RU": "Стейкинг до",
+      "en-US": "Staking until"
+   },
+   "upgrade": {
+      "ru-RU": "Повысить",
+      "en-US": "Upgrade"
+   },
+   "enterPromo": {
+      "ru-RU": "Ввести промокод",
+      "en-US": "Enter promo code"
+   },
+   "mActivCount": {
+      "ru-RU": "Участники (активные)",
+      "en-US": "Members (active)"
+   },
+   "coinsCount": {
+      "ru-RU": "Монет в команде",
+      "en-US": "Сoins in the team"
+   },
+   "delegatedCount": {
+      "ru-RU": "Делегировано командой",
+      "en-US": "Delegated by the team"
+   },
+   "level": {
+      "ru-RU": "Уровень",
+      "en-US": "Level"
+   },
+   "invitedMembers": {
+      "ru-RU": "Приглашенные участники",
+      "en-US": "Invited members"
+   },
+   "all": {
+      "ru-RU": "Все",
+      "en-US": "All"
+   },
+   "activated": {
+      "ru-RU": "Активные",
+      "en-US": "Activated"
+   },
+   "notActivated": {
+      "ru-RU": "Не активные",
+      "en-US": "Not activated"
    }
 }
