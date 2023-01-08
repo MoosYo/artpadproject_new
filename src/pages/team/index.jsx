@@ -12,6 +12,7 @@ import profileRoutes from "../../routes/profile";
 import Progressbar from "../../components/Progressbar";
 import Chip from "../../components/Chip";
 import { useState } from "react";
+import Button from "../../components/Button";
 
 const {
    teamPage__memberContainer,
@@ -24,6 +25,8 @@ const {
    teamPage__memberLevelName,
    teamPage__memberLevelProgress,
    teamPage__memberInvitedBy,
+   teamPage__memberInviteCodeBlock,
+   teamPage__memberButtons,
 
    teamPage__numbersDataBlock,
    teamPage__numbersDataTitle,
@@ -75,9 +78,16 @@ export default function TeamPage(props) {
                <Avatar img={avatar} className={teamPage__memberAvatar} />
                <div className={teamPage__memberInfoBlock}>
                   <div className={teamPage__memberNameBlock}>
-                     <h2 className={teamPage__memberName}>{userName}</h2>
+                     <h2 className={teamPage__memberName}>
+                        {invitedBy !== null && invitedBy.length > 0 ? (
+                           <p className={teamPage__memberInvitedBy}>Вас пригласил {invitedBy}</p>
+                        ) : (
+                        ""
+                        )}
+                        {userName}
+                     </h2>
                      <Chip className={teamPage__memberExpireIn}>
-                        Активен до {expireInDate.toLocaleDateString("ru-RU")} {expireInDate.getHours()}:
+                        Стейкинг до {expireInDate.toLocaleDateString("ru-RU")} {expireInDate.getHours()}:
                         {("0" + expireInDate.getMinutes()).slice(-2)}
                      </Chip>
                   </div>
@@ -86,11 +96,10 @@ export default function TeamPage(props) {
                      <Progressbar value={level} showPercents={true} className={teamPage__memberLevelProgress} />
                      <p className={teamPage__memberLevelName}>Coins</p>
                   </div>
-                  {invitedBy !== null && invitedBy.length > 0 ? (
-                     <p className={teamPage__memberInvitedBy}>Вас пригласил {invitedBy}</p>
-                  ) : (
-                     ""
-                  )}
+                  <div className={teamPage__memberInviteCodeBlock}>
+                     <Button className={teamPage__memberButtons}>Upgrate</Button>
+                     <Button className={teamPage__memberButtons} variant="outline" >Enter promo code</Button>
+                  </div>
                </div>
             </Container>
             <Layout direction="vertical">
