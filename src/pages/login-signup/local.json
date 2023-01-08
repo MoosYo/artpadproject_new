@@ -4,7 +4,7 @@
       "en-US": "Sign in"
    },
    "sign_up": {
-      "ru-RU": "Зарегистрироваться",
+      "ru-RU": "Регистрация",
       "en-US": "Sign up"
    },
    "info_text": {
@@ -14,5 +14,9 @@
    "form_checkbox_text": {
       "ru-RU": "Я согласен с <a href='/privacy-policy'>политикой конфиденциальности</a> и&nbsp;<a href='/user-agreement'>пользовательским соглашением</a>",
       "en-US": "I agree with the <a href='/privacy-policy'>privacy policy</a> and&nbsp;<a href='/user-agreement'>user agreement</a>"
-   }
+   },
+   "password": { "ru-RU": "Пароль", "en-US": "Password" },
+   "consfirm_password": { "ru-RU": "Подвердить пароль", "en-US": "Confirm password" },
+   "email": { "ru-RU": "Электронная почта", "en-US": "E-mail" },
+   "login": { "ru-RU": "Псевдоним", "en-US": "Login" }
 }

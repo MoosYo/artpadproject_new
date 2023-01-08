@@ -1,4 +1,5 @@
 import classes from "./styles.module.scss";
+import localize from "./local.json";
 
 // Components
 import Tabs from "../../components/Tabs";
@@ -74,18 +75,18 @@ export default function MyProjectsPage(props) {
    const local = "ru-RU";
 
    const thead = [
-      { cname: "Project" },
-      { cname: "Round" },
-      { cname: "Pool" },
-      { cname: "Price" },
-      { cname: "Token" },
-      { cname: "Status" },
-      { cname: "Link" },
+      { cname: localize.thead[local][0] },
+      { cname: localize.thead[local][1] },
+      { cname: localize.thead[local][2] },
+      { cname: localize.thead[local][3] },
+      { cname: localize.thead[local][4] },
+      { cname: localize.thead[local][5] },
+      { cname: localize.thead[local][6] },
    ];
    return (
       <>
          <Tabs tabs={profileRoutes} />
-         <PageHeader>My Project</PageHeader>
+         <PageHeader>{localize.header_title[local]}</PageHeader>
          <div className={my_project__layout}>
             <div className={table}>
                <div className={table__header}>
@@ -108,7 +109,7 @@ export default function MyProjectsPage(props) {
                         <span>{token}</span>
                         <span>{status}</span>
                         <span>
-                           <a href={link}>Click</a>
+                           <a href={link}>{localize.click[local]}</a>
                         </span>
                      </div>
                   ))}

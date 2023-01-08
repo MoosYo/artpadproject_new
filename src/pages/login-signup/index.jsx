@@ -1,4 +1,5 @@
 import classes from "./styles.module.scss";
+import localize from "./local.json";
 
 // Components
 import Container from "../../components/Container";
@@ -44,10 +45,10 @@ export default function LoginSignupPage(props) {
          <Container className={block__container}>
             <div className={block__header}>
                <button type="button" className={block__headerButton} onClick={() => setCurrentTab(0)}>
-                  Sign in
+                  {localize.sign_in[local]}
                </button>
                <button type="button" className={block__headerButton} onClick={() => setCurrentTab(1)}>
-                  Sign up
+                  {localize.sign_up[local]}
                </button>
                <div
                   className={block__headerIndicator}
@@ -64,7 +65,7 @@ export default function LoginSignupPage(props) {
                      maxHeight: currentTab !== 0 ? "0px" : null,
                   }}
                >
-                  <p className={content__infoText}>Make sure you are using the&nbsp;correct URL:</p>
+                  <p className={content__infoText} dangerouslySetInnerHTML={{ __html: localize.info_text[local] }}></p>
                   <p className={content__infoLink}>
                      <a href="/">art-pad.io</a>
                   </p>
@@ -72,7 +73,7 @@ export default function LoginSignupPage(props) {
                      <Input
                         type="text"
                         name="login"
-                        placeholder="Login"
+                        placeholder={localize.login[local]}
                         required="required"
                         className={content__formInput}
                      />
@@ -80,13 +81,13 @@ export default function LoginSignupPage(props) {
                      <Input
                         type="password"
                         name="password"
-                        placeholder="Password"
+                        placeholder={localize.password[local]}
                         required="required"
                         className={content__formInput}
                      />
 
                      <Button type="submit" variant="solid" className={content__formButton}>
-                        Sign in
+                        {localize.sign_in[local]}
                      </Button>
                   </form>
                </div>
@@ -101,7 +102,7 @@ export default function LoginSignupPage(props) {
                      <Input
                         type="text"
                         name="login"
-                        placeholder="Login"
+                        placeholder={localize.login[local]}
                         required="required"
                         className={content__formInput}
                      />
@@ -109,7 +110,7 @@ export default function LoginSignupPage(props) {
                      <Input
                         type="email"
                         name="email"
-                        placeholder="E-mail"
+                        placeholder={localize.email[local]}
                         required="required"
                         className={content__formInput}
                      />
@@ -117,7 +118,7 @@ export default function LoginSignupPage(props) {
                      <Input
                         type="password"
                         name="password"
-                        placeholder="Password"
+                        placeholder={localize.password[local]}
                         required="required"
                         className={content__formInput}
                      />
@@ -125,21 +126,21 @@ export default function LoginSignupPage(props) {
                      <Input
                         type="password"
                         name="confirm_password"
-                        placeholder="Confirm Password"
+                        placeholder={localize.consfirm_password[local]}
                         required="required"
                         className={content__formInput}
                      />
 
                      <Button type="submit" variant="solid" className={content__formButton}>
-                        Sign up
+                        {localize.sign_up[local]}
                      </Button>
 
                      <label className={content__formCheckbox}>
                         <Checkbox name="user-rules" className={content__formCheckboxInput} />
-                        <span className={content__formCheckboxText}>
-                           I agree with the <a href="/privacy-policy">privacy policy</a> and&nbsp;
-                           <a href="/user-agreement">user agreement</a>
-                        </span>
+                        <span
+                           className={content__formCheckboxText}
+                           dangerouslySetInnerHTML={{ __html: localize.form_checkbox_text[local] }}
+                        ></span>
                      </label>
                   </form>
                </div>

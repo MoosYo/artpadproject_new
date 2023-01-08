@@ -1,6 +1,46 @@
 {
-   "": {
-      "ru-RU": "",
-      "en-US": ""
+   "header_title": {
+      "ru-RU": "Ставится",
+      "en-US": "Stacking"
+   },
+   "level": {
+      "ru-RU": "уровень",
+      "en-US": "level"
+   },
+   "staced": {
+      "ru-RU": "поставлено",
+      "en-US": "staced"
+   },
+   "token_unlocked": {
+      "ru-RU": "Ваш токен разблокирован",
+      "en-US": "Your token are unlocked"
+   },
+   "token_locked": {
+      "ru-RU": "Ваш токен заблокирован",
+      "en-US": "Your token are locked"
+   },
+   "balance": {
+      "ru-RU": "Баланс",
+      "en-US": "Balance"
+   },
+   "max": {
+      "ru-RU": "Макс",
+      "en-US": "Max"
+   },
+   "stacking_time": {
+      "ru-RU": "Время ставки",
+      "en-US": "Staсking time"
+   },
+   "time": {
+      "ru-RU": ["1 месяц", "3 месяца", "6 месяцев", "12 месяцев"],
+      "en-US": ["1 month", "3 month's", "6 month's", "12 month's"]
+   },
+   "stake": {
+      "ru-RU": "Поставить",
+      "en-US": "Stake"
+   },
+   "unstake": {
+      "ru-RU": "Снять ставку",
+      "en-US": "Unstake"
    }
 }
