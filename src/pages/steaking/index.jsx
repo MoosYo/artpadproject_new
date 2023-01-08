@@ -62,7 +62,7 @@ const { level, nextLevel, tierMultiplier, staked, stakedMultiplier, balance, tim
      };
 
 export default function SteakingPage(props) {
-   const local = "ru-RU";
+   const local = "en-US";
 
    const [selected, setSelected] = useState(selectedTime);
 
@@ -73,17 +73,17 @@ export default function SteakingPage(props) {
          <div className={steaking__layout}>
             <div className={steaking__content}>
                <h3 className={steaking__title}>
-                  {localize.level[local]}: <span className={steaking__subtext}>tier {level}</span>&nbsp;<br className={steaking__titleMobDrop} />
-                  <span className={steaking__subtext + " " + steaking__subtext_small}><a href="###" className={steaking__subtext_magenta}>upgrade tier to {level + 1}</a> ({nextLevel.toLocaleString()} BonusCoin)</span>
+                  {localize.level[local]}: <span className={steaking__subtext}>{localize.tier[local]} {level}</span>&nbsp;<br className={steaking__titleMobDrop} />
+                  <span className={steaking__subtext + " " + steaking__subtext_small}><a href="###" className={steaking__subtext_magenta}>{localize.upgradeTo[local]} {level + 1}</a> ({nextLevel.toLocaleString()} BonusCoin)</span>
                </h3>
 
                <h3 className={steaking__title}>
-                  tier, Multiplier:&nbsp;
+                  {localize.tierMultiplier[local]}:&nbsp;
                   <span className={steaking__subtext + " " + steaking__subtext_magenta}>
                      x{tierMultiplier}
                   </span>
                </h3>
-
+               
                <h3 className={steaking__title}>
                   {localize.staced[local]}:&nbsp;
                   <span className={steaking__subtext + " " + steaking__subtext_magenta}>
@@ -92,7 +92,7 @@ export default function SteakingPage(props) {
                </h3>
 
                <h3 className={steaking__title}>
-                  Staked, Multiplier:&nbsp;
+                  {localize.stakedMultiplier[local]}:&nbsp;
                   <span className={steaking__subtext + " " + steaking__subtext_magenta}>
                      x{stakedMultiplier}
                   </span>
@@ -136,7 +136,7 @@ export default function SteakingPage(props) {
                   <h2 className={steaking__timeTitle}>
                      <span className={steaking__timeTitleText}>{localize.stacking_time[local]}</span>
                      <span className={steaking__timeTitleNote}>
-                        <span className={steaking__resultText}>for staking you get:</span>&nbsp;
+                        <span className={steaking__resultText}>{localize.stakingResult[local]}:</span>&nbsp;
                         <span className={steaking__resultValue}>
                            {stakingResult.toLocaleString()} <a href="###" className={steaking__resultLink}>BonusCoin</a>
                         </span>
@@ -147,7 +147,7 @@ export default function SteakingPage(props) {
                <RangeSlider values={timeRange} selected={selected} onChange={setSelected} />
 
                <div className={steaking__timeNote}>
-                  <span className={steaking__resultText}>for staking you get:</span>
+                  <span className={steaking__resultText}>{localize.stakingResult[local]}:</span>
                   <span className={steaking__resultValue}>
                      {stakingResult.toLocaleString()} <a href="###" className={steaking__resultLink}>BonusCoin</a>
                   </span>

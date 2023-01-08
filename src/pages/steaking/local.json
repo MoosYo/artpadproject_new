@@ -1,15 +1,35 @@
 {
    "header_title": {
-      "ru-RU": "Ставится",
+      "ru-RU": "Ставка",
       "en-US": "Stacking"
    },
    "level": {
       "ru-RU": "уровень",
       "en-US": "level"
    },
+   "tier": {
+      "ru-RU": "",
+      "en-US": "tier"
+   },
+   "upgradeTo": {
+      "ru-RU": "повысить до",
+      "en-US": "upgrade tier to"
+   },
+   "tierMultiplier": {
+      "ru-RU": "Множитель уровня",
+      "en-US": "TIER, MULTIPLIER"
+   },
+   "stakedMultiplier": {
+      "ru-RU": "Множитель ставки",
+      "en-US": "Staked, Multiplier"
+   },
+   "stakingResult": {
+      "ru-RU": "Результат ставки",
+      "en-US": "for staking you get"
+   },
    "staced": {
       "ru-RU": "поставлено",
-      "en-US": "staced"
+      "en-US": "staked"
    },
    "token_unlocked": {
       "ru-RU": "Ваш токен разблокирован",
@@ -29,11 +49,7 @@
    },
    "stacking_time": {
       "ru-RU": "Время ставки",
-      "en-US": "Staсking time"
-   },
-   "time": {
-      "ru-RU": ["1 месяц", "3 месяца", "6 месяцев", "12 месяцев"],
-      "en-US": ["1 month", "3 month's", "6 month's", "12 month's"]
+      "en-US": "Staking time"
    },
    "stake": {
       "ru-RU": "Поставить",
