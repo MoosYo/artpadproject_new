@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import classes from "./styles.module.scss";
+import lang from "./local.json";
 
 // Components
 import Logo from "../../assets/svg/logo";
@@ -13,6 +14,8 @@ import ConnectWalletModal from "../ConnectWalleteModal";
 
 // Data
 import mainRoutes from "../../routes/main";
+import LocaleIcon from "../Icons/locale";
+import CopyOutlineIcon from "../Icons/CopyOutline";
 
 const {
    header,
@@ -29,10 +32,26 @@ const {
    header__navMenuLink_active,
    header__navButtons,
    header__navIcon,
+
+   header__language,
+   header__languageIcon,
+   header__languageList,
+   header__languageListSeparator,
+   header__languageLink,
+
+   header__wallet,
+   header__walletProfile,
+   header__walletNumber,
+   header__walletCopyBtn,
+   
+   hideOnMob
 } = classes;
 
 export default function Header(props) {
-   const local = "ru-RU";
+
+   const locale = "ru-RU";
+   const isLogedIn = false;
+   const wallet = null;
 
    const path = window.location.pathname;
 
@@ -66,9 +85,35 @@ export default function Header(props) {
                <a href="/calendar" className={header__navMobileIcon}>
                   <CalendarIcon />
                </a>
-               <a href="/sign-in" className={header__navMobileIcon}>
-                  <PersonIcon />
-               </a>
+               
+               {
+                  wallet ? (
+                     <div className={header__walletProfile}>
+
+                        <div className={header__wallet}>
+                           <p className={header__walletNumber}>
+                              {wallet.substring(0, 6)}...{wallet.substring(wallet.length - 4)}
+                           </p>
+
+                           <button
+                              type="button"
+                              className={header__walletCopyBtn}
+                              onClick={() => {}}
+                           >
+                              <CopyOutlineIcon />
+                           </button>
+                        </div>
+
+                        <a href={isLogedIn ? "/profile" : "/sign-in"} className={header__navMobileIcon}>
+                           <PersonIcon />
+                        </a>
+                     </div>
+                  ) : (
+                     <a href={isLogedIn ? "/profile" : "/sign-in"} className={header__navMobileIcon}>
+                        <PersonIcon />
+                     </a>
+                  )
+               }
                <button
                   className={header__navMobileIcon + " " + header__navMobileIcon_close}
                   type="button"
@@ -88,8 +133,8 @@ export default function Header(props) {
 
                   return (
                      <li className={header__navMenuItem} key={i}>
-                        <a href={href} className={className} title={text}>
-                           {text}
+                        <a href={href} className={className} title={text[locale]}>
+                           {text[locale]}
                         </a>
                      </li>
                   );
@@ -97,18 +142,64 @@ export default function Header(props) {
             </ul>
 
             <div className={header__navButtons}>
-               <a href="/calendar" className={header__navIcon} title="Calendar">
+               <a href="/calendar" className={header__navIcon + " " + hideOnMob} title={lang.calendar[locale]}>
                   <CalendarIcon />
                </a>
-               <a href="/sign-in" className={header__navIcon} title="Profile">
-                  <PersonIcon />
-               </a>
-               <Button href="/buy-artr" className="">
-                  Buy ARTR
-               </Button>
-               <Button onClick={connectWallet} className="">
+               {
+                  isLogedIn ? (
+                     <Button href="/buy-artr" className="">
+                        {lang.buyARTR[locale]}
+                     </Button>
+                  ) : ""
+               }
+
+               <div className={header__language}>
+                  <LocaleIcon className={header__languageIcon} />   
+                  <div className={header__languageList}>
+                     <a
+                        href="/language=ru"
+                        className={header__languageLink}
+                     >RU</a>
+                     <hr className={header__languageListSeparator} />
+                     <a
+                        href="/language=en"
+                        className={header__languageLink}
+                     >EN</a>
+                  </div>
+               </div>
+
+               {
+                  wallet ? (
+                     <div className={header__walletProfile + " " + hideOnMob}>
+
+                        <div className={header__wallet}>
+                           <p className={header__walletNumber}>
+                              {wallet.substring(0, 6)}...{wallet.substring(wallet.length - 4)}
+                           </p>
+
+                           <button
+                              type="button"
+                              className={header__walletCopyBtn}
+                              onClick={() => {}}
+                           >
+                              <CopyOutlineIcon />
+                           </button>
+                        </div>
+
+                        <a href={isLogedIn ? "/profile" : "/sign-in"} className={header__navIcon} title={isLogedIn ? lang.profile[locale] : lang.signin[locale]}>
+                           <PersonIcon />
+                        </a>
+                     </div>
+                  ) : (
+                     <a href={isLogedIn ? "/profile" : "/sign-in"} className={header__navIcon} title={isLogedIn ? lang.profile[locale] : lang.signin[locale]}>
+                        <PersonIcon />
+                     </a>
+                  )
+               }
+               
+               {/* <Button onClick={connectWallet} className="">
                   Connect Wallet
-               </Button>
+               </Button> */}
             </div>
          </nav>
       </header>
