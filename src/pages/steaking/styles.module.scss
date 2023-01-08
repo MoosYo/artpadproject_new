@@ -65,6 +65,7 @@
       font-weight: 600;
       letter-spacing: 0em;
       text-align: left;
+      text-transform: uppercase;
       
       font-size: vw(24px, 360px);
       line-height: vw(28px, 360px);
@@ -87,6 +88,12 @@
       @media screen and (min-width: 1600px) {
          font-size: 24px;
          line-height: 28px;
+      }
+   }
+
+   &__titleMobDrop {
+      @media screen and (min-width: 920px) {
+         display: none;
       }
    }
 
@@ -121,6 +128,32 @@
 
       &_magenta {
          color: $accent;
+      }
+
+      &_small {
+         text-transform: none;
+         font-size: vw(18px, 360px);
+         line-height: vw(21px, 360px);
+         
+         @media screen and (min-width: 360px) {
+            font-size: 18px;
+            line-height: 21px;
+         }
+   
+         @media screen and (min-width: 500px) {
+            font-size: vw(18px, 360px);
+            line-height: vw(21px, 360px);
+         }
+   
+         @media screen and (min-width: 920px) {
+            font-size: vw(18px);
+            line-height: vw(21px);
+         }
+   
+         @media screen and (min-width: 1600px) {
+            font-size: 18px;
+            line-height: 21px;
+         }
       }
    }
 
@@ -247,28 +280,14 @@
          font-weight: 600;
          color: $white !important;
          width: 100%;
+         text-transform: uppercase;
 
-         font-size: vw(24px, 360px);
-         line-height: vw(28px, 360px);
-      
-         @media screen and (min-width: 360px) {
-            font-size: 24px;
-            line-height: 28px;
-         }
-   
-         @media screen and (min-width: 500px) {
-            font-size: vw(24px, 360px);
-            line-height: vw(28px, 360px);
-         }
-   
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+
          @media screen and (min-width: 920px) {
-            font-size: vw(24px);
-            line-height: vw(28px);
-         }
-
-         @media screen and (min-width: 1600px) {
-            font-size: 24px;
-            line-height: 28px;
+            justify-content: space-between;
          }
       }
 
@@ -296,6 +315,124 @@
          }
       }
    }
+
+   &__timeTitleText {
+
+      font-size: vw(24px, 360px);
+      line-height: vw(28px, 360px);
+   
+      @media screen and (min-width: 360px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
+
+      @media screen and (min-width: 500px) {
+         font-size: vw(24px, 360px);
+         line-height: vw(28px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         font-size: vw(24px);
+         line-height: vw(28px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
+   }
+
+   &__timeTitleNote {
+      display: none;
+
+      @media screen and (min-width: 920px) {
+         display: block;
+      }
+   }
+
+   &__resultText {
+      font-weight: 600;
+      text-transform: uppercase;
+
+      font-size: vw(24px, 360px);
+      line-height: vw(28px, 360px);
+   
+      @media screen and (min-width: 360px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
+
+      @media screen and (min-width: 500px) {
+         font-size: vw(24px, 360px);
+         line-height: vw(28px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         font-size: vw(24px);
+         line-height: vw(28px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
+   }
+
+   &__resultValue {
+      font-weight: 400;
+      text-transform: none;
+
+      font-size: vw(24px, 360px);
+      line-height: vw(28px, 360px);
+   
+      @media screen and (min-width: 360px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
+
+      @media screen and (min-width: 500px) {
+         font-size: vw(24px, 360px);
+         line-height: vw(28px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         font-size: vw(24px);
+         line-height: vw(28px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         font-size: 24px;
+         line-height: 28px;
+      }
+   }
+
+   &__resultLink {
+      color: $accent;
+   }
+
+   &__timeNote {
+      color: $white;
+      display: flex;
+      flex-direction: column;
+
+      gap: vw(8px, 360px);
+      margin-top: vw(40px, 360px);
+
+      @media screen and (min-width: 360px) {
+         gap: 8px;
+         margin-top: 40px;
+      }
+
+      @media screen and (min-width: 500px) {
+         gap: vw(8px, 360px);
+         margin-top: vw(40px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         display: none;
+      }
+   }
+
 }
 
 .card {
