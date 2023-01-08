@@ -8,27 +8,29 @@
    grid-template-columns: 1fr;
    width: 1440px;
 
-   grid-template-rows: vw(24px, 360px) 1fr;
+   height: max-content;
+
+   grid-template-rows: vw(24px, 360px) auto;
    grid-row-gap: vw(18px, 360px);
 
    @media screen and (min-width: 360px) {
-      grid-template-rows: 24px 1fr;
+      grid-template-rows: 24px auto;
       grid-row-gap: 18px;
    }
 
    @media screen and (min-width: 500px) {
-      grid-template-rows: vw(24px, 360px) 1fr;
+      grid-template-rows: vw(24px, 360px) auto;
       grid-row-gap: vw(18px, 360px);
    }
 
    @media screen and (min-width: 920px) {
-      grid-template-rows: vw(24px) 1fr;
+      grid-template-rows: vw(24px) auto;
       grid-row-gap: vw(18px);
       width: vw(1400px);
    }
 
    @media screen and (min-width: 1600px) {
-      grid-template-rows: 24px 1fr;
+      grid-template-rows: 24px auto;
       grid-row-gap: 18px;
       width: 1400px;
    }
@@ -93,27 +95,28 @@
       display: grid;
       grid-template-columns: 1fr;
       grid-column-gap: 0px;
+      height: auto;
 
-      grid-template-rows: repeat(4, vw(54px, 360px));
+      grid-template-rows: auto;
       grid-row-gap: vw(16px, 360px);
 
       @media screen and (min-width: 360px) {
-         grid-template-rows: repeat(4, 54px);
+         grid-template-rows: auto;
          grid-row-gap: 16px;
       }
 
       @media screen and (min-width: 500px) {
-         grid-template-rows: repeat(4, vw(54px, 360px));
+         grid-template-rows: auto;
          grid-row-gap: vw(16px, 360px);
       }
 
       @media screen and (min-width: 920px) {
-         grid-template-rows: repeat(4, vw(54px));
+         grid-template-rows: auto;
          grid-row-gap: vw(16px);
       }
 
       @media screen and (min-width: 1600px) {
-         grid-template-rows: repeat(4, 54px);
+         grid-template-rows: auto;
          grid-row-gap: 16px;
       }
    }
@@ -132,6 +135,15 @@
       grid-row-gap: vw(16px, 360px);
       border-radius: vw(10px, 360px);
       padding: 0px vw(18px, 360px);
+
+      &_child {
+         grid-template-columns: 155px repeat(auto-fit, 15.4%) 70px;
+         margin-left: 3%;
+      }
+
+      &_close {
+         display: none;
+      }
 
       @media screen and (min-width: 360px) {
          grid-template-rows: 54px;

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import classes from "./index.module.scss";
 const {
    table,
@@ -9,12 +10,15 @@ const {
    description,
    description__title,
    description__text,
+   table__row_child,
+   table__row_close,
 } = classes;
 
 function Table({ columnNames, rowsData, linkName = "Click", type = "base" }) {
+   const [isClose, setClose] = useState({});
    const getCels = (row) => {
       let celsCount = Object.keys(row).length;
-      let celsName = Object.keys(row).splice(3, celsCount - 1);
+      let celsName = Object.keys(row).splice(3, row.children ? celsCount - 2 : celsCount - 1);
       return { celsCount, celsName };
    };
 
@@ -28,6 +32,9 @@ function Table({ columnNames, rowsData, linkName = "Click", type = "base" }) {
                   </a>
                </span>
             );
+
+         case "children":
+            return null;
 
          default:
             return <span key={key}>{cel}</span>;
@@ -51,18 +58,56 @@ function Table({ columnNames, rowsData, linkName = "Click", type = "base" }) {
          </div>
          <div className={table__body}>
             {rowsData?.map((row) => (
-               <div className={table__row} key={row?.id}>
-                  {type === "whisIcon" ? (
+               <div key={row?.id}>
+                  {row?.children ? (
                      <>
-                        <div className={table__cel}>
-                           {row.icon ? <img src={row.icon} alt="" /> : null}
-                           {row.name ? <span>{row.name}</span> : null}
-                        </div>
+                        <div className={table__row}>
+                           {type === "withIcon" ? (
+                              <>
+                                 <div className={table__cel}>
+                                    {row.icon ? <img src={row.icon} alt="" /> : null}
+                                    {row.name ? <span>{row.name}</span> : null}
+                                 </div>
 
-                        {getCels(row).celsName.map((cel, key) => getElement(cel, row[cel], key))}
+                                 {getCels(row).celsName.map((cel, key) => getElement(cel, row[cel], key))}
+                                 <span>Open</span>
+                              </>
+                           ) : (
+                              getCels(row).celsName.map((cel, key) => getElement(cel, row[cel], key))
+                           )}
+                        </div>
+                        {row?.children.map((cild, key) => (
+                           <div className={table__row + " " + table__row_child + " " + table__row_close} key={key}>
+                              {type === "withIcon" ? (
+                                 <>
+                                    <div className={table__cel}>
+                                       {cild.icon ? <img src={row.icon} alt="" /> : null}
+                                       {cild.name ? <span>{row.name}</span> : null}
+                                    </div>
+
+                                    {getCels(cild).celsName.map((cel, key) => getElement(cel, row[cel], key))}
+                                 </>
+                              ) : (
+                                 getCels(cild).celsName.map((cel, key) => getElement(cel, row[cel], key))
+                              )}
+                           </div>
+                        ))}
                      </>
                   ) : (
-                     getCels(row).celsName.map((cel, key) => getElement(cel, row[cel], key))
+                     <div className={table__row}>
+                        {type === "withIcon" ? (
+                           <>
+                              <div className={table__cel}>
+                                 {row.icon ? <img src={row.icon} alt="" /> : null}
+                                 {row.name ? <span>{row.name}</span> : null}
+                              </div>
+
+                              {getCels(row).celsName.map((cel, key) => getElement(cel, row[cel], key))}
+                           </>
+                        ) : (
+                           getCels(row).celsName.map((cel, key) => getElement(cel, row[cel], key))
+                        )}
+                     </div>
                   )}
                </div>
             ))}
