@@ -15,7 +15,7 @@ import Table from "../../components/Table";
 // Helpers
 import getLocale from "../../helpers/getLoacale";
 
-const { my_project__layout, table, table__header, table__title, table__body, table__row, table__cel } = classes;
+const { my_project__layout } = classes;
 
 let { data, pagination } = window.initState?.projects
    ? window.initState?.projects

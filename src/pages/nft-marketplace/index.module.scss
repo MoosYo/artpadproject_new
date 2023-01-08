@@ -1,0 +1,27 @@
+@import "../../styles/helpers.scss";
+
+.image {
+   object-fit: cover;
+   width: 100%;
+   margin-bottom: 32px;
+
+   @media screen and (min-width: 360px) {
+      width: 100%;
+      margin-bottom: 32px;
+   }
+
+   @media screen and (min-width: 500px) {
+      width: 100%;
+      margin-bottom: vw(32px, 414px);
+   }
+
+   @media screen and (min-width: 920px) {
+      width: vw(1300px);
+      margin-bottom: vw(32px);
+   }
+
+   @media screen and (min-width: 1600px) {
+      width: 1300px;
+      margin-bottom: 32px;
+   }
+}
