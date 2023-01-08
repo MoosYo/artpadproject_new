@@ -7,6 +7,9 @@ const {
 } = classes;
 
 export default function Tabs (props) {
+
+    const locale = "en-US";
+
     const tabsList = props.tabs;
     const path = window.location.pathname;
     return (
@@ -27,7 +30,7 @@ export default function Tabs (props) {
                             title={text}
                             key={i}
                         >
-                            {text}
+                            {text[locale]}
                         </a>
                     )
                 })
