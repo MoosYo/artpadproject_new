@@ -360,10 +360,29 @@
 }
 
 .font_fix {
+   font-weight: 400;
+   text-align: center;
+   text-decoration-line: underline;
+
+   color: #cd3ed0;
+
    font-size: 16px;
-   padding: 8px 16px;
-   height: auto;
-   border-width: 2px;
+   line-height: 19px;
+
+   @media screen and (min-width: 500px) {
+      font-size: vw(16px, 414px);
+      line-height: vw(19px, 414px);
+   }
+
+   @media screen and (min-width: 920px) {
+      font-size: vw(16px);
+      line-height: vw(19px);
+   }
+
+   @media screen and (min-width: 1600px) {
+      font-size: 16px;
+      line-height: 19px;
+   }
 }
 
 .link_list_fix {
