@@ -6,6 +6,7 @@ import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/Layout";
 import Container from "../../components/Container";
 import Avatar from "../../components/Avatar";
+import PromocodeModal from "../../components/PromocodeModal";
 
 // Data
 import profileRoutes from "../../routes/profile";
@@ -56,7 +57,7 @@ const { userName, avatar, expireIn, level, invitedBy, activeMembers, totalMember
         delegated: 790279,
      };
 
-export default function TeamPage(props) {
+export default function TeamPage({setModal}) {
    const local = "ru-RU";
 
    const expireInDate = new Date(expireIn);
@@ -97,8 +98,14 @@ export default function TeamPage(props) {
                      <p className={teamPage__memberLevelName}>Coins</p>
                   </div>
                   <div className={teamPage__memberInviteCodeBlock}>
-                     <Button className={teamPage__memberButtons}>Upgrate</Button>
-                     <Button className={teamPage__memberButtons} variant="outline" >Enter promo code</Button>
+                     <Button
+                        className={teamPage__memberButtons}
+                     >Upgrate</Button>
+                     <Button
+                        className={teamPage__memberButtons}
+                        variant="outline"
+                        onClick={() => setModal((props) => <PromocodeModal {...props} />)}
+                     >Enter promo code</Button>
                   </div>
                </div>
             </Container>
