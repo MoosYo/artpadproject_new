@@ -31,6 +31,7 @@ let { data, pagination } = window.initState?.projects
               token: "ARTR 20000",
               status: "Finished",
               link: "#",
+              children: [],
            },
            {
               id: 2,
@@ -42,6 +43,7 @@ let { data, pagination } = window.initState?.projects
               token: "EWA 33333",
               status: "FSFC",
               link: "#",
+              children: [],
            },
            {
               id: 3,
@@ -52,31 +54,8 @@ let { data, pagination } = window.initState?.projects
               price: "$0.001",
               token: "ART",
               status: "Registration",
-              //   link: "#",
-              children: [
-                 {
-                    id: 4,
-                    name: "ARTERY",
-                    icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/11104.png",
-                    round: "IDO",
-                    pool: "200$",
-                    price: "$0.01",
-                    token: "ARTR 20000",
-                    status: "Finished",
-                    link: "#",
-                 },
-                 {
-                    id: 4,
-                    name: "ARTERY",
-                    icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/11104.png",
-                    round: "IDO",
-                    pool: "200$",
-                    price: "$0.01",
-                    token: "ARTR 20000",
-                    status: "Finished",
-                    link: "#",
-                 },
-              ],
+              link: "#",
+              children: [],
            },
            {
               id: 4,
@@ -87,31 +66,8 @@ let { data, pagination } = window.initState?.projects
               price: "$0.01",
               token: "ARTR 20000",
               status: "Finished",
-              //   link: "#",
-              children: [
-                 {
-                    id: 4,
-                    name: "ARTERY",
-                    icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/11104.png",
-                    round: "IDO",
-                    pool: "200$",
-                    price: "$0.01",
-                    token: "ARTR 20000",
-                    status: "Finished",
-                    link: "#",
-                 },
-                 {
-                    id: 4,
-                    name: "ARTERY",
-                    icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/11104.png",
-                    round: "IDO",
-                    pool: "200$",
-                    price: "$0.01",
-                    token: "ARTR 20000",
-                    status: "Finished",
-                    link: "#",
-                 },
-              ],
+              link: "#",
+              children: [],
            },
         ],
         pagination: {
@@ -149,7 +105,7 @@ export default function MyProjectsPage({}) {
          celDescription: {},
       },
       {
-         celName: "Link",
+         celName: "",
          celDescription: {},
       },
    ];
@@ -159,7 +115,7 @@ export default function MyProjectsPage({}) {
          <Tabs tabs={profileRoutes} />
          <PageHeader>{localize.header_title[local]}</PageHeader>
          <div className={my_project__layout}>
-            <Table columns={thead} rows={data} keys={Object.keys(data[0]).splice(3, 7)} />
+            <Table columns={thead} rows={data} keys={Object.keys(data[0]).splice(3, Object.keys(data[0]).length - 1)} />
          </div>
          {pagination.totalPagesCount > 1 ? (
             <Pagination

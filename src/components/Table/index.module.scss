@@ -184,6 +184,10 @@
       font-size: vw(18px, 360px);
       line-height: vw(18px, 360px);
 
+      // &_children {
+      //    margin-left: -20%;
+      // }
+
       @media screen and (min-width: 360px) {
          gap: 8px;
          font-size: 18px;
@@ -236,6 +240,39 @@
             height: 32px;
             margin-left: 11px;
          }
+      }
+   }
+
+   &__children {
+      display: grid;
+      grid-template-rows: auto;
+      row-gap: vw(16px, 360px);
+
+      padding-top: vw(16px, 360px);
+      padding-left: vw(50px, 360px);
+
+      @media screen and (min-width: 360px) {
+         row-gap: 16px;
+         padding-top: 16px;
+         padding-left: 50px;
+      }
+
+      @media screen and (min-width: 500px) {
+         row-gap: vw(16px, 360px);
+         padding-top: vw(16px, 360px);
+         padding-left: vw(50px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         row-gap: vw(16px);
+         padding-top: vw(16px);
+         padding-left: vw(50px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         row-gap: 16px;
+         padding-top: 16px;
+         padding-left: 50px;
       }
    }
 }
