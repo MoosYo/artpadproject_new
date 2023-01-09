@@ -9,7 +9,6 @@ import profileRoutes from "../../routes/profile";
 import PageHeader from "../../components/PageHeader";
 import React from "react";
 import Pagination from "../../components/Pagination";
-import { type } from "@testing-library/user-event/dist/type";
 import Table from "../../components/Table";
 
 // Helpers
@@ -31,6 +30,7 @@ let { data, pagination } = window.initState?.projects
               token: "ARTR 20000",
               status: "Finished",
               link: "#",
+              click: "",
               children: [],
            },
            {
@@ -43,6 +43,7 @@ let { data, pagination } = window.initState?.projects
               token: "EWA 33333",
               status: "FSFC",
               link: "#",
+              click: "",
               children: [],
            },
            {
@@ -55,6 +56,7 @@ let { data, pagination } = window.initState?.projects
               token: "ART",
               status: "Registration",
               link: "#",
+              click: "",
               children: [],
            },
            {
@@ -67,6 +69,7 @@ let { data, pagination } = window.initState?.projects
               token: "ARTR 20000",
               status: "Finished",
               link: "#",
+              click: "",
               children: [],
            },
         ],
@@ -76,7 +79,7 @@ let { data, pagination } = window.initState?.projects
         },
      };
 
-export default function MyProjectsPage({}) {
+export default function MyProjectsPage() {
    const local = getLocale();
 
    const thead = [
@@ -102,6 +105,10 @@ export default function MyProjectsPage({}) {
       },
       {
          celName: "Status",
+         celDescription: {},
+      },
+      {
+         celName: "Links",
          celDescription: {},
       },
       {

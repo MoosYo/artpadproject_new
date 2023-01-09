@@ -1,7 +1,16 @@
 import React from "react";
+import Button from "../Button";
 import classes from "./index.module.scss";
-const { table, table__row, table__row_names, table__cel, table__cel_padl, table__children, table__cel_children } =
-   classes;
+const {
+   table,
+   table__row,
+   table__row_names,
+   table__cel,
+   table__cel_padl,
+   table__children,
+   table__cel_children,
+   button,
+} = classes;
 
 function Table({ columns, rows, keys }) {
    console.log(columns, rows, keys);
@@ -43,9 +52,13 @@ function Table({ columns, rows, keys }) {
                                  <div key={key} className={table__cel_padl}>
                                     <span className={table__cel}>{row[item]}</span>
                                  </div>
+                              ) : item !== "children" ? (
+                                 <div key={key} className={table__cel_padl}>
+                                    <span className={table__cel}>{row[item]}</span>
+                                 </div>
                               ) : item === "children" && row[item].length > 0 ? (
                                  <div key={key} className={table__cel_padl}>
-                                    <span className={table__cel}>{row[item].length}</span>
+                                    <span className={table__cel}>Open</span>
                                  </div>
                               ) : null
                            )}
@@ -115,19 +128,15 @@ function Table({ columns, rows, keys }) {
                                     Click
                                  </a>
                               </div>
-                           ) : item !== "children" ? (
+                           ) : item === "children" ? null : item === "click" ? (
+                              <div key={key} className={table__cel_padl}>
+                                 <Button className={button}>Claim</Button>
+                              </div>
+                           ) : (
                               <div key={key} className={table__cel_padl}>
                                  <span className={table__cel}>{row[item]}</span>
                               </div>
-                           ) : item !== "children" ? (
-                              <div key={key} className={table__cel_padl}>
-                                 <span className={table__cel}>{row[item]}</span>
-                              </div>
-                           ) : item === "children" && row[item].length > 0 ? (
-                              <div key={key} className={table__cel_padl}>
-                                 <span className={table__cel}>Open</span>
-                              </div>
-                           ) : null
+                           )
                         )}
                      </>
                   ) : (
