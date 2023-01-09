@@ -2,214 +2,168 @@
 @import "../../styles/colors.scss";
 
 .table {
-   position: relative;
-
    display: grid;
-   grid-template-columns: 1fr;
-   width: 1440px;
+   grid-template-rows: repeat(2, auto);
+   grid-template-columns: vw(1400px, 360px);
+   row-gap: vw(18px, 360px);
+   overflow-x: scroll;
+   /* Chrome, Edge, and Safari */
+   &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+   }
 
-   height: max-content;
+   &::-webkit-scrollbar-track {
+      background: #0e0e0e00;
+   }
 
-   grid-template-rows: vw(24px, 360px) auto;
-   grid-row-gap: vw(18px, 360px);
+   &::-webkit-scrollbar-thumb {
+      background-color: $accent;
+      border-radius: 8px;
+      border: 3px solid $background;
+   }
 
    @media screen and (min-width: 360px) {
-      grid-template-rows: 24px auto;
-      grid-row-gap: 18px;
+      grid-template-columns: 1400px;
+      row-gap: 18px;
    }
 
    @media screen and (min-width: 500px) {
-      grid-template-rows: vw(24px, 360px) auto;
-      grid-row-gap: vw(18px, 360px);
+      grid-template-columns: vw(1400px, 360px);
+      row-gap: vw(18px, 360px);
    }
 
    @media screen and (min-width: 920px) {
-      grid-template-rows: vw(24px) auto;
-      grid-row-gap: vw(18px);
-      width: vw(1400px);
+      grid-template-columns: vw(1400px);
+      row-gap: vw(18px);
    }
 
    @media screen and (min-width: 1600px) {
-      grid-template-rows: 24px auto;
-      grid-row-gap: 18px;
-      width: 1400px;
-   }
-
-   &__header {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, 15%) 70px;
-
-      padding: 0px vw(18px, 360px);
-
-      @media screen and (min-width: 360px) {
-         padding: 0px 18px;
-      }
-
-      @media screen and (min-width: 500px) {
-         padding: 0px vw(18px, 360px);
-      }
-
-      @media screen and (min-width: 920px) {
-         padding: 0px vw(18px);
-      }
-
-      @media screen and (min-width: 1600px) {
-         padding: 0px 18px;
-      }
-   }
-
-   &__title {
-      font-family: Rubik;
-      font-weight: 600;
-      letter-spacing: 0em;
-      text-align: left;
-      text-transform: uppercase;
-
-      color: $white;
-
-      font-size: vw(18px, 360px);
-      line-height: vw(18px, 360px);
-
-      @media screen and (min-width: 360px) {
-         font-size: 18px;
-         line-height: 18px;
-      }
-
-      @media screen and (min-width: 500px) {
-         font-size: vw(18px, 360px);
-         line-height: vw(18px, 360px);
-      }
-
-      @media screen and (min-width: 920px) {
-         font-size: vw(18px);
-         line-height: vw(18px);
-      }
-
-      @media screen and (min-width: 1600px) {
-         font-size: 18px;
-         line-height: 18px;
-      }
-   }
-
-   &__body {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-column-gap: 0px;
-      height: auto;
-
-      grid-template-rows: auto;
-      grid-row-gap: vw(16px, 360px);
-
-      @media screen and (min-width: 360px) {
-         grid-template-rows: auto;
-         grid-row-gap: 16px;
-      }
-
-      @media screen and (min-width: 500px) {
-         grid-template-rows: auto;
-         grid-row-gap: vw(16px, 360px);
-      }
-
-      @media screen and (min-width: 920px) {
-         grid-template-rows: auto;
-         grid-row-gap: vw(16px);
-      }
-
-      @media screen and (min-width: 1600px) {
-         grid-template-rows: auto;
-         grid-row-gap: 16px;
-      }
+      grid-template-columns: 1400px;
+      row-gap: 18px;
    }
 
    &__row {
       display: grid;
-      grid-column-gap: 0px;
-      align-items: center;
-
-      border: 2px solid $accent;
-      background: $background;
-
-      grid-template-columns: repeat(auto-fit, 15%) 70px;
-
+      grid-template-columns: repeat(auto-fit, minmax(vw(60px, 360px), 1fr));
       grid-template-rows: vw(54px, 360px);
-      grid-row-gap: vw(16px, 360px);
+
+      align-items: center;
+      justify-items: start;
+
+      background: #0e0e0e;
+      border: vw(2px, 360px) solid #cd3ed0;
       border-radius: vw(10px, 360px);
-      padding: 0px vw(18px, 360px);
-
-      &_child {
-         grid-template-columns: 155px repeat(auto-fit, 15.4%) 70px;
-         margin-left: 3%;
-      }
-
-      &_close {
-         display: none;
-      }
+      color: $white;
 
       @media screen and (min-width: 360px) {
+         grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
          grid-template-rows: 54px;
-         grid-row-gap: 16px;
+
+         background: #0e0e0e;
+         border: 2px solid #cd3ed0;
          border-radius: 10px;
-         padding: 0px 18px;
       }
 
       @media screen and (min-width: 500px) {
+         grid-template-columns: repeat(auto-fit, minmax(vw(60px, 360px), 1fr));
          grid-template-rows: vw(54px, 360px);
-         grid-row-gap: vw(16px, 360px);
+         border: vw(2px, 360px) solid #cd3ed0;
          border-radius: vw(10px, 360px);
-         padding: 0px vw(18px, 360px);
       }
 
       @media screen and (min-width: 920px) {
+         grid-template-columns: repeat(auto-fit, minmax(vw(40px), 1fr));
          grid-template-rows: vw(54px);
-         grid-row-gap: vw(16px);
+         border: vw(2px) solid #cd3ed0;
          border-radius: vw(10px);
-         padding: 0px vw(18px);
       }
 
       @media screen and (min-width: 1600px) {
+         grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
          grid-template-rows: 54px;
-         grid-row-gap: 16px;
+         border: 2px solid #cd3ed0;
          border-radius: 10px;
-         padding: 0px 18px;
       }
 
-      span {
-         font-family: Rubik;
-         font-weight: 400;
-         letter-spacing: 0em;
-         text-align: left;
-         text-transform: capitalize;
+      div {
+         &:last-child {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+         }
+      }
 
-         color: $white;
+      &_names {
+         background: transparent;
+         border: none;
 
-         font-size: vw(18px, 360px);
-         line-height: vw(18px, 360px);
+         div {
+            span {
+               font-family: Rubik;
+               font-weight: 600;
+               letter-spacing: 0em;
+               text-align: left;
 
-         width: 100%;
+               font-size: vw(18px, 360px);
+               line-height: vw(18px, 360px);
 
-         a {
-            text-decoration-line: underline;
-            color: $accent;
+               @media screen and (min-width: 360px) {
+                  font-size: 18px;
+                  line-height: 18px;
+               }
+
+               @media screen and (min-width: 500px) {
+                  font-size: vw(18px, 360px);
+                  line-height: vw(18px, 360px);
+               }
+
+               @media screen and (min-width: 920px) {
+                  font-size: vw(18px);
+                  line-height: vw(18px);
+               }
+
+               @media screen and (min-width: 1600px) {
+                  font-size: 18px;
+                  line-height: 18px;
+               }
+            }
          }
 
-         @media screen and (min-width: 360px) {
-            font-size: 18px;
-            line-height: 18px;
-         }
+         div {
+            &:last-child {
+               width: 100%;
+               height: 100%;
+               display: flex;
+               flex-direction: row;
+               flex-wrap: nowrap;
+               align-items: center;
+               justify-content: center;
+            }
 
-         @media screen and (min-width: 500px) {
-            font-size: vw(18px, 360px);
-            line-height: vw(18px, 360px);
-         }
+            &:first-child {
+               padding-left: vw(50px, 360px);
 
-         @media screen and (min-width: 920px) {
-            font-size: vw(18px);
-            line-height: vw(18px);
-         }
+               @media screen and (min-width: 360px) {
+                  padding-left: 50px;
+               }
 
-         @media screen and (min-width: 1600px) {
-            font-size: 18px;
-            line-height: 18px;
+               @media screen and (min-width: 500px) {
+                  padding-left: vw(50px, 360px);
+               }
+
+               @media screen and (min-width: 920px) {
+                  padding-left: vw(50px);
+               }
+
+               @media screen and (min-width: 1600px) {
+                  padding-left: 50px;
+               }
+            }
          }
       }
    }
@@ -218,98 +172,70 @@
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      justify-content: flex-start;
       align-items: center;
+      justify-content: flex-start;
+      gap: vw(8px, 360px);
 
-      gap: vw(4px, 360px);
+      font-family: Rubik;
+      font-weight: 400;
+      letter-spacing: 0em;
+      text-align: left;
+
+      font-size: vw(18px, 360px);
+      line-height: vw(18px, 360px);
 
       @media screen and (min-width: 360px) {
-         gap: 4px;
+         gap: 8px;
+         font-size: 18px;
+         line-height: 18px;
       }
 
       @media screen and (min-width: 500px) {
-         gap: vw(4px, 360px);
+         gap: vw(8px, 360px);
+         font-size: vw(18px, 360px);
+         line-height: vw(18px, 360px);
       }
 
       @media screen and (min-width: 920px) {
-         gap: vw(4px);
+         gap: vw(8px);
+         font-size: vw(18px);
+         line-height: vw(18px);
       }
 
       @media screen and (min-width: 1600px) {
-         gap: 4px;
+         gap: 8px;
+         font-size: 18px;
+         line-height: 18px;
       }
 
       img {
-         object-fit: cover;
-         border-radius: 100%;
-
-         width: vw(18px, 360px);
-         height: vw(18px, 360px);
+         width: vw(32px, 360px);
+         height: vw(32px, 360px);
+         margin-left: vw(11px, 360px);
 
          @media screen and (min-width: 360px) {
-            width: 18px;
-            height: 18px;
+            width: 32px;
+            height: 32px;
+            margin-left: 11px;
          }
 
          @media screen and (min-width: 500px) {
-            width: vw(18px, 360px);
-            height: vw(18px, 360px);
+            width: vw(32px, 360px);
+            height: vw(32px, 360px);
+            margin-left: vw(11px, 360px);
          }
 
          @media screen and (min-width: 920px) {
-            width: vw(18px);
-            height: vw(18px);
+            width: vw(32px);
+            height: vw(32px);
+            margin-left: vw(11px);
          }
 
          @media screen and (min-width: 1600px) {
-            width: 18px;
-            height: 18px;
+            width: 32px;
+            height: 32px;
+            margin-left: 11px;
          }
       }
-
-      span {
-         font-family: Rubik;
-         font-weight: 400;
-         letter-spacing: 0em;
-         text-align: left;
-         text-transform: uppercase;
-
-         color: $white;
-
-         font-size: vw(18px, 360px);
-         line-height: vw(18px, 360px);
-
-         width: 100%;
-
-         @media screen and (min-width: 360px) {
-            font-size: 18px;
-            line-height: 18px;
-         }
-
-         @media screen and (min-width: 500px) {
-            font-size: vw(18px, 360px);
-            line-height: vw(18px, 360px);
-         }
-
-         @media screen and (min-width: 920px) {
-            font-size: vw(18px);
-            line-height: vw(18px);
-         }
-
-         @media screen and (min-width: 1600px) {
-            font-size: 18px;
-            line-height: 18px;
-         }
-      }
-   }
-}
-
-.description {
-   position: absolute;
-
-   background-color: aliceblue;
-   &__title {
-   }
-   &__text {
    }
 }

@@ -1,119 +1,59 @@
-import { useState } from "react";
+import React from "react";
 import classes from "./index.module.scss";
-const {
-   table,
-   table__header,
-   table__title,
-   table__body,
-   table__row,
-   table__cel,
-   description,
-   description__title,
-   description__text,
-   table__row_child,
-   table__row_close,
-} = classes;
+const { table, table__row, table__row_names, table__cel, table__cel_padl } = classes;
 
-function Table({ columnNames, rowsData, linkName = "Click", type = "base" }) {
-   const [isClose, setClose] = useState({});
-   const getCels = (row) => {
-      let celsCount = Object.keys(row).length;
-      let celsName = Object.keys(row).splice(3, row.children ? celsCount - 2 : celsCount - 1);
-      return { celsCount, celsName };
-   };
-
-   const getElement = (type, cel, key) => {
-      switch (type) {
-         case "link":
-            return (
-               <span key={key}>
-                  <a href={cel} target="_blank" rel="noopener noreferrer">
-                     {linkName}
-                  </a>
-               </span>
-            );
-
-         case "children":
-            return null;
-
-         default:
-            return <span key={key}>{cel}</span>;
-      }
-   };
-
+function Table({ columns, rows, keys }) {
+   console.log(columns, rows, keys);
    return (
-      <div className={table}>
-         <div className={table__header}>
-            {columnNames?.map(({ celName, celDescription }, key) => (
+      <section className={table}>
+         <div className={table__row + " " + table__row_names}>
+            {columns.map((item, key) => (
                <div key={key}>
-                  <span className={table__title}>{celName}</span>
-                  {celDescription !== "" ? (
-                     <div className={description}>
-                        <h3 className={description__title}>{celDescription?.title}</h3>
-                        <p className={description__text}>{celDescription?.text}</p>
-                     </div>
-                  ) : null}
+                  <span className={table__cel}>{item?.celName}</span>
                </div>
             ))}
          </div>
-         <div className={table__body}>
-            {rowsData?.map((row) => (
-               <div key={row?.id}>
-                  {row?.children ? (
-                     <>
-                        <div className={table__row}>
-                           {type === "withIcon" ? (
-                              <>
-                                 <div className={table__cel}>
-                                    {row.icon ? <img src={row.icon} alt="" /> : null}
-                                    {row.name ? <span>{row.name}</span> : null}
-                                 </div>
-
-                                 {getCels(row).celsName.map((cel, key) => getElement(cel, row[cel], key))}
-                                 <span>Open</span>
-                              </>
-                           ) : (
-                              getCels(row).celsName.map((cel, key) => getElement(cel, row[cel], key))
-                           )}
-                        </div>
-                        {row?.children.map((cild, key) => (
-                           <div className={table__row + " " + table__row_child + " " + table__row_close} key={key}>
-                              {type === "withIcon" ? (
-                                 <>
-                                    <div className={table__cel}>
-                                       {cild.icon ? <img src={row.icon} alt="" /> : null}
-                                       {cild.name ? <span>{row.name}</span> : null}
-                                    </div>
-
-                                    {getCels(cild).celsName.map((cel, key) => getElement(cel, row[cel], key))}
-                                 </>
-                              ) : (
-                                 getCels(cild).celsName.map((cel, key) => getElement(cel, row[cel], key))
-                              )}
+         {rows.map((row, key) => (
+            <div className={table__row} key={row?.id}>
+               {row?.icon ? (
+                  <>
+                     <div key={toString(key)}>
+                        <span className={table__cel}>
+                           <img src={row?.icon} alt={row?.nsme} width="32px" height="32px" />
+                           {row?.name}
+                        </span>
+                     </div>
+                     {keys.map((item, key) =>
+                        item === "link" ? (
+                           <div key={key}>
+                              <a
+                                 className={table__cel}
+                                 href={row[item]}
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 title={item}
+                              >
+                                 Click
+                              </a>
                            </div>
-                        ))}
-                     </>
-                  ) : (
-                     <div className={table__row}>
-                        {type === "withIcon" ? (
-                           <>
-                              <div className={table__cel}>
-                                 {row.icon ? <img src={row.icon} alt="" /> : null}
-                                 {row.name ? <span>{row.name}</span> : null}
-                              </div>
-
-                              {getCels(row).celsName.map((cel, key) => getElement(cel, row[cel], key))}
-                           </>
                         ) : (
-                           getCels(row).celsName.map((cel, key) => getElement(cel, row[cel], key))
-                        )}
+                           <div key={key} className={table__cel_padl}>
+                              <span className={table__cel}>{row[item]}</span>
+                           </div>
+                        )
+                     )}
+                  </>
+               ) : (
+                  keys.map((item, key) => (
+                     <div key={key}>
+                        <span className={table__cel}>{item}</span>
                      </div>
-                  )}
-               </div>
-            ))}
-         </div>
-      </div>
+                  ))
+               )}
+            </div>
+         ))}
+      </section>
    );
 }
 
-export default Table;
+export default React.memo(Table);

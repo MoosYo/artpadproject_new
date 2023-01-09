@@ -125,31 +125,31 @@ export default function MyProjectsPage({}) {
 
    const thead = [
       {
-         celName: localize.thead[local][0],
+         celName: "Project",
          celDescription: {},
       },
       {
-         celName: localize.thead[local][1],
+         celName: "Round",
          celDescription: {},
       },
       {
-         celName: localize.thead[local][2],
+         celName: "Pool",
          celDescription: {},
       },
       {
-         celName: localize.thead[local][3],
+         celName: "Price",
          celDescription: {},
       },
       {
-         celName: localize.thead[local][4],
+         celName: "Token",
          celDescription: {},
       },
       {
-         celName: localize.thead[local][5],
+         celName: "Status",
          celDescription: {},
       },
       {
-         celName: localize.thead[local][6],
+         celName: "Link",
          celDescription: {},
       },
    ];
@@ -159,7 +159,7 @@ export default function MyProjectsPage({}) {
          <Tabs tabs={profileRoutes} />
          <PageHeader>{localize.header_title[local]}</PageHeader>
          <div className={my_project__layout}>
-            <Table columnNames={thead} rowsData={data} type={"withIcon"} />
+            <Table columns={thead} rows={data} keys={Object.keys(data[0]).splice(3, 7)} />
          </div>
          {pagination.totalPagesCount > 1 ? (
             <Pagination
