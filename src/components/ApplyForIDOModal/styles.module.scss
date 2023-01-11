@@ -1,0 +1,219 @@
+@import "../../styles/colors.scss";
+@import "../../styles/helpers.scss";
+
+.block {
+    display: flex;
+    flex-direction: column;
+
+    width: vw(286px, 360px);
+    gap: vw(24px, 360px);
+
+    @media screen and (min-width: 360px) {
+        width: 286px;
+        gap: 24px;
+    }
+
+    @media screen and (min-width: 500px) {
+        width: vw(286px, 360px);
+        gap: vw(24px, 360px);
+    }
+
+    @media screen and (min-width: 920px) {
+        width: vw(380px);
+        gap: vw(24px);
+    }
+
+    @media screen and (min-width: 1600px) {
+        width: 380px;
+        gap: 24px;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: solid $accent;
+        
+        padding-bottom: vw(18px, 360px);
+        border-width: vw(2px, 360px);
+        margin-bottom: vw(6px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            padding-bottom: 18px;
+            border-width: 2px;
+            margin-bottom: 6px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            padding-bottom: vw(18px, 360px);
+            border-width: vw(2px, 360px);
+            margin-bottom: vw(6px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            padding-bottom: vw(18px);
+            border-width: vw(2px);
+            margin-bottom: vw(6px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            padding-bottom: 18px;
+            border-width: 2px;
+            margin-bottom: 6px;
+        }
+
+        &Title {
+            color: $white;
+            font-weight: 400;
+
+            font-size: vw(24px, 360px);
+            line-height: vw(24px, 360px);
+            
+            @media screen and (min-width: 360px) {
+                font-size: 24px;
+                line-height: 24px;
+            }
+            
+            @media screen and (min-width: 500px) {
+                font-size: vw(24px, 360px);
+                line-height: vw(24px, 360px);
+            }
+            
+            @media screen and (min-width: 920px) {
+                font-size: vw(24px);
+                line-height: vw(24px);
+            }
+
+            @media screen and (min-width: 1600px) {
+                font-size: 24px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    &__closeBtn {
+        cursor: pointer;
+        background: none;
+        border: none;
+        
+        width: vw(17px, 360px);
+        height: vw(17px, 360px);
+
+        @media screen and (min-width: 360px) {
+            width: 17px;
+            height: 17px;
+        }
+
+        @media screen and (min-width: 500px) {
+            width: vw(17px, 360px);
+            height: vw(17px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            width: vw(17px);
+            height: vw(17px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 17px;
+            height: 17px;
+        }
+
+        &Icon {
+            width: vw(17px, 360px);
+            height: vw(17px, 360px);
+        
+            @media screen and (min-width: 360px) {
+                width: 17px;
+                height: 17px;
+            }
+        
+            @media screen and (min-width: 500px) {
+                width: vw(17px, 360px);
+                height: vw(17px, 360px);
+            }
+        
+            @media screen and (min-width: 920px) {
+                width: vw(17px);
+                height: vw(17px);
+            }
+
+            @media screen and (min-width: 1600px) {
+                width: 17px;
+                height: 17px;
+            }
+
+            & path {
+                fill: $accent;
+            }
+        }
+    }
+
+    &__input {
+        width: 100%;
+        margin-bottom: 32px;
+    }
+
+    &__button {
+        width: 100%;
+        font-weight: 400;
+        
+        height: vw(56px, 360px);
+        font-size: vw(24px, 360px);
+        line-height: vw(24px, 360px);
+
+        @media screen and (min-width: 360px) {
+            height: 56px;
+            font-size: 24px;
+            line-height: 24px;
+        }
+
+        @media screen and (min-width: 500px) {
+            height: vw(56px, 360px);
+            font-size: vw(24px, 360px);
+            line-height: vw(24px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            height: vw(56px);
+            font-size: vw(24px);
+            line-height: vw(24px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            height: 56px;
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+
+    &__result {
+        color: $white;
+        text-align: center;
+
+        font-size: vw(16px, 360px);
+        line-height: vw(16px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(16px, 360px);
+            line-height: vw(16px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(16px);
+            line-height: vw(16px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+    }
+}

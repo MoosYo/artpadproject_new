@@ -1,0 +1,33 @@
+<svg width="77" height="81" viewBox="0 0 77 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.5" clip-path="url(#clip0_208_114)">
+        <path
+            d="M12.6577 10.7315C13.1389 10.2695 13.7742 10 14.4286 10H75.5258C76.6423 10 77.2005 11.3474 76.4113 12.1367L64.342 24.206C63.88 24.668 63.2448 24.9374 62.5711 24.9374H1.47386C0.357406 24.9374 -0.200823 23.59 0.588397 22.8008L12.6577 10.7315Z"
+            fill="url(#paint0_linear_208_114)" />
+        <path
+            d="M64.342 33.6689C63.88 33.2069 63.2448 32.9374 62.5711 32.9374H1.47386C0.357406 32.9374 -0.200823 34.2849 0.588397 35.0741L12.6577 47.1434C13.1197 47.6054 13.7549 47.8749 14.4286 47.8749H75.5258C76.6423 47.8749 77.2005 46.5274 76.4113 45.7382L64.342 33.6689Z"
+            fill="url(#paint1_linear_208_114)" />
+        <path
+            d="M12.6577 56.6063C13.1197 56.1444 13.7549 55.8749 14.4286 55.8749H75.5258C76.6423 55.8749 77.2005 57.2223 76.4113 58.0115L64.342 70.0808C63.88 70.5428 63.2448 70.8123 62.5711 70.8123H1.47386C0.357406 70.8123 -0.200823 69.4649 0.588397 68.6756L12.6577 56.6063Z"
+            fill="url(#paint2_linear_208_114)" />
+    </g>
+    <defs>
+        <linearGradient id="paint0_linear_208_114" x1="51.2003" y1="-6.86264" x2="8.9162" y2="74.1285"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#00FFA3" />
+            <stop offset="1" stop-color="#DC1FFF" />
+        </linearGradient>
+        <linearGradient id="paint1_linear_208_114" x1="60.386" y1="-1.51645" x2="18.1018" y2="79.4747"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#00FFA3" />
+            <stop offset="1" stop-color="#DC1FFF" />
+        </linearGradient>
+        <linearGradient id="paint2_linear_208_114" x1="69.6893" y1="3.60246" x2="27.4052" y2="84.5936"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#00FFA3" />
+            <stop offset="1" stop-color="#DC1FFF" />
+        </linearGradient>
+        <clipPath id="clip0_208_114">
+            <rect width="76.5621" height="80.8123" fill="white" transform="translate(0.218781)" />
+        </clipPath>
+    </defs>
+</svg>

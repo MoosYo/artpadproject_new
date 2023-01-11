@@ -1,0 +1,62 @@
+{
+    "topBlockTitle": {
+        "ru-RU": "Ведущая стартовая площадка.",
+        "en-US": "The leading launchpad."
+    },
+    "topBlockDescription": {
+        "ru-RU": "ArtPad - это стартовая платформа для розничных инвесторов, предоставляющая доступ к публичным и приватным продажам самых популярных крипто проектов таким же образом, как это делают венчурные фонды. Мы предоставляем услуги по инкубации стартапов.",
+        "en-US": "ArtPad is a launch platform for retail investors, allowing access to public and private sales of the most popular crypto projects in the same way as venture funds do. We provide startup incubation services."
+    },
+    "topBlockCommunity": {
+        "ru-RU": "Сообщество",
+        "en-US": "Community"
+    },
+    "topBlockPrice": {
+        "ru-RU": "Цена",
+        "en-US": "Price"
+    },
+    "topBlockMCap": {
+        "ru-RU": "Рыночная капитализация",
+        "en-US": "Market Cap (87.44M supply)"
+    },
+    "topBlockTVL": {
+        "ru-RU": "Ликвидность",
+        "en-US": "TVL"
+    },
+    "topBlockRaised": {
+        "ru-RU": "Привлечено в 114 проектов",
+        "en-US": "Raised in 114 projects"
+    },
+    "topBlockApply": {
+        "ru-RU": "Подать заявку на IDO",
+        "en-US": "Apply for IDO"
+    },
+    "platformsTitle": {
+        "ru-RU": "Мультичейн Платформа",
+        "en-US": "MultiChain Platform"
+    },
+    "platformsText": {
+        "ru-RU": "ArtPad включает в себя несколько цепочек, но не будет ограничиваться ими: Ethereum, Solana, Polygon и BNB Chain.",
+        "en-US": "ArtPad includes several chains, but will not be limited to them, Ethereum, Solana, Polygon and BNB Chain."
+    },
+    "platformsSubText": {
+        "ru-RU": "Это позволяет нашему сообществу получать уникальные и высококачественные инвестиционные предложения, и мы помогаем проектам в различных сетях привлекать средства",
+        "en-US": "This makes it possible for our community to receive unique and high-quality investment offers, and we help projects in various networks to raise funds"
+    },
+    "roadmapTitle": {
+        "ru-RU": "Дорожная карта 2022 - 2023",
+        "en-US": "Roadmap 2022 - 2023"
+    },
+    "subscribeTitle": {
+        "ru-RU": "Получать уведомления о новых проектах",
+        "en-US": "Get notified about new projects"
+    },
+    "subscribePlaceholder": {
+        "ru-RU": "Введите свой адрес эл. почты",
+        "en-US": "Enter your email"
+    },
+    "subscribeButton": {
+        "ru-RU": "Подписаться",
+        "en-US": "Subscribe"
+    }
+}

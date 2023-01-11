@@ -1,0 +1,1309 @@
+@import "../../styles/colors.scss";
+@import "../../styles/helpers.scss";
+
+.hideOnDesc {
+    @media screen and (min-width: 920px) {
+        display: none !important;
+    }
+}
+
+.hideOnMob {
+    @media screen and (max-width: 919px) {
+        display: none !important;
+    }
+}
+
+.topBlock {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    margin-bottom: vw(220px, 360px);
+    gap: vw(128px, 360px);
+
+    @media screen and (min-width: 360px) {
+        margin-bottom: 220px;
+        gap: 128px;
+    }
+    
+    @media screen and (min-width: 500px) {
+        margin-bottom: vw(220px, 360px);
+        gap: vw(128px, 360px);
+    }
+    
+    @media screen and (min-width: 920px) {
+        gap: 0px;
+        height: 70vh;
+        flex-direction: row;
+        margin-bottom: vw(260px);
+    }
+    
+    @media screen and (min-width: 1600px) {
+        margin-bottom: 260px;
+    }
+    
+    &__left {
+        width: 100%;
+
+        @media screen and (min-width: 920px) {
+            width: 60%;
+        }
+    }
+
+    &__right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+
+        @media screen and (min-width: 920px) {
+            align-items: flex-end;
+            width: 35%;
+        }
+    }
+
+    &__title {
+        color: $white;
+        font-weight: 500;
+
+        font-size: vw(32px, 360px);
+        line-height: vw(38px, 360px);
+        margin-bottom: vw(30px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 32px;
+            line-height: 38px;
+            margin-bottom: 30px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            font-size: vw(32px, 360px);
+            line-height: vw(38px, 360px);
+            margin-bottom: vw(30px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            font-size: vw(60px);
+            line-height: vw(60px);
+            margin-bottom: vw(30px);
+        }
+        
+        @media screen and (min-width: 1600px) {
+            font-size: 60px;
+            line-height: 60px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__description {
+        color: $white;
+        opacity: 0.8;
+
+        font-size: vw(16px, 360px);
+        line-height: vw(21px, 360px);
+        margin-bottom: vw(60px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            font-size: 16px;
+            line-height: 21px;
+            margin-bottom: 60px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            font-size: vw(16px, 360px);
+            line-height: vw(21px, 360px);
+            margin-bottom: vw(60px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            font-size: vw(19px);
+            line-height: vw(26px);
+            margin-bottom: vw(60px);
+        }
+        
+        @media screen and (min-width: 1600px) {
+            font-size: 19px;
+            line-height: 26px;
+            margin-bottom: 60px;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: vw(18px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            gap: 18px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            gap: vw(18px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            flex-direction: row;
+            gap: vw(18px);
+        }
+        
+        @media screen and (min-width: 1600px) {
+            gap: 18px;
+        }
+    }
+
+    &__card {
+        border: dashed rgba($color: $white, $alpha: 0.8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        width: vw(260px, 360px);
+        border-radius: vw(8px, 360px);
+        border-width: vw(1.5px, 360px);
+        padding: vw(18px, 360px) vw(24px, 360px);
+        gap: vw(8px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            width: 260px;
+            border-radius: 8px;
+            border-width: 1.5px;
+            padding: 18px 24px;
+            gap: 8px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            width: vw(260px, 360px);
+            border-radius: vw(8px, 360px);
+            border-width: vw(1.5px, 360px);
+            padding: vw(18px, 360px) vw(24px, 360px);
+            gap: vw(8px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            width: auto;
+            border-radius: vw(8px);
+            border-width: vw(1.5px);
+            padding: vw(18px) vw(24px);
+            gap: vw(8px);
+        }
+        
+        @media screen and (min-width: 1600px) {
+            border-radius: 8px;
+            border-width: 1.5px;
+            padding: 18px 24px;
+            gap: 8px;
+        }
+    }
+
+    &__cardTitle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        gap: vw(8px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            gap: 8px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            gap: vw(8px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            gap: vw(8px);
+        }
+        
+        @media screen and (min-width: 1600px) {
+            gap: 8px;
+        }
+    }
+
+    &__cardTitleIcon {
+        width: 100%;
+        
+        max-width: vw(24px, 360px);
+        height: vw(24px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            max-width: 24px;
+            height: 24px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            max-width: vw(24px, 360px);
+            height: vw(24px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            max-width: vw(24px);
+            height: vw(24px);
+        }
+        
+        @media screen and (min-width: 1600px) {
+            max-width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__cardTitleText {
+        font-weight: 700;
+        color: $white;
+        text-transform: uppercase;
+
+        font-size: vw(18px, 360px);
+        line-height: vw(18px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            font-size: 18px;
+            line-height: 18px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            font-size: vw(18px, 360px);
+            line-height: vw(18px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            font-size: vw(18px);
+            line-height: vw(18px);
+        }
+        
+        @media screen and (min-width: 1600px) {
+            font-size: 18px;
+            line-height: 18px;
+        }
+    }
+
+    &__cardText {
+        color: rgba($color: $white, $alpha: 0.8);
+
+        font-size: vw(14px, 360px);
+        line-height: vw(14px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            font-size: 14px;
+            line-height: 14px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            font-size: vw(14px, 360px);
+            line-height: vw(14px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            font-size: vw(14px);
+            line-height: vw(14px);
+        }
+        
+        @media screen and (min-width: 1600px) {
+            font-size: 14px;
+            line-height: 14px;
+        }
+    }
+
+    &__communtity {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+
+        gap: vw(16px, 360px);
+        margin-bottom: vw(56px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            gap: 16px;
+            margin-bottom: 56px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            gap: vw(16px, 360px);
+            margin-bottom: vw(56px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            gap: vw(16px);
+            margin-bottom: vw(56px);
+        }
+        
+        @media screen and (min-width: 1600px) {
+            gap: 16px;
+            margin-bottom: 56px;
+        }
+    }
+
+    &__communityText {
+        color: rgba($color: $white, $alpha: 0.8);
+
+        font-size: vw(16px, 360px);
+        line-height: vw(16px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            font-size: vw(16px, 360px);
+            line-height: vw(16px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            font-size: vw(16px);
+            line-height: vw(16px);
+        }
+        
+        @media screen and (min-width: 1600px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    }
+
+    &__communityButton {
+
+    }
+
+    &__actionButton {
+        background: $gradient;
+        cursor: pointer;
+        border: none;
+        width: 100%;
+
+        border-radius: vw(8px, 360px);
+        padding: vw(3px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            border-radius: 8px;
+            padding: 3px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            border-radius: vw(8px, 360px);
+            padding: vw(3px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            width: vw(270px);
+            border-radius: vw(8px);
+            padding: vw(3px);
+        }
+        
+        @media screen and (min-width: 1600px) {
+            width: 270px;
+            border-radius: 8px;
+            padding: 3px;
+        }
+    }
+
+    &__actionButtonContent {
+        background: $background;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+        gap: vw(18px, 360px);
+        border-radius: vw(5px, 360px);
+        height: vw(90px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            gap: 18px;
+            border-radius: 5px;
+            height: 90px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            gap: vw(18px, 360px);
+            border-radius: vw(5px, 360px);
+            height: vw(90px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            gap: vw(18px);
+            border-radius: vw(4px);
+            height: vw(90px);
+        }
+        
+        @media screen and (min-width: 1600px) {
+            gap: 18px;
+            border-radius: 4px;
+            height: 90px;
+        }
+    }
+
+    &__actionButtonText {
+        color: $white;
+
+        font-size: vw(21px, 360px);
+        line-height: vw(21px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            font-size: 21px;
+            line-height: 21px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            font-size: vw(21px, 360px);
+            line-height: vw(21px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            font-size: vw(21px);
+            line-height: vw(21px);
+        }
+        
+        @media screen and (min-width: 1600px) {
+            font-size: 21px;
+            line-height: 21px;
+        }
+    }
+
+    &__actionButtonIcon {
+        width: vw(28px, 360px);
+        height: vw(28px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            width: 28px;
+            height: 28px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            width: vw(28px, 360px);
+            height: vw(28px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            width: vw(28px);
+            height: vw(28px);
+        }
+        
+        @media screen and (min-width: 1600px) {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+}
+
+.platforms {
+    padding: vw(20px, 360px) 0px vw(216px, 360px) 0px;
+
+    @media screen and (min-width: 360px) {
+        padding: 20px 0px 216px 0px;
+    }
+
+    @media screen and (min-width: 500px) {
+        padding: vw(20px, 360px) 0px vw(216px, 360px) 0px;
+    }
+
+    @media screen and (min-width: 920px) {
+        padding: vw(20px) 0px vw(216px) 0px;
+    }
+
+    @media screen and (min-width: 1600px) {
+        padding: 20px 0px 216px 0px;
+    }
+
+    &__title {
+        text-align: center;
+        font-weight: 500;
+        color: $white;
+
+        font-size: vw(24px, 360px);
+        line-height: vw(24px, 360px);
+        margin-bottom: vw(45px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 24px;
+            line-height: 24px;
+            margin-bottom: 45px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(24px, 360px);
+            line-height: vw(24px, 360px);
+            margin-bottom: vw(45px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(40px);
+            line-height: vw(40px);
+            margin-bottom: vw(80px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 40px;
+            line-height: 40px;
+            margin-bottom: 80px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: vw(48px, 360px);
+        margin-bottom: vw(82px, 360px);
+
+        @media screen and (min-width: 360px) {
+            gap: 48px;
+            margin-bottom: 82px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            gap: vw(48px, 360px);
+            margin-bottom: vw(82px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            flex-direction: row;
+            gap: vw(64px);
+            margin-bottom: vw(132px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            gap: 64px;
+            margin-bottom: 132px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: vw(22px, 360px);
+
+        @media screen and (min-width: 360px) {
+            gap: 22px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            gap: vw(22px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            gap: vw(28px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            gap: 28px;
+        }
+    }
+
+    &__logo {
+        object-fit: contain;
+
+        width: vw(64px, 360px);
+        height: vw(64px, 360px);
+
+        @media screen and (min-width: 360px) {
+            width: 64px;
+            height: 64px;
+        }
+
+        @media screen and (min-width: 500px) {
+            width: vw(64px, 360px);
+            height: vw(64px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            width: vw(84px);
+            height: vw(84px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 84px;
+            height: 84px;
+        }
+    }
+
+    &__name {
+        color: $white;
+
+        font-size: vw(18px, 360px);
+        line-height: vw(18px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 18px;
+            line-height: 18px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(18px, 360px);
+            line-height: vw(18px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(24px);
+            line-height: vw(24px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+
+    &__graph {
+        height: vw(64px, 360px);
+
+        @media screen and (min-width: 360px) {
+            height: 64px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            height: vw(64px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            height: vw(84px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            height: 84px;
+        }
+    }
+
+    &__text {
+        color: $white;
+        font-weight: 500;
+        text-align: center;
+        margin: 0px auto;
+        width: 100%;
+
+        font-size: vw(24px, 360px);
+        line-height: vw(28px, 360px);
+        margin-bottom: vw(24px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 22px;
+            line-height: 28px;
+            margin-bottom: 24px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(24px, 360px);
+            line-height: vw(28px, 360px);
+            margin-bottom: vw(24px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            width: vw(1200px);
+            font-size: vw(36px);
+            line-height: vw(54px);
+            margin-bottom: vw(32px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            width: 1200px;
+            font-size: 36px;
+            line-height: 54px;
+            margin-bottom: 32px;
+        }
+    }
+
+    &__subText {
+        color: $white;
+        text-align: center;
+        margin: 0px auto;
+        width: 100%;
+
+        font-size: vw(16px, 360px);
+        line-height: vw(24px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(16px, 360px);
+            line-height: vw(24px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            width: vw(900px);
+            font-size: vw(24px);
+            line-height: vw(36px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            width: 900px;
+            font-size: 24px;
+            line-height: 36px;
+        }
+    }
+
+}
+
+.roadMap {
+    padding: vw(20px, 360px) 0px vw(220px, 360px) 0px;
+
+    margin: 0px -12px;
+
+    @media screen and (min-width: 360px) {
+        padding: 20px 0px 220px 0px;
+    }
+
+    @media screen and (min-width: 500px) {
+        padding: vw(20px, 360px) 0px vw(220px, 360px) 0px;
+    }
+
+    @media screen and (min-width: 920px) {
+        margin: 0px;
+        padding: vw(20px) 0px vw(350px) 0px;
+    }
+
+    @media screen and (min-width: 1600px) {
+        padding: 20px 0px 350px 0px;
+    }
+
+
+    &__title {
+        text-align: center;
+        color: $white;
+
+        font-size: vw(24px, 360px);
+        line-height: vw(24px, 360px);
+        margin-bottom: vw(45px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 24px;
+            line-height: 24px;
+            margin-bottom: 45px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(24px, 360px);
+            line-height: vw(24px, 360px);
+            margin-bottom: vw(45px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(40px);
+            line-height: vw(40px);
+            margin-bottom: vw(80px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 40px;
+            line-height: 40px;
+            margin-bottom: 80px;
+        }
+    }
+
+    &__timeLine {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        gap: vw(20px, 360px);
+        padding: 0px vw(12px, 360px);
+
+        @media screen and (min-width: 360px) {
+            gap: 20px;
+            padding: 0px 12px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            gap: vw(20px, 360px);
+            padding: 0px vw(12px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            gap: vw(20px);
+            padding: 0px;
+        }
+    
+        @media screen and (min-width: 1600px) {
+            gap: 20px;
+        }
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: center;
+
+        height: vw(400px, 360px);
+        min-width: vw(300px, 360px);
+
+        @media screen and (min-width: 360px) {
+            height: 400px;
+            min-width: 300px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            height: vw(400px, 360px);
+            min-width: vw(300px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            height: vw(400px);
+            min-width: auto;
+        }
+    
+        @media screen and (min-width: 1600px) {
+            height: 400px;
+        }
+    }
+
+    &__progress {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background: $purple;
+        z-index: 0;
+
+        margin: vw(20px, 360px) 0px;
+        border-radius: vw(8px, 360px);
+        min-height: vw(40px, 360px);
+        max-height: vw(40px, 360px);
+
+        @media screen and (min-width: 360px) {
+            margin: 20px 0px;
+            border-radius: 8px;
+            min-height: 40px;
+            max-height: 40px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            margin: vw(20px, 360px) 0px;
+            border-radius: vw(8px, 360px);
+            min-height: vw(40px, 360px);
+            max-height: vw(40px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            margin: vw(20px) 0px;
+            border-radius: vw(8px);
+            min-height: vw(40px);
+            max-height: vw(40px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            margin: 20px 0px;
+            border-radius: 8px;
+            min-height: 40px;
+            max-height: 40px;
+        }
+    }
+
+    &__progrssBar {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        background: $blue;
+        z-index: 1;
+
+        border-radius: vw(8px, 360px) 0px 0px vw(8px, 360px);
+
+        @media screen and (min-width: 360px) {
+            border-radius: 8px 0px 0px 8px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            border-radius: vw(8px, 360px) 0px 0px vw(8px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            border-radius: vw(8px) 0px 0px vw(8px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            border-radius: 8px 0px 0px 8px;
+        }
+        
+        &_active {
+            &::after {
+                position: absolute;
+                top: -50%;
+                right: 0px;
+                content: ' ';
+                display: block;
+                height: 200%;
+                background: $blue;
+                border-radius: 50%;
+                filter: blur(1px);
+                animation: anim 1s ease-in-out infinite;
+    
+                width: vw(3px, 360px);
+
+                @media screen and (min-width: 360px) {
+                    width: 3px;
+                }
+            
+                @media screen and (min-width: 500px) {
+                    width: vw(3px, 360px);
+                }
+            
+                @media screen and (min-width: 920px) {
+                    width: vw(3px);
+                }
+            
+                @media screen and (min-width: 1600px) {
+                    width: 3px;
+                }
+                
+                @keyframes anim {
+                    0% {
+                        transform: scaleY(0.7);
+                        opacity: 0.5;
+                    }
+    
+                    50% {
+                        transform: scaleY(1.5);
+                        opacity: 1;
+                    }
+    
+                    100% {
+                        transform: scaleY(0.7);
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+    }
+
+    &__progressText {
+        color: $white;
+        position: relative;
+        z-index: 2;
+
+        font-size: vw(16px, 360px);
+        line-height: vw(16px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(16px, 360px);
+            line-height: vw(16px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(16px);
+            line-height: vw(16px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+    }
+
+    &__list {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        gap: vw(12px, 360px);
+
+        @media screen and (min-width: 360px) {
+            gap: 12px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            gap: vw(12px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            gap: vw(12px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            gap: 12px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        gap: vw(10px, 360px);
+
+        @media screen and (min-width: 360px) {
+            gap: 10px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            gap: vw(10px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            gap: vw(10px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            gap: 10px;
+        }
+    }
+
+    &__itemCheck {
+        width: vw(20px, 360px);
+        height: vw(20px, 360px);
+
+        @media screen and (min-width: 360px) {
+            width: 20px;
+            height: 20px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            width: vw(20px, 360px);
+            height: vw(20px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            width: vw(20px);
+            height: vw(20px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__itemCheckEmpty {
+        min-width: 16px;
+        max-width: 16px;
+        height: 16px;
+        border-radius: 10px;
+        border: solid $white;
+
+        border-width: vw(2px, 360px);
+        margin: vw(2px, 360px);
+
+        @media screen and (min-width: 360px) {
+            border-width: 2px;
+            margin: 2px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            border-width: vw(2px, 360px);
+            margin: vw(2px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            border-width: vw(2px);
+            margin: vw(2px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            border-width: 2px;
+            margin: 2px;
+        }
+    }
+
+    &__itemText {
+        color: $white;
+
+        font-size: vw(17px, 360px);
+        line-height: vw(21px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 17px;
+            line-height: 21px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(17px, 360px);
+            line-height: vw(21px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(17px);
+            line-height: vw(21px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 17px;
+            line-height: 21px;
+        }
+    }
+
+    &__itemText_done {
+        color: $blue;
+    }
+}
+
+.subscribeForm {
+    margin-bottom: vw(220px, 360px);
+
+    @media screen and (min-width: 360px) {
+        margin-bottom: 220px;
+    }
+
+    @media screen and (min-width: 500px) {
+        margin-bottom: vw(220px, 360px);
+    }
+
+    @media screen and (min-width: 920px) {
+        margin-bottom: vw(280px);
+    }
+
+    @media screen and (min-width: 1600px) {
+        margin-bottom: 280px;
+    }
+
+    &__title {
+        color: $white;
+        font-weight: normal;
+        text-align: center;
+        
+        font-size: vw(24px, 360px);
+        line-height: vw(28px, 360px);
+        margin-bottom: vw(60px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 24px;
+            line-height: 28px;
+            margin-bottom: 60px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(24px, 360px);
+            line-height: vw(28px, 360px);
+            margin-bottom: vw(60px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(38px);
+            line-height: vw(38px);
+            margin-bottom: vw(60px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 38px;
+            line-height: 38px;
+            margin-bottom: 60px;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px auto;
+        width: 100%;
+
+        gap: vw(24px, 360px);
+
+        @media screen and (min-width: 360px) {
+            gap: 24px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            gap: vw(24px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            flex-direction: row;
+            width: vw(600px);
+            gap: vw(24px);
+            
+        }
+    
+        @media screen and (min-width: 1600px) {
+            width: 600px;
+            gap: 24px;
+        }
+    }
+
+    &__input {
+        width: 100%;
+    }
+
+    &__button {
+        width: 100%;
+
+        font-size: vw(18px, 360px);
+        line-height: vw(18px, 360px);
+        height: vw(50px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 18px;
+            line-height: 18px;
+            height: 50px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(18px, 360px);
+            line-height: vw(18px, 360px);
+            height: vw(50px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            width: vw(200px);
+            min-width: vw(200px);
+            font-size: vw(18px);
+            line-height: vw(18px);
+            height: vw(50px);
+            
+        }
+    
+        @media screen and (min-width: 1600px) {
+            width: 200px;
+            min-width: 200px;
+            font-size: 18px;
+            line-height: 18px;
+            height: 50px;
+        }
+    }
+
+    &__result {
+        color: $white;
+        text-align: center;
+
+        font-size: vw(16px, 360px);
+        line-height: vw(16px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(16px, 360px);
+            line-height: vw(16px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(16px);
+            line-height: vw(16px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    }
+}
