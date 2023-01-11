@@ -442,44 +442,52 @@
     &__actionButtonText {
         color: $white;
 
-        font-size: 21px;
-        line-height: 21px;
+        font-size: vw(21px, 360px);
+        line-height: vw(21px, 360px);
         
         @media screen and (min-width: 360px) {
-                
+            font-size: 21px;
+            line-height: 21px;
         }
         
         @media screen and (min-width: 500px) {
-            
+            font-size: vw(21px, 360px);
+            line-height: vw(21px, 360px);
         }
         
         @media screen and (min-width: 920px) {
-            
+            font-size: vw(21px);
+            line-height: vw(21px);
         }
         
         @media screen and (min-width: 1600px) {
-            
+            font-size: 21px;
+            line-height: 21px;
         }
     }
 
     &__actionButtonIcon {
-        width: 28px;
-        height: 28px;
+        width: vw(28px, 360px);
+        height: vw(28px, 360px);
         
         @media screen and (min-width: 360px) {
-                
+            width: 28px;
+            height: 28px;
         }
         
         @media screen and (min-width: 500px) {
-            
+            width: vw(28px, 360px);
+            height: vw(28px, 360px);
         }
         
         @media screen and (min-width: 920px) {
-            
+            width: vw(28px);
+            height: vw(28px);
         }
         
         @media screen and (min-width: 1600px) {
-            
+            width: 28px;
+            height: 28px;
         }
     }
 
@@ -835,16 +843,16 @@
         justify-content: center;
 
         height: vw(400px, 360px);
-        min-width: vw(280px, 360px);
+        min-width: vw(300px, 360px);
 
         @media screen and (min-width: 360px) {
             height: 400px;
-            min-width: 280px;
+            min-width: 300px;
         }
     
         @media screen and (min-width: 500px) {
             height: vw(400px, 360px);
-            min-width: vw(280px, 360px);
+            min-width: vw(300px, 360px);
         }
     
         @media screen and (min-width: 920px) {
@@ -982,6 +990,30 @@
         color: $white;
         position: relative;
         z-index: 2;
+
+        font-size: vw(16px, 360px);
+        line-height: vw(16px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(16px, 360px);
+            line-height: vw(16px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(16px);
+            line-height: vw(16px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+
     }
 
     &__list {
