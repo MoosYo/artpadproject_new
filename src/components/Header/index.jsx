@@ -75,6 +75,15 @@ export default function Header(props) {
       props.setModal((props) => <ConnectWalletModal {...props} />);
    };
 
+   const profileIcon = (className = "") => {
+
+      return (
+         <a href={isLogedIn ? "/profile" : "/sign-in"} className={ className ? className : header__navIcon}>
+            <PersonIcon />
+         </a>
+      );
+   }
+
    return (
       <header className={header}>
          <Logo className={header__logo} />
@@ -107,14 +116,12 @@ export default function Header(props) {
                            </button>
                         </div>
 
-                        <a href={isLogedIn ? "/profile" : "/sign-in"} className={header__navMobileIcon}>
-                           <PersonIcon />
-                        </a>
+                        {
+                           profileIcon(header__navMobileIcon)
+                        }
                      </div>
                   ) : (
-                     <a href={isLogedIn ? "/profile" : "/sign-in"} className={header__navMobileIcon}>
-                        <PersonIcon />
-                     </a>
+                     profileIcon(header__navMobileIcon)
                   )
                }
                <button
@@ -189,14 +196,12 @@ export default function Header(props) {
                            </button>
                         </div>
 
-                        <a href={isLogedIn ? "/profile" : "/sign-in"} className={header__navIcon} title={isLogedIn ? lang.profile[locale] : lang.signin[locale]}>
-                           <PersonIcon />
-                        </a>
+                        {
+                           profileIcon(header__navIcon)
+                        }
                      </div>
                   ) : (
-                     <a href={isLogedIn ? "/profile" : "/sign-in"} className={header__navIcon + " " + hideOnMob} title={isLogedIn ? lang.profile[locale] : lang.signin[locale]}>
-                        <PersonIcon />
-                     </a>
+                     profileIcon(header__navIcon + " " + hideOnMob)
                   )
                }
                
