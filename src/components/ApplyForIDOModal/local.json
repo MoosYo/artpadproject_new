@@ -1,0 +1,27 @@
+{
+    "header": {
+       "ru-RU": "Введите Ваш промо-код",
+       "en-US": "Apply for IDO"
+    },
+    "placeholder1": {
+       "ru-RU": "Укажите Ваше имя",
+       "en-US": "Enter your Name"
+    },
+    "placeholder2": {
+       "ru-RU": "Укажите Ваш телефон",
+       "en-US": "Enter your phone"
+    },
+    "placeholder3": {
+       "ru-RU": "Укажите адрес Вашей эл. почты",
+       "en-US": "Enter your email"
+    },
+    "placeholder4": {
+       "ru-RU": "Введите описание проекта",
+       "en-US": "Enter description of project"
+    },
+    "button": {
+       "ru-RU": "Отправить",
+       "en-US": "Send"
+    }
+ }
+ 

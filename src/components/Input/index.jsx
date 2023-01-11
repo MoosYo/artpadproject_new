@@ -1,7 +1,8 @@
 import classes from "./styles.module.scss";
 
 const {
-    input
+    input,
+    input_outline
 } = classes
 
 export default function Input ({
@@ -11,17 +12,35 @@ export default function Input ({
     type,
     placeholder,
     required,
-    className
+    className,
+    variant
 }) {
+
+    let tmpClassName = input + (className ? " " + className : "");
+
+    if (variant === "outline") tmpClassName += " " + input_outline
+
     return (
-        <input
-            className={input + (className ? " " + className : "")}
-            value={value}
-            name={name}
-            type={type}
-            placeholder={placeholder}
-            required={required}
-            onChange={onChange}    
-        />
+        type === "textarea" ? (
+            <textarea
+                className={tmpClassName}
+                value={value}
+                name={name}
+                type={type}
+                placeholder={placeholder}
+                required={required}
+                onChange={onChange}    
+            />
+        ) : (
+            <input
+                className={tmpClassName}
+                value={value}
+                name={name}
+                type={type}
+                placeholder={placeholder}
+                required={required}
+                onChange={onChange}    
+            />
+        )
     );
 }
