@@ -329,7 +329,7 @@ const MainPage = ({setModal = () => {}}) => {
                 <div className={roadMap__timeLine}>
                     {
                         roadMapArray.map((block, i) => (
-                            <div className={roadMap__block}>
+                            <div className={roadMap__block} key={i}>
                                 <div className={roadMap__list} style={{justifyContent: "flex-end"}}>
                                     {
                                         block.top.map((blockList, j) => (
