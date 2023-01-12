@@ -19,6 +19,9 @@ import CopyOutlineIcon from "../Icons/CopyOutline";
 
 // Helpers
 import getLocale from "../../helpers/getLoacale";
+import RoundedCrossIcon from "../Icons/RoundedCross";
+import ExitIcon from "../Icons/Exit";
+import RoundedFillCheckIcon from "../Icons/RoundedFillCheck";
 
 const {
    header,
@@ -46,15 +49,33 @@ const {
    header__walletProfile,
    header__walletNumber,
    header__walletCopyBtn,
+
+   header__profileButton,
+   header__dropDownMenu,
+   header__dropDownMenu_shown,
+   header__dropDownMenuItem,
+   header__dropDownMenuIcon,
+   header__dropDownMenuText,
    
    hideOnMob
 } = classes;
 
+
+const initState = window.initState ? window.initState : {
+   kyc: false,
+   wallet: null,
+   isLogedIn: false
+};
+
 export default function Header(props) {
 
    const locale = getLocale();
-   const isLogedIn = false;
-   const wallet = null;
+
+   const {
+      kyc,
+      isLogedIn,
+      wallet
+   } = initState;
 
    const path = window.location.pathname;
 
@@ -67,6 +88,7 @@ export default function Header(props) {
 
    const hideMenu = () => {
       setMenuState(false);
+      setMenuShown(false);
       document.querySelector("body").style.overflow = null;
    };
 
@@ -75,12 +97,126 @@ export default function Header(props) {
       props.setModal((props) => <ConnectWalletModal {...props} />);
    };
 
+   const [menuShown, setMenuShown] = useState(false);
+   const [menuHasShown, setMenuHasShown] = useState(false);
+
    const profileIcon = (className = "") => {
 
+      const dropDownMenuItems = [
+         {
+            "text": {
+               "ru-RU": "KYC",
+               "en-US": "KYC"
+            },
+            "href": "/kyc",
+            "icon": kyc ? "check" : ""
+         },
+         {
+            "text": {
+               "ru-RU": "Кошелёк",
+               "en-US": "Wallet"
+            },
+            "href": "/wallet",
+            "icon": ""
+         },
+         {
+            "text": {
+               "ru-RU": "История Транзакция",
+               "en-US": "Recent Transaction"
+            },
+            "href": "/transactions",
+            "icon": ""
+         },
+         {
+            "text": {
+               "ru-RU": "Ваш NFT",
+               "en-US": "Your NFT"
+            },
+            "href": "/your-nft",
+            "icon": ""
+         },
+         {
+            "text": {
+               "ru-RU": "Профиль",
+               "en-US": "Profile"
+            },
+            "href": "/profile",
+            "icon": ""
+         },
+         {
+            "text": {
+               "ru-RU": wallet ? "Отключить кошелёк" : "Подключить кошелёк",
+               "en-US": wallet ? "Disconnect Wallet" : "Connect Wallet"
+            },
+            "href": wallet ? "/wallet" : "m:connectWallet",
+            "icon": ""
+         },
+         {
+            "text": {
+               "ru-RU": "Выйти",
+               "en-US": "Exit profile"
+            },
+            "href": "/auth/exit.php",
+            "icon": "exit"
+         },
+      ]
+
       return (
-         <a href={isLogedIn ? "/profile" : "/sign-in"} className={ className ? className : header__navIcon}>
-            <PersonIcon />
-         </a>
+         <div className={header__profileButton}>
+            {
+               isLogedIn ? (
+                  <button
+                     type="button"
+                     onClick={() => {setMenuShown (!menuShown); setMenuHasShown(true)}}
+                     className={ className ? className : header__navIcon}
+                  >
+                     {
+                        menuShown ? (
+                           <RoundedCrossIcon />
+                        ) : (
+                           <PersonIcon />
+                        )
+                     }
+                  </button>
+               )
+               : (
+                  <a href="/sign-in" className={ className ? className : header__navIcon}>
+                     <PersonIcon />
+                  </a>
+               )
+            }
+            {
+               isLogedIn ? (
+                  <div
+                     className={header__dropDownMenu + (menuShown ? " " + header__dropDownMenu_shown : "")}
+                     style={{
+                        display: !menuHasShown ? "none" : null
+                     }}
+                  >
+                     {
+                        dropDownMenuItems.map(({href, icon, text}, i) => (
+                           href === "m:connectWallet" ? (
+                              <button type="button" className={header__dropDownMenuItem} key={i} onClick={connectWallet}>
+                                 <span className={header__dropDownMenuText}>
+                                    {text[locale]}
+                                 </span>
+                              </button>
+                           ) : (
+                              <a href={href} key={i} className={header__dropDownMenuItem}>
+                                 {icon === "exit" ? <ExitIcon className={header__dropDownMenuIcon} /> : ""}
+                                 {icon === "check" ? <RoundedFillCheckIcon className={header__dropDownMenuIcon} /> : ""}
+
+                                 <span className={header__dropDownMenuText}>
+                                    {text[locale]}
+                                 </span>
+                              </a>
+                           )
+                        ))
+                     }
+                  </div>
+               ) : ""
+            }
+         </div>
       );
    }
 
@@ -110,7 +246,7 @@ export default function Header(props) {
                            <button
                               type="button"
                               className={header__walletCopyBtn}
-                              onClick={() => {}}
+                              onClick={() => navigator.clipboard.writeText(wallet)}
                            >
                               <CopyOutlineIcon />
                            </button>
@@ -190,7 +326,7 @@ export default function Header(props) {
                            <button
                               type="button"
                               className={header__walletCopyBtn}
-                              onClick={() => {}}
+                              onClick={() => navigator.clipboard.writeText(wallet)}
                            >
                               <CopyOutlineIcon />
                            </button>
