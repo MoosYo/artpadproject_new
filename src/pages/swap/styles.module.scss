@@ -1,0 +1,219 @@
+@import "../../styles/colors.scss";
+@import "../../styles/helpers.scss";
+
+.swap {
+    width: 100%;
+    color: #ffffff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    gap: 42px;
+    margin-bottom: 64px;
+
+    &__form {
+        margin-top: 42px;
+        border: solid $accent;
+
+        border-width: 1px;
+        border-radius: 24px;
+    }
+
+    &__header {
+        text-align: center;
+        color: $accent;
+
+        padding: 24px 24px 4px 24px;
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    &__description {
+        text-align: center;
+        color: $white;
+
+        padding: 0px 24px 24px 24px;
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    &__formDivider {
+        border: none;
+        border-bottom: solid $accent;
+
+        border-bottom-width: 1px;
+    }
+
+    &__field {
+        padding: 32px 32px 0px;
+    }
+
+    &__fieldData {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+
+        gap: 6px;
+        margin-bottom: 6px;
+    }
+
+    &__fieldLogo {
+        object-fit: contain;
+
+        width: 24px;
+        height: 24px;
+    }
+
+    &__fieldLabel {
+        font-weight: 500;
+        width: 100%;
+
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    &__fieldChange {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__fieldChangeIcon {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__fieldInput {
+        border-color: $accent;
+        text-align: center;
+
+        border-radius: 24px;
+        height: 64px;
+    }
+
+    &__formText {
+        color: $accent;
+        font-weight: 600;
+        text-align: center;
+
+        margin-top: 24px;
+        margin-bottom: 16px;
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    &__formIndex {
+        color: $white;
+        font-weight: 700;
+        text-align: center;
+
+        font-size: 36px;
+        margin-bottom: 24px;
+    }
+
+    &__formSubmit {
+        width: calc(100% - 48px);
+
+        border-radius: 24px;
+        font-size: 18px;
+        line-height: 18px;
+        height: 64px;
+        margin: 0px 24px 24px 24px;
+    }
+
+    &__data {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        gap: 18px;
+    }
+
+    &_dataHeader {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        height: 24px;
+    }
+
+    &__dataCurrency {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 12px;
+    }
+
+    &__dataCurrencyLogo {
+        object-fit: contain;
+
+        width: 24px;
+        height: 24px;
+    }
+
+    &__dataCurrencyText {
+        color: $white;
+        font-weight: 600;
+
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    &__dataCurrencyChange {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__dataCurrencyChangeIcon {
+        transform: rotate(90deg);
+
+        width: 24px;
+        height: 24px;
+    }
+
+    &__dataDuration {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        border: solid $accent;
+
+        border-width: 1px;
+        height: 24px;
+        border-radius: 12px;
+        gap: 16px;
+        padding: 0px 16px;
+    }
+
+    &__dataDurationButton {
+        background: none;
+        border: none;
+        color: $white;
+        cursor: pointer;
+
+        &_active {
+            color: $accent;
+        }
+    }
+
+    &__dataGraph {
+        width: 100%;
+        height: 100%;
+        border: solid $accent;
+
+        border-radius: 24px;
+        border-width: 1px;
+        padding: 24px;
+    }
+
+}
