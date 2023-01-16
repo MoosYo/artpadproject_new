@@ -16,6 +16,7 @@ import LoginSignupPage from "./pages/login-signup";
 import Marketplace from "./pages/nft-marketplace";
 import Accordion from "./components/Accordion";
 import MainPage from "./pages/main";
+import Swap from "./pages/swap";
 
 const { app, pageWrapper } = classes;
 
@@ -59,6 +60,7 @@ export default function App() {
          <Header setModal={showModal} />
          <main className={pageWrapper}>
             {path === "/" || path === "" ? <MainPage setModal={showModal} /> : ""}
+            {path === "/swap" || path === "/swap/" ? <Swap setModal={showModal} /> : ""}
             {path === "/nft-marketplace" || path === "/nft-marketplace/" ? <Marketplace /> : ""}
             {path === "/faq" || path === "/faq/" ? <Accordion /> : ""}
             {path === "/profile" || path === "/profile/" ? <ProfilePage /> : ""}
