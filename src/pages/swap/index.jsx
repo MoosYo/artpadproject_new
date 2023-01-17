@@ -3,6 +3,16 @@ import lang from "./local.json";
 
 // Libs
 import { useState } from "react";
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Tooltip,
+    Filler
+  } from 'chart.js';
+import { Line } from "react-chartjs-2";
 
 // Components
 import Button from "../../components/Button";
@@ -13,6 +23,17 @@ import SwapIcon from "../../components/Icons/Swap";
 
 // Helpers
 import getLocale from "../../helpers/getLoacale";
+import { useEffect } from "react";
+
+
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Tooltip,
+    Filler
+);
 
 const {
     swap,
@@ -101,6 +122,83 @@ const Swap = ({}) => {
     }
 
     const [duration, setDuration] = useState("h");
+
+    
+    const options = {
+        responsive: true,
+        scales: {
+            y: {
+                grid: {
+                    color: "#ACACAC"
+                },
+                border: {
+                    display: false
+                }
+            },
+            x: {
+                grid: {
+                    display: false
+                }
+            }
+        },
+        plugins: {
+            tooltip: {
+                mode: 'index',
+                intersect: false,
+                backgroundColor: "rgba(255,255,255,1)",
+                titleColor: "#000",
+                bodyColor: "#000"
+            }
+        }
+    };
+    
+    const labels = {
+        h: [],
+        d: [],
+        w: [],
+        m: []
+    };
+
+    const currentTime = new Date().getTime();
+    for(let i = 0; i < 12; i++) {
+        const tmpTime = new Date(currentTime - (i * 5 * 60 * 1000));
+        labels.h.unshift(("0" + tmpTime.getHours()).slice(-2) + ":" + ("0" + tmpTime.getMinutes()).slice(-2));
+    }
+    for(let i = 0; i < 24; i++) {
+        const tmpTime = new Date(currentTime - (i * 60 * 60 * 1000));
+        labels.d.unshift(("0" + tmpTime.getHours()).slice(-2) + ":00");
+    }
+    for(let i = 0; i < 7; i++) {
+        const tmpTime = new Date(currentTime - (i * 24 * 60 * 60 * 1000));
+        labels.w.unshift(("0" + tmpTime.getDate()).slice(-2) + "." + ("0" + tmpTime.getMonth()).slice(-2));
+    }
+    for(let i = 0; i < 30; i++) {
+        const tmpTime = new Date(currentTime - (i * 24 * 60 * 60 * 1000));
+        labels.m.unshift(("0" + tmpTime.getDate()).slice(-2) + "." + ("0" + tmpTime.getMonth()).slice(-2));
+    }
+
+    const data = {
+        labels: labels[duration],
+        datasets: [
+            {
+                label: "USDT",
+                backgroundColor: (context) => {
+                    const ctx = context.chart.ctx;
+                    const gradient = ctx.createLinearGradient(0, 0, 0, 410);
+                    gradient.addColorStop(0, "rgba(205, 62, 208, 1)");
+                    gradient.addColorStop(1, "rgba(205, 62, 208, 0)");
+                    return gradient;
+                },
+                fill: true,
+                data: labels[duration].map(() => Math.random() * 100),
+                borderColor: 'rgb(205, 62, 208)'
+            }
+        ]
+    };
+
+    useEffect(() => {
+        data.datasets[0].data = labels[duration].map(() => Math.random() * 100);
+    }, [duration]);
 
     return (
         <div className={swap}>
@@ -212,7 +310,7 @@ const Swap = ({}) => {
                 </div>
 
                 <div className={swap__dataGraph}>
-
+                    <Line options={options} data={data} />
                 </div>
             </div>
         </div>
