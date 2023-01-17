@@ -111,22 +111,22 @@ export default function Header(props) {
             "href": "/kyc",
             "icon": kyc ? "check" : ""
          },
-         {
-            "text": {
-               "ru-RU": "Кошелёк",
-               "en-US": "Wallet"
-            },
-            "href": "/wallet",
-            "icon": ""
-         },
-         {
-            "text": {
-               "ru-RU": "История Транзакция",
-               "en-US": "Recent Transaction"
-            },
-            "href": "/transactions",
-            "icon": ""
-         },
+         // {
+         //    "text": {
+         //       "ru-RU": "Кошелёк",
+         //       "en-US": "Wallet"
+         //    },
+         //    "href": "/wallet",
+         //    "icon": ""
+         // },
+         // {
+         //    "text": {
+         //       "ru-RU": "История Транзакция",
+         //       "en-US": "Recent Transaction"
+         //    },
+         //    "href": "/transactions",
+         //    "icon": ""
+         // },
          {
             "text": {
                "ru-RU": "Ваш NFT",
@@ -296,7 +296,7 @@ export default function Header(props) {
                      <Button href="/buy-artr" className="">
                         {lang.buyARTR[locale]}
                      </Button>
-                  ) : ""
+                  ) : <div></div>
                }
 
                <div className={header__language}>
