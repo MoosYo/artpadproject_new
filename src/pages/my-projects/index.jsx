@@ -79,43 +79,101 @@ let { data, pagination } = window.initState?.projects
 export default function MyProjectsPage({}) {
    const local = getLocale();
 
-   const thead = [
+   const headers = [
       {
-         celName: "Project",
-         celDescription: {},
+          name: "",
+          toolTip: null,
+          width: "40px"
       },
       {
-         celName: "Round",
-         celDescription: {},
+          name: "Project",
+          toolTip: null,
+          width: "1fr"
       },
       {
-         celName: "Pool",
-         celDescription: {},
+          name: "Round",
+          toolTip: null,
+          width: "140px"
       },
       {
-         celName: "Price",
-         celDescription: {},
+          name: "Pool",
+          toolTip: null,
+          width: "140px"
       },
       {
-         celName: "Token",
-         celDescription: {},
+          name: "Price",
+          toolTip: null,
+          width: "140px"
       },
       {
-         celName: "Status",
-         celDescription: {},
+          name: "Token",
+          toolTip: null,
+          width: "140px"
       },
       {
-         celName: "",
-         celDescription: {},
+          name: "Status",
+          toolTip: null,
+          width: "140px"
       },
-   ];
+      {
+          name: "Link",
+          toolTip: null,
+          width: "140px"
+      }
+  ];
+
+  const dataToRows = (dataSet = []) => {
+
+      const tmpRows = [];
+
+      dataSet.forEach(dataItem => {
+         tmpRows.push({
+            cells: [
+               {
+                  value: dataItem.icon,
+                  type: "img"
+               },
+               {
+                   value: dataItem.name,
+                   type: "text"
+               },
+               {
+                   value: dataItem.round,
+                   type: "text"
+               },
+              {
+                  value: dataItem.pool,
+                  type: "text"
+              },
+              {
+                  value: dataItem.price,
+                  type: "text"
+              },
+              {
+                  value: dataItem.token,
+                  type: "text"
+              },
+              {
+                  value: dataItem.status,
+                  type: "text"
+              },
+              {
+                  value: dataItem.link,
+                  type: "url"
+              }
+            ]
+         })
+      });
+
+      return tmpRows;
+  }
 
    return (
       <>
          <Tabs tabs={profileRoutes} />
          <PageHeader>{localize.header_title[local]}</PageHeader>
          <div className={my_project__layout}>
-            <Table columns={thead} rows={data} keys={Object.keys(data[0]).splice(3, Object.keys(data[0]).length - 1)} />
+            <Table headers={headers} rows={dataToRows(data)} />
          </div>
          {pagination.totalPagesCount > 1 ? (
             <Pagination

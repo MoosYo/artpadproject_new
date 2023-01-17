@@ -22,8 +22,8 @@ const profileRoutes = [
     },
     {
         text: {
-            "en-US": "My project",
-            "ru-RU": "Мой проект"
+            "en-US": "My projects",
+            "ru-RU": "Мои проекты"
         },
         href: "/profile/my-projects"
     }

@@ -1,0 +1,299 @@
+@import "../../styles/helpers.scss";
+@import "../../styles/colors.scss";
+
+.table {
+    width: 100%;
+    overflow-x: auto;
+
+    @media screen and (min-width: 360px) {
+
+    }
+
+    @media screen and (min-width: 500px) {
+
+    }
+
+    @media screen and (min-width: 920px) {
+        width: vw(1360px);
+    }
+
+    @media screen and (min-width: 1600px) {
+        width: 1360px;
+    }
+
+    &__header {
+        display: grid;
+        width: max-content;
+        min-width: 100%;
+
+        
+        column-gap: vw(12px, 360px);
+        padding: vw(12px, 360px);
+        margin-bottom: vw(6px, 360px);
+
+        @media screen and (min-width: 360px) {
+            column-gap: 12px;
+            padding: 12px;
+            margin-bottom: 6px;
+        }
+
+        @media screen and (min-width: 500px) {
+            column-gap: vw(12px, 360px);
+            padding: vw(12px, 360px);
+            margin-bottom: vw(6px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            column-gap: vw(12px);
+            padding: vw(12px);
+            margin-bottom: vw(6px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            column-gap: 12px;
+            padding: 12px;
+            margin-bottom: 6px;
+        }
+    }
+
+    &__headerCell {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: vw(4px, 360px);
+
+        @media screen and (min-width: 360px) {
+            gap: 4px;
+        }
+
+        @media screen and (min-width: 500px) {
+            gap: vw(4px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            gap: vw(4px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            gap: 4px;
+        }
+    }
+
+    &__headerText {
+        color: $white;
+        text-transform: uppercase;
+        white-space: nowrap;
+        font-weight: 600;
+
+        font-size: vw(18px, 360px);
+        line-height: vw(18px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 18px;
+            line-height: 18px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(18px, 360px);
+            line-height: vw(18px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(18px);
+            line-height: vw(18px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 18px;
+            line-height: 18px;
+        }
+    }
+
+    &__headerToolTip {
+        width: vw(18px, 360px);
+        height: vw(18px, 360px);
+
+        @media screen and (min-width: 360px) {
+            width: 18px;
+            height: 18px;
+        }
+
+        @media screen and (min-width: 500px) {
+            width: vw(18px, 360px);
+            height: vw(18px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            width: vw(18px);
+            height: vw(18px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    &__rows {
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+        min-width: 100%;
+
+        gap: vw(12px, 360px);
+
+        @media screen and (min-width: 360px) {
+            gap: 12px;
+        }
+
+        @media screen and (min-width: 500px) {
+            gap: vw(12px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            gap: vw(12px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            gap: 12px;
+        }
+    }
+
+    &__rowWrapper {
+        display: grid;
+        
+        column-gap: vw(12px, 360px);
+
+        @media screen and (min-width: 360px) {
+            column-gap: 12px;
+        }
+
+        @media screen and (min-width: 500px) {
+            column-gap: vw(12px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            column-gap: vw(12px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            column-gap: 12px;
+        }
+    }
+
+    &__row {
+        border: solid $accent;
+
+        border-width: vw(2px, 360px);
+        padding: vw(12px, 360px);
+        border-radius: vw(10px, 360px);
+
+        @media screen and (min-width: 360px) {
+            border-width: 2px;
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        @media screen and (min-width: 500px) {
+            border-width: vw(2px, 360px);
+            padding: vw(12px, 360px);
+            border-radius: vw(10px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            border-width: vw(2px);
+            padding: vw(12px);
+            border-radius: vw(10px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            border-width: 2px;
+            padding: 12px;
+            border-radius: 10px;
+        }
+    }
+
+    &__cell {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: $white;
+        font-weight: 400;
+
+        font-size: vw(18px, 360px);
+        line-height: vw(18px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 18px;
+            line-height: 18px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(18px, 360px);
+            line-height: vw(18px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(18px);
+            line-height: vw(18px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 18px;
+            line-height: 18px;
+        }
+    }
+
+    &__cellImg {
+        object-fit: cover;
+
+        width: vw(32px, 360px);
+        height: vw(32px, 360px);
+        border-radius: vw(4px, 360px);
+
+        @media screen and (min-width: 360px) {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+        }
+
+        @media screen and (min-width: 500px) {
+            width: vw(32px, 360px);
+            height: vw(32px, 360px);
+            border-radius: vw(4px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            width: vw(32px);
+            height: vw(32px);
+            border-radius: vw(4px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+        }
+    }
+
+    &__cellLink {
+        color: $accent;
+
+        @media screen and (min-width: 360px) {
+
+        }
+
+        @media screen and (min-width: 500px) {
+
+        }
+
+        @media screen and (min-width: 920px) {
+
+        }
+
+        @media screen and (min-width: 1600px) {
+
+        }
+    }
+}
