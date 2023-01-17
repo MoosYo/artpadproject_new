@@ -30,7 +30,7 @@ export default function Tabs (props) {
                         <a
                             href={href}
                             className={className}
-                            title={text}
+                            title={text[locale]}
                             key={i}
                         >
                             {text[locale]}

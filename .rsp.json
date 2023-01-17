@@ -1,0 +1,10 @@
+{
+    "routes": [
+        "/",
+        "/projects",
+        "/levels",
+        "/swap",
+        "/faq",
+        "/nft-marketplace"
+    ]
+}

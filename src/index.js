@@ -4,9 +4,18 @@ import App from "./App";
 
 import "./index.module.scss";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+const base = () => (
    <React.StrictMode>
       <App />
    </React.StrictMode>
 );
+const rootElement = document.getElementById("root");
+
+if (rootElement.hasChildNodes()) {
+   const root = ReactDOM.hydrateRoot(rootElement);
+   root.render(base());
+}
+else {
+   const root = ReactDOM.createRoot(rootElement);
+   root.render(base());
+}

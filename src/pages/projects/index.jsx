@@ -60,86 +60,6 @@ const initState = window.initState?.projects ? window.initState.projects : {
             done: 20,
             goal: 100,
             listing: Math.floor(new Date().getTime() / 1000 + (7 * 24 * 60 * 60))
-        },
-        {
-            id: 2,
-            name: "Artery",
-            nameCode: "ARTR",
-            logo: "https://artpad.kadys.webtm.ru/uploads/tokens/2.png",
-            status: "upcoming",
-            description: "Some text",
-            total: 100,
-            start: Math.floor(new Date().getTime() / 1000),
-            price: 0.5,
-            registration: Math.floor(new Date().getTime() / 1000 + (2 * 24 * 60 * 60)),
-            busd: 10,
-            done: 20,
-            goal: 100,
-            listing: Math.floor(new Date().getTime() / 1000 + (7 * 24 * 60 * 60))
-        },
-        {
-            id: 3,
-            name: "Artery",
-            nameCode: "ARTR",
-            logo: "https://artpad.kadys.webtm.ru/uploads/tokens/2.png",
-            status: "upcoming",
-            description: "Some text",
-            total: 100,
-            start: Math.floor(new Date().getTime() / 1000),
-            price: 0.5,
-            registration: Math.floor(new Date().getTime() / 1000 + (2 * 24 * 60 * 60)),
-            busd: 10,
-            done: 20,
-            goal: 100,
-            listing: Math.floor(new Date().getTime() / 1000 + (7 * 24 * 60 * 60))
-        },
-        {
-            id: 4,
-            name: "Artery",
-            nameCode: "ARTR",
-            logo: "https://artpad.kadys.webtm.ru/uploads/tokens/2.png",
-            status: "upcoming",
-            description: "Some text",
-            total: 100,
-            start: Math.floor(new Date().getTime() / 1000),
-            price: 0.5,
-            registration: Math.floor(new Date().getTime() / 1000 + (2 * 24 * 60 * 60)),
-            busd: 10,
-            done: 20,
-            goal: 100,
-            listing: Math.floor(new Date().getTime() / 1000 + (7 * 24 * 60 * 60))
-        },
-        {
-            id: 5,
-            name: "Artery",
-            nameCode: "ARTR",
-            logo: "https://artpad.kadys.webtm.ru/uploads/tokens/2.png",
-            status: "upcoming",
-            description: "Some text",
-            total: 100,
-            start: Math.floor(new Date().getTime() / 1000),
-            price: 0.5,
-            registration: Math.floor(new Date().getTime() / 1000 + (2 * 24 * 60 * 60)),
-            busd: 10,
-            done: 20,
-            goal: 100,
-            listing: Math.floor(new Date().getTime() / 1000 + (7 * 24 * 60 * 60))
-        },
-        {
-            id: 6,
-            name: "Artery",
-            nameCode: "ARTR",
-            logo: "https://artpad.kadys.webtm.ru/uploads/tokens/2.png",
-            status: "upcoming",
-            description: "Some text",
-            total: 100,
-            start: Math.floor(new Date().getTime() / 1000),
-            price: 0.5,
-            registration: Math.floor(new Date().getTime() / 1000 + (2 * 24 * 60 * 60)),
-            busd: 10,
-            done: 20,
-            goal: 100,
-            listing: Math.floor(new Date().getTime() / 1000 + (7 * 24 * 60 * 60))
         }
     ],
     all: 4,
@@ -298,8 +218,13 @@ const ProjectsPage = ({setModal}) => {
 
                                     <div className={projects__cardReg}>
                                         <p className={projects__cardRegText}>
-                                            {lang.reg[locale] + " "}
-                                            {regDays}&nbsp;{regDays > 1 ? lang.days[locale] : lang.day[locale]} {regHours}&nbsp;{regHours > 1 ? lang.hours[locale] : lang.hour[locale]}
+                                            {
+                                                project.registration ? (
+                                                    lang.reg[locale] + " " +
+                                                    regDays + " " + (regDays > 1 ? lang.days[locale] : lang.day[locale]) + " " +
+                                                    regHours + " " + (regHours > 1 ? lang.hours[locale] : lang.hour[locale])
+                                                ) : ""
+                                            }
                                         </p>
 
                                         <p className={projects__cardRegValue}>
