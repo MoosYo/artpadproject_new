@@ -1,0 +1,930 @@
+@import "../../styles/colors.scss";
+@import "../../styles/helpers.scss";
+
+.projects {
+    margin-bottom: vw(64px, 360px);
+
+    @media screen and (min-width: 360px) {
+        margin-bottom: 64px;
+    }
+
+    @media screen and (min-width: 500px) {
+        margin-bottom: vw(64px, 360px);
+    }
+
+    @media screen and (min-width: 920px) {
+        margin-bottom: vw(64px);
+    }
+
+    @media screen and (min-width: 1600px) {
+        margin-bottom: 64px;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        justify-content: space-between;
+
+        margin-bottom: vw(42px, 360px);
+        gap: vw(24px, 360px);
+
+        @media screen and (min-width: 360px) {
+            margin-bottom: 42px;
+            gap: 24px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            margin-bottom: vw(42px, 360px);
+            gap: vw(24px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            gap: 0px;
+            flex-direction: row;
+            margin-bottom: vw(42px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            margin-bottom: 42px;
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        gap: vw(24px, 360px);
+
+        @media screen and (min-width: 360px) {
+            gap: 24px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            gap: vw(24px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            flex-wrap: nowrap;
+            gap: vw(24px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            gap: 24px;
+        }
+    }
+
+    &__tab {
+        border-width: vw(2px, 360px);
+
+        @media screen and (min-width: 360px) {
+            border-width: 2px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            border-width: vw(2px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            border-width: vw(2px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            border-width: 2px;
+        }
+
+        &_active {
+            border-color: $accent;
+            color: $accent;
+        }
+    }
+
+    &__search {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        border: solid $button-link-border;
+
+        padding: 0px vw(12px, 360px);
+        border-radius: vw(8px, 360px);
+        border-width: vw(2px, 360px);
+        gap: vw(8px, 360px);
+        height: vw(35px, 360px);
+
+        @media screen and (min-width: 360px) {
+            padding: 0px 12px;
+            border-radius: 8px;
+            border-width: 2px;
+            gap: 8px;
+            height: 35px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            padding: 0px vw(12px, 360px);
+            border-radius: vw(8px, 360px);
+            border-width: vw(2px, 360px);
+            gap: vw(8px, 360px);
+            height: vw(35px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            padding: 0px vw(12px);
+            border-radius: vw(8px);
+            border-width: vw(2px);
+            gap: vw(8px);
+            height: vw(35px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            padding: 0px 12px;
+            border-radius: 8px;
+            border-width: 2px;
+            gap: 8px;
+            height: 35px;
+        }
+    }
+
+    &__searchIcon {
+        width: vw(20px, 360px);
+        height: vw(20px, 360px);
+
+        @media screen and (min-width: 360px) {
+            width: 20px;
+            height: 20px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            width: vw(20px, 360px);
+            height: vw(20px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            width: vw(20px);
+            height: vw(20px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__searchInput {
+        border: none;
+        background: none;
+        outline: none;
+        color: $white;
+        
+        font-size: vw(16px, 360px);
+        line-height: vw(16px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(16px, 360px);
+            line-height: vw(16px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(16px);
+            line-height: vw(16px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    }
+
+    &__title {
+        color: $white;
+        font-weight: 700;
+
+        font-size: vw(36px, 360px);
+        line-height: vw(36px, 360px);
+        margin-bottom: vw(42px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 36px;
+            line-height: 36px;
+            margin-bottom: 42px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(36px, 360px);
+            line-height: vw(36px, 360px);
+            margin-bottom: vw(42px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(36px);
+            line-height: vw(36px);
+            margin-bottom: vw(42px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 36px;
+            line-height: 36px;
+            margin-bottom: 42px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        grid-column-gap: vw(24px, 360px);
+        grid-row-gap: vw(24px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            grid-column-gap: 24px;
+            grid-row-gap: 24px;
+        }
+
+        @media screen and (min-width: 500px) {
+            grid-column-gap: vw(24px, 360px);
+            grid-row-gap: vw(24px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            grid-template-columns: repeat(4, 1fr);
+            grid-column-gap: vw(24px);
+            grid-row-gap: vw(24px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            grid-column-gap: 24px;
+            grid-row-gap: 24px;
+        }
+    }
+
+    &__card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border: solid $accent;
+        overflow: hidden;
+        width: 100%;
+        
+        border-width: vw(2px, 360px);
+        padding: vw(24px, 360px);
+        border-radius: vw(24px, 360px);
+
+        @media screen and (min-width: 360px) {
+            border-width: 2px;
+            padding: 24px;
+            border-radius: 24px;
+        }
+
+        @media screen and (min-width: 500px) {
+            border-width: vw(2px, 360px);
+            padding: vw(24px, 360px);
+            border-radius: vw(24px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            border-width: vw(2px);
+            padding: vw(24px);
+            border-radius: vw(24px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            border-width: 2px;
+            padding: 24px;
+            border-radius: 24px;
+        }
+    }
+
+    &__cardHeader {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background: url("../../../public/public/img/ProjectsCardImg.png");
+        background-size: cover;
+
+        margin: vw(-24px, 360px);
+        padding: vw(24px, 360px);
+        margin-bottom: vw(12px, 360px);
+
+        @media screen and (min-width: 360px) {
+            margin: -24px;
+            padding: 24px;
+            margin-bottom: 12px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            margin: vw(-24px, 360px);
+            padding: vw(24px, 360px);
+            margin-bottom: vw(12px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            margin: vw(-24px);
+            padding: vw(24px);
+            margin-bottom: vw(12px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            margin: -24px;
+            padding: 24px;
+            margin-bottom: 12px;
+        }
+    }
+
+    &__cardHeaderText {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        gap: vw(8px, 360px);
+
+        @media screen and (min-width: 360px) {
+            gap: 8px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            gap: vw(8px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            gap: vw(8px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            gap: 8px;
+        }
+    }
+
+    &__cardName {
+        color: $white;
+        font-weight: 700;
+
+        font-size: vw(32px, 360px);
+        line-height: vw(32px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 32px;
+            line-height: 32px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(32px, 360px);
+            line-height: vw(32px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(32px);
+            line-height: vw(32px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 32px;
+            line-height: 32px;
+        }
+    }
+
+    &__cardNameCode {
+        color: $white;
+        font-weight: 600;
+
+        font-size: vw(28px, 360px);
+        line-height: vw(28px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 28px;
+            line-height: 28px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(28px, 360px);
+            line-height: vw(28px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(28px);
+            line-height: vw(28px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 28px;
+            line-height: 28px;
+        }
+    }
+
+    &__cardLogo {
+        object-fit: contain;
+
+        width: vw(100px, 360px);
+        height: vw(100px, 360px);
+
+        @media screen and (min-width: 360px) {
+            width: 100px;
+            height: 100px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            width: vw(100px, 360px);
+            height: vw(100px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            width: vw(100px);
+            height: vw(100px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    &__cardStatus {
+        background: $text-title;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+
+        font-size: vw(14px, 360px);
+        line-height: vw(14px, 360px);
+        border-radius: vw(16px, 360px);
+        width: vw(130px, 360px);
+        height: vw(32px, 360px);
+        margin-bottom: vw(12px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 14px;
+            line-height: 14px;
+            border-radius: 16px;
+            width: 130px;
+            height: 32px;
+            margin-bottom: 12px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(14px, 360px);
+            line-height: vw(14px, 360px);
+            border-radius: vw(16px, 360px);
+            width: vw(130px, 360px);
+            height: vw(32px, 360px);
+            margin-bottom: vw(12px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(14px);
+            line-height: vw(14px);
+            border-radius: vw(16px);
+            width: vw(130px);
+            height: vw(32px);
+            margin-bottom: vw(12px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 14px;
+            line-height: 14px;
+            border-radius: 16px;
+            width: 130px;
+            height: 32px;
+            margin-bottom: 12px;
+        }
+    }
+
+    &__cardDescription {
+        color: $white;
+
+        font-size: vw(14px, 360px);
+        line-height: vw(16px, 360px);
+        height: vw(64px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 14px;
+            line-height: 16px;
+            height: 64px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(14px, 360px);
+            line-height: vw(16px, 360px);
+            height: vw(64px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(14px);
+            line-height: vw(16px);
+            height: vw(64px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 14px;
+            line-height: 16px;
+            height: 64px;
+        }
+    }
+
+    &__cardData {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: vw(12px, 360px);
+
+        @media screen and (min-width: 360px) {
+            margin-bottom: 12px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            margin-bottom: vw(12px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            margin-bottom: vw(12px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__cardDataName {
+        color: $white;
+
+        font-size: vw(16px, 360px);
+        line-height: vw(16px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(16px, 360px);
+            line-height: vw(16px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(16px);
+            line-height: vw(16px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    }
+
+    &__cardDataValue {
+        color: $accent;
+
+        font-size: vw(16px, 360px);
+        line-height: vw(16px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(16px, 360px);
+            line-height: vw(16px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(16px);
+            line-height: vw(16px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    }
+
+    &__cardReg {
+        display: flex;
+        align-self: center;
+        justify-content: space-between;
+
+        gap: vw(8px, 360px);
+        margin: vw(14px, 360px) 0px;
+
+        @media screen and (min-width: 360px) {
+            gap: 8px;
+            margin: 14px 0px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            gap: vw(8px, 360px);
+            margin: vw(14px, 360px) 0px;
+        }
+    
+        @media screen and (min-width: 920px) {
+            gap: vw(8px);
+            margin: vw(14px) 0px;
+        }
+    
+        @media screen and (min-width: 1600px) {
+            gap: 8px;
+            margin: 14px 0px;
+        }
+    }
+
+    &__cardRegText {
+        color: $white;
+
+        font-size: vw(14px, 360px);
+        line-height: vw(16px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(14px, 360px);
+            line-height: vw(16px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(14px);
+            line-height: vw(16px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+
+    &__cardRegValue {
+        color: $accent;
+
+        font-size: vw(16px, 360px);
+        line-height: vw(16px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(16px, 360px);
+            line-height: vw(16px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(16px);
+            line-height: vw(16px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    }
+
+    &__cardProgress {
+        width: 100%;
+        background: $text-title;
+        display: flex;
+        align-self: center;
+        justify-content: flex-start;
+
+        border-radius: vw(4px, 360px);
+        height: vw(8px, 360px);
+        margin-bottom: vw(14px, 360px);
+
+        @media screen and (min-width: 360px) {
+            border-radius: 4px;
+            height: 8px;
+            margin-bottom: 14px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            border-radius: vw(4px, 360px);
+            height: vw(8px, 360px);
+            margin-bottom: vw(14px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            border-radius: vw(4px);
+            height: vw(8px);
+            margin-bottom: vw(14px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            border-radius: 4px;
+            height: 8px;
+            margin-bottom: 14px;
+        }
+    }
+
+    &__cardBar {
+        background: $accent;
+
+        border-radius: vw(4px, 360px);
+        height: vw(8px, 360px);
+
+        @media screen and (min-width: 360px) {
+            border-radius: 4px;
+            height: 8px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            border-radius: vw(4px, 360px);
+            height: vw(8px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            border-radius: vw(4px);
+            height: vw(8px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            border-radius: 4px;
+            height: 8px;
+        }
+    }
+
+    &__cardCounter {
+        width: 100%;
+        display: flex;
+        align-self: center;
+        justify-content: space-between;
+
+        margin-bottom: vw(24px, 360px);
+
+        @media screen and (min-width: 360px) {
+            margin-bottom: 24px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            margin-bottom: vw(24px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            margin-bottom: vw(24px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__cardBusd {
+        color: $text-title;
+        font-weight: 600;
+
+        font-size: vw(16px, 360px);
+        line-height: vw(16px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(16px, 360px);
+            line-height: vw(16px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(16px);
+            line-height: vw(16px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    }
+
+    &__cardGoal {
+        color: $text-title;
+        font-weight: 600;
+
+        font-size: vw(16px, 360px);
+        line-height: vw(16px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(16px, 360px);
+            line-height: vw(16px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(16px);
+            line-height: vw(16px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    }
+
+    &__cardListing {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+
+        gap: vw(4px, 360px);
+
+        @media screen and (min-width: 360px) {
+            gap: 4px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            gap: vw(4px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            gap: vw(4px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            gap: 4px;
+        }
+    }
+
+    &__cardListingText {
+        color: $white;
+        font-weight: 500;
+
+        font-size: vw(18px, 360px);
+        line-height: vw(18px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 18px;
+            line-height: 18px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(18px, 360px);
+            line-height: vw(18px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(18px);
+            line-height: vw(18px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 18px;
+            line-height: 18px;
+        }
+    }
+
+    &__cardListingValue {
+        color: $accent;
+        font-weight: 500;
+        text-align: right;
+
+        font-size: vw(20px, 360px);
+        line-height: vw(20px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 20px;
+            line-height: 20px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(20px, 360px);
+            line-height: vw(20px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(20px);
+            line-height: vw(20px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 20px;
+            line-height: 20px;
+        }
+    }
+
+    &__cardLink {
+        position: absolute;
+        display: block;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+    }
+
+}
