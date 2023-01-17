@@ -303,12 +303,12 @@ export default function Header(props) {
                   <LocaleIcon className={header__languageIcon} />   
                   <div className={header__languageList}>
                      <a
-                        href="/language=ru"
+                        href="/?language=ru"
                         className={header__languageLink}
                      >RU</a>
                      <hr className={header__languageListSeparator} />
                      <a
-                        href="/language=en"
+                        href="/?language=en"
                         className={header__languageLink}
                      >EN</a>
                   </div>
