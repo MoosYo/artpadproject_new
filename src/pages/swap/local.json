@@ -1,0 +1,30 @@
+{
+    "swap" : {
+        "ru-RU": "Обмен",
+        "en-US": "Swap"
+    },
+    "tradeToken" :  {
+        "ru-RU": "Обменивайте токены мгновенно",
+        "en-US": "Trade tokens in instant"
+    },
+    "slippage" : {
+        "ru-RU": "Доступное проскальзывание",
+        "en-US": "Slippage Tolerances"
+    },
+    "h" : {
+        "ru-RU": "Ч",
+        "en-US": "H"
+    },
+    "d" : {
+        "ru-RU": "Д",
+        "en-US": "D"
+    },
+    "w" : {
+        "ru-RU": "Н",
+        "en-US": "W"
+    },
+    "m" : {
+        "ru-RU": "М",
+        "en-US": "M"
+    }
+}
