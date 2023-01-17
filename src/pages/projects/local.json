@@ -1,0 +1,70 @@
+{
+    "all": {
+        "ru-RU": "Все",
+        "en-US": "All"
+    },
+    "upcoming": {
+        "ru-RU": "Предстоящие",
+        "en-US": "Upcoming"
+    },
+    "active": {
+        "ru-RU": "Активные",
+        "en-US": "Active"
+    },
+    "ended": {
+        "ru-RU": "Завершённые",
+        "en-US": "Ended"
+    },
+    "vesting": {
+        "ru-RU": "Вестинг",
+        "en-US": "Vesting"
+    },
+    "search": {
+        "ru-RU": "Поисковый запрос",
+        "en-US": "Search Pools"
+    },
+    "ido": {
+        "ru-RU": "IDO",
+        "en-US": "IDOs"
+    },
+    "result": {
+        "ru-RU": "Поиск по",
+        "en-US": "Result for"
+    },
+    "total": {
+        "ru-RU": "Всего собрано",
+        "en-US": "Total Raise"
+    },
+    "start": {
+        "ru-RU": "Старт",
+        "en-US": "Start"
+    },
+    "price": {
+        "ru-RU": "Цена",
+        "en-US": "Price"
+    },
+    "reg": {
+        "ru-RU": "Регистрация открывается через",
+        "en-US": "Registrations opens ind"
+    },
+    "days": {
+        "ru-RU": "дней",
+        "en-US": "days"
+    },
+    "day": {
+        "ru-RU": "день",
+        "en-US": "day"
+    },
+    "hours": {
+        "ru-RU": "часов",
+        "en-US": "hours"
+    },
+    "hour": {
+        "ru-RU": "час",
+        "en-US": "hour"
+    },
+    "listing": {
+        "ru-RU": "Время перечисления",
+        "en-US": "Listing time"
+    }
+}
