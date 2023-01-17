@@ -24,6 +24,7 @@ import SwapIcon from "../../components/Icons/Swap";
 // Helpers
 import getLocale from "../../helpers/getLoacale";
 import { useEffect } from "react";
+import DevModal from "../../components/DevModal";
 
 
 ChartJS.register(
@@ -63,7 +64,14 @@ const {
     swap__dataDuration,
     swap__dataDurationButton,
     swap__dataDurationButton_active,
-    swap__dataGraph
+
+    swap__dataGraph,
+    swap__dataGraphHeader,
+    swap__dataGraphTitle,
+    swap__dataGraphInfo,
+    swap__dataGraphDate,
+    swap__dataGraphCurrency,
+    swap__dataGraphResult
 } = classes;
 
 const {
@@ -85,9 +93,11 @@ const {
     slippage: 0.5
 };
 
-const Swap = ({}) => {
+const locale = getLocale();
 
-    const locale = getLocale();
+const currentDateTime = new Date().toLocaleDateString(locale) + " " + new Date().toLocaleTimeString(locale);
+
+const Swap = ({setModal}) => {
 
     const [currencyOrder, setCurrencyOrder] = useState([0,1]);
 
@@ -200,9 +210,15 @@ const Swap = ({}) => {
         data.datasets[0].data = labels[duration].map(() => Math.random() * 100);
     }, [duration]);
 
+
+    const submitSwap = (e) => {
+        e.preventDefault();
+        setModal(DevModal);
+    }
+
     return (
         <div className={swap}>
-            <form className={swap__form} action="" method="POST">
+            <form className={swap__form} action="" method="POST" onSubmit={submitSwap}>
                 <h2 className={swap__header}>
                     {lang.swap[locale]}
                 </h2>
@@ -310,7 +326,24 @@ const Swap = ({}) => {
                 </div>
 
                 <div className={swap__dataGraph}>
+                    <div className={swap__dataGraphHeader}>
+                        <h2 className={swap__dataGraphTitle}>
+                            {currency[currencyOrder[0]].usdt} {currency[currencyOrder[0]].name}/USDT
+                        </h2>
+
+                        <div className={swap__dataGraphInfo}>
+                            <p className={swap__dataGraphDate}>
+                                {currentDateTime}
+                            </p>
+                            <p className={swap__dataGraphCurrency}>
+                                {currency[currencyOrder[0]].name}/{currency[currencyOrder[1]].name}
+                            </p>
+                        </div>
+                    </div>
                     <Line options={options} data={data} />
+                    <div className={swap__dataGraphResult}>
+                        0.00000 (0.00%)
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,15 @@
+{
+    "header": {
+       "ru-RU": "Функция находится в разработке",
+       "en-US": "The function is under development"
+    },
+    "text": {
+       "ru-RU": "Мы запустим её в ближайшее время.",
+       "en-US": "We will launch it in the near future."
+    },
+    "button": {
+       "ru-RU": "Ок",
+       "en-US": "Ok"
+    }
+ }
+ 
