@@ -240,28 +240,28 @@
         display: grid;
         grid-template-columns: 1fr;
 
-        grid-column-gap: vw(24px, 360px);
-        grid-row-gap: vw(24px, 360px);
+        column-gap: vw(24px, 360px);
+        row-gap: vw(24px, 360px);
         
         @media screen and (min-width: 360px) {
-            grid-column-gap: 24px;
-            grid-row-gap: 24px;
+            column-gap: 24px;
+            row-gap: 24px;
         }
 
         @media screen and (min-width: 500px) {
-            grid-column-gap: vw(24px, 360px);
-            grid-row-gap: vw(24px, 360px);
+            column-gap: vw(24px, 360px);
+            row-gap: vw(24px, 360px);
         }
 
         @media screen and (min-width: 920px) {
             grid-template-columns: repeat(4, 1fr);
-            grid-column-gap: vw(24px);
-            grid-row-gap: vw(24px);
+            column-gap: vw(24px);
+            row-gap: vw(24px);
         }
 
         @media screen and (min-width: 1600px) {
-            grid-column-gap: 24px;
-            grid-row-gap: 24px;
+            column-gap: 24px;
+            row-gap: 24px;
         }
     }
 

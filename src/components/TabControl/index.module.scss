@@ -6,19 +6,19 @@
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: auto 1fr;
-      grid-column-gap: 0px;
-      grid-row-gap: 30px;
+      column-gap: 0px;
+      row-gap: 30px;
 
       @media screen and (min-width: 500px) {
-         grid-row-gap: vw(30px, 360px);
+         row-gap: vw(30px, 360px);
       }
 
       @media screen and (min-width: 920px) {
-         grid-row-gap: vw(30px);
+         row-gap: vw(30px);
       }
 
       @media screen and (min-width: 1600px) {
-         grid-row-gap: 30px;
+         row-gap: 30px;
       }
    }
    &__header {
