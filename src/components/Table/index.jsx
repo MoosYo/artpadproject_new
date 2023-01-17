@@ -1,147 +1,95 @@
-import React from "react";
-import classes from "./index.module.scss";
-const { table, table__row, table__row_names, table__cel, table__cel_padl, table__children, table__cel_children } =
-   classes;
+import getLocale from "../../helpers/getLoacale";
+import InfoIcon from "../Icons/info";
 
-function Table({ columns, rows, keys }) {
-   console.log(columns, rows, keys);
-   return (
-      <section className={table}>
-         <div className={table__row + " " + table__row_names}>
-            {columns.map((item, key) => (
-               <div key={key}>
-                  <span className={table__cel}>{item?.celName}</span>
-               </div>
-            ))}
-         </div>
-         {rows.map((row, key) =>
-            row?.children && row?.children.length > 0 ? (
-               <details key={row?.id}>
-                  <summary className={table__row}>
-                     {row?.icon ? (
-                        <>
-                           <div key={toString(key)}>
-                              <span className={table__cel}>
-                                 <img src={row?.icon} alt={row?.nsme} width="32px" height="32px" />
-                                 {row?.name}
-                              </span>
-                           </div>
-                           {keys.map((item, key) =>
-                              item === "link" ? (
-                                 <div key={key}>
-                                    <a
-                                       className={table__cel}
-                                       href={row[item]}
-                                       target="_blank"
-                                       rel="noopener noreferrer"
-                                       title={item}
-                                    >
-                                       Click
-                                    </a>
-                                 </div>
-                              ) : item !== "children" ? (
-                                 <div key={key} className={table__cel_padl}>
-                                    <span className={table__cel}>{row[item]}</span>
-                                 </div>
-                              ) : item === "children" && row[item].length > 0 ? (
-                                 <div key={key} className={table__cel_padl}>
-                                    <span className={table__cel}>{row[item].length}</span>
-                                 </div>
-                              ) : null
-                           )}
-                        </>
-                     ) : (
-                        keys.map((item, key) => (
-                           <div key={key}>
-                              <span className={table__cel}>{item}</span>
-                           </div>
-                        ))
-                     )}
-                  </summary>
-                  {row?.children ? (
-                     <div className={table__children} key={row?.id}>
-                        {row?.children.map((row_cl, key) => (
-                           <div className={table__row} key={key}>
-                              {row_cl?.icon ? (
-                                 <div key={toString(key)}>
-                                    <span className={table__cel}>
-                                       <img src={row_cl?.icon} alt={row_cl?.name} width="32px" height="32px" />
-                                       {row_cl?.name}
-                                    </span>
-                                 </div>
-                              ) : (
-                                 <div key={toString(key)}>
-                                    <span className={table__cel}>{row_cl?.name}</span>
-                                 </div>
-                              )}
-                              {keys.map((item, key) =>
-                                 item !== "children" ? (
-                                    <>
-                                       <div key={key} className={table__cel_padl}>
-                                          <span className={table__cel + " " + table__cel_children}>{row_cl[item]}</span>
-                                       </div>
-                                    </>
-                                 ) : (
-                                    <div key={key} className={table__cel_padl}>
-                                       <span className={table__cel + " " + table__cel_children}>{row_cl[item]}</span>
-                                    </div>
-                                 )
-                              )}
-                           </div>
-                        ))}
-                     </div>
-                  ) : null}
-               </details>
-            ) : (
-               <div className={table__row} key={row?.id}>
-                  {row?.icon ? (
-                     <>
-                        <div key={toString(key)}>
-                           <span className={table__cel}>
-                              <img src={row?.icon} alt={row?.nsme} width="32px" height="32px" />
-                              {row?.name}
-                           </span>
+import classes from "./styles.module.scss";
+
+const {
+    table,
+    table__header,
+    table__headerCell,
+    table__headerText,
+    table__headerToolTip,
+    table__rows,
+    table__row,
+    table__rowWrapper,
+    table__cell,
+    table__cellImg,
+    table__cellLink
+} = classes;
+
+const Table = ({headers = [], rows = []}) => {
+
+    const locale = getLocale();
+
+   const showToolTip = (toolTip) => {
+      console.log(123);
+   }
+
+   let columnsWidth = "";
+   
+   headers.forEach((header, i) => {
+        const isPx = header.width.indexOf("px") > 0;
+        const tmpWidth = isPx ? parseInt(header.width) : 120
+
+        
+        const fixedWidth = window.innerWidth > 920 ? (
+            window.innerWidth > 1600 ? tmpWidth : window.innerWidth / 1600 * tmpWidth
+        ) : window.innerWidth / 360 * tmpWidth;
+
+        columnsWidth += (isPx ? fixedWidth + "px" : header.width) + " ";
+   });
+
+   if (columnsWidth === "") columnsWidth = null;
+
+    return (
+        <div className={table}>
+            <div className={table__header} style={{gridTemplateColumns: columnsWidth}}>
+                {
+                    headers.map(({name, toolTip, width}, i) => (
+                        <div className={table__headerCell} key={i} style={{minWidth: width.indexOf("px") > 0 ? width : "120px"}}>
+                            <p className={table__headerText}>
+                                {name}
+                            </p>
+                            {
+                              toolTip ? (
+                                 <InfoIcon className={table__headerToolTip} onMouseEnter={() => showToolTip(toolTip)} />
+                              ) : ""
+                            }
                         </div>
-                        {keys.map((item, key) =>
-                           item === "link" ? (
-                              <div key={key}>
-                                 <a
-                                    className={table__cel}
-                                    href={row[item]}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    title={item}
-                                 >
-                                    Click
-                                 </a>
-                              </div>
-                           ) : item !== "children" ? (
-                              <div key={key} className={table__cel_padl}>
-                                 <span className={table__cel}>{row[item]}</span>
-                              </div>
-                           ) : item !== "children" ? (
-                              <div key={key} className={table__cel_padl}>
-                                 <span className={table__cel}>{row[item]}</span>
-                              </div>
-                           ) : item === "children" && row[item].length > 0 ? (
-                              <div key={key} className={table__cel_padl}>
-                                 <span className={table__cel}>Open</span>
-                              </div>
-                           ) : null
-                        )}
-                     </>
-                  ) : (
-                     keys.map((item, key) => (
-                        <div key={key}>
-                           <span className={table__cel}>{item}</span>
+                    ))
+                }
+            </div>
+
+            <div className={table__rows}>
+                {
+                    rows.map(({cells}, i) => (
+                        <div className={table__row} key={i}>
+                            <div className={table__rowWrapper} style={{gridTemplateColumns: columnsWidth}}>
+                                {
+                                    cells.map(({value, type}, j) => {
+                                        
+                                        let formatedValue = value;
+
+                                        if (type === "number") formatedValue = parseFloat(formatedValue).toLocaleString(locale);
+
+                                        if (type === "img") formatedValue = (() => <img src={value} alt="" className={table__cellImg} />)();
+                                        
+                                        if (type === "url") formatedValue = (() => <a href={value} className={table__cellLink} >Click</a>)();
+
+                                        return (
+                                            <div className={table__cell} key={j} style={{minWidth: headers[j].width.indexOf("px") > 0 ? headers[j].width : "120px"}}>
+                                                {formatedValue}
+                                            </div>
+                                        );
+                                    })
+                                }
+                            </div>
                         </div>
-                     ))
-                  )}
-               </div>
-            )
-         )}
-      </section>
-   );
+                    ))
+                }
+            </div>
+        </div>
+    );
 }
 
-export default React.memo(Table);
+export default Table;
