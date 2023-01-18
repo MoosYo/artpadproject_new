@@ -93,32 +93,32 @@ export default function MyProjectsPage({}) {
       {
           name: "Round",
           toolTip: null,
-          width: "140px"
+          width: "1fr"
       },
       {
           name: "Pool",
           toolTip: null,
-          width: "140px"
+          width: "1fr"
       },
       {
           name: "Price",
           toolTip: null,
-          width: "140px"
+          width: "1fr"
       },
       {
           name: "Token",
           toolTip: null,
-          width: "140px"
+          width: "1fr"
       },
       {
           name: "Status",
           toolTip: null,
-          width: "140px"
+          width: "1fr"
       },
       {
           name: "Link",
           toolTip: null,
-          width: "140px"
+          width: "1fr"
       }
   ];
 
