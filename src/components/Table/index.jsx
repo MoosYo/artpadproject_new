@@ -17,7 +17,7 @@ const {
     table__cellLink
 } = classes;
 
-const Table = ({headers = [], rows = []}) => {
+const Table = ({headers = [], rows = [], className = "", style = {}}) => {
 
     const locale = getLocale();
 
@@ -32,17 +32,22 @@ const Table = ({headers = [], rows = []}) => {
         const tmpWidth = isPx ? parseInt(header.width) : 120
 
         
-        const fixedWidth = window.innerWidth > 920 ? (
-            window.innerWidth > 1600 ? tmpWidth : window.innerWidth / 1600 * tmpWidth
-        ) : window.innerWidth / 360 * tmpWidth;
+        // const fixedWidth = window.innerWidth > 920 ? (
+        //     window.innerWidth > 1600 ? tmpWidth : window.innerWidth / 1600 * tmpWidth
+        // ) : window.innerWidth / 360 * tmpWidth;
 
-        columnsWidth += (isPx ? fixedWidth + "px" : header.width) + " ";
+        // columnsWidth += (isPx ? fixedWidth + "px" : header.width) + " ";
+
+        columnsWidth += header.width + " ";
    });
 
    if (columnsWidth === "") columnsWidth = null;
 
     return (
-        <div className={table}>
+        <div
+            className={table + (className ? " " + className : "")}
+            style={style}
+        >
             <div className={table__header} style={{gridTemplateColumns: columnsWidth}}>
                 {
                     headers.map(({name, toolTip, width}, i) => (

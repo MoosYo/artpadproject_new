@@ -1,0 +1,82 @@
+{
+    "numOfSteak": {
+        "ru-RU": "Количество стейкеров",
+        "en-US": "number of steakers"
+    },
+    "totalArtr": {
+        "ru-RU": "Сумма поставленных ARTR",
+        "en-US": "Total ARTR staked"
+    },
+    "apy": {
+        "ru-RU": "Apy",
+        "en-US": "Apy"
+    },
+    "artrLvl": {
+        "ru-RU": "Уровни ARTR",
+        "en-US": "Artr levels"
+    },
+    "dearInv": {
+        "ru-RU": "Уважаемый инвестор!",
+        "en-US": "Dear investor!"
+    },
+    "payUrAtt": {
+        "ru-RU": "Обратите внимание, что депозит токенов SPORTZCHAIN (SPN) доступен в нескольких блокчейн-сетях: BNB Chain, Polygon.",
+        "en-US": "Pay your attention that SPORTZCHAIN token (SPN) deposit is available on several blockchain networks: BNB Chain, Polygon."
+    },
+    "theDistribut": {
+        "ru-RU": "Распределение токена SPORTZCHAIN будет осуществляться только в полигоне!",
+        "en-US": "The distribution of SPORTZCHAIN token will carried out in polygon only!!"
+    },
+    "tier": {
+        "ru-RU": "№ уровня",
+        "en-US": "№ tiere"
+    },
+    "staking": {
+        "ru-RU": "Ставка",
+        "en-US": "staking"
+    },
+    "multiplier": {
+        "ru-RU": "Множитель",
+        "en-US": "multiplier"
+    },
+    "allocation": {
+        "ru-RU": "Тип аллокации",
+        "en-US": "Allocation type"
+    },
+    "stakingCond": {
+        "ru-RU": "Условия ставки",
+        "en-US": "Staking conditions"
+    },
+    "stakingPer": {
+        "ru-RU": "Период ставки",
+        "en-US": "Steaking period"
+    },
+    "reward": {
+        "ru-RU": "Вознаграждение с Бонусными Монетами",
+        "en-US": "Reward with Bonus Сoins"
+    },
+    "1m": {
+        "ru-RU": "1 месяц",
+        "en-US": "1 month"
+    },
+    "4m": {
+        "ru-RU": "4 месяца",
+        "en-US": "4 month"
+    },
+    "6m": {
+        "ru-RU": "6 месяцев",
+        "en-US": "6 month"
+    },
+    "12m": {
+        "ru-RU": "12 месяцев",
+        "en-US": "12 month"
+    },
+    "lottery": {
+        "ru-RU": "Лотерея",
+        "en-US": "Lottery"
+    },
+    "guaranteed": {
+        "ru-RU": "Гарантировано",
+        "en-US": "Guaranteed"
+    }
+}

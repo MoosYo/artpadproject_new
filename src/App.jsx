@@ -18,6 +18,7 @@ import Accordion from "./components/Accordion";
 import MainPage from "./pages/main";
 import Swap from "./pages/swap";
 import ProjectsPage from "./pages/projects";
+import LevelsPage from "./pages/levels";
 
 const { app, pageWrapper } = classes;
 
@@ -62,6 +63,7 @@ export default function App() {
          <main className={pageWrapper}>
             {path === "/" || path === "" ? <MainPage setModal={showModal} /> : ""}
             {path === "/projects" || path === "/projects/" ? <ProjectsPage setModal={showModal} /> : ""}
+            {path === "/levels" || path === "/levels/" ? <LevelsPage setModal={showModal} /> : ""}
             {path === "/swap" || path === "/swap/" ? <Swap setModal={showModal} /> : ""}
             {path === "/nft-marketplace" || path === "/nft-marketplace/" ? <Marketplace /> : ""}
             {path === "/faq" || path === "/faq/" ? <Accordion /> : ""}
