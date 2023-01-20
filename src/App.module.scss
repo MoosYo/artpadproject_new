@@ -11,19 +11,19 @@
 .pageWrapper {
    width: 100%;
    margin: 0px auto auto;
-   padding: 64px 12px 0px;
+   padding: 0px 12px 0px;
 
    @media screen and (min-width: 500px) {
-      padding: vw(64px, 360px) vw(12px, 360px) 0px;
+      padding: 0px vw(12px, 360px) vw(48px, 360px);
    }
 
    @media screen and (min-width: 920px) {
       width: vw(1440px);
-      padding: vw(64px) vw(20px) 0px;
+      padding: 0px vw(20px) vw(48px);
    }
 
    @media screen and (min-width: 1600px) {
       width: 1440px;
-      padding: 64px 20px 0px;
+      padding: 0px 20px 48px;
    }
 }

@@ -319,14 +319,16 @@
    flex-wrap: nowrap;
    justify-content: flex-start;
    align-items: center;
-   width: 100%;
    height: auto;
 
    padding: 0px 15px;
    margin-bottom: 15px;
+   
+
+   @media screen and (min-width: 360px) {
+   }
 
    @media screen and (min-width: 500px) {
-      width: vw(290px, 414px);
    }
 
    @media screen and (min-width: 920px) {
@@ -336,24 +338,28 @@
    }
 
    @media screen and (min-width: 1600px) {
-      width: 290px;
    }
 
    &__link {
       img {
-         width: 100%;
          height: auto;
 
+         width: vw(160px, 360px);
+
          @media screen and (min-width: 500px) {
-            width: vw(290px, 414px);
+            width: 160px;
+         }
+
+         @media screen and (min-width: 500px) {
+            width: vw(160px, 360px);
          }
 
          @media screen and (min-width: 920px) {
-            width: vw(214px);
+            width: vw(240px);
          }
 
          @media screen and (min-width: 1600px) {
-            width: 214px;
+            width: 240px;
          }
       }
    }

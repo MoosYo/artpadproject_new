@@ -93,6 +93,10 @@ export default function LoginSignupPage({}) {
                      <Button type="submit" variant="solid" className={content__formButton}>
                         {localize.sign_in[local]}
                      </Button>
+                     
+                     <p className={content__infoLink} style={{margin: "0px"}}>
+                        <a href="/sign-in">{localize.change_pass[local]}</a>
+                     </p>
                   </form>
                </div>
                <div
@@ -108,6 +112,13 @@ export default function LoginSignupPage({}) {
                         name="login"
                         placeholder={localize.login[local]}
                         required="required"
+                        className={content__formInput}
+                     />
+                     
+                     <Input
+                        type="text"
+                        name="inviter_login"
+                        placeholder={localize.inviter[local]}
                         className={content__formInput}
                      />
 

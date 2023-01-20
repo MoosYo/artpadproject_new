@@ -6,5 +6,9 @@
    "click": {
       "ru-RU": "Перейти",
       "en-US": "Click"
+   },
+   "claim": {
+      "ru-RU": "Получить",
+      "en-US": "Claim"
    }
 }

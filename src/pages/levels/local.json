@@ -78,5 +78,13 @@
     "guaranteed": {
         "ru-RU": "Гарантировано",
         "en-US": "Guaranteed"
+    },
+    "apyInfo": {
+        "ru-RU": "Информация по APY",
+        "en-US": "APY info"
+    },
+    "columnInfo": {
+        "ru-RU": "Подсказка",
+        "en-US": "Column info"
     }
 }
