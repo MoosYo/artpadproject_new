@@ -34,32 +34,36 @@
     }
 
     &__form {
-        margin-top: 42px;
         border: solid $accent;
         width: 100%;
 
         border-width: vw(1px, 360px);
         border-radius: vw(24px, 360px);
+        margin-top: vw(42px, 360px);
 
         @media screen and (min-width: 360px) {
             border-width: 1px;
             border-radius: 24px;
+            margin-top: 42px;
         }
     
         @media screen and (min-width: 500px) {
             border-width: vw(1px, 360px);
             border-radius: vw(24px, 360px);
+            margin-top: vw(42px, 360px);
         }
     
         @media screen and (min-width: 920px) {
             border-width: vw(1px);
             border-radius: vw(24px);
+            margin-top: vw(42px);
             width: auto;
         }
     
         @media screen and (min-width: 1600px) {
             border-width: 1px;
             border-radius: 24px;
+            margin-top: 42px;
         }
     }
 
@@ -491,7 +495,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
 
         gap: vw(12px, 360px);
 
@@ -504,7 +508,6 @@
         }
     
         @media screen and (min-width: 920px) {
-            justify-content: flex-start;
             gap: vw(12px);
         }
     
@@ -609,6 +612,7 @@
         flex-wrap: nowrap;
         border: solid $accent;
         margin: 0px auto;
+        width: 100%;
 
         border-width: vw(1px, 360px);
         height: vw(24px, 360px);
@@ -633,6 +637,7 @@
         }
     
         @media screen and (min-width: 920px) {
+            width: auto;
             margin: 0px;
             border-width: vw(1px);
             height: vw(24px);
@@ -655,6 +660,29 @@
         border: none;
         color: $white;
         cursor: pointer;
+        
+        font-size: vw(16px, 360px);
+        line-height: vw(16px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(16px, 360px);
+            line-height: vw(16px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(16px);
+            line-height: vw(16px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 16px;
+            line-height: 16px;
+        }
 
         &_active {
             color: $accent;
@@ -708,7 +736,7 @@
     &__dataGraphHeader {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
 
         gap: vw(24px, 360px);
@@ -722,6 +750,7 @@
         }
     
         @media screen and (min-width: 920px) {
+            align-items: center;
             flex-direction: row;
             gap: vw(24px);
         }
@@ -840,6 +869,32 @@
         @media screen and (min-width: 1600px) {
             font-size: 16px;
             line-height: 16px;
+        }
+    }
+
+    &__dataGraphCanvas {
+        width: 100%;
+
+        height: vw(340px, 360px);
+
+        @media screen and (min-width: 360px) {
+            height: 340px;
+        }
+
+        @media screen and (min-width: 500px) {
+            height: vw(340px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            height: vw(415px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            height: 415px;
+        }
+
+        canvas {
+            width: 100%;
         }
     }
 

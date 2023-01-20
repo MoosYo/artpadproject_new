@@ -119,6 +119,11 @@ export default function MyProjectsPage({}) {
           name: "Link",
           toolTip: null,
           width: "1fr"
+      },
+      {
+          name: "",
+          toolTip: null,
+          width: "1fr"
       }
   ];
 
@@ -160,6 +165,11 @@ export default function MyProjectsPage({}) {
               {
                   value: dataItem.link,
                   type: "url"
+              },
+              {
+                  value: localize.claim[local],
+                  func: () => alert("Claim"),
+                  type: "button"
               }
             ],
             child: []

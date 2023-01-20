@@ -91,6 +91,11 @@
             background-color: #000000;
             background-image: url("../../assets/svg/background.svg");
             transition: transform 0.3s ease-in-out;
+            
+            background-size: 300%;
+            background-position-y: bottom;
+            background-position-x: right;
+            background-repeat: no-repeat;
 
             flex-direction: column;
     

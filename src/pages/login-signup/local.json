@@ -18,5 +18,7 @@
    "password": { "ru-RU": "Пароль", "en-US": "Password" },
    "consfirm_password": { "ru-RU": "Подвердить пароль", "en-US": "Confirm password" },
    "email": { "ru-RU": "Электронная почта", "en-US": "E-mail" },
-   "login": { "ru-RU": "Псевдоним", "en-US": "Login" }
+   "login": { "ru-RU": "Логин", "en-US": "Login" },
+   "inviter": { "ru-RU": "Логин пригласившего", "en-US": "Inviter’s login" },
+   "change_pass": { "ru-RU": "Сменить пароль", "en-US": "Change password" }
 }

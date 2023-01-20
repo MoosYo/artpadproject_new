@@ -417,4 +417,25 @@
 
         }
     }
+    
+    &__cellButton {
+        width: 100%;
+        height: 100%;
+
+        @media screen and (min-width: 360px) {
+
+        }
+
+        @media screen and (min-width: 500px) {
+
+        }
+
+        @media screen and (min-width: 920px) {
+
+        }
+
+        @media screen and (min-width: 1600px) {
+
+        }
+    }
 }

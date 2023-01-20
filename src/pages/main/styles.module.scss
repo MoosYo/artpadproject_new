@@ -847,26 +847,26 @@
         align-items: flex-start;
         justify-content: center;
 
-        height: vw(400px, 360px);
+        height: vw(440px, 360px);
         min-width: vw(300px, 360px);
 
         @media screen and (min-width: 360px) {
-            height: 400px;
+            height: 440px;
             min-width: 300px;
         }
     
         @media screen and (min-width: 500px) {
-            height: vw(400px, 360px);
+            height: vw(440px, 360px);
             min-width: vw(300px, 360px);
         }
     
         @media screen and (min-width: 920px) {
-            height: vw(400px);
+            height: vw(440px);
             min-width: auto;
         }
     
         @media screen and (min-width: 1600px) {
-            height: 400px;
+            height: 440px;
         }
     }
 

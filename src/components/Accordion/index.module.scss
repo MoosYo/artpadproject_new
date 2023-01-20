@@ -25,7 +25,7 @@
 
    @media screen and (min-width: 920px) {
       gap: vw(10px);
-      padding: vw(32px) vw(64px);
+      padding: vw(24px) vw(48px);
       border: vw(1px) solid $accent;
       border-radius: vw(30px);
       margin-bottom: vw(32px);
@@ -33,7 +33,7 @@
 
    @media screen and (min-width: 1600px) {
       gap: 10px;
-      padding: 32px 64px;
+      padding: 24px 48px;
       border: 1px solid $accent;
       border-radius: 30px;
       margin-bottom: 32px;

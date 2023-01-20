@@ -20,8 +20,8 @@
       "en-US": "Enter promo code"
    },
    "mActivCount": {
-      "ru-RU": "Участники (активные)",
-      "en-US": "Members (active)"
+      "ru-RU": "Команда (с уровнем)",
+      "en-US": "Team (with Tier)"
    },
    "coinsCount": {
       "ru-RU": "Монет в команде",

@@ -222,7 +222,9 @@ export default function Header(props) {
 
    return (
       <header className={header}>
-         <Logo className={header__logo} />
+         <a href="/">
+            <Logo className={header__logo} />
+         </a>
 
          <button className={header__mobileButton} type="button" onClick={showMenu}>
             <BurgerMenuIcon />

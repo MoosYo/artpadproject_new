@@ -71,6 +71,7 @@ const {
     swap__dataGraphInfo,
     swap__dataGraphDate,
     swap__dataGraphCurrency,
+    swap__dataGraphCanvas,
     swap__dataGraphResult
 } = classes;
 
@@ -135,6 +136,7 @@ const Swap = ({setModal}) => {
 
     
     const options = {
+        maintainAspectRatio: false,
         responsive: true,
         scales: {
             y: {
@@ -340,7 +342,9 @@ const Swap = ({setModal}) => {
                             </p>
                         </div>
                     </div>
-                    <Line options={options} data={data} />
+                    <div className={swap__dataGraphCanvas}>
+                        <Line options={options} data={data} />
+                    </div>
                     <div className={swap__dataGraphResult}>
                         0.00000 (0.00%)
                     </div>

@@ -29,15 +29,15 @@
       border: none;
 
       @media screen and (min-width: 500px) {
-         height: vw(32px, 360px);
+         height: vw(64px, 360px);
       }
 
       @media screen and (min-width: 920px) {
-         height: vw(120px);
+         height: vw(64px);
       }
 
       @media screen and (min-width: 1600px) {
-         height: 120px;
+         height: 64px;
       }
    }
 
