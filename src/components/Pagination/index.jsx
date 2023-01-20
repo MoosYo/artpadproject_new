@@ -3,12 +3,12 @@ import classes from "./index.module.scss";
 
 const { pagination, pagination__item, pagination__arrow, pagination__arrow_left, pagination__arrow_right } = classes;
 
-function Pagination({ curentPage, totalPages, href, className }) {
+function Pagination({ curentPage, totalPages, href, className, params = "" }) {
    return (
       <ul className={pagination + " " + className}>
          <li className={pagination__item}>
             <a
-               href={href + "?page=" + (curentPage > 1 ? curentPage - 1 : 1)}
+               href={href + "?page=" + (curentPage > 1 ? curentPage - 1 : 1) + params}
                className={pagination__arrow + " " + pagination__arrow_left}
             >
                <Arrow className={pagination__arrow} />
@@ -16,7 +16,7 @@ function Pagination({ curentPage, totalPages, href, className }) {
          </li>
          {curentPage > 2 ? (
             <li className={pagination__item}>
-               <a href={href + "?page=1"} className="pagination__link">
+               <a href={href + "?page=1" + params} className="pagination__link">
                   1
                </a>
             </li>
@@ -30,7 +30,7 @@ function Pagination({ curentPage, totalPages, href, className }) {
 
          {curentPage > 1 ? (
             <li className={pagination__item}>
-               <a href={href + "?page=" + (curentPage - 1)} className="pagination__link">
+               <a href={href + "?page=" + (curentPage - 1) + params} className="pagination__link">
                   {curentPage - 1}
                </a>
             </li>
@@ -38,7 +38,7 @@ function Pagination({ curentPage, totalPages, href, className }) {
 
          {(curentPage > 1 && curentPage <= totalPages - 1) || curentPage === 1 || curentPage === totalPages ? (
             <li className={pagination__item}>
-               <a href={href + "?page=" + curentPage} className="pagination__link">
+               <a href={href + "?page=" + curentPage + params} className="pagination__link">
                   {curentPage}
                </a>
             </li>
@@ -46,7 +46,7 @@ function Pagination({ curentPage, totalPages, href, className }) {
 
          {curentPage <= totalPages - 1 ? (
             <li className={pagination__item}>
-               <a href={href + "?page=" + (curentPage + 1)} className="pagination__link">
+               <a href={href + "?page=" + (curentPage + 1) + params} className="pagination__link">
                   {curentPage + 1}
                </a>
             </li>
@@ -60,14 +60,14 @@ function Pagination({ curentPage, totalPages, href, className }) {
 
          {curentPage <= totalPages - 2 ? (
             <li className={pagination__item}>
-               <a href={href + "?page=" + totalPages} className="pagination__link">
+               <a href={href + "?page=" + totalPages + params} className="pagination__link">
                   {totalPages}
                </a>
             </li>
          ) : null}
          <li className={pagination__item}>
             <a
-               href={href + "?page=" + (curentPage < totalPages ? curentPage + 1 : curentPage)}
+               href={href + "?page=" + (curentPage < totalPages ? curentPage + 1 : curentPage) + params}
                className={pagination__arrow + " " + pagination__arrow_right}
             >
                <Arrow className={pagination__arrow} />

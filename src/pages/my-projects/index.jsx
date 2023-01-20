@@ -161,7 +161,8 @@ export default function MyProjectsPage({}) {
                   value: dataItem.link,
                   type: "url"
               }
-            ]
+            ],
+            child: []
          })
       });
 

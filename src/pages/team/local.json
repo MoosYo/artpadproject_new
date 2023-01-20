@@ -50,5 +50,37 @@
    "notActivated": {
       "ru-RU": "Не активные",
       "en-US": "Not activated"
+   },
+   "tableName": {
+      "ru-RU": "Имя",
+      "en-US": "Name"
+   },
+   "tableTeam": {
+      "ru-RU": "Команда",
+      "en-US": "Team"
+   },
+   "tableStaking": {
+      "ru-RU": "Ставка",
+      "en-US": "Staking"
+   },
+   "tableInvested": {
+      "ru-RU": "Инвестировано",
+      "en-US": "Invested"
+   },
+   "tableReceived": {
+      "ru-RU": "Полученные BS",
+      "en-US": "Received BS"
+   },
+   "tableStakingInfo": {
+      "ru-RU": "Подсказка по ставке",
+      "en-US": "Staking info"
+   },
+   "tableInvestedInfo": {
+      "ru-RU": "Подсказака по инвестиции",
+      "en-US": "Invested info"
+   },
+   "tableReceivedInfo": {
+      "ru-RU": "Подсказка о получении BS",
+      "en-US": "Received BS info"
    }
 }

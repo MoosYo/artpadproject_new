@@ -61,15 +61,7 @@ export default function App() {
 
    
 
-   const [toolTip, setTooltip] = useState({
-      content: () => (
-         <>
-            123
-         </>
-      ),
-      x: 100,
-      y: 100
-   });
+   const [toolTip, setTooltip] = useState(null);
 
    const hideToolTip = () => {
       setTooltip(null);
@@ -87,7 +79,7 @@ export default function App() {
             {path === "/faq" || path === "/faq/" ? <Accordion /> : ""}
             {path === "/profile" || path === "/profile/" ? <ProfilePage /> : ""}
             {path === "/profile/staking" || path === "/profile/staking/" ? <SteakingPage /> : ""}
-            {path === "/profile/team" || path === "/profile/team/" ? <TeamPage setModal={showModal} /> : ""}
+            {path === "/profile/team" || path === "/profile/team/" ? <TeamPage setModal={showModal} setToolTip={setTooltip} /> : ""}
             {path === "/profile/my-projects" || path === "/profile/my-projects/" ? <MyProjectsPage /> : ""}
             {path === "/sign-in" || path === "/sign-in/" || path === "/sign-up" || path === "/sign-up/" ? (
                <LoginSignupPage />

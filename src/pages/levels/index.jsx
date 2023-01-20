@@ -55,7 +55,8 @@ const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
                     value: lang.lottery[locale] + " (25%)",
                     type: "text"
                 },
-            ]
+            ],
+            child: []
         },
         {
             cells: [
@@ -75,7 +76,8 @@ const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
                     value: lang.lottery[locale] + " (50%)",
                     type: "text"
                 },
-            ]
+            ],
+            child: []
         },
         {
             cells: [
@@ -95,7 +97,8 @@ const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
                     value: lang.lottery[locale] + " (75%)",
                     type: "text"
                 },
-            ]
+            ],
+            child: []
         },
         {
             cells: [
@@ -115,7 +118,8 @@ const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
                     value: lang.guaranteed[locale],
                     type: "text"
                 },
-            ]
+            ],
+            child: []
         },
         {
             cells: [
@@ -135,7 +139,8 @@ const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
                     value: lang.guaranteed[locale],
                     type: "text"
                 },
-            ]
+            ],
+            child: []
         },
         {
             cells: [
@@ -155,7 +160,8 @@ const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
                     value: lang.guaranteed[locale],
                     type: "text"
                 },
-            ]
+            ],
+            child: []
         },
         {
             cells: [
@@ -175,7 +181,8 @@ const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
                     value: lang.guaranteed[locale],
                     type: "text"
                 },
-            ]
+            ],
+            child: []
         },
         {
             cells: [
@@ -195,7 +202,8 @@ const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
                     value: lang.guaranteed[locale],
                     type: "text"
                 },
-            ]
+            ],
+            child: []
         },
         {
             cells: [
@@ -215,7 +223,8 @@ const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
                     value: lang.guaranteed[locale],
                     type: "text"
                 },
-            ]
+            ],
+            child: []
         },
     ];
 
@@ -238,7 +247,8 @@ const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
                     value: "X1",
                     type: "text"
                 }
-            ]
+            ],
+            child: []
         },
         {
             cells: [
@@ -258,7 +268,8 @@ const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
                     value: "X1",
                     type: "text"
                 }
-            ]
+            ],
+            child: []
         },
         {
             cells: [
@@ -278,7 +289,8 @@ const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
                     value: "X1",
                     type: "text"
                 }
-            ]
+            ],
+            child: []
         },
         {
             cells: [
@@ -298,7 +310,8 @@ const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
                     value: "X1",
                     type: "text"
                 }
-            ]
+            ],
+            child: []
         }
     ]
 
@@ -308,15 +321,15 @@ const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
         const content = [
             (props) => (
                 <>
-                    <p className={levels__toolTipText} style={{color: "#ffffff"}} {...props}>
-                        APY info
+                    <p className={levels__toolTipText} {...props}>
+                        {lang.apyInfo[locale]}
                     </p>
                 </>
             ),
             (props) => (
                 <>
-                    <p className={levels__toolTipText} style={{color: "#ffffff"}} {...props}>
-                        Column info
+                    <p className={levels__toolTipText} {...props}>
+                        {lang.columnInfo[locale]}
                     </p>
                 </>
             )
@@ -533,7 +546,8 @@ const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
                                 value: "24%",
                                 type: "text"
                             }
-                        ]
+                        ],
+                        child: []
                     }
                 ]}
             />
