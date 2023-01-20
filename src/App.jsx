@@ -19,6 +19,7 @@ import MainPage from "./pages/main";
 import Swap from "./pages/swap";
 import ProjectsPage from "./pages/projects";
 import LevelsPage from "./pages/levels";
+import ToolTip from "./components/ToolTip";
 
 const { app, pageWrapper } = classes;
 
@@ -57,13 +58,30 @@ export default function App() {
    }, [modalContent]);
 
    const ModalContent = (props) => modalContent.content(props);
+
+   
+
+   const [toolTip, setTooltip] = useState({
+      content: () => (
+         <>
+            123
+         </>
+      ),
+      x: 100,
+      y: 100
+   });
+
+   const hideToolTip = () => {
+      setTooltip(null);
+   }
+
    return (
       <div className={app}>
          <Header setModal={showModal} />
          <main className={pageWrapper}>
             {path === "/" || path === "" ? <MainPage setModal={showModal} /> : ""}
             {path === "/projects" || path === "/projects/" ? <ProjectsPage setModal={showModal} /> : ""}
-            {path === "/levels" || path === "/levels/" ? <LevelsPage setModal={showModal} /> : ""}
+            {path === "/levels" || path === "/levels/" ? <LevelsPage setModal={showModal} setToolTip={setTooltip} /> : ""}
             {path === "/swap" || path === "/swap/" ? <Swap setModal={showModal} /> : ""}
             {path === "/nft-marketplace" || path === "/nft-marketplace/" ? <Marketplace /> : ""}
             {path === "/faq" || path === "/faq/" ? <Accordion /> : ""}
@@ -83,6 +101,18 @@ export default function App() {
          <Modal shown={modalContent.shown} onClose={onModalClose}>
             <ModalContent onClose={onModalClose} />
          </Modal>
+
+         {
+            toolTip ? (
+               <ToolTip
+                  x={toolTip.x}
+                  y={toolTip.y}
+                  onClose={hideToolTip}
+               >
+                  {toolTip.content()}
+               </ToolTip>
+            ) : ""
+         }
       </div>
    );
 }

@@ -16,7 +16,9 @@ const {
     levels__blockText,
     levels__blockText_accent,
     levels__header,
-    levels__table
+    levels__table,
+
+    levels__toolTipText
 } = classes;
 
 
@@ -30,7 +32,7 @@ const {
     apy: 133.09
 }
 
-const LevelsPage = () => {
+const LevelsPage = ({setModals = () => {}, setToolTip = () => {}}) => {
 
     const locale = getLocale();
 
@@ -300,6 +302,33 @@ const LevelsPage = () => {
         }
     ]
 
+    const toolTip = (e, i) => {
+
+        const rect = e.target.getClientRects()[0];
+        const content = [
+            (props) => (
+                <>
+                    <p className={levels__toolTipText} style={{color: "#ffffff"}} {...props}>
+                        APY info
+                    </p>
+                </>
+            ),
+            (props) => (
+                <>
+                    <p className={levels__toolTipText} style={{color: "#ffffff"}} {...props}>
+                        Column info
+                    </p>
+                </>
+            )
+        ];
+        
+        setToolTip({
+            content: content[i],
+            x: rect.x + (rect.x < window.innerWidth / 2 ? 0 : rect.height),
+            y: window.scrollY + rect.y + rect.height
+        });
+    }
+
     return (
         <div className={levels}>
             <div className={levels__top}>
@@ -332,7 +361,10 @@ const LevelsPage = () => {
                         <h2 className={levels__blockTitleText}>
                             {lang.apy[locale]}:
                         </h2>
-                        <InfoIcon className={levels__blockTitleToolTip} />
+                        <InfoIcon
+                            className={levels__blockTitleToolTip}
+                            onClick={(e) => toolTip(e, 0)}
+                        />
                     </div>
 
                     <p className={levels__blockText + " " + levels__blockText_accent}>
@@ -367,17 +399,17 @@ const LevelsPage = () => {
                     },
                     {
                         name: lang.staking[locale],
-                        toolTip: () => "",
+                        toolTip: (e) => toolTip(e, 1),
                         width: "1fr"
                     },
                     {
                         name: lang.multiplier[locale],
-                        toolTip: () => "",
+                        toolTip: (e) => toolTip(e, 1),
                         width: "1fr"
                     },
                     {
                         name: lang.allocation[locale],
-                        toolTip: () => "",
+                        toolTip: (e) => toolTip(e, 1),
                         width: "1fr"
                     }
                 ]}
@@ -417,12 +449,12 @@ const LevelsPage = () => {
                     {
                         name: lang.apy[locale],
                         width: "1fr",
-                        toolTip: () => ""
+                        toolTip: (e) => toolTip(e, 1)
                     },
                     {
                         name: lang.multiplier[locale],
                         width: "1fr",
-                        toolTip: () => ""
+                        toolTip: (e) => toolTip(e, 1)
                     }
                 ]}
                 rows={table2Rows}

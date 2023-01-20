@@ -1,0 +1,79 @@
+@import "../../styles/colors.scss";
+@import "../../styles/helpers.scss";
+
+.tooltip {
+    position: absolute;
+
+    padding: 32px;
+    
+    @media screen and (max-width: 359px) {
+        width: vw(336px, 360px);
+        left: vw(12px, 360px) !important;
+        right: vw(12px, 360px) !important;
+    }
+
+    @media screen and (max-width: 499px) {
+        width: calc(100% - 24px);
+        left: 12px;
+        right: 12px;
+    }
+
+    @media screen and (max-width: 919px) {
+        width: vw(336px, 360px);
+        left: vw(12px, 360px) !important;
+        right: vw(12px, 360px) !important;
+    }
+    
+    &__block {
+        position: absolute;
+        background: $background;
+        border: solid $accent;
+        width: 100%;
+
+        border-width: vw(2px, 360px);
+        border-radius: vw(10px, 360px);
+        padding: vw(24px, 360px);
+        transform: translateX(vw(-32px, 360px));
+
+        @media screen and (min-width: 360px) {
+            border-width: 2px;
+            border-radius: 10px;
+            padding: 24px;
+            transform: translateX(-32px);
+        }
+
+        @media screen and (min-width: 500px) {
+            border-width: vw(2px, 360px);
+            border-radius: vw(10px, 360px);
+            padding: vw(24px, 360px);
+            transform: translateX(vw(-32px, 360px));
+        }
+
+        @media screen and (min-width: 920px) {
+            border-width: vw(2px);
+            border-radius: vw(10px);
+            padding: vw(24px);
+            width: vw(288px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            border-width: 2px;
+            border-radius: 10px;
+            padding: 24px;
+            width: 288px;
+        }
+        
+
+        &_right {
+            left: 0px;
+            right: auto;
+
+            transform: translateX(0px);
+
+            @media screen and (min-width: 920px) {
+                right: 0px;
+                left: auto;
+            }
+        }
+    }
+}

@@ -21,10 +21,6 @@ const Table = ({headers = [], rows = [], className = "", style = {}}) => {
 
     const locale = getLocale();
 
-   const showToolTip = (toolTip) => {
-      console.log(123);
-   }
-
    let columnsWidth = "";
    
    headers.forEach((header, i) => {
@@ -57,7 +53,7 @@ const Table = ({headers = [], rows = [], className = "", style = {}}) => {
                             </p>
                             {
                               toolTip ? (
-                                 <InfoIcon className={table__headerToolTip} onMouseEnter={() => showToolTip(toolTip)} />
+                                 <InfoIcon className={table__headerToolTip} onClick={toolTip} />
                               ) : ""
                             }
                         </div>
