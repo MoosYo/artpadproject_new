@@ -1,0 +1,63 @@
+{
+    "header": {
+       "ru-RU": "Повысить уровень",
+       "en-US": "Upgrade tier"
+    },
+    "yourLevel": {
+       "ru-RU": "Ваш уровень",
+       "en-US": "Your level"
+    },
+    "tier": {
+       "ru-RU": "уровень",
+       "en-US": "tier"
+    },
+    "upgrate": {
+       "ru-RU": "Повысить до",
+       "en-US": "Upgrade to"
+    },
+    "select": {
+       "ru-RU": "Выбрать",
+       "en-US": "Select Tier"
+    },
+    "needPay": {
+       "ru-RU": "Вам необходимо заплатить",
+       "en-US": "you need to pay"
+    },
+    "canPay": {
+       "ru-RU": "Вы можете заплатить максимум",
+       "en-US": "you can pay the maximum"
+    },
+    "multiplierWas": {
+       "ru-RU": "Ваш множитель на данный момент",
+       "en-US": "you’r tier, Multiplier was"
+    },
+    "with": {
+       "ru-RU": "с",
+       "en-US": "with"
+    },
+    "multiplierBe": {
+       "ru-RU": "Ваш множитель составит",
+       "en-US": "you’r Multiplier be"
+    },
+    "useBonus": {
+       "ru-RU": "Вы можете использовать бонусные монеты для оплаты",
+       "en-US": "You can use bonus coin to pay"
+    },
+    "onlyW": {
+       "ru-RU": "Только wARTR",
+       "en-US": "Only wARTR"
+    },
+    "balance": {
+       "ru-RU": "Баланс",
+       "en-US": "Balance"
+    },
+    "max": {
+       "ru-RU": "Макс.",
+       "en-US": "Max"
+    },
+    "upgradeTier": {
+       "ru-RU": "Повысить уровень",
+       "en-US": "Upgrade tier"
+    }
+ }
+ 

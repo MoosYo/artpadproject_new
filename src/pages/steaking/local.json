@@ -12,8 +12,8 @@
       "en-US": "tier"
    },
    "upgradeTo": {
-      "ru-RU": "повысить до",
-      "en-US": "upgrade tier to"
+      "ru-RU": "повысить",
+      "en-US": "upgrade tier"
    },
    "tierMultiplier": {
       "ru-RU": "Множитель уровня",
@@ -58,5 +58,21 @@
    "unstake": {
       "ru-RU": "Снять ставку",
       "en-US": "Unstake"
+   },
+   "daily": {
+      "ru-RU": "Ежедневная награда за ставку",
+      "en-US": "Daily reward for staking"
+   },
+   "stakingEnd": {
+      "ru-RU": "Конец ставки",
+      "en-US": "staking end"
+   },
+   "frozen": {
+      "ru-RU": "Take a frozen staking",
+      "en-US": "Take a frozen staking"
+   },
+   "percentage": {
+      "ru-RU": "Take a percentage",
+      "en-US": "Take a percentage"
    }
 }

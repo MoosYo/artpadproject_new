@@ -29,37 +29,212 @@
    }
 
    &__content {
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      
+      margin-bottom: vw(40px, 360px);
+      gap: vw(40px, 360px);
+
+      @media screen and (min-width: 360px) {
+         margin-bottom: 40px;
+         gap: 40px;
+      }
+
+      @media screen and (min-width: 500px) {
+         margin-bottom: vw(40px, 360px);
+         gap: vw(40px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         align-items: flex-end;
+         flex-direction: row;
+         margin-bottom: vw(40px);
+         gap: 0px;
+      }
+
+      @media screen and (min-width: 1600px) {
+         margin-bottom: 40px;
+      }
+   }
+
+   &__contentLeft {
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
       justify-content: center;
       align-items: stretch;
-      color: $white;
 
       gap: vw(24px, 360px);
-      margin-bottom: vw(40px, 360px);
       
       @media screen and (min-width: 360px) {
          gap: 24px;
-         margin-bottom: 40px;
       }
 
       @media screen and (min-width: 500px) {
          gap: vw(24px, 360px);
-         margin-bottom: vw(40px, 360px);
       }
 
       @media screen and (min-width: 920px) {
          gap: vw(24px);
-         margin-bottom: vw(40px);
       }
 
       @media screen and (min-width: 1600px) {
          gap: 24px;
-         margin-bottom: 40px;
       }
    }
 
+   &__contentRight {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      gap: vw(30px, 360px);
+
+      @media screen and (min-width: 360px) {
+         gap: 30px;
+      }
+
+      @media screen and (min-width: 500px) {
+         gap: vw(30px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         width: auto;
+         gap: vw(30px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         gap: 30px;
+      }
+   }
+
+   &__contentCard {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      background: $background;
+      border: solid $accent;
+
+      border-radius: vw(10px, 360px);
+      border-width: vw(2px, 360px);
+      gap: vw(14px, 360px);
+      padding: vw(24px, 360px);
+
+      @media screen and (min-width: 360px) {
+         border-radius: 10px;
+         border-width: 2px;
+         gap: 14px;
+         padding: 24px;
+      }
+
+      @media screen and (min-width: 500px) {
+         border-radius: vw(10px, 360px);
+         border-width: vw(2px, 360px);
+         gap: vw(14px, 360px);
+         padding: vw(24px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         border-radius: vw(10px);
+         border-width: vw(2px);
+         gap: vw(14px);
+         padding: vw(24px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         border-radius: 10px;
+         border-width: 2px;
+         gap: 14px;
+         padding: 24px;
+      }
+   }
+
+   &__contentCardTitle {
+      color: $white;
+      font-weight: 400;
+      text-transform: uppercase;
+
+      font-size: vw(18px, 360px);
+      line-height: vw(18px, 360px);
+
+      @media screen and (min-width: 360px) {
+         font-size: 18px;
+         line-height: 18px;
+      }
+
+      @media screen and (min-width: 500px) {
+         font-size: vw(18px, 360px);
+         line-height: vw(18px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         font-size: vw(18px);
+         line-height: vw(18px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         font-size: 18px;
+         line-height: 18px;
+      }
+   }
+
+   &__contentCardData {
+      width: 100%;
+      color: $accent;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: vw(14px, 360px);
+
+      @media screen and (min-width: 360px) {
+         gap: 14px;
+      }
+
+      @media screen and (min-width: 500px) {
+         gap: vw(14px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         gap: vw(14px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         gap: 14px;
+      }
+   }
+
+   &__contentCardText {
+      font-weight: 600;
+
+      font-size: vw(18px, 360px);
+      line-height: vw(18px, 360px);
+
+      @media screen and (min-width: 360px) {
+         font-size: 18px;
+         line-height: 18px;
+      }
+
+      @media screen and (min-width: 500px) {
+         font-size: vw(18px, 360px);
+         line-height: vw(18px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         font-size: vw(18px);
+         line-height: vw(18px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         font-size: 18px;
+         line-height: 18px;
+      }
+   }
+   
    &__title {
       font-family: Rubik;
       font-weight: 600;
@@ -433,6 +608,65 @@
       }
    }
 
+   
+
+   &__actions {
+      width: 100%;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: vw(20px, 360px);
+
+      @media screen and (min-width: 360px) {
+         gap: 20px;
+      }
+      
+      @media screen and (min-width: 500px) {
+         gap: vw(20px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         flex-direction: row;
+      }
+   }
+
+   &__actionsBlock {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 100%;
+
+      &:last-child {
+         flex-direction: column-reverse;
+      }
+
+      gap: vw(20px, 360px);
+
+      @media screen and (min-width: 360px) {
+         gap: 20px;
+      }
+
+      @media screen and (min-width: 500px) {
+         gap: vw(20px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         width: auto;
+         flex-direction: row;
+         gap: vw(20px);
+         
+         &:last-child {
+            flex-direction: row;
+         }
+      }
+
+      @media screen and (min-width: 1600px) {
+         gap: 20px;
+      }
+   }
 }
 
 .card {
@@ -640,6 +874,7 @@
    }
 
    &__button {
+      width: 100%;
       border-radius: vw(4px, 360px);
       
       @media screen and (min-width: 360px) {
@@ -651,11 +886,17 @@
       }
 
       @media screen and (min-width: 920px) {
+         width: auto;
          border-radius: vw(4px);
       }
 
       @media screen and (min-width: 1600px) {
          border-radius: 4px;
+      }
+
+      &_outline {
+         border-color: $accent;
+         color: $accent;
       }
    }
 }
