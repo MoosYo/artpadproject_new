@@ -17,6 +17,7 @@ import CopyIcon from "../../components/Icons/Copy";
 
 // Helpers
 import getLocale from "../../helpers/getLoacale";
+import UserEditModal from "../../components/UserEditModal";
 
 const {
    profilePage__mainBlock,
@@ -58,7 +59,7 @@ if (wallet.length > 19) {
 }
 // shortWallet +=
 
-export default function ProfilePage({}) {
+export default function ProfilePage({setModal = () => {}}) {
 
    const local = getLocale();
 
@@ -77,10 +78,10 @@ export default function ProfilePage({}) {
                   <div className={profilePage__userName}>
                      <p className={profilePage__userNameText}>{login}</p>
 
-                     <a href="/profile/edit" className={profilePage__userNameEdit} type="button">
+                     <span className={profilePage__userNameEdit} type="button" onClick={() => setModal(UserEditModal)}>
                         <span className={profilePage__userNameEditText}>{localize.edit[local]}</span>
                         <EditIcon className={profilePage__userNameEditIcon} />
-                     </a>
+                     </span>
                   </div>
 
                   <a

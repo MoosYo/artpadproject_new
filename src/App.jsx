@@ -77,7 +77,7 @@ export default function App() {
             {path === "/swap" || path === "/swap/" ? <Swap setModal={showModal} /> : ""}
             {path === "/nft-marketplace" || path === "/nft-marketplace/" ? <Marketplace /> : ""}
             {path === "/faq" || path === "/faq/" ? <Accordion /> : ""}
-            {path === "/profile" || path === "/profile/" ? <ProfilePage /> : ""}
+            {path === "/profile" || path === "/profile/" ? <ProfilePage setModal={showModal} /> : ""}
             {path === "/profile/staking" || path === "/profile/staking/" ? <SteakingPage setModal={showModal} /> : ""}
             {path === "/profile/team" || path === "/profile/team/" ? <TeamPage setModal={showModal} setToolTip={setTooltip} /> : ""}
             {path === "/profile/my-projects" || path === "/profile/my-projects/" ? <MyProjectsPage /> : ""}
