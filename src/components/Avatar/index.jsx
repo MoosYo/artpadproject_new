@@ -6,13 +6,12 @@ const {
     avatar
 } = classes;
 
-export default function Avatar (props) {
-    const img = props.img ? props.img : emptyAvatarImg;
+export default function Avatar ({img, alt, className}) {
     return (
         <img
-            src={img}
-            className={avatar + (props.className ? " " + props.className : "")}
-            alt={props.alt ? props.alt : "User avatar"}
+            src={img ? img : emptyAvatarImg}
+            className={avatar + (className ? " " + className : "")}
+            alt={alt ? alt : "User avatar"}
         />
     );
 }

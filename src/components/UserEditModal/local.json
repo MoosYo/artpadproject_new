@@ -1,0 +1,59 @@
+{
+   "header": {
+      "ru-RU": "Настройки",
+      "en-US": "Settings"
+   },
+   "changeImage": {
+      "ru-RU": "Изменить",
+      "en-US": "Change image"
+   },
+   "addNft": {
+      "ru-RU": "Добавить NFT",
+      "en-US": "Add NFT"
+   },
+   "nickname": {
+      "ru-RU": "Псевдоним",
+      "en-US": "Nickname"
+   },
+   "newNickname": {
+      "ru-RU": "Новый псевдоним",
+      "en-US": "New nickname"
+   },
+   "change": {
+      "ru-RU": "Изменить",
+      "en-US": "Change"
+   },
+   "email": {
+      "ru-RU": "Эл. почта",
+      "en-US": "E-mail"
+   },
+   "newEmail": {
+      "ru-RU": "Новая эл. почта",
+      "en-US": "New e-mail"
+   },
+   "wallet": {
+      "ru-RU": "Кошелёк",
+      "en-US": "Wallet"
+   },
+   "changeWallet": {
+      "ru-RU": "Изменить кошелёк",
+      "en-US": "Change Wallet"
+   },
+   "disconnectWallet": {
+      "ru-RU": "Отключить кошелёк",
+      "en-US": "Disconnect Wallet"
+   },
+   "changePass": {
+      "ru-RU": "Изменить пароль",
+      "en-US": "Change password"
+   },
+   "newPass": {
+      "ru-RU": "Новый пароль",
+      "en-US": "New password"
+   },
+   "confirmPass": {
+      "ru-RU": "Повторите пароль",
+      "en-US": "Confirm password"
+   }
+ }
+ 
