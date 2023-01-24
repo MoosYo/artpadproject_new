@@ -2,6 +2,7 @@
     "routes": [
         "/",
         "/projects",
+        "/projects/1",
         "/levels",
         "/swap",
         "/faq",

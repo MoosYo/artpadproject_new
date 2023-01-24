@@ -255,6 +255,7 @@
 
     &__selectText {
         color: $white;
+        white-space: nowrap;
         
         font-size: vw(24px, 360px);
         line-height: vw(24px, 360px);
@@ -291,6 +292,7 @@
         align-items: center;
         justify-content: flex-start;
         text-decoration: underline;
+        white-space: nowrap;
         
         font-size: vw(24px, 360px);
         line-height: vw(24px, 360px);
@@ -631,6 +633,7 @@
     &__barText {
         color: $white;
         opacity: 0.3;
+        max-width: 50%;
 
         font-size: vw(14px, 360px);
         line-height: vw(14px, 360px);

@@ -12,13 +12,22 @@
    background: $gradient;
    border: none;
    cursor: pointer;
+   
+   height: vw(35px, 360px);
+   padding: 0px vw(16px, 360px);
+   border-radius: vw(8px, 360px);
 
-   height: 35px;
-   padding: 0px 16px;
-   border-radius: 8px;
+   font-size: vw(16px, 360px);
+   line-height: vw(19px, 360px);
 
-   font-size: 16px;
-   line-height: 19px;
+   @media screen and (min-width: 360px) {
+      height: 35px;
+      padding: 0px 16px;
+      border-radius: 8px;
+   
+      font-size: 16px;
+      line-height: 19px;
+   }
 
    @media screen and (min-width: 500px) {
       height: vw(35px, 360px);

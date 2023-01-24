@@ -2,6 +2,126 @@
 @import "../../styles/helpers.scss";
 
 .project {
+
+   &__socials {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+
+      gap: vw(14px, 360px);
+      width: vw(250px, 360px);
+
+      @media screen and (min-width: 360px) {
+         gap: 14px;
+         width: 250px;
+      }
+
+      @media screen and (min-width: 500px) {
+         gap: vw(14px, 360px);
+         width: vw(250px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         gap: vw(14px);
+         width: vw(250px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         gap: 14px;
+         width: 250px;
+      }
+   }
+
+   &__socialsLink {
+
+   }
+
+   &__socialsLinkImg {
+      width: vw(51px, 360px);
+      height: vw(35px, 360px);
+
+      @media screen and (min-width: 360px) {
+         width: 51px;
+         height: 35px;
+      }
+
+      @media screen and (min-width: 500px) {
+         width: vw(51px, 360px);
+         height: vw(35px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         width: vw(51px);
+         height: vw(35px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         width: 51px;
+         height: 35px;
+      }
+   }
+
+   &__tag {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      background: $text;
+      color: $accent;
+      position: absolute;
+      text-transform: uppercase;
+
+      padding: 0px vw(16px, 360px);
+      border-radius: vw(17.5px, 360px);
+      font-size: vw(16px, 360px);
+      line-height: vw(16px, 360px);
+      height: vw(35px, 360px);
+      top: vw(-18px, 360px);
+      right: vw(-18px, 360px);
+
+      @media screen and (min-width: 360px) {
+         padding: 0px 16px;
+         border-radius: 17.5px;
+         font-size: 16px;
+         line-height: 16px;
+         height: 35px;
+         top: -18px;
+         right: -18px;
+      }
+
+      @media screen and (min-width: 500px) {
+         padding: 0px vw(16px, 360px);
+         border-radius: vw(17.5px, 360px);
+         font-size: vw(16px, 360px);
+         line-height: vw(16px, 360px);
+         height: vw(35px, 360px);
+         top: vw(-18px, 360px);
+         right: vw(-18px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         padding: 0px vw(16px);
+         border-radius: vw(17.5px);
+         font-size: vw(16px);
+         line-height: vw(16px);
+         height: vw(35px);
+         top: vw(-18px);
+         right: vw(-18px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         padding: 0px 16px;
+         border-radius: 17.5px;
+         font-size: 16px;
+         line-height: 16px;
+         height: 35px;
+         top: -18px;
+         right: -18px;
+      }
+   }
+
    &__layout {
       display: flex;
       flex-direction: column;
@@ -11,6 +131,7 @@
    }
 
    &__head {
+      position: relative;
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
@@ -33,22 +154,27 @@
          gap: 20px;
       }
       img {
-         width: vw(78px, 360px);
-         height: auto;
+         object-fit: contain;
+         height: vw(78px, 360px);
+         max-width: vw(250px);
 
          @media screen and (min-width: 360px) {
-            width: 78px;
+            height: 78px;
+            max-width: 250px;
          }
 
          @media screen and (min-width: 500px) {
-            width: vw(78px, 360px);
+            height: vw(78px, 360px);
+            max-width: vw(250px);
          }
 
          @media screen and (min-width: 920px) {
-            width: vw(78px);
+            height: vw(78px);
+            max-width: vw(250px);
          }
          @media screen and (min-width: 1600px) {
-            width: 78px;
+            height: 78px;
+            max-width: 250px;
          }
       }
    }
@@ -211,22 +337,27 @@
       align-items: stretch;
 
       gap: vw(30px, 360px);
+      // width: vw(266px, 360px);
 
       color: $white;
 
       @media screen and (min-width: 360px) {
          gap: 30px;
+         // width: 100%;
       }
 
       @media screen and (min-width: 500px) {
          gap: vw(30px, 360px);
+         // width: vw(276px, 360px);
       }
 
       @media screen and (min-width: 920px) {
          gap: vw(30px);
+         // width: vw(380px);
       }
       @media screen and (min-width: 1600px) {
          gap: 30px;
+         // width: 380px;
       }
 
       hr {
@@ -376,6 +507,7 @@
       flex-wrap: nowrap;
       justify-content: flex-start;
       align-items: stretch;
+
       gap: vw(24px, 360px);
 
       @media screen and (min-width: 360px) {
@@ -663,5 +795,284 @@
       font-size: 14px;
       line-height: 20px;
       gap: 12px;
+   }
+}
+
+.slider {
+   display: flex;
+   flex-direction: column;
+   align-items: stretch;
+   justify-content: flex-start;
+   width: 100%;
+
+   gap: vw(24px, 360px);
+   margin-bottom: vw(64px, 360px);
+
+   @media screen and (min-width: 360px) {
+      gap: 24px;
+      margin-bottom: 64px;
+   }
+
+   @media screen and (min-width: 500px) {
+      gap: vw(24px, 360px);
+      margin-bottom: vw(64px, 360px);
+   }
+
+   @media screen and (min-width: 920px) {
+      gap: vw(24px);
+      margin-bottom: vw(64px);
+   }
+
+   @media screen and (min-width: 1600px) {
+      gap: 24px;
+      margin-bottom: 64px;
+   }
+
+   &__header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+   }
+
+   &__title {
+      color: $white;
+      font-weight: 600;
+
+      font-size: vw(18px, 360px);
+      line-height: vw(18px, 360px);
+
+      @media screen and (min-width: 360px) {
+         font-size: 18px;
+         line-height: 18px;
+      }
+   
+      @media screen and (min-width: 500px) {
+         font-size: vw(18px, 360px);
+         line-height: vw(18px, 360px);
+      }
+   
+      @media screen and (min-width: 920px) {
+         font-size: vw(18px);
+         line-height: vw(18px);
+      }
+   
+      @media screen and (min-width: 1600px) {
+         font-size: 18px;
+         line-height: 18px;
+      }
+   }
+
+   &__control {
+      display: none;
+   
+      @media screen and (min-width: 920px) {
+         display: flex;
+         align-items: center;
+         justify-content: flex-end;
+         gap: vw(12px);
+      }
+   
+      @media screen and (min-width: 1600px) {
+         gap: 12px;
+      }
+   }
+
+   &__counter {
+      color: $accent;
+
+      font-size: vw(18px, 360px);
+      line-height: vw(18px, 360px);
+
+      @media screen and (min-width: 360px) {
+         font-size: 18px;
+         line-height: 18px;
+      }
+   
+      @media screen and (min-width: 500px) {
+         font-size: vw(18px, 360px);
+         line-height: vw(18px, 360px);
+      }
+   
+      @media screen and (min-width: 920px) {
+         font-size: vw(18px);
+         line-height: vw(18px);
+      }
+   
+      @media screen and (min-width: 1600px) {
+         font-size: 18px;
+         line-height: 18px;
+      }
+   }
+
+   &__button {
+      background: #252525;
+      transition: background 0.3s ease-in-out;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      width: vw(30px, 360px);
+      height: vw(30px, 360px);
+      border-radius: vw(4px, 360px);
+
+      @media screen and (min-width: 360px) {
+         width: 30px;
+         height: 30px;
+         border-radius: 4px;
+      }
+   
+      @media screen and (min-width: 500px) {
+         width: vw(30px, 360px);
+         height: vw(30px, 360px);
+         border-radius: vw(4px, 360px);
+      }
+   
+      @media screen and (min-width: 920px) {
+         width: vw(30px);
+         height: vw(30px);
+         border-radius: vw(4px);
+      }
+   
+      @media screen and (min-width: 1600px) {
+         width: 30px;
+         height: 30px;
+         border-radius: 4px;
+      }
+
+      &:hover {
+         background: $accent;
+
+         path {
+            fill: #252525;
+         }
+      }
+
+      svg {
+         width: vw(8px, 360px);
+         height: vw(12px, 360px);
+
+         @media screen and (min-width: 360px) {
+            width: 8px;
+            height: 12px;
+         }
+      
+         @media screen and (min-width: 500px) {
+            width: vw(8px, 360px);
+            height: vw(12px, 360px);
+         }
+      
+         @media screen and (min-width: 920px) {
+            width: vw(8px);
+            height: vw(12px);
+         }
+      
+         @media screen and (min-width: 1600px) {
+            width: 8px;
+            height: 12px;
+         }
+
+         path {
+            fill: $accent;
+         }
+      }
+   }
+
+   &__track {
+      overflow: auto;
+      white-space: nowrap;
+      width: 100%;
+      
+      padding-bottom: vw(26px, 360px);
+
+      @media screen and (min-width: 360px) {
+         padding-bottom: 26px;
+      }
+   
+      @media screen and (min-width: 500px) {
+         padding-bottom: vw(26px, 360px);
+      }
+   
+      @media screen and (min-width: 920px) {
+         border: solid $accent;
+         padding: 0px;
+         overflow: hidden;
+         width: vw(927px);
+         border-width: vw(1px);
+         border-radius: vw(10px);
+      }
+   
+      @media screen and (min-width: 1600px) {
+         border-width: 1px;
+         border-radius: 10px;
+         width: 927px;
+      }
+   }
+
+   &_slide {
+      position: relative;
+      display: inline-block;
+      transition: transform 0.3s ease-in-out;
+      overflow: hidden;
+      border: solid $accent;
+
+      @media screen and (max-width: 919px) {
+         transform: none !important;
+      }
+      
+      border-radius: vw(10px, 360px);
+      margin-right: vw(8px, 360px);
+      border-width: vw(1px, 360px);
+
+      @media screen and (min-width: 360px) {
+         border-radius: 10px;
+         margin-right: 12px;
+         border-width: 1px;
+      }
+
+      @media screen and (min-width: 500px) {
+         border-radius: vw(10px, 360px);
+         margin-right: vw(12px, 360px);
+         border-width: vw(1px, 360px);
+      }
+
+      @media screen and (min-width: 920px) {
+         border: none;
+         border-radius: 0px;
+         margin: 0px;
+      }
+   }
+
+   &__img {
+      vertical-align: bottom;
+
+      width: 100%;
+
+      @media screen and (min-width: 360px) {
+
+      }
+
+      @media screen and (min-width: 500px) {
+
+      }
+
+      @media screen and (min-width: 920px) {
+         width: vw(927px);
+      }
+
+      @media screen and (min-width: 1600px) {
+         width: 927px;
+      }
+   }
+
+   &_link {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0px;
+      top: 0px;
    }
 }

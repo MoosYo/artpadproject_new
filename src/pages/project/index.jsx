@@ -1,7 +1,11 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import Button from "../../components/Button";
 import Container from "../../components/Container";
 import Countdown from "../../components/Countdown";
 import Error from "../../components/Icons/error";
+import SliderArrowIcon from "../../components/Icons/SliderArrow";
+import SocialButton from "../../components/Icons/SocialButton";
 import ProgressbarTimestamp from "../../components/ProgressbarTimestamp";
 import StoryBoard from "../../components/StoryBoard";
 import TabControl from "../../components/TabControl";
@@ -30,15 +34,41 @@ const {
    card__timer,
    card__block,
    container__alert,
+
+   project__socials,
+   project__socialsLink,
+   project__socialsLinkImg,
+   project__tag,
+
+   slider,
+   slider__header,
+   slider__title,
+   slider__control,
+   slider__counter,
+   slider__button,
+   slider__track,
+   slider_slide,
+   slider__img,
+   slider_link
 } = classes;
 
-const { header, links, info, news, story } = window.initState?.project
+const { header, socials, links, info, news, story, banners } = window.initState?.project
    ? window.initState?.project
    : {
         header: {
            img: "https://icodrops.com/wp-content/uploads/2022/07/yycZmh7_400x400.png",
            title: "SEOR",
+           showTitle: true,
+           tag: "private"
         },
+        socials: [
+         { type: "web", href: "#" },
+         { type: "twitter", href: "#" },
+         { type: "telegram", href: "#" },
+         { type: "facebook", href: "#" },
+         { type: "instagram", href: "#" },
+         { type: "discord", href: "#" }
+        ],
         links: [
            { title: "Whitepeper", href: "#" },
            { title: "Tokenomics", href: "#" },
@@ -148,31 +178,31 @@ const { header, links, info, news, story } = window.initState?.project
            },
            {
               title: "REGISTRATION",
-              active: false,
+              active: true,
               points: [],
            },
            {
               title: "Swap",
-              active: true,
+              active: false,
               points: [
-                 {
-                    title: "End of FCFS -",
-                    time: 1670929200,
-                 },
+               {
+                  title: "Whitelist start —",
+                  time: 1672121180,
+               },
+               {
+                  title: "Whitelist end —",
+                  time: 1669529116,
+               },
               ],
            },
            {
               title: "FCFS",
               active: false,
               points: [
-                 {
-                    title: "Whitelist start —",
-                    time: 1672121180,
-                 },
-                 {
-                    title: "Whitelist end —",
-                    time: 1669529116,
-                 },
+                  {
+                     title: "End of FCFS -",
+                     time: 1670929200,
+                  }
               ],
            },
            {
@@ -191,6 +221,20 @@ const { header, links, info, news, story } = window.initState?.project
               ],
            },
         ],
+        banners: [
+         {
+            img: "/public/img/project_slider_exemple.jpg",
+            url: "#"
+         },
+         {
+            img: "/public/img/project_slider_exemple.jpg",
+            url: "#"
+         },
+         {
+            img: "/public/img/project_slider_exemple.jpg",
+            url: "#"
+         }
+        ]
      };
 
 export default function ProjectPage(props) {
@@ -212,6 +256,13 @@ export default function ProjectPage(props) {
       }
    };
 
+   const [curretnSlide, setCurrentSlide] = useState(0);
+
+   useEffect(() => {
+      if (curretnSlide < 0) setCurrentSlide(banners.length - 1);
+      if (curretnSlide >= banners.length) setCurrentSlide(0);
+   }, [curretnSlide])
+
    return (
       <>
          <div className={project__layout}>
@@ -221,7 +272,23 @@ export default function ProjectPage(props) {
                   <aside className={project__info}>
                      <div className={project__head}>
                         <img src={header.img} alt={header.title} />
-                        <h2 className={project__title}>{header.title}</h2>
+                        {
+                           header.showTitle ? <h2 className={project__title}>{header.title}</h2> : ""
+                        }
+
+                        {header.tag ? <div className={project__tag}>{header.tag}</div> : ""}
+                     </div>
+                     <div className={project__socials}>
+                        {
+                           socials.map(({type, href}, i) => (
+                              <a className={project__socialsLink} href={href} target="_blank" rel="noopener noreferrer">
+                                 <SocialButton
+                                    className={project__socialsLinkImg}
+                                    type={type}
+                                 />
+                              </a>
+                           ))
+                        }
                      </div>
                      <ul className={project__links}>
                         {links.map(({ title, href }, key) => (
@@ -321,6 +388,46 @@ export default function ProjectPage(props) {
                      <h3 className={card__title}>PROJECT DESCREPTION</h3>
                      <TabControl array={news} />
                   </Container>
+
+                  {
+                     banners?.length > 0 ? (
+                        <div className={slider}>
+                           <div className={slider__header}>
+                              <p className={slider__title}>
+                                 ABOUT {header.title}
+                              </p>
+      
+                              <div className={slider__control}>
+                                 <button className={slider__button} type="button" onClick={() => setCurrentSlide(curretnSlide - 1)}>
+                                    <SliderArrowIcon />
+                                 </button>
+      
+                                 <p className={slider__counter}>
+                                    {curretnSlide + 1} / {banners.length}
+                                 </p>
+                                 
+                                 <button className={slider__button} type="button" onClick={() => setCurrentSlide(curretnSlide + 1)}>
+                                    <SliderArrowIcon style={{transform: "rotate(180deg)"}} />
+                                 </button>
+                              </div>
+                           </div>
+      
+                           <div className={slider__track}>
+                              {
+                                 banners.map((banner, i) => (
+                                    <div className={slider_slide} style={{transform: "translateX("+(curretnSlide * -100)+"%)"}}>
+                                       <img src={banner.img} alt="" className={slider__img} />
+      
+                                       {
+                                          banner.url ? <a href={banner.url} className={slider_link} target="_blank" rel="noopener noreferrer"> </a> : ""
+                                       }
+                                    </div>
+                                 ))
+                              }
+                           </div>
+                        </div>
+                     ) : ""
+                  }
                </div>
             </div>
          </div>

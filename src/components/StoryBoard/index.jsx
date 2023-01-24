@@ -38,7 +38,7 @@ function StoryBoard({ steps }) {
                                  : story_board__sublist_text
                            }
                         >
-                           {title + " " + new Date(time).toLocaleString()}
+                           {title + " " + new Date(time * 1000).toLocaleString()}
                         </p>
                      </li>
                   ))}
