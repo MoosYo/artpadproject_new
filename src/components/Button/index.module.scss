@@ -56,6 +56,11 @@
       line-height: 19px;
    }
 
+   &:disabled {
+      opacity: 0.2;
+      cursor: not-allowed;
+   }
+
    &_grey {
       background: #626262;
    }

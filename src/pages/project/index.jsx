@@ -3,6 +3,8 @@ import { useState } from "react";
 import Button from "../../components/Button";
 import Container from "../../components/Container";
 import Countdown from "../../components/Countdown";
+import CheckIcon from "../../components/Icons/check";
+import CrossIcon from "../../components/Icons/Cross";
 import Error from "../../components/Icons/error";
 import SliderArrowIcon from "../../components/Icons/SliderArrow";
 import SocialButton from "../../components/Icons/SocialButton";
@@ -49,7 +51,19 @@ const {
    slider__track,
    slider_slide,
    slider__img,
-   slider_link
+   slider_link,
+
+   registrationCard,
+   registrationCard__block,
+   registrationCard__title,
+   registrationCard__check,
+   registrationCard__checkItem,
+   registrationCard__checkCircle,
+   registrationCard__checkCircle_check,
+   registrationCard__checkIcon,
+   registrationCard__checkIcon_check,
+   registrationCard__checkText,
+   registrationCard__button,
 } = classes;
 
 const { header, socials, links, info, news, story, banners } = window.initState?.project
@@ -59,7 +73,9 @@ const { header, socials, links, info, news, story, banners } = window.initState?
            img: "https://icodrops.com/wp-content/uploads/2022/07/yycZmh7_400x400.png",
            title: "SEOR",
            showTitle: true,
-           tag: "private"
+           tag: "private",
+           state: "registration",
+           stateEnd: new Date("2023-02-01").getTime() / 1000,
         },
         socials: [
          { type: "web", href: "#" },
@@ -352,37 +368,74 @@ export default function ProjectPage(props) {
                </Container>
                <div className={project__cards}>
                   <Container className={project__container + " " + project__container_left}>
-                     <h3 className={card__title}>SWAP</h3>
-                     <div className={card__attantions}>
-                        <div className={card__rejected}>
-                           <Error />
-                           <p>You did not apply IDO of your application was rejected</p>
-                        </div>
-                        <div className={card__timer}>
-                           <h3 className={card__title}>SWAP ENDS AFTER</h3>
-                           <Countdown className={card__block} timestamp={info.swapEnd} />
-                        </div>
-                     </div>
-                     <Container
-                        className={
-                           project__container +
-                           " " +
-                           project__container_magenta +
-                           " " +
-                           project__container_lowPadding +
-                           " " +
-                           container__alert +
-                           " " +
-                           project__container_left
-                        }
-                     >
-                        <p>Dear investor!</p>
-                        <p>
-                           Pay your attension that SPORTPZCHAIN token (SPN) deposit is availible on several blockchain
-                           networks: BNB Chain, Polygon.
-                        </p>
-                        <p>The distribution of SPORTPZCHAIN token will carried out in polygon ony!</p>
-                     </Container>
+                     {
+                        header.state === "registration" ? (
+                           <div className={registrationCard}>
+                              <div className={registrationCard__block}>
+                                 <h3 className={registrationCard__title}>Registration</h3>
+                                 <div className={registrationCard__check}>
+                                    <div className={registrationCard__checkItem}>
+                                       <div className={registrationCard__checkCircle + " " + registrationCard__checkCircle_check}>
+                                          <CheckIcon className={registrationCard__checkIcon + " " + registrationCard__checkIcon_check} />
+                                       </div>
+                                       <p className={registrationCard__checkText}>
+                                          Tier
+                                       </p>
+                                    </div>
+                                    <div className={registrationCard__checkItem}>
+                                       <div className={registrationCard__checkCircle}>
+                                          <CrossIcon className={registrationCard__checkIcon} />
+                                       </div>
+                                       <p className={registrationCard__checkText}>
+                                          KYC
+                                       </p>
+                                    </div>
+                                 </div>
+                                 <Button disabled={true} type={"button"} className={registrationCard__button}>Registration</Button>
+                              </div>
+                              <div className={registrationCard__block}>
+                                 <h3 className={registrationCard__title}>Registration ENDS IN</h3>
+                                 <div className={card__timer}>
+                                    <Countdown className={card__block} timestamp={header.stateEnd * 1000} />
+                                 </div>
+                              </div>
+                           </div>
+                        ) : (
+                           <>
+                              <h3 className={card__title}>SWAP</h3>
+                              <div className={card__attantions}>
+                                 <div className={card__rejected}>
+                                    <Error />
+                                    <p>You did not apply IDO of your application was rejected</p>
+                                 </div>
+                                 <div className={card__timer}>
+                                    <h3 className={card__title}>SWAP ENDS AFTER</h3>
+                                    <Countdown className={card__block} timestamp={info.swapEnd} />
+                                 </div>
+                              </div>
+                              <Container
+                                 className={
+                                    project__container +
+                                    " " +
+                                    project__container_magenta +
+                                    " " +
+                                    project__container_lowPadding +
+                                    " " +
+                                    container__alert +
+                                    " " +
+                                    project__container_left
+                                 }
+                              >
+                                 <p>Dear investor!</p>
+                                 <p>
+                                    Pay your attension that SPORTPZCHAIN token (SPN) deposit is availible on several blockchain
+                                    networks: BNB Chain, Polygon.
+                                 </p>
+                                 <p>The distribution of SPORTPZCHAIN token will carried out in polygon ony!</p>
+                              </Container>
+                           </>
+                        )
+                     }
                   </Container>
                   <Container className={project__container + " " + project__container_left}>
                      <h3 className={card__title}>PROJECT DESCREPTION</h3>

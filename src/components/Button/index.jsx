@@ -2,7 +2,7 @@ import classes from "./index.module.scss";
 
 const { button, button_outline, button_grey } = classes;
 
-export default function Button({ children, variant, href, onClick, type, className }) {
+export default function Button({ children, variant, href, onClick, type, className, disabled = false }) {
    let newClassName = button;
 
    newClassName += variant ? " " + classes["button_" + variant] : "";
@@ -29,7 +29,7 @@ export default function Button({ children, variant, href, onClick, type, classNa
    } else {
       return (
          <>
-            <button type={type ? type : "button"} onClick={onClick} className={newClassName}>
+            <button disabled={disabled ? "disabled" : null} type={type ? type : "button"} onClick={onClick} className={newClassName}>
                {children ? children : "Кнопка"}
             </button>
          </>

@@ -346,6 +346,7 @@
 
     &__languageList {
         position: absolute;
+        background: $background;
         border: solid $white;
         display: flex;
         flex-direction: row;

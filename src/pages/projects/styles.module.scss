@@ -447,6 +447,33 @@
         }
     }
 
+    &__cardTags {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+
+        margin-bottom: vw(12px, 360px);
+        gap: vw(12px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            margin-bottom: 12px;
+            gap: 12px;
+        }
+        @media screen and (min-width: 500px) {
+            margin-bottom: vw(12px, 360px);
+            gap: vw(12px, 360px);
+        }
+        @media screen and (min-width: 920px) {
+            margin-bottom: vw(12px);
+            gap: vw(12px);
+        }
+        @media screen and (min-width: 1600px) {
+            margin-bottom: 12px;
+            gap: 12px;
+        }
+    }
+
     &__cardStatus {
         background: $text-title;
         color: $white;
@@ -458,45 +485,44 @@
         font-size: vw(14px, 360px);
         line-height: vw(14px, 360px);
         border-radius: vw(16px, 360px);
-        width: vw(130px, 360px);
+        padding: 0px vw(14px, 360px);
         height: vw(32px, 360px);
-        margin-bottom: vw(12px, 360px);
 
         @media screen and (min-width: 360px) {
             font-size: 14px;
             line-height: 14px;
             border-radius: 16px;
-            width: 130px;
+            padding: 0px 14px;
             height: 32px;
-            margin-bottom: 12px;
         }
     
         @media screen and (min-width: 500px) {
             font-size: vw(14px, 360px);
             line-height: vw(14px, 360px);
             border-radius: vw(16px, 360px);
-            width: vw(130px, 360px);
+            padding: 0px vw(14px, 360px);
             height: vw(32px, 360px);
-            margin-bottom: vw(12px, 360px);
         }
     
         @media screen and (min-width: 920px) {
             font-size: vw(14px);
             line-height: vw(14px);
             border-radius: vw(16px);
-            width: vw(130px);
+            padding: 0px vw(14px);
             height: vw(32px);
-            margin-bottom: vw(12px);
         }
     
         @media screen and (min-width: 1600px) {
             font-size: 14px;
             line-height: 14px;
             border-radius: 16px;
-            width: 130px;
+            padding: 0px 14px;
             height: 32px;
-            margin-bottom: 12px;
         }
+    }
+    
+    &__cardRound {
+        
     }
 
     &__cardDescription {

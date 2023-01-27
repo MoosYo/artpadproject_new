@@ -23,6 +23,7 @@ function StoryBoard({ steps }) {
                key={key}
             >
                <div className={story_board__head}>
+                  {steps.length - 1 === key ? <div className={line}></div> : null}
                   <p className={active ? story_board__title + " " + story_board__title_active : story_board__title}>
                      {title}
                   </p>
@@ -38,7 +39,7 @@ function StoryBoard({ steps }) {
                                  : story_board__sublist_text
                            }
                         >
-                           {title + " " + new Date(time * 1000).toLocaleString()}
+                           {title}&nbsp;{new Date(time * 1000).toLocaleString()}
                         </p>
                      </li>
                   ))}

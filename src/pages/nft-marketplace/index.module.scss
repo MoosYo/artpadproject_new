@@ -1,23 +1,32 @@
 @import "../../styles/helpers.scss";
 
-.image {
+.video {
    width: 100%;
-   object-fit: cover;
-   margin-bottom: 32px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+
+   margin-bottom: vw(32px, 360px);
+   max-height: vw(600px);
 
    @media screen and (min-width: 360px) {
       margin-bottom: 32px;
+      max-height: 600px;
    }
 
    @media screen and (min-width: 500px) {
-      margin-bottom: vw(32px, 414px);
+      margin-bottom: vw(32px, 360px);
    }
 
    @media screen and (min-width: 920px) {
       margin-bottom: vw(32px);
+      max-height: vw(600px);
    }
 
    @media screen and (min-width: 1600px) {
       margin-bottom: 32px;
+      max-height: 600px;
    }
 }

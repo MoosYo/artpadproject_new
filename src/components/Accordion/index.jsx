@@ -1,30 +1,50 @@
-import getLocale from "../../helpers/getLoacale";
 import AccordionItem from "../AccordionItem";
 import scss from "./index.module.scss";
-import localize from "./local.json";
 
 const { accordion, accordion__title, accordion__text } = scss;
 
+const faq = window.initState?.faq ? window.initState.faq : [
+   {
+      title: "How can I participate in IDO?",
+      content: "<p><a href=\"#\">Read the full guide in our official documentation</a><br /><br />"+
+               "1. Register in your personal account<br />" +
+               "2. Top up the Main $ARTR wallet with the required number of coins through the Buy <a href=\"#\">ARTR</a> section<br />" +
+               "3. Go to the Levels page<br />" +
+               "4. Send the required amount of $ARTR to Staking to get one of the <a href=\"/levels/\">levels</a>. You can see the required amount for staking in the list of levels, as well as the terms of placement and conditions for them.<br />" +
+               "5. Register for the IDO you want to participate in. The IDO registration period usually starts 72 hours before the start of IDO, you need to open the <a href=\"/projects/\">Projects</a> page and click the “Register” button in the IDO pool card.</p>"
+   },
+   {
+      title: "How can I participate in IDO?",
+      content: "<p><a href=\"#\">Read the full guide in our official documentation</a><br /><br />"+
+               "1. Register in your personal account<br />" +
+               "2. Top up the Main $ARTR wallet with the required number of coins through the Buy <a href=\"#\">ARTR</a> section<br />" +
+               "3. Go to the Levels page<br />" +
+               "4. Send the required amount of $ARTR to Staking to get one of the <a href=\"/levels/\">levels</a>. You can see the required amount for staking in the list of levels, as well as the terms of placement and conditions for them.<br />" +
+               "5. Register for the IDO you want to participate in. The IDO registration period usually starts 72 hours before the start of IDO, you need to open the <a href=\"/projects/\">Projects</a> page and click the “Register” button in the IDO pool card.</p>"
+   },
+   {
+      title: "How can I participate in IDO?",
+      content: "<p><a href=\"#\">Read the full guide in our official documentation</a><br /><br />"+
+               "1. Register in your personal account<br />" +
+               "2. Top up the Main $ARTR wallet with the required number of coins through the Buy <a href=\"#\">ARTR</a> section<br />" +
+               "3. Go to the Levels page<br />" +
+               "4. Send the required amount of $ARTR to Staking to get one of the <a href=\"/levels/\">levels</a>. You can see the required amount for staking in the list of levels, as well as the terms of placement and conditions for them.<br />" +
+               "5. Register for the IDO you want to participate in. The IDO registration period usually starts 72 hours before the start of IDO, you need to open the <a href=\"/projects/\">Projects</a> page and click the “Register” button in the IDO pool card.</p>"
+   }
+   ]
+;
+
 function Accordion({ className }) {
-   const local = getLocale();
    return (
       <section className={accordion + " " + className}>
          <h1 className={accordion__title}>FAQ</h1>
-         <AccordionItem title={"1. How can I participate in IDO?"}>
-            <div className={accordion__text} dangerouslySetInnerHTML={{ __html: localize.question_1[local] }}></div>
-         </AccordionItem>
-         <AccordionItem title={"2. What are the steps in IDO?"}>
-            <div className={accordion__text} dangerouslySetInnerHTML={{ __html: localize.question_2[local] }}></div>
-         </AccordionItem>
-         <AccordionItem title={"3. What is First Come First Serve (FCFS)? Who can participate in it?"}>
-            <div className={accordion__text} dangerouslySetInnerHTML={{ __html: localize.question_3[local] }}></div>
-         </AccordionItem>
-         <AccordionItem title={"4. Do I need to spread (unstake) / steak for each IDO?"}>
-            <div className={accordion__text} dangerouslySetInnerHTML={{ __html: localize.question_4[local] }}></div>
-         </AccordionItem>
-         <AccordionItem title={"5. Can I shake (unstake) after each IDO?"}>
-            <div className={accordion__text} dangerouslySetInnerHTML={{ __html: localize.question_5[local] }}></div>
-         </AccordionItem>
+         {
+            faq.map((item, i) => (
+               <AccordionItem title={(i + 1) + ".   " + item.title} key={i}>
+                  <div className={accordion__text} dangerouslySetInnerHTML={{ __html: item.content }}></div>
+               </AccordionItem>
+            ))
+         }
       </section>
    );
 }

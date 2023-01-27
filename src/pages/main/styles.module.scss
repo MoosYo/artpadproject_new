@@ -1183,21 +1183,23 @@
         color: $white;
         font-weight: normal;
         text-align: center;
+        max-width: 80%;
+        margin: 0px auto;
         
         font-size: vw(24px, 360px);
         line-height: vw(28px, 360px);
-        margin-bottom: vw(60px, 360px);
+        margin-bottom: vw(32px, 360px);
 
         @media screen and (min-width: 360px) {
             font-size: 24px;
             line-height: 28px;
-            margin-bottom: 60px;
+            margin-bottom: 32px;
         }
     
         @media screen and (min-width: 500px) {
             font-size: vw(24px, 360px);
             line-height: vw(28px, 360px);
-            margin-bottom: vw(60px, 360px);
+            margin-bottom: vw(32px, 360px);
         }
     
         @media screen and (min-width: 920px) {
@@ -1221,16 +1223,21 @@
         width: 100%;
 
         gap: vw(24px, 360px);
+        padding: vw(24px, 360px);
 
         @media screen and (min-width: 360px) {
             gap: 24px;
+            padding: 24px;
         }
     
         @media screen and (min-width: 500px) {
             gap: vw(24px, 360px);
+            padding: vw(24px, 360px);
+
         }
     
         @media screen and (min-width: 920px) {
+            padding: 0px;
             flex-direction: row;
             width: vw(600px);
             gap: vw(24px);
@@ -1245,6 +1252,21 @@
 
     &__input {
         width: 100%;
+
+        @media screen and (max-width: 359px) {
+            font-size: vw(18px, 360px);
+            border-radius: vw(6px, 360px);
+        }
+
+        @media screen and (max-width: 499px) {
+            font-size: 18px;
+            border-radius: 6px;
+        }
+
+        @media screen and (max-width: 919px) {
+            font-size: vw(18px, 360px);
+            border-radius: vw(6px, 360px);
+        }
     }
 
     &__button {
@@ -1253,17 +1275,20 @@
         font-size: vw(18px, 360px);
         line-height: vw(18px, 360px);
         height: vw(50px, 360px);
+        border-radius: vw(6px, 360px);
 
         @media screen and (min-width: 360px) {
             font-size: 18px;
             line-height: 18px;
             height: 50px;
+            border-radius: 6px;
         }
     
         @media screen and (min-width: 500px) {
             font-size: vw(18px, 360px);
             line-height: vw(18px, 360px);
             height: vw(50px, 360px);
+            border-radius: vw(6px, 360px);
         }
     
         @media screen and (min-width: 920px) {
@@ -1272,7 +1297,7 @@
             font-size: vw(18px);
             line-height: vw(18px);
             height: vw(50px);
-            
+            border-radius: vw(8px);
         }
     
         @media screen and (min-width: 1600px) {
@@ -1281,6 +1306,7 @@
             font-size: 18px;
             line-height: 18px;
             height: 50px;
+            border-radius: 8px;
         }
     }
 

@@ -10,9 +10,40 @@
 
    border-bottom: 2px solid $accent;
    width: 100%;
+   padding-bottom: 10px;
 
+   
+   &_active {
+      margin-bottom: 24px;
+   
+      @media screen and (min-width: 500px) {
+         margin-bottom: vw(24px, 360px);
+      }
+   
+      @media screen and (min-width: 920px) {
+         margin-bottom: vw(24px);
+      }
+   
+      @media screen and (min-width: 1600px) {
+         margin-bottom: 24px;
+      }
+   }
+
+   @media screen and (min-width: 500px) {
+      padding-bottom: vw(10px, 360px);
+   }
+
+   @media screen and (min-width: 920px) {
+      padding-bottom: vw(10px);
+   }
+
+   @media screen and (min-width: 1600px) {
+      padding-bottom: 10px;
+   }
+   
    &:last-child {
       border: none;
+      margin-bottom: 0px;
    }
 
    &__header {
@@ -24,20 +55,20 @@
 
       cursor: pointer;
       width: 100%;
-      height: 64px;
+      min-height: 64px;
       background: transparent;
       border: none;
 
       @media screen and (min-width: 500px) {
-         height: vw(64px, 360px);
+         min-height: vw(64px, 360px);
       }
 
       @media screen and (min-width: 920px) {
-         height: vw(64px);
+         min-height: vw(64px);
       }
 
       @media screen and (min-width: 1600px) {
-         height: 64px;
+         min-height: 64px;
       }
    }
 
@@ -48,22 +79,22 @@
 
       color: $white;
 
-      font-size: 18px;
-      line-height: 22px;
+      font-size: 16px;
+      line-height: 16px;
 
       @media screen and (min-width: 500px) {
-         font-size: vw(18px, 360px);
-         line-height: vw(22px, 360px);
+         font-size: vw(16px, 360px);
+         line-height: vw(16px, 360px);
       }
 
       @media screen and (min-width: 920px) {
-         font-size: vw(22px);
-         line-height: vw(26px);
+         font-size: vw(32px);
+         line-height: vw(32px);
       }
 
       @media screen and (min-width: 1600px) {
-         font-size: 22px;
-         line-height: 26px;
+         font-size: 32px;
+         line-height: 32px;
       }
    }
 
@@ -78,9 +109,8 @@
       gap: 10px;
       width: 40px;
       height: auto;
-      transform: rotate(0deg);
       transition: transform ease-in-out 0.3s;
-      transform: rotate(-90deg);
+      transform: rotate(90deg);
 
       @media screen and (min-width: 500px) {
          gap: vw(10px, 360px);
@@ -98,26 +128,30 @@
       }
 
       &_active {
-         transform: rotate(90deg);
+         transform: rotate(-90deg);
       }
 
       &Icon {
-         width: 28px;
-         height: 14px;
+         width: 40px;
+         height: 24px;
+
+         path {
+            stroke: $accent;
+         }
 
          @media screen and (min-width: 500px) {
-            width: vw(28px, 360px);
-            height: vw(14px, 360px);
+            width: vw(40px, 360px);
+            height: vw(24px, 360px);
          }
 
          @media screen and (min-width: 920px) {
-            width: vw(28px);
-            height: vw(14px);
+            width: vw(40px);
+            height: vw(24px);
          }
 
          @media screen and (min-width: 1600px) {
-            width: 28px;
-            height: 14px;
+            width: 40px;
+            height: 24px;
          }
       }
    }
@@ -134,16 +168,20 @@
          opacity: 100;
          height: auto;
          padding-bottom: 20px;
+         padding-top: 20px;
 
          @media screen and (min-width: 500px) {
+            padding-top: vw(20px, 360px);
             padding-bottom: vw(20px, 360px);
          }
 
          @media screen and (min-width: 920px) {
             padding-bottom: vw(20px);
+            padding-top: vw(20px);
          }
 
          @media screen and (min-width: 1600px) {
+            padding-top: 20px;
             padding-bottom: 20px;
          }
       }
