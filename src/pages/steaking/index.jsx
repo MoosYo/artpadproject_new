@@ -53,6 +53,7 @@ const {
    steaking__contentCardTitle,
    steaking__contentCardData,
    steaking__contentCardText,
+   steaking__contentCardButton,
    steaking__actions,
    steaking__actionsBlock
 } = classes;
@@ -62,6 +63,7 @@ const {
    tierMultiplier,
    staked,
    stakedMultiplier,
+   balanceSummBC,
    balanceSumm,
    balanceState,
    balancePercentage,
@@ -78,6 +80,7 @@ const {
         tierMultiplier: 15,
         staked: 750000,
         stakedMultiplier: 15,
+        balanceSummBC: 0,
         balanceSumm: 0,
         balanceState: true,
         balancePercentage: 10000,
@@ -152,9 +155,11 @@ export default function SteakingPage({setModal = () => {}}) {
                      </h2>
                      <div className={steaking__contentCardData}>
                         <p className={steaking__contentCardText}>
-                           {dailyReward.toLocaleString(local)} bonus coin
+                           {dailyReward.toLocaleString(local)} wARTR
                         </p>
-                        <p className={steaking__contentCardText} />
+                        <p className={steaking__contentCardText}>
+                           <Button variant={"outline"} className={steaking__contentCardButton}>{localize.earn[local]}</Button>
+                        </p>
                      </div>
                   </div>
                   <div className={steaking__contentCard}>
@@ -172,61 +177,71 @@ export default function SteakingPage({setModal = () => {}}) {
                   </div>
                </div>
             </div>
-            <div className={steaking__cards}>
-               
-               <div className={steaking__wrapper}>
-                  <Container className={card}>
-                     <span className={card__title}>
-                        {localize.balance[local]}:{" "}
-                        <span className={card__subtext}>{balanceSumm.toLocaleString()} wARTR</span>
-                     </span>
-                     <div className={card__label}>
-                        <span className={card__chips}>{localize.max[local]}</span>
-                        <p>WARTR</p>
-                     </div>
-                  </Container>
-                  <div className={steaking__actions}>
-                     <div className={steaking__actionsBlock}>
-                        <Button
-                           className={card__button + " " + card__button_outline}
-                           variant={"outline"}
-                           onClick={() => {
-                              console.log("Click");
-                           }}
-                        >
-                           <span>{localize.frozen[local]}</span>
-                        </Button>
-                        <Button
-                           className={card__button + " " + card__button_outline}
-                           variant={"outline"}
-                           onClick={() => {
-                              console.log("Click");
-                           }}
-                        >
-                           <span>{localize.percentage[local]} ({balancePercentage.toLocaleString(local)} wARTR)</span>
-                        </Button>
-                     </div>
+            <div className={steaking__wrapper}>
+               <div className={steaking__cards}>
+                     <Container className={card}>
+                        <span className={card__title}>
+                           {localize.balance[local]}:{" "}
+                           <span className={card__subtext}>{balanceSummBC.toLocaleString()} BC</span>
+                        </span>
+                        <div className={card__label}>
+                           <span className={card__chips}>{localize.max[local]}</span>
+                           <p>BONUS COIN</p>
+                        </div>
+                     </Container>
+                     <Container className={card}>
+                        <span className={card__title}>
+                           {localize.balance[local]}:{" "}
+                           <span className={card__subtext}>{balanceSumm.toLocaleString()} wARTR</span>
+                        </span>
+                        <div className={card__label}>
+                           <span className={card__chips}>{localize.max[local]}</span>
+                           <p>WARTR</p>
+                        </div>
+                     </Container>
+               </div>
 
-                     <div className={steaking__actionsBlock}>
-                        <Button
-                           className={card__button + (balanceState ? " " + card__button_outline : "")}
-                           variant={balanceState ? "outline" : "solid"}
-                           onClick={() => {
-                              console.log("Click");
-                           }}
-                        >
-                           <span>{localize.unstake[local]}</span>
-                        </Button>
-                        <Button
-                           className={card__button + (!balanceState ? " " + card__button_outline : "")}
-                           variant={balanceState ? "solid" : "outline"}
-                           onClick={() => {
-                              console.log("Click");
-                           }}
-                        >
-                           <span>{localize.stake[local]}</span>
-                        </Button>
-                     </div>
+               <div className={steaking__actions}>
+                  <div className={steaking__actionsBlock}>
+                     {/* <Button
+                        className={card__button + " " + card__button_outline}
+                        variant={"outline"}
+                        onClick={() => {
+                           console.log("Click");
+                        }}
+                     >
+                        <span>{localize.frozen[local]}</span>
+                     </Button>
+                     <Button
+                        className={card__button + " " + card__button_outline}
+                        variant={"outline"}
+                        onClick={() => {
+                           console.log("Click");
+                        }}
+                     >
+                        <span>{localize.percentage[local]} ({balancePercentage.toLocaleString(local)} wARTR)</span>
+                     </Button> */}
+                  </div>
+
+                  <div className={steaking__actionsBlock}>
+                     <Button
+                        className={card__button + (balanceState ? " " + card__button_outline : "")}
+                        variant={balanceState ? "outline" : "solid"}
+                        onClick={() => {
+                           console.log("Click");
+                        }}
+                     >
+                        <span>{localize.unstake[local]}</span>
+                     </Button>
+                     <Button
+                        className={card__button + (!balanceState ? " " + card__button_outline : "")}
+                        variant={balanceState ? "solid" : "outline"}
+                        onClick={() => {
+                           console.log("Click");
+                        }}
+                     >
+                        <span>{localize.stake[local]}</span>
+                     </Button>
                   </div>
                </div>
             </div>
@@ -243,6 +258,7 @@ export default function SteakingPage({setModal = () => {}}) {
                   </h2>
                   <p className={steaking__timeValue}>{timeRange[selected]}</p>
                </div>
+
                <RangeSlider values={timeRange} selected={selected} onChange={setSelected} />
 
                <div className={steaking__timeNote}>

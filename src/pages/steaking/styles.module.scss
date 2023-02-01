@@ -234,6 +234,11 @@
          line-height: 18px;
       }
    }
+
+   &__contentCardButton {
+      border-color: $accent;
+      color: $accent;
+   }
    
    &__title {
       font-family: Rubik;
@@ -368,23 +373,20 @@
       flex-wrap: nowrap;
       justify-content: flex-start;
       align-items: stretch;
+      width: 100%;
 
       gap: vw(40px, 360px);
-      margin-bottom: vw(64px, 360px);
       
       @media screen and (min-width: 360px) {
          gap: 40px;
-         margin-bottom: 64px;
       }
 
       @media screen and (min-width: 500px) {
          gap: vw(40px, 360px);
-         margin-bottom: vw(64px, 360px);
       }
 
       @media screen and (min-width: 920px) {
          gap: vw(40px);
-         margin-bottom: vw(64px);
          display: flex;
          flex-direction: row;
          justify-content: space-between;
@@ -393,7 +395,6 @@
 
       @media screen and (min-width: 1600px) {
          gap: 40px;
-         margin-bottom: 64px;
       }
    }
 
@@ -404,23 +405,28 @@
       width: 100%;
 
       gap: vw(20px, 360px);
+      margin-bottom: vw(64px, 360px);
       
       @media screen and (min-width: 360px) {
          gap: 20px;
+         margin-bottom: 64px;
       }
 
       @media screen and (min-width: 500px) {
          gap: vw(20px, 360px);
+         margin-bottom: vw(64px, 360px);
       }
 
       @media screen and (min-width: 920px) {
          gap: vw(20px);
+         margin-bottom: vw(64px);
          justify-content: flex-start;
          align-items: flex-end;
       }
 
       @media screen and (min-width: 1600px) {
          gap: 20px;
+         margin-bottom: 64px;
       }
    }
 
@@ -678,15 +684,15 @@
    color: $text;
 
    gap: vw(32px, 360px);
-   padding: vw(30px, 360px) vw(53px, 360px);
+   padding: vw(30px, 360px) vw(30px, 360px);
       
    @media screen and (min-width: 360px) {
-      padding: 30px 53px;
+      padding: 30px 30px;
       gap: 32px;
    }
 
    @media screen and (min-width: 500px) {
-      padding: vw(30px, 360px) vw(53px, 360px);
+      padding: vw(30px, 360px) vw(30px, 360px);
       gap: vw(32px, 360px);
    }
 

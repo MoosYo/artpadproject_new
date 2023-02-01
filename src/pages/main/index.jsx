@@ -321,56 +321,60 @@ const MainPage = ({setModal = () => {}}) => {
                 </p>
             </section>
 
-            <section className={roadMap}>
-                <h2 className={roadMap__title}>
-                    {lang.roadmapTitle[locale]}
-                </h2>
-
-                <div className={roadMap__timeLine}>
-                    {
-                        roadMapArray.map((block, i) => (
-                            <div className={roadMap__block} key={i}>
-                                <div className={roadMap__list} style={{justifyContent: "flex-end"}}>
-                                    {
-                                        block.top.map((blockList, j) => (
-                                            <div className={roadMap__item} key={j}>
-                                                {
-                                                    blockList.done ?
-                                                        <RoundedCheckIcon className={roadMap__itemCheck} /> :
-                                                        <div className={roadMap__itemCheckEmpty} />
-                                                }
-                                                <p className={roadMap__itemText + (blockList.done ? " " + roadMap__itemText_done : "")}>
-                                                    {blockList.text}
-                                                </p>
-                                            </div>
-                                        ))
-                                    }
-                                </div>
-                                <div className={roadMap__progress}>
-                                    <div className={roadMap__progrssBar + (block.completed > 0 ? " " + roadMap__progrssBar_active : "")} style={{width: block.completed / block.total * 100 + "%"}} />
-                                    <p className={roadMap__progressText}>{block.text}</p>
-                                </div>
-                                <div className={roadMap__list} style={{justifyContent: "flex-start"}}>
-                                    {
-                                        block.bottom.map((blockList, j) => (
-                                            <div className={roadMap__item} key={j}>
-                                                {
-                                                    blockList.done ?
-                                                        <RoundedCheckIcon className={roadMap__itemCheck} /> :
-                                                        <div className={roadMap__itemCheckEmpty} />
-                                                }
-                                                <p className={roadMap__itemText + (blockList.done ? " " + roadMap__itemText_done : "")}>
-                                                    {blockList.text}
-                                                </p>
-                                            </div>
-                                        ))
-                                    }
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-            </section>
+            {
+                roadMapArray.length > 0 ? (
+                    <section className={roadMap}>
+                        <h2 className={roadMap__title}>
+                            {lang.roadmapTitle[locale]}
+                        </h2>
+        
+                        <div className={roadMap__timeLine}>
+                            {
+                                roadMapArray.map((block, i) => (
+                                    <div className={roadMap__block} key={i}>
+                                        <div className={roadMap__list} style={{justifyContent: "flex-end"}}>
+                                            {
+                                                block.top.map((blockList, j) => (
+                                                    <div className={roadMap__item} key={j}>
+                                                        {
+                                                            blockList.done ?
+                                                                <RoundedCheckIcon className={roadMap__itemCheck} /> :
+                                                                <div className={roadMap__itemCheckEmpty} />
+                                                        }
+                                                        <p className={roadMap__itemText + (blockList.done ? " " + roadMap__itemText_done : "")}>
+                                                            {blockList.text}
+                                                        </p>
+                                                    </div>
+                                                ))
+                                            }
+                                        </div>
+                                        <div className={roadMap__progress}>
+                                            <div className={roadMap__progrssBar + (block.completed > 0 ? " " + roadMap__progrssBar_active : "")} style={{width: block.completed / block.total * 100 + "%"}} />
+                                            <p className={roadMap__progressText}>{block.text}</p>
+                                        </div>
+                                        <div className={roadMap__list} style={{justifyContent: "flex-start"}}>
+                                            {
+                                                block.bottom.map((blockList, j) => (
+                                                    <div className={roadMap__item} key={j}>
+                                                        {
+                                                            blockList.done ?
+                                                                <RoundedCheckIcon className={roadMap__itemCheck} /> :
+                                                                <div className={roadMap__itemCheckEmpty} />
+                                                        }
+                                                        <p className={roadMap__itemText + (blockList.done ? " " + roadMap__itemText_done : "")}>
+                                                            {blockList.text}
+                                                        </p>
+                                                    </div>
+                                                ))
+                                            }
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </section>
+                ) : ""
+            }
 
             <section className={subscribeForm}>
                     <h2 className={subscribeForm__title}>

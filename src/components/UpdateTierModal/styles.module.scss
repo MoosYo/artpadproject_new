@@ -500,6 +500,35 @@
         }
     }
 
+    &__rangeMobile {
+        color: $white;
+
+        margin-top: vw(-14px, 360px);
+        margin-bottom: vw(14px, 360px);
+        font-size: vw(14px, 360px);
+        line-height: vw(14px, 360px);
+
+        @media screen and (min-width: 360px) {
+            margin-top: -14px;
+            margin-bottom: 14px;
+            font-size: 14px;
+            line-height: 14px;
+
+        }
+
+        @media screen and (min-width: 500px) {
+            margin-top: vw(-14px, 360px);
+            margin-bottom: vw(14px, 360px);
+            font-size: vw(14px, 360px);
+            line-height: vw(14px, 360px);
+
+        }
+
+        @media screen and (min-width: 920px) {
+            display: none;
+        }
+    }
+
     &__bar {
         width: 100%;
         position: relative;

@@ -9,6 +9,7 @@ import CloseIcon from "../Icons/Close";
 import getLocale from "../../helpers/getLoacale";
 import Arrow from "../Icons/arrow";
 import { useState } from "react";
+import RangeSlider from "../RangeSlider";
 
 const {
     block,
@@ -43,7 +44,8 @@ const {
     upgradeContent__cardText,
     upgradeContent__cardText_bold,
     upgradeContent__tag,
-    upgradeContent__info
+    upgradeContent__info,
+    upgradeContent__rangeMobile
 } = classes;
 
 
@@ -84,6 +86,8 @@ const UpdateTierModal = ({onClose = () => {}}) => {
 
     const [selectedTier, selectTier] = useState(null);
     const [listState, setListState]  = useState(false);
+
+    const [selectedDuration, setSelectedDuration] = useState(0);
 
     return (
         <div className={block}>
@@ -170,6 +174,16 @@ const UpdateTierModal = ({onClose = () => {}}) => {
                                     <p className={upgradeContent__barText} style={{left: 70 + "%", position: "absolute"}}>30% {lang.onlyW[locale]}</p>
                                 </div>
                             </div>
+
+
+                            <RangeSlider
+                                values={timeRange}
+                                selected={selectedDuration}
+                                onChange={setSelectedDuration}
+                            />
+                            <p className={upgradeContent__rangeMobile}>
+                                {timeRange[selectedDuration]}
+                            </p>
 
                             <div className={upgradeContent__cards}>
                                 <div className={upgradeContent__card}>

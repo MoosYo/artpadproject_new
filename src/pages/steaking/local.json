@@ -63,6 +63,10 @@
       "ru-RU": "Ежедневная награда за ставку",
       "en-US": "Daily reward for staking"
    },
+   "earn": {
+      "ru-RU": "Забрать",
+      "en-US": "Take"
+   },
    "stakingEnd": {
       "ru-RU": "Конец ставки",
       "en-US": "staking end"
