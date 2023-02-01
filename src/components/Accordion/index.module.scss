@@ -7,17 +7,17 @@
    flex-wrap: nowrap;
    align-items: flex-start;
    justify-content: flex-start;
-   background: transparent;
+   background: $background;
 
-   gap: 5px;
-   padding: 8px 16px;
+   gap: 10px;
+   padding: 14px 32px;
    border: 1px solid $accent;
    border-radius: 15px;
    margin-bottom: 32px;
 
    @media screen and (min-width: 500px) {
       gap: vw(10px, 360px);
-      padding: vw(8px, 360px) vw(16px, 360px);
+      padding: vw(14px, 360px) vw(32px, 360px);
       border: vw(1px, 360px) solid $accent;
       border-radius: vw(30px, 360px);
       margin-bottom: vw(32px, 360px);
@@ -25,27 +25,29 @@
 
    @media screen and (min-width: 920px) {
       gap: vw(10px);
-      padding: vw(24px) vw(48px);
+      padding: vw(14px) vw(70px);
       border: vw(1px) solid $accent;
       border-radius: vw(30px);
+      margin: 0px vw(-20px);
       margin-bottom: vw(32px);
    }
 
    @media screen and (min-width: 1600px) {
       gap: 10px;
-      padding: 24px 48px;
+      padding: 14px 70px;
       border: 1px solid $accent;
       border-radius: 30px;
+      margin: 0px -20px;
       margin-bottom: 32px;
    }
 
    &__text {
       font-family: Rubik;
-      font-weight: 600;
+      font-weight: 400;
       text-align: left;
 
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 10px;
+      line-height: 14px;
 
       a {
          color: $accent;
@@ -53,19 +55,19 @@
       }
 
       @media screen and (min-width: 500px) {
-         font-size: vw(14px, 360px);
-         line-height: vw(20px, 360px);
+         font-size: vw(10px, 360px);
+         line-height: vw(14px, 360px);
       }
 
       @media screen and (min-width: 920px) {
-         max-width: vw(820px);
-         font-size: vw(14px);
+         max-width: vw(800px);
+         font-size: vw(16px);
          line-height: vw(20px);
       }
 
       @media screen and (min-width: 1600px) {
-         max-width: 820px;
-         font-size: 14px;
+         max-width: 800px;
+         font-size: 16px;
          line-height: 20px;
       }
    }
@@ -74,27 +76,28 @@
       text-align: center;
       color: $white;
       width: 100%;
+      font-weight: 600;
 
-      font-size: 30px;
-      line-height: 30px;
+      font-size: 32px;
+      line-height: 38px;
 
       @media screen and (min-width: 500px) {
-         font-size: vw(30px, 360px);
-         line-height: vw(30px, 360px);
+         font-size: vw(32px, 360px);
+         line-height: vw(38px, 360px);
       }
 
       @media screen and (min-width: 920px) {
-         font-size: vw(30px);
-         line-height: vw(30px);
+         font-size: vw(48px);
+         line-height: vw(56px);
       }
 
       @media screen and (min-width: 1600px) {
-         font-size: 30px;
-         line-height: 30px;
+         font-size: 48px;
+         line-height: 56px;
       }
    }
 
    p {
-      color: #fff;
+      color: $white;
    }
 }

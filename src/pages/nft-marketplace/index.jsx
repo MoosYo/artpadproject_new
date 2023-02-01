@@ -1,18 +1,15 @@
 import scss from "./index.module.scss";
 
-const { image } = scss;
+const { video } = scss;
 
 function Marketplace() {
    return (
-      <img
-         className={image}
-         src={`/public/ezgif-3-1b322eb9f5.webp`}
-         alt={"Мы скоро запустимся"}
-         loading={"lazy"}
-         decoding="async"
-         width={"1300"}
-         height={"500"}
-      />
+      <div className={video}>
+         <video width="100%" autoplay="autoplay" loop="true" muted>
+            <source src="/public/nft-marketplace-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+         </video>
+      </div>
    );
 }
 

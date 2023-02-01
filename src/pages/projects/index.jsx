@@ -24,7 +24,9 @@ const {
     projects__cardName,
     projects__cardNameCode,
     projects__cardLogo,
+    projects__cardTags,
     projects__cardStatus,
+    projects__cardRound,
     projects__cardDescription,
     projects__cardData,
     projects__cardDataName,
@@ -51,6 +53,7 @@ const initState = window.initState?.projects ? window.initState.projects : {
             nameCode: "ARTR",
             logo: "https://artpad.kadys.webtm.ru/uploads/tokens/2.png",
             status: "upcoming",
+            round: "private",
             description: "Some text",
             total: 100,
             start: Math.floor(new Date().getTime() / 1000),
@@ -185,8 +188,17 @@ const ProjectsPage = ({setModal}) => {
 
                                         <img className={projects__cardLogo} src={project.logo} alt="" />
                                     </div>
-                                    <div className={projects__cardStatus}>
-                                        {lang[project.status][locale]}
+                                    <div className={projects__cardTags}>
+                                        <div className={projects__cardStatus}>
+                                            {lang[project.status][locale]}
+                                        </div>
+                                        {
+                                            project?.round ? (
+                                                <div className={projects__cardStatus}>
+                                                    {project.round}
+                                                </div>
+                                            ) : ""
+                                        }
                                     </div>
                                     <p className={projects__cardDescription}>
                                         {project.description}
