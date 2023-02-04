@@ -121,8 +121,7 @@ const { header, state, socials, links, info, news, story, banners } = window.ini
            img: "https://icodrops.com/wp-content/uploads/2022/07/yycZmh7_400x400.png",
            title: "SEOR",
            showTitle: true,
-           tag: "private",
-           stateEnd: new Date("2023-02-01").getTime() / 1000,
+           tag: "private"
         },
         state: {
          state: "upcoming",         // Состояние проекта (регистрация, обмен и т.д.)
