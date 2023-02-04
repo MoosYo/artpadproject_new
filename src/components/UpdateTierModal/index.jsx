@@ -49,21 +49,7 @@ const {
 } = classes;
 
 
-const {
-    level,
-    tierMultiplier,
-    staked,
-    stakedMultiplier,
-    balanceSumm,
-    balanceState,
-    balancePercentage,
-    timeRange,
-    selectedTime,
-    isTokenUnlocked,
-    stakingResult,
-    dailyReward,
-    stakingEnd
- } = window.initState?.staking
+const staking = window.initState?.staking
     ? window.initState?.staking
     : {
          level: 7,
@@ -82,12 +68,26 @@ const {
 };
 
 const UpdateTierModal = ({onClose = () => {}}) => {
+
     const locale = getLocale();
+   
+   const [level, setLevel] = useState(staking.level ? staking.level : 0);
+   const [tierMultiplier, setTierMultiplier] = useState(staking.tierMultiplier ? staking.tierMultiplier : 1);
+   const [staked, setStaked] = useState(staking.staked ? staking.staked : 0);
+   const [stakedMultiplier, setStakedMultiplier] = useState(staking.stakedMultiplier ? staking.stakedMultiplier : 1);
+   const [balanceSummBC, setBalanceSummBC] = useState(staking.balanceSummBC ? staking.balanceSummBC : 0);
+   const [balanceSumm, setBalanceSumm] = useState(staking.balanceSumm ? staking.balanceSumm : 0);
+   const [balanceState, setBalanceState] = useState(staking.balanceState ? staking.balanceState : true);
+   const [balancePercentage, setBalancePercentage] = useState(staking.balancePercentage ? staking.balancePercentage : 0);
+   const [timeRange, setTimeRange] = useState(staking.timeRange ? staking.timeRange : ["1 month", "3 month’s", "6 month’s", "12 month’s"]);
+   const [selectedTime, setSelectedTime] = useState(0);
+   const [isTokenUnlocked, setIsTokenUnlocked] = useState(staking.isTokenUnlocked ? staking.isTokenUnlocked : true);
+   const [stakingResult, setStakingResult] = useState(staking.stakingResult ? staking.stakingResult : 0);
+   const [dailyReward, setDailyReward] = useState(staking.dailyReward ? staking.dailyReward : 0);
+   const [stakingEnd, setStakingEnd] = useState(staking.stakingEnd ? staking.stakingEnd : 0);
 
     const [selectedTier, selectTier] = useState(null);
     const [listState, setListState]  = useState(false);
-
-    const [selectedDuration, setSelectedDuration] = useState(0);
 
     return (
         <div className={block}>
@@ -178,11 +178,11 @@ const UpdateTierModal = ({onClose = () => {}}) => {
 
                             <RangeSlider
                                 values={timeRange}
-                                selected={selectedDuration}
-                                onChange={setSelectedDuration}
+                                selected={selectedTime}
+                                onChange={setSelectedTime}
                             />
                             <p className={upgradeContent__rangeMobile}>
-                                {timeRange[selectedDuration]}
+                                {timeRange[selectedTime]}
                             </p>
 
                             <div className={upgradeContent__cards}>
