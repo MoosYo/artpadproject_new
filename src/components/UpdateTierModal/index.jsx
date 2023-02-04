@@ -10,6 +10,7 @@ import getLocale from "../../helpers/getLoacale";
 import Arrow from "../Icons/arrow";
 import { useState } from "react";
 import RangeSlider from "../RangeSlider";
+import DropDownList from "../DropDownList";
 
 const {
     block,
@@ -24,11 +25,6 @@ const {
     header__select,
     header__selectText,
     header__selectBlock,
-    header__selectBlockVal,
-    header__selectList,
-    header__selectList_shown,
-    header__selectListItem,
-    header__selectListItem_active,
 
     upgradeContent,
     upgradeContent__text,
@@ -49,21 +45,7 @@ const {
 } = classes;
 
 
-const {
-    level,
-    tierMultiplier,
-    staked,
-    stakedMultiplier,
-    balanceSumm,
-    balanceState,
-    balancePercentage,
-    timeRange,
-    selectedTime,
-    isTokenUnlocked,
-    stakingResult,
-    dailyReward,
-    stakingEnd
- } = window.initState?.staking
+const staking = window.initState?.staking
     ? window.initState?.staking
     : {
          level: 7,
@@ -82,12 +64,26 @@ const {
 };
 
 const UpdateTierModal = ({onClose = () => {}}) => {
+
     const locale = getLocale();
+   
+   const [level, setLevel] = useState(staking.level ? staking.level : 0);
+   const [tierMultiplier, setTierMultiplier] = useState(staking.tierMultiplier ? staking.tierMultiplier : 1);
+   const [staked, setStaked] = useState(staking.staked ? staking.staked : 0);
+   const [stakedMultiplier, setStakedMultiplier] = useState(staking.stakedMultiplier ? staking.stakedMultiplier : 1);
+   const [balanceSummBC, setBalanceSummBC] = useState(staking.balanceSummBC ? staking.balanceSummBC : 0);
+   const [balanceSumm, setBalanceSumm] = useState(staking.balanceSumm ? staking.balanceSumm : 0);
+   const [balanceState, setBalanceState] = useState(staking.balanceState ? staking.balanceState : true);
+   const [balancePercentage, setBalancePercentage] = useState(staking.balancePercentage ? staking.balancePercentage : 0);
+   const [timeRange, setTimeRange] = useState(staking.timeRange ? staking.timeRange : ["1 month", "3 month’s", "6 month’s", "12 month’s"]);
+   const [selectedTime, setSelectedTime] = useState(0);
+   const [isTokenUnlocked, setIsTokenUnlocked] = useState(staking.isTokenUnlocked ? staking.isTokenUnlocked : true);
+   const [stakingResult, setStakingResult] = useState(staking.stakingResult ? staking.stakingResult : 0);
+   const [dailyReward, setDailyReward] = useState(staking.dailyReward ? staking.dailyReward : 0);
+   const [stakingEnd, setStakingEnd] = useState(staking.stakingEnd ? staking.stakingEnd : 0);
 
     const [selectedTier, selectTier] = useState(null);
     const [listState, setListState]  = useState(false);
-
-    const [selectedDuration, setSelectedDuration] = useState(0);
 
     return (
         <div className={block}>
@@ -109,32 +105,48 @@ const UpdateTierModal = ({onClose = () => {}}) => {
                             {lang.upgrate[locale]}
                         </p>
 
-                        <div className={header__selectBlock} onMouseLeave={() => setListState(false)}>
-                            <div className={header__selectBlockVal} onClick={() => setListState(listState ? false : true)}>
-                                {
-                                    selectedTier ? <>
-                                        {lang.tier[locale] + " " + selectedTier}
-                                        <Arrow style={{transform: listState ? "rotate(-90deg)" : null}} />
-                                    </>: (<>
-                                        {lang.select[locale]}
-                                        <Arrow style={{transform: listState ? "rotate(-90deg)" : null}} />
-                                    </>)
-                                }
-                            </div>
-                            <div className={header__selectList + (listState ? " " + header__selectList_shown : "")}>
-                                {
-                                    [1,2,3,4,5,6,7,8,9,10].map(val => (
-                                        <div
-                                            className={header__selectListItem + (val > level ? " " + header__selectListItem_active: "")}
-                                            key={val}
-                                            onClick={() => {if (val > level) { selectTier(val); setListState(false); }}}
-                                        >
-                                            {lang.tier[locale]} {val}
-                                        </div>
-                                    ))
-                                }
-                            </div>
-                        </div>
+                        <DropDownList
+                            className={header__selectBlock}
+                            selectedItem = {selectedTier}
+                            onSelect = {selectTier}
+                            disabledOptions = {(val) => val > level}
+                            emptyText = {lang.select[locale]}
+                            items = {
+                                [
+                                    {
+                                        index: 1,
+                                        text: lang.tier[locale] + " " + 1
+                                    },{
+                                        index: 2,
+                                        text: lang.tier[locale] + " " + 2
+                                    },{
+                                        index: 3,
+                                        text: lang.tier[locale] + " " + 3
+                                    },{
+                                        index: 4,
+                                        text: lang.tier[locale] + " " + 4
+                                    },{
+                                        index: 5,
+                                        text: lang.tier[locale] + " " + 5
+                                    },{
+                                        index: 6,
+                                        text: lang.tier[locale] + " " + 6
+                                    },{
+                                        index: 7,
+                                        text: lang.tier[locale] + " " + 7
+                                    },{
+                                        index: 8,
+                                        text: lang.tier[locale] + " " + 8
+                                    },{
+                                        index: 9,
+                                        text: lang.tier[locale] + " " + 9
+                                    },{
+                                        index: 10,
+                                        text: lang.tier[locale] + " " + 10
+                                    }
+                                ]
+                            }
+                        />
                     </div>
                 </div>
             
@@ -178,11 +190,11 @@ const UpdateTierModal = ({onClose = () => {}}) => {
 
                             <RangeSlider
                                 values={timeRange}
-                                selected={selectedDuration}
-                                onChange={setSelectedDuration}
+                                selected={selectedTime}
+                                onChange={setSelectedTime}
                             />
                             <p className={upgradeContent__rangeMobile}>
-                                {timeRange[selectedDuration]}
+                                {timeRange[selectedTime]}
                             </p>
 
                             <div className={upgradeContent__cards}>

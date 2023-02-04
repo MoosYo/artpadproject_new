@@ -12,6 +12,7 @@ import ProgressbarTimestamp from "../../components/ProgressbarTimestamp";
 import StoryBoard from "../../components/StoryBoard";
 import TabControl from "../../components/TabControl";
 import classes from "./index.module.scss";
+import statesClasses from "./states.module.scss";
 
 const {
    project__layout,
@@ -66,16 +67,66 @@ const {
    registrationCard__button,
 } = classes;
 
-const { header, socials, links, info, news, story, banners } = window.initState?.project
+const {
+   notRegist,
+   notRegist__block,
+   notRegist__block_card,
+   notRegist__title,
+   notRegist__timer,
+   notRegist__blockText,
+   notRegist__link,
+
+   upcomingBlock,
+   upcomingBlock__block,
+   upcomingBlock__title,
+   upcomingBlock__checks,
+   upcomingBlock__check,
+   upcomingBlock__checkIcon,
+   upcomingBlock__checkIcon_check,
+   upcomingBlock__checkText,
+   upcomingBlock__timer,
+   upcomingBlock__buttons,
+   upcomingBlock__button,
+   upcomingBlock__buttonOutline,
+
+   connectWalletBlock,
+   connectWalletBlock__block,
+   connectWalletBlock__title,
+   connectWalletBlock__button,
+   connectWalletBlock__timer,
+
+   allocationBlock,
+   allocationBlock__block,
+   allocationBlock__block_right,
+   allocationBlock__title,
+   allocationBlock__wrapper,
+   allocationBlock__row,
+   allocationBlock__text,
+   allocationBlock__subText,
+   allocationBlock__subText_accent,
+   allocationBlock__iconBlock,
+   allocationBlock__iconBlockImg,
+   allocationBlock__iconBlockInput,
+   allocationBlock__iconBlockText,
+   allocationBlock__button,
+   allocationBlock__timer,
+   allocationBlock__infoTitle,
+   allocationBlock__infoText
+} = statesClasses;
+
+const { header, state, socials, links, info, news, story, banners } = window.initState?.project
    ? window.initState?.project
    : {
         header: {
            img: "https://icodrops.com/wp-content/uploads/2022/07/yycZmh7_400x400.png",
            title: "SEOR",
            showTitle: true,
-           tag: "private",
-           state: "registration",
-           stateEnd: new Date("2023-02-01").getTime() / 1000,
+           tag: "private"
+        },
+        state: {
+         state: "upcoming",         // Состояние проекта (регистрация, обмен и т.д.)
+         stage: 0,              // Этап состояния проекта (зарегистрирован и т.д.)
+         endsIn: (new Date().getTime() / 1000) + (24 * 60 * 60)
         },
         socials: [
          { type: "web", href: "#" },
@@ -279,6 +330,219 @@ export default function ProjectPage(props) {
       if (curretnSlide >= banners.length) setCurrentSlide(0);
    }, [curretnSlide])
 
+   const NotRegisterBlock = ({title = "", time = new Date().getTime() / 1000 + (24 * 60 * 60)}) => (
+      <div className={notRegist}>
+         <div className={notRegist__block}>
+            <h3 className={notRegist__title}>{title}</h3>
+            <Countdown className={notRegist__timer} timestamp={time * 1000} />
+         </div>
+         <div className={notRegist__block + " " + notRegist__block_card}>
+            <p className={notRegist__blockText}>
+               Dear investor!
+            </p>
+            <p className={notRegist__blockText}>
+               You need <a href="/sign-in/" className={notRegist__link}>Login</a> or <a href="/sign-up/" className={notRegist__link}>Register</a> to get information about this project and be able to connect a wallet
+            </p>
+         </div>
+      </div>
+   );
+
+   const UpcomingBlock = ({}) => (
+      <div className={upcomingBlock}>
+         <div className={upcomingBlock__block}>
+            <h3 className={upcomingBlock__title}>
+               REQUIREMENTS
+            </h3>
+
+            <div className={upcomingBlock__checks}>
+               <div className={upcomingBlock__check}>
+                  <div className={upcomingBlock__checkIcon + " " + upcomingBlock__checkIcon_check}>
+                     <CheckIcon />
+                  </div>
+                  <p className={upcomingBlock__checkText}>
+                     Tyr is not required
+                  </p>
+               </div>
+               <div className={upcomingBlock__check}>
+                  <div className={upcomingBlock__checkIcon + " " + upcomingBlock__checkIcon_check}>
+                     <CheckIcon />
+                  </div>
+                  <p className={upcomingBlock__checkText}>
+                     KYC is not required
+                  </p>
+               </div>
+               <div className={upcomingBlock__check}>
+                  <div className={upcomingBlock__checkIcon}>
+                     
+                  </div>
+                  <p className={upcomingBlock__checkText}>
+                     Social activities
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div className={upcomingBlock__block}>
+            <h3 className={upcomingBlock__title}>
+               WHITELIST OPENING IN
+            </h3>
+
+            <Countdown className={upcomingBlock__timer} timestamp={state.endsIn * 1000} />
+
+            <div className={upcomingBlock__buttons}>
+               <Button className={upcomingBlock__button}>Connect wallet</Button>
+               <Button className={upcomingBlock__buttonOutline} variant={"outline"}>Apply</Button>
+            </div>
+         </div>
+      </div>
+   );
+
+   const ConnectWalletBlock = ({title = "", endText = ""}) => (
+      <div className={connectWalletBlock}>
+         <div className={connectWalletBlock__block}>
+            <h3 className={connectWalletBlock__title}>
+               {title}
+            </h3>
+
+            <Button className={connectWalletBlock__button}>Connect Wallet</Button>
+         </div>
+         
+         <div className={connectWalletBlock__block}>
+            <h3 className={connectWalletBlock__title}>
+               {endText}
+            </h3>
+
+            <Countdown className={connectWalletBlock__timer} timestamp={state.endsIn * 1000} />
+         </div>
+      </div>
+   );
+
+   const AllocationBlock = ({title = "", endText =""}) => {
+
+      const [currencyImg, setCurrencyImg] = useState("https://cdn.worldvectorlogo.com/logos/tether.svg");
+      const [tokenImg, setTokenImg] = useState("https://icodrops.com/wp-content/uploads/2022/07/yycZmh7_400x400.png");
+
+      const [paidIn, setPaidIn] = useState(0);
+      const [receive, setReceive] = useState(0);
+      
+      const [amount, setAmount] = useState(2000);
+      const [tokens, setTokens] = useState(66666.66);
+      const [maxAmount, setMaxAmount] = useState(2000);
+      const [tokenName, setTokenName] = useState("eywa");
+      const [spnCost, setSpnCost] = useState(0.0024);
+      const [balance, setBalance] = useState(0);
+
+      return (
+         <div className={allocationBlock}>
+            <div className={allocationBlock__block + " " + allocationBlock__block_right}>
+               <h3 className={allocationBlock__title}>
+                  {title}
+               </h3>
+
+               <div className={allocationBlock__wrapper}>
+                  <div className={allocationBlock__row}>
+                     <p className={allocationBlock__subText}>
+                        You paid in total
+                     </p>
+                     <p className={allocationBlock__subText}>
+                        You will receive
+                     </p>
+                  </div>
+
+                  <div className={allocationBlock__row}>
+                     <div className={allocationBlock__iconBlock}>
+                        <img src={currencyImg} className={allocationBlock__iconBlockImg} />
+
+                        <input
+                           type="number"
+                           min="0"
+                           className={allocationBlock__iconBlockInput}
+                           onChange={e => setPaidIn(e.target.value)}
+                           value={paidIn}
+                        />
+                     </div>
+                     
+                     <div className={allocationBlock__iconBlock}>
+                        <img src={tokenImg} className={allocationBlock__iconBlockImg} />
+
+                        <p className={allocationBlock__iconBlockText}>{receive.toLocaleString(local)}</p>
+                     </div>
+                  </div>
+               </div>
+               
+               <div className={allocationBlock__wrapper}>
+                  <div className={allocationBlock__row}>
+                     <p className={allocationBlock__subText}>
+                        Amount
+                     </p>
+                     <p className={allocationBlock__subText}>
+                        tokens
+                     </p>
+                  </div>
+
+                  <div className={allocationBlock__row}>
+                     <div className={allocationBlock__iconBlock}>
+                        <img src={currencyImg} className={allocationBlock__iconBlockImg} />
+
+                        <p className={allocationBlock__iconBlockText}>{amount.toLocaleString(local)}</p>
+                     </div>
+
+                     <div className={allocationBlock__iconBlock}>
+                        <img src={tokenImg} className={allocationBlock__iconBlockImg} />
+
+                        <p className={allocationBlock__iconBlockText}>{tokens.toLocaleString(local)}</p>
+                     </div>
+                  </div>
+                  
+                  <div className={allocationBlock__row}>
+                     <p className={allocationBlock__subText + " " + allocationBlock__subText_accent}>
+                        Max {maxAmount.toLocaleString(local)}
+                     </p>
+                     <p className={allocationBlock__subText}>
+                        1 {tokenName} = {spnCost} usdt
+                     </p>
+                  </div>
+                  
+                  <div className={allocationBlock__row}>
+                     <p className={allocationBlock__subText}>
+                        Balance:
+                     </p>
+                     <p className={allocationBlock__subText}>
+                     </p>
+                  </div>
+                  
+                  <div className={allocationBlock__row}>
+                     <p className={allocationBlock__text}>
+                        {balance} USDT
+                     </p>
+                     <p className={allocationBlock__text}>
+                     </p>
+                  </div>
+               </div>
+
+               <Button className={allocationBlock__button}>Approve</Button>
+            </div>
+            
+            <div className={allocationBlock__block}>
+               <h3 className={allocationBlock__title}>
+                  {endText}
+               </h3>
+
+               <Countdown className={allocationBlock__timer} timestamp={state.endsIn * 1000} />
+
+               <div className={allocationBlock__wrapper}>
+                  <h3 className={allocationBlock__infoTitle}>Dear investor!</h3>
+                  <p className={allocationBlock__infoText}>
+                     Pay your attension that SPORTPZCHAIN token (SPN) deposit is availible on several blockchain networks: BNB Chain, Polygon.
+                  </p>
+                  <p className={allocationBlock__infoText}>
+                     The distribution of SPORTPZCHAIN token will carried out in polygon ony!
+                  </p>
+               </div>
+            </div>
+         </div>
+      );
+   }
+
    return (
       <>
          <div className={project__layout}>
@@ -369,38 +633,91 @@ export default function ProjectPage(props) {
                <div className={project__cards}>
                   <Container className={project__container + " " + project__container_left}>
                      {
-                        header.state === "registration" ? (
-                           <div className={registrationCard}>
-                              <div className={registrationCard__block}>
-                                 <h3 className={registrationCard__title}>Registration</h3>
-                                 <div className={registrationCard__check}>
-                                    <div className={registrationCard__checkItem}>
-                                       <div className={registrationCard__checkCircle + " " + registrationCard__checkCircle_check}>
-                                          <CheckIcon className={registrationCard__checkIcon + " " + registrationCard__checkIcon_check} />
+                        state.state === "upcoming" ? (
+                           state.stage === 0 ? <NotRegisterBlock title="WHITELIST OPENING IN" time = {state.endsIn} /> : <UpcomingBlock />
+                        ) : ""
+                     }
+
+                     {
+                        state.state === "registration" ? (
+                           state.stage === 0 ? <NotRegisterBlock title="Registration ends in" time = {state.endsIn} /> : (
+                              <div className={registrationCard}>
+                                 <div className={registrationCard__block}>
+                                    <h3 className={registrationCard__title}>Registration</h3>
+                                    <div className={registrationCard__check}>
+                                       <div className={registrationCard__checkItem}>
+                                          <div className={registrationCard__checkCircle + " " + registrationCard__checkCircle_check}>
+                                             <CheckIcon className={registrationCard__checkIcon + " " + registrationCard__checkIcon_check} />
+                                          </div>
+                                          <p className={registrationCard__checkText}>
+                                             Tier
+                                          </p>
                                        </div>
-                                       <p className={registrationCard__checkText}>
-                                          Tier
-                                       </p>
+                                       <div className={registrationCard__checkItem}>
+                                          <div className={registrationCard__checkCircle}>
+                                             <CrossIcon className={registrationCard__checkIcon} />
+                                          </div>
+                                          <p className={registrationCard__checkText}>
+                                             KYC
+                                          </p>
+                                       </div>
                                     </div>
-                                    <div className={registrationCard__checkItem}>
-                                       <div className={registrationCard__checkCircle}>
-                                          <CrossIcon className={registrationCard__checkIcon} />
-                                       </div>
-                                       <p className={registrationCard__checkText}>
-                                          KYC
-                                       </p>
+                                    <Button disabled={true} type={"button"} className={registrationCard__button}>Registration</Button>
+                                 </div>
+                                 <div className={registrationCard__block}>
+                                    <h3 className={registrationCard__title}>Registration ENDS IN</h3>
+                                    <div className={card__timer}>
+                                       <Countdown className={card__block} timestamp={state.endsIn * 1000} />
                                     </div>
                                  </div>
-                                 <Button disabled={true} type={"button"} className={registrationCard__button}>Registration</Button>
                               </div>
-                              <div className={registrationCard__block}>
-                                 <h3 className={registrationCard__title}>Registration ENDS IN</h3>
-                                 <div className={card__timer}>
-                                    <Countdown className={card__block} timestamp={header.stateEnd * 1000} />
-                                 </div>
-                              </div>
-                           </div>
-                        ) : (
+                           )
+                        ) : ""
+                     }
+                     
+                     {
+                        state.state === "swap" ? (
+                           state.stage === 0 ? <NotRegisterBlock title="SWAP ends in" time = {state.endsIn} /> : (
+                              state.stage === 1 ? <ConnectWalletBlock title="Swap" endText="Swap ENDS IN" /> : 
+                              <AllocationBlock title="swap" endText="swap ENDS IN" />
+                           )
+                        ) : ""
+                     }
+                     
+                     {
+                        state.state === "fcfs" ? (
+                           state.stage === 0 ? <NotRegisterBlock title="FCFS ends in" time = {state.endsIn} /> : (
+                              state.stage === 1 ? <ConnectWalletBlock title="REQUIREMENTS" endText="FCfs ENDS IN" /> : 
+                              <AllocationBlock title="FCFS" endText="FCFS ENDS IN" />
+                           )
+                        ) : ""
+                     }
+                     
+                     {
+                        state.state === "filled" ? (
+                           state.stage === 0 ? <NotRegisterBlock title="Filled ends in" time = {state.endsIn} /> : (
+                              <>
+                              </>
+                           )
+                        ) : ""
+                     }
+
+                     {
+                        state.state === "claim" ? (
+                           state.stage === 0 ? <NotRegisterBlock title="Claim ends in" time = {state.endsIn} /> : (
+                              <>
+                              </>
+                           )
+                        ) : ""
+                     }
+                     
+                     {
+                        state.state !== "upcoming" &&
+                        state.state !== "registration" &&
+                        state.state !== "swap" &&
+                        state.state !== "fcfs" &&
+                        state.state !== "filled" &&
+                        state.state !== "claim" ? (
                            <>
                               <h3 className={card__title}>SWAP</h3>
                               <div className={card__attantions}>
@@ -434,7 +751,7 @@ export default function ProjectPage(props) {
                                  <p>The distribution of SPORTPZCHAIN token will carried out in polygon ony!</p>
                               </Container>
                            </>
-                        )
+                        ) : ""
                      }
                   </Container>
                   <Container className={project__container + " " + project__container_left}>

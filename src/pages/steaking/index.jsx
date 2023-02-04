@@ -15,6 +15,7 @@ import { useState } from "react";
 // Helpers
 import getLocale from "../../helpers/getLoacale";
 import UpdateTierModal from "../../components/UpdateTierModal";
+import DropDownList from "../../components/DropDownList";
 
 const {
    steaking__layout,
@@ -58,22 +59,7 @@ const {
    steaking__actionsBlock
 } = classes;
 
-const {
-   level,
-   tierMultiplier,
-   staked,
-   stakedMultiplier,
-   balanceSummBC,
-   balanceSumm,
-   balanceState,
-   balancePercentage,
-   timeRange,
-   selectedTime,
-   isTokenUnlocked,
-   stakingResult,
-   dailyReward,
-   stakingEnd
-} = window.initState?.staking
+const staking = window.initState?.staking
    ? window.initState?.staking
    : {
         level: 7,
@@ -95,8 +81,23 @@ const {
 export default function SteakingPage({setModal = () => {}}) {
 
    const local = getLocale();
+   
+   const [level, setLevel] = useState(staking.level ? staking.level : 0);
+   const [tierMultiplier, setTierMultiplier] = useState(staking.tierMultiplier ? staking.tierMultiplier : 1);
+   const [staked, setStaked] = useState(staking.staked ? staking.staked : 0);
+   const [stakedMultiplier, setStakedMultiplier] = useState(staking.stakedMultiplier ? staking.stakedMultiplier : 1);
+   const [balanceSummBC, setBalanceSummBC] = useState(staking.balanceSummBC ? staking.balanceSummBC : 0);
+   const [balanceSumm, setBalanceSumm] = useState(staking.balanceSumm ? staking.balanceSumm : 0);
+   const [balanceState, setBalanceState] = useState(staking.balanceState ? staking.balanceState : true);
+   const [balancePercentage, setBalancePercentage] = useState(staking.balancePercentage ? staking.balancePercentage : 0);
+   const [timeRange, setTimeRange] = useState(staking.timeRange ? staking.timeRange : ["1 month", "3 month’s", "6 month’s", "12 month’s"]);
+   const [selectedTime, setSelectedTime] = useState(staking.selectedTime ? staking.selectedTime : 1);
+   const [isTokenUnlocked, setIsTokenUnlocked] = useState(staking.isTokenUnlocked ? staking.isTokenUnlocked : true);
+   const [stakingResult, setStakingResult] = useState(staking.stakingResult ? staking.stakingResult : 0);
+   const [dailyReward, setDailyReward] = useState(staking.dailyReward ? staking.dailyReward : 0);
+   const [stakingEnd, setStakingEnd] = useState(staking.stakingEnd ? staking.stakingEnd : 0);
 
-   const [selected, setSelected] = useState(selectedTime);
+   const [selectedTier, selectTier] = useState(null);
 
    return (
       <>
@@ -221,6 +222,49 @@ export default function SteakingPage({setModal = () => {}}) {
                      >
                         <span>{localize.percentage[local]} ({balancePercentage.toLocaleString(local)} wARTR)</span>
                      </Button> */}
+                     
+                     <DropDownList
+                            className={""}
+                            selectedItem = {selectedTier}
+                            onSelect = {selectTier}
+                            disabledOptions = {(val) => val > level}
+                            emptyText = {localize.select[local]}
+                            items = {
+                                [
+                                    {
+                                        index: 1,
+                                        text: localize.tier[local] + " " + 1
+                                    },{
+                                        index: 2,
+                                        text: localize.tier[local] + " " + 2
+                                    },{
+                                        index: 3,
+                                        text: localize.tier[local] + " " + 3
+                                    },{
+                                        index: 4,
+                                        text: localize.tier[local] + " " + 4
+                                    },{
+                                        index: 5,
+                                        text: localize.tier[local] + " " + 5
+                                    },{
+                                        index: 6,
+                                        text: localize.tier[local] + " " + 6
+                                    },{
+                                        index: 7,
+                                        text: localize.tier[local] + " " + 7
+                                    },{
+                                        index: 8,
+                                        text: localize.tier[local] + " " + 8
+                                    },{
+                                        index: 9,
+                                        text: localize.tier[local] + " " + 9
+                                    },{
+                                        index: 10,
+                                        text: localize.tier[local] + " " + 10
+                                    }
+                                ]
+                            }
+                        />
                   </div>
 
                   <div className={steaking__actionsBlock}>
@@ -256,10 +300,10 @@ export default function SteakingPage({setModal = () => {}}) {
                         </span>
                      </span>
                   </h2>
-                  <p className={steaking__timeValue}>{timeRange[selected]}</p>
+                  <p className={steaking__timeValue}>{timeRange[selectedTime]}</p>
                </div>
 
-               <RangeSlider values={timeRange} selected={selected} onChange={setSelected} />
+               <RangeSlider values={timeRange} selected={selectedTime} onChange={setSelectedTime} />
 
                <div className={steaking__timeNote}>
                   <span className={steaking__resultText}>{localize.stakingResult[local]}:</span>
