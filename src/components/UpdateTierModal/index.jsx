@@ -10,6 +10,7 @@ import getLocale from "../../helpers/getLoacale";
 import Arrow from "../Icons/arrow";
 import { useState } from "react";
 import RangeSlider from "../RangeSlider";
+import DropDownList from "../DropDownList";
 
 const {
     block,
@@ -24,11 +25,6 @@ const {
     header__select,
     header__selectText,
     header__selectBlock,
-    header__selectBlockVal,
-    header__selectList,
-    header__selectList_shown,
-    header__selectListItem,
-    header__selectListItem_active,
 
     upgradeContent,
     upgradeContent__text,
@@ -109,32 +105,48 @@ const UpdateTierModal = ({onClose = () => {}}) => {
                             {lang.upgrate[locale]}
                         </p>
 
-                        <div className={header__selectBlock} onMouseLeave={() => setListState(false)}>
-                            <div className={header__selectBlockVal} onClick={() => setListState(listState ? false : true)}>
-                                {
-                                    selectedTier ? <>
-                                        {lang.tier[locale] + " " + selectedTier}
-                                        <Arrow style={{transform: listState ? "rotate(-90deg)" : null}} />
-                                    </>: (<>
-                                        {lang.select[locale]}
-                                        <Arrow style={{transform: listState ? "rotate(-90deg)" : null}} />
-                                    </>)
-                                }
-                            </div>
-                            <div className={header__selectList + (listState ? " " + header__selectList_shown : "")}>
-                                {
-                                    [1,2,3,4,5,6,7,8,9,10].map(val => (
-                                        <div
-                                            className={header__selectListItem + (val > level ? " " + header__selectListItem_active: "")}
-                                            key={val}
-                                            onClick={() => {if (val > level) { selectTier(val); setListState(false); }}}
-                                        >
-                                            {lang.tier[locale]} {val}
-                                        </div>
-                                    ))
-                                }
-                            </div>
-                        </div>
+                        <DropDownList
+                            className={header__selectBlock}
+                            selectedItem = {selectedTier}
+                            onSelect = {selectTier}
+                            disabledOptions = {(val) => val > level}
+                            emptyText = {lang.select[locale]}
+                            items = {
+                                [
+                                    {
+                                        index: 1,
+                                        text: lang.tier[locale] + " " + 1
+                                    },{
+                                        index: 2,
+                                        text: lang.tier[locale] + " " + 2
+                                    },{
+                                        index: 3,
+                                        text: lang.tier[locale] + " " + 3
+                                    },{
+                                        index: 4,
+                                        text: lang.tier[locale] + " " + 4
+                                    },{
+                                        index: 5,
+                                        text: lang.tier[locale] + " " + 5
+                                    },{
+                                        index: 6,
+                                        text: lang.tier[locale] + " " + 6
+                                    },{
+                                        index: 7,
+                                        text: lang.tier[locale] + " " + 7
+                                    },{
+                                        index: 8,
+                                        text: lang.tier[locale] + " " + 8
+                                    },{
+                                        index: 9,
+                                        text: lang.tier[locale] + " " + 9
+                                    },{
+                                        index: 10,
+                                        text: lang.tier[locale] + " " + 10
+                                    }
+                                ]
+                            }
+                        />
                     </div>
                 </div>
             

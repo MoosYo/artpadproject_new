@@ -1,0 +1,156 @@
+@import "../../styles/colors.scss";
+@import "../../styles/helpers.scss";
+
+.dropDownList {
+
+
+    &__Block {
+        color: $accent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        text-decoration: underline;
+        white-space: nowrap;
+        
+        font-size: vw(24px, 360px);
+        line-height: vw(24px, 360px);
+        gap: vw(5px, 360px);
+    
+        @media screen and (min-width: 360px) {
+            font-size: 24px;
+            line-height: 24px;
+            gap: 5px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(24px, 360px);
+            line-height: vw(24px, 360px);
+            gap: vw(5px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(24px);
+            line-height: vw(24px);
+            gap: vw(5px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 24px;
+            line-height: 24px;
+            gap: 5px;
+        }
+
+        svg {
+            transform: rotate(90deg);
+            transition: transform 0.3s ease-in-out;
+    
+            width: vw(8px, 360px);
+    
+            @media screen and (min-width: 360px) {
+                width: 8px;
+            }
+    
+            @media screen and (min-width: 500px) {
+                width: vw(8px, 360px);
+            }
+    
+            @media screen and (min-width: 920px) {
+                width: vw(8px);
+            }
+    
+            @media screen and (min-width: 1600px) {
+                width: 8px;
+            }
+            
+            path {
+                stroke: $accent;
+            }
+        }
+    }
+
+    &__list {
+        position: absolute;
+        display: none;
+        background: $background;
+        border: solid $accent;
+        flex-direction: column;
+        z-index: 2;
+    
+        border-width: vw(2px, 360px);
+        border-radius: vw(10px, 360px);
+        padding: vw(24px, 360px);
+        gap: vw(14px, 360px);
+    
+        @media screen and (min-width: 360px) {
+            border-width: 2px;
+            border-radius: 10px;
+            padding: 24px;
+            gap: 14px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            border-width: vw(2px, 360px);
+            border-radius: vw(10px, 360px);
+            padding: vw(24px, 360px);
+            gap: vw(14px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            border-width: vw(2px);
+            border-radius: vw(10px);
+            padding: vw(24px);
+            gap: vw(14px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            border-width: 2px;
+            border-radius: 10px;
+            padding: 24px;
+            gap: 14px;
+        }
+    }
+
+    &__list_shown {
+        display: flex;
+    }
+
+    &__listItem {
+        color: $white;
+        opacity: 0.3;
+        text-decoration: line-through;
+        text-transform: capitalize;
+        cursor: not-allowed;
+        white-space: nowrap;
+    
+        font-size: vw(18px, 360px);
+        line-height: vw(21px, 360px);
+    
+        @media screen and (min-width: 360px) {
+            font-size: 18px;
+            line-height: 21px;
+        }
+    
+        @media screen and (min-width: 500px) {
+            font-size: vw(18px, 360px);
+            line-height: vw(21px, 360px);
+        }
+    
+        @media screen and (min-width: 920px) {
+            font-size: vw(18px);
+            line-height: vw(21px);
+        }
+    
+        @media screen and (min-width: 1600px) {
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+
+    &__listItem_active {
+        color: $accent;
+        opacity: 1;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}

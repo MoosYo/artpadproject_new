@@ -78,5 +78,13 @@
    "percentage": {
       "ru-RU": "Take a percentage",
       "en-US": "Take a percentage"
+   },
+   "select": {
+      "ru-RU": "Выбрать",
+      "en-US": "Select Tier"
+   },
+   "tier": {
+      "ru-RU": "уровень",
+      "en-US": "tier"
    }
 }
