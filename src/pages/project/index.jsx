@@ -667,7 +667,7 @@ export default function ProjectPage(props) {
                                  <div className={registrationCard__block}>
                                     <h3 className={registrationCard__title}>Registration ENDS IN</h3>
                                     <div className={card__timer}>
-                                       <Countdown className={card__block} timestamp={header.stateEnd * 1000} />
+                                       <Countdown className={card__block} timestamp={state.endsIn * 1000} />
                                     </div>
                                  </div>
                               </div>
