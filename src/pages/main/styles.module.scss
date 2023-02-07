@@ -24,11 +24,11 @@
     background-size: cover;
     background-position: center;
 
-    display: none;
+    // display: none;
     
-    @media screen and (min-width: 920px) {
-        display: block;
-    }
+    // @media screen and (min-width: 920px) {
+    //     display: block;
+    // }
 }
 
 .topBlock {
@@ -40,6 +40,7 @@
 
     margin-bottom: vw(220px, 360px);
     gap: vw(128px, 360px);
+    margin-top: 30vh;
 
     @media screen and (min-width: 360px) {
         margin-bottom: 220px;
@@ -52,6 +53,7 @@
     }
     
     @media screen and (min-width: 920px) {
+        margin-top: 0px;
         gap: 0px;
         height: 70vh;
         flex-direction: row;
