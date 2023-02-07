@@ -3,6 +3,7 @@ import { useState } from "react";
 import getLocale from "../../helpers/getLoacale";
 import Button from "../Button";
 import Arrow from "../Icons/arrow";
+import CheckIcon from "../Icons/check";
 import InfoIcon from "../Icons/info";
 
 import classes from "./styles.module.scss";
@@ -20,6 +21,8 @@ const {
     table__rowWrapper_sub,
     table__cell,
     table__cell_sub,
+    table__cellDisabledText,
+    table__cellCheckedText,
     table__cellImg,
     table__cellLink,
     table__cellButton
@@ -85,15 +88,21 @@ const Table = ({headers = [], rows = [], className = "", style = {}, hasChild = 
                         <div className={table__row} key={i}>
                             <div className={table__rowWrapper} style={{gridTemplateColumns: columnsWidth}}>
                                 {
-                                    cells.map(({value, type, func}, j) => {
+                                    cells.map(({value, type, func = () => {}, link = ""}, j) => {
                                         
                                         let formatedValue = value;
 
                                         if (type === "number") formatedValue = parseFloat(formatedValue).toLocaleString(locale);
+                                        
+                                        if (type === "disabled") formatedValue = (() => <p className={table__cellDisabledText}>{value}</p>)();
 
+                                        if (type === "checked") formatedValue = (() => <p className={table__cellCheckedText}>
+                                            {value} <CheckIcon />
+                                        </p>)();
+                                        
                                         if (type === "img") formatedValue = (() => <img src={value} alt="" className={table__cellImg} />)();
                                         
-                                        if (type === "url") formatedValue = (() => <a href={value} className={table__cellLink} >Click</a>)();
+                                        if (type === "url") formatedValue = (() => <a href={link} onClick={func} className={table__cellLink}>{value}</a>)();
                                         
                                         if (type === "button") formatedValue = (() => <Button className={table__cellButton} onClick={func ? func : null} >{value}</Button>)();
 

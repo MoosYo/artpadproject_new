@@ -2,7 +2,7 @@ import classes from "./index.module.scss";
 
 const { button, button_outline, button_grey } = classes;
 
-export default function Button({ children, variant, href, onClick, type, className, disabled = false }) {
+export default function Button({ style = {}, children, variant, href, onClick, type, className, disabled = false }) {
    let newClassName = button;
 
    newClassName += variant ? " " + classes["button_" + variant] : "";
@@ -13,7 +13,7 @@ export default function Button({ children, variant, href, onClick, type, classNa
       if (variant === "grey") {
          return (
             <>
-               <a href={href ? href : "#"} className={newClassName}>
+               <a href={href ? href : "#"} className={newClassName} style={style}>
                   {children ? children : "Кнопка"}
                </a>
             </>
@@ -21,7 +21,7 @@ export default function Button({ children, variant, href, onClick, type, classNa
       }
       return (
          <>
-            <a href={href ? href : "#"} className={newClassName}>
+            <a href={href ? href : "#"} className={newClassName} style={style}>
                {children ? children : "Кнопка"}
             </a>
          </>
@@ -29,7 +29,13 @@ export default function Button({ children, variant, href, onClick, type, classNa
    } else {
       return (
          <>
-            <button disabled={disabled ? "disabled" : null} type={type ? type : "button"} onClick={onClick} className={newClassName}>
+            <button
+               disabled={disabled ? "disabled" : null}
+               type={type ? type : "button"}
+               onClick={onClick}
+               className={newClassName}
+               style={style}
+            >
                {children ? children : "Кнопка"}
             </button>
          </>

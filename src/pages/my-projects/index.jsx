@@ -163,7 +163,8 @@ export default function MyProjectsPage({}) {
                   type: "text"
               },
               {
-                  value: dataItem.link,
+                  value: "Click",
+                  link: dataItem.link,
                   type: "url"
               },
               {

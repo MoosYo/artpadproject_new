@@ -366,6 +366,68 @@
         }
     }
 
+    &__cellDisabledText {
+        opacity: 0.5;
+        color: $white;
+        text-transform: uppercase;
+    }
+
+    &__cellCheckedText {
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: vw(7px, 360px);
+
+        @media screen and (min-width: 360px) {
+            gap: 7px;
+        }
+
+        @media screen and (min-width: 500px) {
+            gap: vw(7px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            gap: vw(7px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            gap: 7px;
+        }
+
+        svg {
+            width: vw(12px, 360px);
+            height: vw(9px, 360px);
+
+            @media screen and (min-width: 360px) {
+                width: 12px;
+                height: 9px;
+            }
+    
+            @media screen and (min-width: 500px) {
+                width: vw(12px, 360px);
+                height: vw(9px, 360px);
+            }
+    
+            @media screen and (min-width: 920px) {
+                width: vw(12px);
+                height: vw(9px);
+            }
+    
+            @media screen and (min-width: 1600px) {
+                width: 12px;
+                height: 9px;
+            }
+
+            path {
+                fill: $white;
+                opacity: 0.7;
+            }
+        }
+    }
+
     &__cellImg {
         object-fit: cover;
 
