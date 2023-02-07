@@ -23,6 +23,8 @@ const {
     hideOnDesc,
     hideOnMob,
 
+    background,
+
     topBlock,
     topBlock__left,
     topBlock__right,
@@ -275,6 +277,7 @@ const MainPage = ({setModal = () => {}}) => {
     return (
         <>
             <section className={topBlock}>
+                <div className={background} />
                 <div className={topBlock__left}>
                     <h2 className={topBlock__title}>
                         {lang.topBlockTitle[locale]}

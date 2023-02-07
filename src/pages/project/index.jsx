@@ -11,6 +11,7 @@ import SocialButton from "../../components/Icons/SocialButton";
 import ProgressbarTimestamp from "../../components/ProgressbarTimestamp";
 import StoryBoard from "../../components/StoryBoard";
 import TabControl from "../../components/TabControl";
+import ProjectClaimBlock from "./claim/claim";
 import classes from "./index.module.scss";
 import statesClasses from "./states.module.scss";
 
@@ -125,7 +126,7 @@ const { header, state, socials, links, info, news, story, banners } = window.ini
         },
         state: {
          state: "upcoming",         // Состояние проекта (регистрация, обмен и т.д.)
-         stage: 0,              // Этап состояния проекта (зарегистрирован и т.д.)
+         stage: 1,              // Этап состояния проекта (зарегистрирован и т.д.)
          endsIn: (new Date().getTime() / 1000) + (24 * 60 * 60)
         },
         socials: [
@@ -547,259 +548,255 @@ export default function ProjectPage(props) {
       <>
          <div className={project__layout}>
             <StoryBoard steps={story} />
-            <div className={project__body}>
-               <Container className={project__container}>
-                  <aside className={project__info}>
-                     <div className={project__head}>
-                        <img src={header.img} alt={header.title} />
-                        {
-                           header.showTitle ? <h2 className={project__title}>{header.title}</h2> : ""
-                        }
 
-                        {header.tag ? <div className={project__tag}>{header.tag}</div> : ""}
-                     </div>
-                     <div className={project__socials}>
-                        {
-                           socials.map(({type, href}, i) => (
-                              <a className={project__socialsLink} href={href} target="_blank" rel="noopener noreferrer">
-                                 <SocialButton
-                                    className={project__socialsLinkImg}
-                                    type={type}
-                                 />
-                              </a>
-                           ))
-                        }
-                     </div>
-                     <ul className={project__links}>
-                        {links.map(({ title, href }, key) => (
-                           <li key={key}>
-                              <Button variant={"grey"} href={href}>
-                                 {title}
-                              </Button>
-                           </li>
-                        ))}
-                     </ul>
-                     <hr />
-                     <ul className={project__info__items}>
-                        <li>
-                           <span className={project__info__items__title}>Raise Currency</span>
-                           <span className={project__info__items__result}>
-                              <img src={info.raiseCurrency.img} alt="" />
-                              {info.raiseCurrency.title}
-                           </span>
-                        </li>
-                        <li>
-                           <span className={project__info__items__title}>Exchange Rate</span>
-                           <span className={project__info__items__result}>{info.exchangeRate}</span>
-                        </li>
-                        <li>
-                           <span className={project__info__items__title}>Swap Amount</span>
-                           <span className={project__info__items__result}>
-                              {info.swapAmount.summ.toLocaleString("ru-RU") + " " + info.swapAmount.type}
-                           </span>
-                        </li>
-                        <li>
-                           <span className={project__info__items__title}>Total Raise</span>
-                           <span className={project__info__items__result}>
-                              {getCurrency(info.currency) + info.totalRaise.toLocaleString("ru-RU")}
-                           </span>
-                        </li>
-                        <li>
-                           <span className={project__info__items__title}>Claim</span>
-                           <span className={project__info__items__result}>{info.claim}</span>
-                        </li>
-                        <li>
-                           <span className={project__info__items__title}>Claim</span>
-                           <span className={project__info__items__result}>
-                              <img src={info.claimImg.img} alt="" />
-                              {info.claimImg.title}
-                           </span>
-                        </li>
-                     </ul>
-                     <hr />
-                     <div className={project__progress}>
-                        <span className={project__progress__title}>50% TGE, remaining in two months (25%:25%)</span>
-                        <ProgressbarTimestamp
-                           value={info.progress}
-                           coin={info.coin}
-                           total={info.total}
-                           current={info.current}
-                           timestamp={info.swapEnd}
-                           showPercents={true}
-                        />
-                     </div>
-                  </aside>
-               </Container>
-               <div className={project__cards}>
-                  <Container className={project__container + " " + project__container_left}>
-                     {
-                        state.state === "upcoming" ? (
-                           state.stage === 0 ? <NotRegisterBlock title="WHITELIST OPENING IN" time = {state.endsIn} /> : <UpcomingBlock />
-                        ) : ""
-                     }
-
-                     {
-                        state.state === "registration" ? (
-                           state.stage === 0 ? <NotRegisterBlock title="Registration ends in" time = {state.endsIn} /> : (
-                              <div className={registrationCard}>
-                                 <div className={registrationCard__block}>
-                                    <h3 className={registrationCard__title}>Registration</h3>
-                                    <div className={registrationCard__check}>
-                                       <div className={registrationCard__checkItem}>
-                                          <div className={registrationCard__checkCircle + " " + registrationCard__checkCircle_check}>
-                                             <CheckIcon className={registrationCard__checkIcon + " " + registrationCard__checkIcon_check} />
-                                          </div>
-                                          <p className={registrationCard__checkText}>
-                                             Tier
-                                          </p>
-                                       </div>
-                                       <div className={registrationCard__checkItem}>
-                                          <div className={registrationCard__checkCircle}>
-                                             <CrossIcon className={registrationCard__checkIcon} />
-                                          </div>
-                                          <p className={registrationCard__checkText}>
-                                             KYC
-                                          </p>
-                                       </div>
-                                    </div>
-                                    <Button disabled={true} type={"button"} className={registrationCard__button}>Registration</Button>
-                                 </div>
-                                 <div className={registrationCard__block}>
-                                    <h3 className={registrationCard__title}>Registration ENDS IN</h3>
-                                    <div className={card__timer}>
-                                       <Countdown className={card__block} timestamp={state.endsIn * 1000} />
-                                    </div>
-                                 </div>
-                              </div>
-                           )
-                        ) : ""
-                     }
-                     
-                     {
-                        state.state === "swap" ? (
-                           state.stage === 0 ? <NotRegisterBlock title="SWAP ends in" time = {state.endsIn} /> : (
-                              state.stage === 1 ? <ConnectWalletBlock title="Swap" endText="Swap ENDS IN" /> : 
-                              <AllocationBlock title="swap" endText="swap ENDS IN" />
-                           )
-                        ) : ""
-                     }
-                     
-                     {
-                        state.state === "fcfs" ? (
-                           state.stage === 0 ? <NotRegisterBlock title="FCFS ends in" time = {state.endsIn} /> : (
-                              state.stage === 1 ? <ConnectWalletBlock title="REQUIREMENTS" endText="FCfs ENDS IN" /> : 
-                              <AllocationBlock title="FCFS" endText="FCFS ENDS IN" />
-                           )
-                        ) : ""
-                     }
-                     
-                     {
-                        state.state === "filled" ? (
-                           state.stage === 0 ? <NotRegisterBlock title="Filled ends in" time = {state.endsIn} /> : (
-                              <>
-                              </>
-                           )
-                        ) : ""
-                     }
-
-                     {
-                        state.state === "claim" ? (
-                           state.stage === 0 ? <NotRegisterBlock title="Claim ends in" time = {state.endsIn} /> : (
-                              <>
-                              </>
-                           )
-                        ) : ""
-                     }
-                     
-                     {
-                        state.state !== "upcoming" &&
-                        state.state !== "registration" &&
-                        state.state !== "swap" &&
-                        state.state !== "fcfs" &&
-                        state.state !== "filled" &&
-                        state.state !== "claim" ? (
-                           <>
-                              <h3 className={card__title}>SWAP</h3>
-                              <div className={card__attantions}>
-                                 <div className={card__rejected}>
-                                    <Error />
-                                    <p>You did not apply IDO of your application was rejected</p>
-                                 </div>
-                                 <div className={card__timer}>
-                                    <h3 className={card__title}>SWAP ENDS AFTER</h3>
-                                    <Countdown className={card__block} timestamp={info.swapEnd} />
-                                 </div>
-                              </div>
-                              <Container
-                                 className={
-                                    project__container +
-                                    " " +
-                                    project__container_magenta +
-                                    " " +
-                                    project__container_lowPadding +
-                                    " " +
-                                    container__alert +
-                                    " " +
-                                    project__container_left
-                                 }
-                              >
-                                 <p>Dear investor!</p>
-                                 <p>
-                                    Pay your attension that SPORTPZCHAIN token (SPN) deposit is availible on several blockchain
-                                    networks: BNB Chain, Polygon.
-                                 </p>
-                                 <p>The distribution of SPORTPZCHAIN token will carried out in polygon ony!</p>
-                              </Container>
-                           </>
-                        ) : ""
-                     }
-                  </Container>
-                  <Container className={project__container + " " + project__container_left}>
-                     <h3 className={card__title}>PROJECT DESCREPTION</h3>
-                     <TabControl array={news} />
-                  </Container>
-
-                  {
-                     banners?.length > 0 ? (
-                        <div className={slider}>
-                           <div className={slider__header}>
-                              <p className={slider__title}>
-                                 ABOUT {header.title}
-                              </p>
-      
-                              <div className={slider__control}>
-                                 <button className={slider__button} type="button" onClick={() => setCurrentSlide(curretnSlide - 1)}>
-                                    <SliderArrowIcon />
-                                 </button>
-      
-                                 <p className={slider__counter}>
-                                    {curretnSlide + 1} / {banners.length}
-                                 </p>
-                                 
-                                 <button className={slider__button} type="button" onClick={() => setCurrentSlide(curretnSlide + 1)}>
-                                    <SliderArrowIcon style={{transform: "rotate(180deg)"}} />
-                                 </button>
-                              </div>
-                           </div>
-      
-                           <div className={slider__track}>
+            {
+               state.state !== "claim" ? (
+                  <div className={project__body}>
+                     <Container className={project__container}>
+                        <aside className={project__info}>
+                           <div className={project__head}>
+                              <img src={header.img} alt={header.title} />
                               {
-                                 banners.map((banner, i) => (
-                                    <div className={slider_slide} style={{transform: "translateX("+(curretnSlide * -100)+"%)"}}>
-                                       <img src={banner.img} alt="" className={slider__img} />
+                                 header.showTitle ? <h2 className={project__title}>{header.title}</h2> : ""
+                              }
       
-                                       {
-                                          banner.url ? <a href={banner.url} className={slider_link} target="_blank" rel="noopener noreferrer"> </a> : ""
-                                       }
-                                    </div>
+                              {header.tag ? <div className={project__tag}>{header.tag}</div> : ""}
+                           </div>
+                           <div className={project__socials}>
+                              {
+                                 socials.map(({type, href}, i) => (
+                                    <a className={project__socialsLink} href={href} target="_blank" rel="noopener noreferrer">
+                                       <SocialButton
+                                          className={project__socialsLinkImg}
+                                          type={type}
+                                       />
+                                    </a>
                                  ))
                               }
                            </div>
-                        </div>
-                     ) : ""
-                  }
-               </div>
-            </div>
+                           <ul className={project__links}>
+                              {links.map(({ title, href }, key) => (
+                                 <li key={key}>
+                                    <Button variant={"grey"} href={href}>
+                                       {title}
+                                    </Button>
+                                 </li>
+                              ))}
+                           </ul>
+                           <hr />
+                           <ul className={project__info__items}>
+                              <li>
+                                 <span className={project__info__items__title}>Raise Currency</span>
+                                 <span className={project__info__items__result}>
+                                    <img src={info.raiseCurrency.img} alt="" />
+                                    {info.raiseCurrency.title}
+                                 </span>
+                              </li>
+                              <li>
+                                 <span className={project__info__items__title}>Exchange Rate</span>
+                                 <span className={project__info__items__result}>{info.exchangeRate}</span>
+                              </li>
+                              <li>
+                                 <span className={project__info__items__title}>Swap Amount</span>
+                                 <span className={project__info__items__result}>
+                                    {info.swapAmount.summ.toLocaleString("ru-RU") + " " + info.swapAmount.type}
+                                 </span>
+                              </li>
+                              <li>
+                                 <span className={project__info__items__title}>Total Raise</span>
+                                 <span className={project__info__items__result}>
+                                    {getCurrency(info.currency) + info.totalRaise.toLocaleString("ru-RU")}
+                                 </span>
+                              </li>
+                              <li>
+                                 <span className={project__info__items__title}>Claim</span>
+                                 <span className={project__info__items__result}>{info.claim}</span>
+                              </li>
+                              <li>
+                                 <span className={project__info__items__title}>Claim</span>
+                                 <span className={project__info__items__result}>
+                                    <img src={info.claimImg.img} alt="" />
+                                    {info.claimImg.title}
+                                 </span>
+                              </li>
+                           </ul>
+                           <hr />
+                           <div className={project__progress}>
+                              <span className={project__progress__title}>50% TGE, remaining in two months (25%:25%)</span>
+                              <ProgressbarTimestamp
+                                 value={info.progress}
+                                 coin={info.coin}
+                                 total={info.total}
+                                 current={info.current}
+                                 timestamp={info.swapEnd}
+                                 showPercents={true}
+                              />
+                           </div>
+                        </aside>
+                     </Container>
+                     <div className={project__cards}>
+                        <Container className={project__container + " " + project__container_left}>
+                           {
+                              state.state === "upcoming" ? (
+                                 state.stage === 0 ? <NotRegisterBlock title="WHITELIST OPENING IN" time = {state.endsIn} /> : <UpcomingBlock />
+                              ) : ""
+                           }
+      
+                           {
+                              state.state === "registration" ? (
+                                 state.stage === 0 ? <NotRegisterBlock title="Registration ends in" time = {state.endsIn} /> : (
+                                    <div className={registrationCard}>
+                                       <div className={registrationCard__block}>
+                                          <h3 className={registrationCard__title}>Registration</h3>
+                                          <div className={registrationCard__check}>
+                                             <div className={registrationCard__checkItem}>
+                                                <div className={registrationCard__checkCircle + " " + registrationCard__checkCircle_check}>
+                                                   <CheckIcon className={registrationCard__checkIcon + " " + registrationCard__checkIcon_check} />
+                                                </div>
+                                                <p className={registrationCard__checkText}>
+                                                   Tier
+                                                </p>
+                                             </div>
+                                             <div className={registrationCard__checkItem}>
+                                                <div className={registrationCard__checkCircle}>
+                                                   <CrossIcon className={registrationCard__checkIcon} />
+                                                </div>
+                                                <p className={registrationCard__checkText}>
+                                                   KYC
+                                                </p>
+                                             </div>
+                                          </div>
+                                          <Button disabled={true} type={"button"} className={registrationCard__button}>Registration</Button>
+                                       </div>
+                                       <div className={registrationCard__block}>
+                                          <h3 className={registrationCard__title}>Registration ENDS IN</h3>
+                                          <div className={card__timer}>
+                                             <Countdown className={card__block} timestamp={state.endsIn * 1000} />
+                                          </div>
+                                       </div>
+                                    </div>
+                                 )
+                              ) : ""
+                           }
+                           
+                           {
+                              state.state === "swap" ? (
+                                 state.stage === 0 ? <NotRegisterBlock title="SWAP ends in" time = {state.endsIn} /> : (
+                                    state.stage === 1 ? <ConnectWalletBlock title="Swap" endText="Swap ENDS IN" /> : 
+                                    <AllocationBlock title="swap" endText="swap ENDS IN" />
+                                 )
+                              ) : ""
+                           }
+                           
+                           {
+                              state.state === "fcfs" ? (
+                                 state.stage === 0 ? <NotRegisterBlock title="FCFS ends in" time = {state.endsIn} /> : (
+                                    state.stage === 1 ? <ConnectWalletBlock title="REQUIREMENTS" endText="FCfs ENDS IN" /> : 
+                                    <AllocationBlock title="FCFS" endText="FCFS ENDS IN" />
+                                 )
+                              ) : ""
+                           }
+                           
+                           {
+                              state.state === "filled" ? (
+                                 state.stage === 0 ? <NotRegisterBlock title="Filled ends in" time = {state.endsIn} /> : (
+                                    <>
+                                    </>
+                                 )
+                              ) : ""
+                           }
+                           
+                           {
+                              state.state !== "upcoming" &&
+                              state.state !== "registration" &&
+                              state.state !== "swap" &&
+                              state.state !== "fcfs" &&
+                              state.state !== "filled" ? (
+                                 <>
+                                    <h3 className={card__title}>SWAP</h3>
+                                    <div className={card__attantions}>
+                                       <div className={card__rejected}>
+                                          <Error />
+                                          <p>You did not apply IDO of your application was rejected</p>
+                                       </div>
+                                       <div className={card__timer}>
+                                          <h3 className={card__title}>SWAP ENDS AFTER</h3>
+                                          <Countdown className={card__block} timestamp={info.swapEnd} />
+                                       </div>
+                                    </div>
+                                    <Container
+                                       className={
+                                          project__container +
+                                          " " +
+                                          project__container_magenta +
+                                          " " +
+                                          project__container_lowPadding +
+                                          " " +
+                                          container__alert +
+                                          " " +
+                                          project__container_left
+                                       }
+                                    >
+                                       <p>Dear investor!</p>
+                                       <p>
+                                          Pay your attension that SPORTPZCHAIN token (SPN) deposit is availible on several blockchain
+                                          networks: BNB Chain, Polygon.
+                                       </p>
+                                       <p>The distribution of SPORTPZCHAIN token will carried out in polygon ony!</p>
+                                    </Container>
+                                 </>
+                              ) : ""
+                           }
+                        </Container>
+                        <Container className={project__container + " " + project__container_left}>
+                           <h3 className={card__title}>PROJECT DESCREPTION</h3>
+                           <TabControl array={news} />
+                        </Container>
+      
+                        {
+                           banners?.length > 0 ? (
+                              <div className={slider}>
+                                 <div className={slider__header}>
+                                    <p className={slider__title}>
+                                       ABOUT {header.title}
+                                    </p>
+            
+                                    <div className={slider__control}>
+                                       <button className={slider__button} type="button" onClick={() => setCurrentSlide(curretnSlide - 1)}>
+                                          <SliderArrowIcon />
+                                       </button>
+            
+                                       <p className={slider__counter}>
+                                          {curretnSlide + 1} / {banners.length}
+                                       </p>
+                                       
+                                       <button className={slider__button} type="button" onClick={() => setCurrentSlide(curretnSlide + 1)}>
+                                          <SliderArrowIcon style={{transform: "rotate(180deg)"}} />
+                                       </button>
+                                    </div>
+                                 </div>
+            
+                                 <div className={slider__track}>
+                                    {
+                                       banners.map((banner, i) => (
+                                          <div className={slider_slide} style={{transform: "translateX("+(curretnSlide * -100)+"%)"}}>
+                                             <img src={banner.img} alt="" className={slider__img} />
+            
+                                             {
+                                                banner.url ? <a href={banner.url} className={slider_link} target="_blank" rel="noopener noreferrer"> </a> : ""
+                                             }
+                                          </div>
+                                       ))
+                                    }
+                                 </div>
+                              </div>
+                           ) : ""
+                        }
+                     </div>
+                  </div>
+               )
+               : <ProjectClaimBlock />
+            }
          </div>
       </>
    );
