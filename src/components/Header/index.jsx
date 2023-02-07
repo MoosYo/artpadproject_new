@@ -64,7 +64,7 @@ const {
 const initState = window.initState ? window.initState : {
    kyc: false,
    wallet: null,
-   isLogedIn: true
+   isLogedIn: false
 };
 
 export default function Header(props) {
