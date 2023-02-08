@@ -31,6 +31,14 @@
       "ru-RU": "Новая эл. почта",
       "en-US": "New e-mail"
    },
+   "telegram": {
+      "ru-RU": "Telegram",
+      "en-US": "Telegram"
+   },
+   "newTelegram": {
+      "ru-RU": "Новый профиль telegram",
+      "en-US": "New telegram profile"
+   },
    "wallet": {
       "ru-RU": "Кошелёк",
       "en-US": "Wallet"

@@ -6,9 +6,9 @@ const {
     tooltip__block_right
 } = classes;
 
-const ToolTip = ({children = "", x = 0, y = 0, onClose = () => ""}) => {
+const ToolTip = ({children = "", x = 0, y = 0, onClose = () => "", isRight = null}) => {
 
-    const isRight = x > window.innerWidth / 2;
+    isRight = isRight === null ? x > window.innerWidth / 2 : isRight;
 
 
     const close = () => {

@@ -91,6 +91,8 @@
    }
 
    &__title {
+      cursor: pointer;
+      
       padding: 8px;
       border-radius: 4px;
 
@@ -172,6 +174,13 @@
       &_active {
          color: $white;
       }
+   }
+
+   &__prompt {
+      color: $white;
+
+      font-size: 14px;
+      line-height: 17px;
    }
 }
 

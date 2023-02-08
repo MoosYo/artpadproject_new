@@ -28,9 +28,10 @@ export default function Modal (props) {
             document.querySelector("body").style.overflow = "hidden";
         }
         else {
+            document.querySelector("body").style.overflow = null;
+
             const timer = setTimeout(()=>{
                 setModalState(shown);
-                document.querySelector("body").style.overflow = null;
                 clearTimeout(timer);
             }, 500);
         }

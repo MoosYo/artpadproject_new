@@ -86,7 +86,7 @@ export default function App() {
             ) : (
                ""
             )}
-            {path.match(/^\/projects\/.*$/) ? <ProjectPage /> : ""}
+            {path.match(/^\/projects\/.*$/) ? <ProjectPage setModal={showModal} setToolTip={setTooltip} /> : ""}
          </main>
          <Footer />
 

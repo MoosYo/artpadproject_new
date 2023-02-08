@@ -70,7 +70,7 @@ const staking = window.initState?.staking
         balanceSumm: 0,
         balanceState: true,
         balancePercentage: 10000,
-        timeRange: ["1 month", "3 month’s", "6 month’s", "12 month’s"],
+        timeRange: ["1 month", "4 month’s", "6 month’s", "12 month’s"],
         selectedTime: 1,
         isTokenUnlocked: true,
         stakingResult: 12000,
@@ -90,7 +90,7 @@ export default function SteakingPage({setModal = () => {}}) {
    const [balanceSumm, setBalanceSumm] = useState(staking.balanceSumm ? staking.balanceSumm : 0);
    const [balanceState, setBalanceState] = useState(staking.balanceState ? staking.balanceState : true);
    const [balancePercentage, setBalancePercentage] = useState(staking.balancePercentage ? staking.balancePercentage : 0);
-   const [timeRange, setTimeRange] = useState(staking.timeRange ? staking.timeRange : ["1 month", "3 month’s", "6 month’s", "12 month’s"]);
+   const [timeRange, setTimeRange] = useState(staking.timeRange ? staking.timeRange : ["1 month", "4 month’s", "6 month’s", "12 month’s"]);
    const [selectedTime, setSelectedTime] = useState(staking.selectedTime ? staking.selectedTime : 1);
    const [isTokenUnlocked, setIsTokenUnlocked] = useState(staking.isTokenUnlocked ? staking.isTokenUnlocked : true);
    const [stakingResult, setStakingResult] = useState(staking.stakingResult ? staking.stakingResult : 0);
@@ -204,7 +204,7 @@ export default function SteakingPage({setModal = () => {}}) {
 
                <div className={steaking__actions}>
                   <div className={steaking__actionsBlock}>
-                     {/* <Button
+                     <Button
                         className={card__button + " " + card__button_outline}
                         variant={"outline"}
                         onClick={() => {
@@ -213,7 +213,7 @@ export default function SteakingPage({setModal = () => {}}) {
                      >
                         <span>{localize.frozen[local]}</span>
                      </Button>
-                     <Button
+                     {/* <Button
                         className={card__button + " " + card__button_outline}
                         variant={"outline"}
                         onClick={() => {
