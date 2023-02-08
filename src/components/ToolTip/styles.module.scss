@@ -54,6 +54,7 @@
             border-radius: vw(10px);
             padding: vw(24px);
             width: vw(288px);
+            transform: translateX(vw(-32px));
         }
 
         @media screen and (min-width: 1600px) {
@@ -61,6 +62,7 @@
             border-radius: 10px;
             padding: 24px;
             width: 288px;
+            transform: translateX(-32px);
         }
         
 

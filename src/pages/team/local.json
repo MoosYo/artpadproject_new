@@ -20,16 +20,16 @@
       "en-US": "Enter promo code"
    },
    "mActivCount": {
-      "ru-RU": "Команда (с уровнем)",
-      "en-US": "Team (with Tier)"
+      "ru-RU": "Команда с уровнем",
+      "en-US": "Team with Tier"
    },
    "coinsCount": {
       "ru-RU": "Монет в команде",
       "en-US": "Сoins in the team"
    },
    "delegatedCount": {
-      "ru-RU": "Делегировано командой",
-      "en-US": "Delegated by the team"
+      "ru-RU": "Поставлено командой",
+      "en-US": "Staked by the team"
    },
    "level": {
       "ru-RU": "Уровень",

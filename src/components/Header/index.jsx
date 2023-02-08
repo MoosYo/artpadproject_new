@@ -64,7 +64,7 @@ const {
 const initState = window.initState ? window.initState : {
    kyc: false,
    wallet: null,
-   isLogedIn: false
+   isLogedIn: true
 };
 
 export default function Header(props) {
@@ -108,7 +108,7 @@ export default function Header(props) {
                "ru-RU": "KYC",
                "en-US": "KYC"
             },
-            "href": "/kyc",
+            "href": "#",
             "icon": kyc ? "check" : ""
          },
          // {
@@ -132,7 +132,7 @@ export default function Header(props) {
                "ru-RU": "Ваш NFT",
                "en-US": "Your NFT"
             },
-            "href": "/your-nft",
+            "href": "#",
             "icon": ""
          },
          {
@@ -148,7 +148,7 @@ export default function Header(props) {
                "ru-RU": wallet ? "Отключить кошелёк" : "Подключить кошелёк",
                "en-US": wallet ? "Disconnect Wallet" : "Connect Wallet"
             },
-            "href": wallet ? "/wallet" : "m:connectWallet",
+            "href": wallet ? "#" : "m:connectWallet",
             "icon": ""
          },
          {
@@ -295,7 +295,7 @@ export default function Header(props) {
                </a>
                {
                   isLogedIn ? (
-                     <Button href="/buy-artr" className="">
+                     <Button href="https://www.lbank.info/exchange/artr/usdt" target={"_blank"} className="">
                         {lang.buyARTR[locale]}
                      </Button>
                   ) : <div></div>

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useState } from "react";
 import getLocale from "../../helpers/getLoacale";
 import Button from "../Button";
@@ -60,6 +60,12 @@ const Table = ({headers = [], rows = [], className = "", style = {}, hasChild = 
         setOpenedChilds(tmp);
     }
 
+    let rowMinWidth = 0;
+
+    headers.forEach(({width}) => {
+        rowMinWidth += (width.indexOf("px") > 0 ? parseFloat(width.replaceAll("px", "")) : 120) + 10;
+    });
+
     return (
         <div
             className={table + (className ? " " + className : "")}
@@ -86,7 +92,15 @@ const Table = ({headers = [], rows = [], className = "", style = {}, hasChild = 
                 {
                     rows.map(({cells, child}, i) => (
                         <div className={table__row} key={i}>
-                            <div className={table__rowWrapper} style={{gridTemplateColumns: columnsWidth}}>
+                            <div
+                                className={table__rowWrapper}
+                                style={
+                                    {
+                                        gridTemplateColumns: columnsWidth,
+                                        minWidth: rowMinWidth + "px"
+                                    }
+                                }
+                            >
                                 {
                                     cells.map(({value, type, func = () => {}, link = ""}, j) => {
                                         

@@ -119,8 +119,8 @@ const UserEditModal = ({onClose = () => {}}) => {
                         <div className={edit__blockValue}>
                             <p className={edit__blockValueText}>{login}</p>
                         </div>
-                        <Input className={edit__blockInput} placeholder={lang.newNickname[locale]} />
-                        <Button className={edit__blockSave + " " + edit__blockSave_bgNone} variant="outline">{lang.change[locale]}</Button>
+                        {/* <Input className={edit__blockInput} placeholder={lang.newNickname[locale]} name="nickname" />
+                        <Button className={edit__blockSave + " " + edit__blockSave_bgNone} variant="outline">{lang.change[locale]}</Button> */}
                     </div>
 
                     <div className={edit__block}>
@@ -130,11 +130,23 @@ const UserEditModal = ({onClose = () => {}}) => {
                         <div className={edit__blockValue}>
                             <p className={edit__blockValueText}>{email}</p>
                         </div>
-                        <Input className={edit__blockInput} placeholder={lang.newEmail[locale]} />
+                        <Input className={edit__blockInput} placeholder={lang.newEmail[locale]} name="email" />
                         <Button className={edit__blockSave + " " + edit__blockSave_bgNone} variant="outline">{lang.change[locale]}</Button>
                     </div>
 
+
                     <div className={edit__block}>
+                        <h2 className={edit__blockTitle}>
+                            {lang.telegram[locale]}
+                        </h2>
+                        <div className={edit__blockValue}>
+                            <p className={edit__blockValueText}>{telegram}</p>
+                        </div>
+                        <Input className={edit__blockInput} placeholder={lang.newTelegram[locale]} name="telegram" />
+                        <Button className={edit__blockSave + " " + edit__blockSave_bgNone} variant="outline">{lang.change[locale]}</Button>
+                    </div>
+
+                    {/* <div className={edit__block}>
                         <h2 className={edit__blockTitle}>
                             {lang.wallet[locale]}
                         </h2>
@@ -150,14 +162,14 @@ const UserEditModal = ({onClose = () => {}}) => {
                         </div>
                         <Button className={edit__blockSave + " " + edit__blockSave_bgNone} variant="outline">{lang.changeWallet[locale]}</Button>
                         <Button className={edit__blockSave} >{lang.disconnectWallet[locale]}</Button>
-                    </div>
+                    </div> */}
 
                     <div className={edit__block}>
                         <h2 className={edit__blockTitle}>
                             {lang.changePass[locale]}
                         </h2>
-                        <Input className={edit__blockInput} placeholder={lang.newPass[locale]} />
-                        <Input className={edit__blockInput} placeholder={lang.confirmPass[locale]} />
+                        <Input className={edit__blockInput} placeholder={lang.newPass[locale]} name="password" />
+                        <Input className={edit__blockInput} placeholder={lang.confirmPass[locale]} name="repeat_password" />
                         <Button className={edit__blockSave + " " + edit__blockSave_bgNone} variant="outline">{lang.change[locale]}</Button>
                     </div>
                 </div>

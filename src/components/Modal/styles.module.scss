@@ -44,7 +44,12 @@
         background: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(7.5px);
 
-        opacity: inherit;
+        opacity: 0;
         transition: inherit;
+        // transition: opacity 0.3s ease-in-out;
+    }
+
+    &__wrapper_shown &__background {
+        opacity: 1;
     }
 }

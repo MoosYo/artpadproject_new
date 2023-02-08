@@ -52,7 +52,7 @@
     
     &__top {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: stretch;
         
         gap: vw(24px, 360px);
@@ -142,6 +142,8 @@
     }
 
     &__blockTitleToolTip {
+        cursor: pointer;
+        
         width: vw(18px, 360px);
         height: vw(18px, 360px);
 

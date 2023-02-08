@@ -23,7 +23,15 @@ const { header, claim } = window.initState?.project
             title: "SEOR"
         },
         claim: {
-            needToSwitch: true,
+            needToSwitch: false,
+            count: 1,
+            currentAmount: 0,
+            totalAmount: 0,
+            amountUnit: "sidus",
+            pages: {
+                current: 1,
+                count: 5
+            },
             items: [
                 {
                     id: 0,
@@ -49,15 +57,7 @@ const { header, claim } = window.initState?.project
                     unit: "synr",
                     claim: true
                 }
-            ],
-            count: 1,
-            currentAmount: 0,
-            totalAmount: 0,
-            amountUnit: "sidus",
-            pages: {
-                current: 1,
-                count: 5
-            }
+            ]
         }
    };
 

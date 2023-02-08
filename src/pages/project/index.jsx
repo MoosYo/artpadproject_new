@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Button from "../../components/Button";
+import ConnectWalletModal from "../../components/ConnectWalleteModal";
 import Container from "../../components/Container";
 import Countdown from "../../components/Countdown";
 import CheckIcon from "../../components/Icons/check";
@@ -153,7 +154,7 @@ const { header, state, socials, links, info, news, story, banners } = window.ini
               type: "spn",
            },
            totalRaise: 50000,
-           claim: "Claim on Gagarin",
+           claim: null,
            claimImg: {
               title: "Polygon",
               img: "https://icodrops.com/wp-content/uploads/2022/07/yycZmh7_400x400.png",
@@ -243,11 +244,13 @@ const { header, state, socials, links, info, news, story, banners } = window.ini
                     time: 1669529116,
                  },
               ],
+              prompt: "Stage information"
            },
            {
               title: "REGISTRATION",
               active: true,
               points: [],
+              prompt: "Stage information"
            },
            {
               title: "Swap",
@@ -262,6 +265,7 @@ const { header, state, socials, links, info, news, story, banners } = window.ini
                   time: 1669529116,
                },
               ],
+              prompt: "Stage information"
            },
            {
               title: "FCFS",
@@ -272,11 +276,13 @@ const { header, state, socials, links, info, news, story, banners } = window.ini
                      time: 1670929200,
                   }
               ],
+              prompt: "Stage information"
            },
            {
               title: "Filled",
               active: false,
               points: [],
+              prompt: "Stage information"
            },
            {
               title: "Claimable",
@@ -287,6 +293,7 @@ const { header, state, socials, links, info, news, story, banners } = window.ini
                     time: 1672121180,
                  },
               ],
+              prompt: "Stage information"
            },
         ],
         banners: [
@@ -307,6 +314,8 @@ const { header, state, socials, links, info, news, story, banners } = window.ini
 
 export default function ProjectPage(props) {
    const local = "ru-RU";
+
+   const {setToolTip} = props;
 
    const getCurrency = (cur) => {
       switch (cur) {
@@ -347,6 +356,10 @@ export default function ProjectPage(props) {
          </div>
       </div>
    );
+
+   const connectWalletFunc = () => {
+      props.setModal((props) => <ConnectWalletModal {...props} />);
+   }
 
    const UpcomingBlock = ({}) => (
       <div className={upcomingBlock}>
@@ -390,7 +403,7 @@ export default function ProjectPage(props) {
             <Countdown className={upcomingBlock__timer} timestamp={state.endsIn * 1000} />
 
             <div className={upcomingBlock__buttons}>
-               <Button className={upcomingBlock__button}>Connect wallet</Button>
+               <Button className={upcomingBlock__button} onClick={connectWalletFunc}>Connect wallet</Button>
                <Button className={upcomingBlock__buttonOutline} variant={"outline"}>Apply</Button>
             </div>
          </div>
@@ -404,7 +417,7 @@ export default function ProjectPage(props) {
                {title}
             </h3>
 
-            <Button className={connectWalletBlock__button}>Connect Wallet</Button>
+            <Button className={connectWalletBlock__button} onClick={connectWalletFunc}>Connect Wallet</Button>
          </div>
          
          <div className={connectWalletBlock__block}>
@@ -547,7 +560,7 @@ export default function ProjectPage(props) {
    return (
       <>
          <div className={project__layout}>
-            <StoryBoard steps={story} />
+            <StoryBoard steps={story} setToolTip={setToolTip} />
 
             {
                state.state !== "claim" ? (
@@ -608,10 +621,14 @@ export default function ProjectPage(props) {
                                     {getCurrency(info.currency) + info.totalRaise.toLocaleString("ru-RU")}
                                  </span>
                               </li>
-                              <li>
-                                 <span className={project__info__items__title}>Claim</span>
-                                 <span className={project__info__items__result}>{info.claim}</span>
-                              </li>
+                              {
+                                 info.claim ? (
+                                    <li>
+                                       <span className={project__info__items__title}>Claim</span>
+                                       <span className={project__info__items__result}>{info.claim}</span>
+                                    </li>
+                                 ) : ""
+                              }
                               <li>
                                  <span className={project__info__items__title}>Claim</span>
                                  <span className={project__info__items__result}>

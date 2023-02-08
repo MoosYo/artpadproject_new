@@ -16,8 +16,8 @@ body {
 
    @media screen and (min-width: 920px) {
       background-image: url("./assets/svg/background.svg");
-      background-position: center bottom;
-      background-size: cover;
+      background-position: center 60%;
+      background-size: contain;
       background-repeat: no-repeat;
    }
 }
