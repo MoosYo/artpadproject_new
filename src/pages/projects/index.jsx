@@ -171,8 +171,8 @@ const ProjectsPage = ({setModal}) => {
                         }
 
                         if ( render ) {
-                            const regDays = Math.floor((project.registration * 1000 - new Date().getTime()) / 1000 / 60 / 60 / 24);
-                            const regHours = Math.floor((project.registration * 1000 - new Date().getTime() - (regDays * 24 * 60 * 60 * 1000)) / 1000 / 60 / 60);
+                            const regDays = Math.floor((project.registration * 1000) / 1000 / 60 / 60 / 24);
+                            const regHours = Math.floor((project.registration * 1000 - (regDays * 24 * 60 * 60 * 1000)) / 1000 / 60 / 60);
 
                             return (
                                 <div key={project.id} className={projects__card}>
@@ -233,8 +233,8 @@ const ProjectsPage = ({setModal}) => {
                                             {
                                                 project.registration ? (
                                                     lang.reg[locale] + " " +
-                                                    regDays + " " + (regDays > 1 ? lang.days[locale] : lang.day[locale]) + " " +
-                                                    regHours + " " + (regHours > 1 ? lang.hours[locale] : lang.hour[locale])
+                                                    regDays + " " + (regDays > 1 ? lang.days[locale] : lang.day[locale]) +
+                                                    (regHours > 0 ? (" " +regHours + " " + (regHours > 1 ? lang.hours[locale] : lang.hour[locale])) : "")
                                                 ) : ""
                                             }
                                         </p>
@@ -251,7 +251,7 @@ const ProjectsPage = ({setModal}) => {
 
                                     <div className={projects__cardCounter}>
                                         <p className={projects__cardBusd}>
-                                            {project.busd} BUSD
+                                            {project.busd} USDT
                                         </p>
                                         <p className={projects__cardGoal}>
                                             {project.done + " / " + project.goal + " " + project.nameCode}
