@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import AcceptSwapModal from "../../components/AcceptSWAPModal";
 import Button from "../../components/Button";
+import ConfirmSwapModal from "../../components/ConfirmSWAPModal";
 import ConnectWalletModal from "../../components/ConnectWalleteModal";
 import Container from "../../components/Container";
 import Countdown from "../../components/Countdown";
+import DepositModal from "../../components/DepositModal";
 import CheckIcon from "../../components/Icons/check";
 import CrossIcon from "../../components/Icons/Cross";
 import Error from "../../components/Icons/error";
@@ -126,8 +129,8 @@ const { header, state, socials, links, info, news, story, banners } = window.ini
            tag: "private"
         },
         state: {
-         state: "upcoming",         // Состояние проекта (регистрация, обмен и т.д.)
-         stage: 1,              // Этап состояния проекта (зарегистрирован и т.д.)
+         state: "swap",         // Состояние проекта (регистрация, обмен и т.д.)
+         stage: 2,              // Этап состояния проекта (зарегистрирован и т.д.)
          endsIn: (new Date().getTime() / 1000) + (24 * 60 * 60)
         },
         socials: [
@@ -361,6 +364,18 @@ export default function ProjectPage(props) {
       props.setModal((props) => <ConnectWalletModal {...props} />);
    }
 
+   const approveFunc = () => {
+      props.setModal((props) => <ConfirmSwapModal {...props} onConfirm={onConfirm} />);
+   }
+
+   const onConfirm = (wart, address) => {
+      props.setModal((props) => <AcceptSwapModal {...props} onAccept={() => deposit(wart, address)} />);
+   }
+
+   const deposit = (wart, address) => {
+      props.setModal((props) => <DepositModal {...props} wart={wart} address={address} />);
+   }
+
    const UpcomingBlock = ({}) => (
       <div className={upcomingBlock}>
          <div className={upcomingBlock__block}>
@@ -533,7 +548,7 @@ export default function ProjectPage(props) {
                   </div>
                </div>
 
-               <Button className={allocationBlock__button}>Approve</Button>
+               <Button className={allocationBlock__button}  onClick={approveFunc} >Approve</Button>
             </div>
             
             <div className={allocationBlock__block}>

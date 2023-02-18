@@ -1,0 +1,55 @@
+{
+  "header": {
+     "ru-RU": "Пополнение",
+     "en-US": "Deposit"
+  },
+  "qrHeader": {
+     "ru-RU": "Адрес пополнения",
+     "en-US": "Deposit address"
+  },
+  "qrSupport": {
+     "ru-RU": "Адрес поддерживает только ARTR",
+     "en-US": "This address only supports ARTR"
+  },
+  "addressValue": {
+     "ru-RU": "Адрес пополнения ARTR",
+     "en-US": "ARTR deposit address"
+  },
+  "memo": {
+     "ru-RU": "MEMO",
+     "en-US": "MEMO"
+  },
+  "copy": {
+     "ru-RU": "Копировать",
+     "en-US": "Copy"
+  },
+  "info": {
+     "ru-RU": "Обязательно заполните MEMO на случай потери активов.",
+     "en-US": "Be sure to fill out a memo in case of loss of assets."
+  },
+  "receivable": {
+     "ru-RU": "сумма к получению",
+     "en-US": "amount receivable"
+  },
+  "transferAmount": {
+     "ru-RU": "сумма перевода",
+     "en-US": "transfer amount"
+  },
+  "minimum": {
+     "ru-RU": "Минимальная сумма депозита",
+     "en-US": "Minimum deposit amount"
+  },
+  "estimated": {
+     "ru-RU": "Расчетное время получения",
+     "en-US": "Estimated time of receipt"
+  },
+  "minutes": {
+     "ru-RU": "минут",
+     "en-US": "minutes"
+  },
+    "confirmButton": {
+      "ru-RU": "Подтвердить обмен",
+      "en-US": "Confirm swap"
+    }
+ }
+ 

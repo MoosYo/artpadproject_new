@@ -1,0 +1,35 @@
+{
+    "header": {
+       "ru-RU": "Подтвердить обмен",
+       "en-US": "Confirm swap"
+    },
+    "arrow": {
+      "ru-RU": "Стрелка (направление)",
+      "en-US": "Arrow (direction)"
+    },
+    "wartAddressLabel": {
+      "ru-RU": "Ваш адрес ARTR кошелька",
+      "en-US": "You”r ARTR wallet address"
+    },
+    "wartAddressPlaceholder": {
+      "ru-RU": "Введите кошелёк",
+      "en-US": "Enter wallet"
+    },
+    "confirmButton": {
+      "ru-RU": "Подтвердить обмен",
+      "en-US": "Confirm swap"
+    },
+    "price": {
+      "ru-RU": "Стоимость",
+      "en-US": "Price"
+    },
+    "fee": {
+      "ru-RU": "Комиссия поставщика ликвидности",
+      "en-US": "Liquidity Provider Fee"
+    },
+    "route": {
+      "ru-RU": "Маршрут",
+      "en-US": "Route"
+    }
+ }
+ 

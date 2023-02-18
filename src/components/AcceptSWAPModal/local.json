@@ -1,0 +1,19 @@
+{
+    "header": {
+       "ru-RU": "Внимание",
+       "en-US": "Warning"
+    },
+    "text1": {
+      "ru-RU": "Успешно внести депозит можно только при правильном указании MEMO и адреса.",
+      "en-US": "You can successfully make a deposit only if the MEMO and address are correctly indicated."
+    },
+    "text2": {
+      "ru-RU": "Отсутствие MEMO приведет к потере актива.",
+      "en-US": "Lack of MEMO will squat to the loss of the asset."
+    },
+    "confirmButton": {
+      "ru-RU": "Принять",
+      "en-US": "accept"
+    }
+ }
+ 

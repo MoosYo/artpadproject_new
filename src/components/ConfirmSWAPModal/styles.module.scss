@@ -1,0 +1,631 @@
+@import "../../styles/colors.scss";
+@import "../../styles/helpers.scss";
+
+.block {
+    display: flex;
+    flex-direction: column;
+
+    width: vw(286px, 360px);
+    gap: vw(24px, 360px);
+
+    @media screen and (min-width: 360px) {
+        width: 286px;
+        gap: 24px;
+    }
+
+    @media screen and (min-width: 500px) {
+        width: vw(286px, 360px);
+        gap: vw(24px, 360px);
+    }
+
+    @media screen and (min-width: 920px) {
+        width: vw(380px);
+        gap: vw(24px);
+    }
+
+    @media screen and (min-width: 1600px) {
+        width: 380px;
+        gap: 24px;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border: none;
+        border-bottom: solid $accent;
+        
+        padding-bottom: vw(18px, 360px);
+        border-width: vw(2px, 360px);
+        margin-bottom: vw(6px, 360px);
+        
+        @media screen and (min-width: 360px) {
+            padding-bottom: 18px;
+            border-width: 2px;
+            margin-bottom: 6px;
+        }
+        
+        @media screen and (min-width: 500px) {
+            padding-bottom: vw(18px, 360px);
+            border-width: vw(2px, 360px);
+            margin-bottom: vw(6px, 360px);
+        }
+        
+        @media screen and (min-width: 920px) {
+            padding-bottom: vw(18px);
+            border-width: vw(2px);
+            margin-bottom: vw(6px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            padding-bottom: 18px;
+            border-width: 2px;
+            margin-bottom: 6px;
+        }
+
+        &Title {
+            color: $white;
+            font-weight: 400;
+
+            font-size: vw(24px, 360px);
+            line-height: vw(24px, 360px);
+            
+            @media screen and (min-width: 360px) {
+                font-size: 24px;
+                line-height: 24px;
+            }
+            
+            @media screen and (min-width: 500px) {
+                font-size: vw(24px, 360px);
+                line-height: vw(24px, 360px);
+            }
+            
+            @media screen and (min-width: 920px) {
+                font-size: vw(24px);
+                line-height: vw(24px);
+            }
+
+            @media screen and (min-width: 1600px) {
+                font-size: 24px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    &__closeBtn {
+        cursor: pointer;
+        background: none;
+        border: none;
+        
+        width: vw(17px, 360px);
+        height: vw(17px, 360px);
+
+        @media screen and (min-width: 360px) {
+            width: 17px;
+            height: 17px;
+        }
+
+        @media screen and (min-width: 500px) {
+            width: vw(17px, 360px);
+            height: vw(17px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            width: vw(17px);
+            height: vw(17px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 17px;
+            height: 17px;
+        }
+
+        &Icon {
+            width: vw(17px, 360px);
+            height: vw(17px, 360px);
+        
+            @media screen and (min-width: 360px) {
+                width: 17px;
+                height: 17px;
+            }
+        
+            @media screen and (min-width: 500px) {
+                width: vw(17px, 360px);
+                height: vw(17px, 360px);
+            }
+        
+            @media screen and (min-width: 920px) {
+                width: vw(17px);
+                height: vw(17px);
+            }
+
+            @media screen and (min-width: 1600px) {
+                width: 17px;
+                height: 17px;
+            }
+
+            & path {
+                fill: $accent;
+            }
+        }
+    }
+    
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: stretch;
+
+        @media screen and (min-width: 360px) {
+
+        }
+
+        @media screen and (min-width: 500px) {
+
+        }
+
+        @media screen and (min-width: 920px) {
+
+        }
+
+        @media screen and (min-width: 1600px) {
+
+        }
+    }
+
+    &__formLabel {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        border: solid $accent;
+        width: 100%;
+        
+        border-radius: vw(10px, 360px);
+        padding: vw(14px, 360px);
+        border-width: vw(2px, 360px);
+        margin-bottom: vw(8px, 360px);
+        gap: vw(8px, 360px);
+
+        @media screen and (min-width: 360px) {
+            border-radius: 10px;
+            padding: 14px;
+            border-width: 2px;
+            margin-bottom: 8px;
+            gap: 8px;
+        }
+
+        @media screen and (min-width: 500px) {
+            border-radius: vw(10px, 360px);
+            padding: vw(14px, 360px);
+            border-width: vw(2px, 360px);
+            margin-bottom: vw(8px, 360px);
+            gap: vw(8px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            border-radius: vw(10px);
+            padding: vw(14px);
+            border-width: vw(2px);
+            margin-bottom: vw(8px);
+            gap: vw(8px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            border-radius: 10px;
+            padding: 14px;
+            border-width: 2px;
+            margin-bottom: 8px;
+            gap: 8px;
+        }
+        
+        &_flexColumn {
+            flex-direction: column;
+            align-items: flex-start;
+
+            margin-bottom: vw(30px, 360px);
+
+            @media screen and (min-width: 360px) {
+                margin-bottom: 30px;
+            }
+
+            @media screen and (min-width: 500px) {
+                margin-bottom: vw(30px, 360px);
+            }
+
+            @media screen and (min-width: 920px) {
+                margin-bottom: vw(30px);
+            }
+
+            @media screen and (min-width: 1600px) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    &__wartIcon {
+        width: vw(36px, 360px);
+        height: vw(36px, 360px);
+
+        @media screen and (min-width: 360px) {
+            width: 36px;
+            height: 36px;
+        }
+
+        @media screen and (min-width: 500px) {
+            width: vw(36px, 360px);
+            height: vw(36px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            width: vw(36px);
+            height: vw(36px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 36px;
+            height: 36px;
+        }
+    }
+
+    &__value {
+        font-weight: 600;
+        color: $white;
+        width: 100%;
+        background: none;
+        border: none;
+        outline: none;
+
+        
+        -moz-appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        font-size: vw(24px, 360px);
+        line-height: vw(24px, 360px);        
+
+        @media screen and (min-width: 360px) {
+            font-size: 24px;
+            line-height: 24px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(24px, 360px);
+            line-height: vw(24px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(24px);
+            line-height: vw(24px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+
+    &__wartText {
+        color: $white;
+
+        font-size: vw(24px, 360px);
+        line-height: vw(24px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 24px;
+            line-height: 24px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(24px, 360px);
+            line-height: vw(24px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(24px);
+            line-height: vw(24px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+
+    &__arrow {
+        margin-left: vw(32px, 360px);
+        margin-bottom: vw(8px, 360px);
+
+        @media screen and (min-width: 360px) {
+            margin-left: 32px;
+            margin-bottom: 8px;
+        }
+
+        @media screen and (min-width: 500px) {
+            margin-left: vw(32px, 360px);
+            margin-bottom: vw(8px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            margin-left: vw(32px);
+            margin-bottom: vw(8px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            margin-left: 32px;
+            margin-bottom: 8px;
+        }
+    }
+
+    &__arrowImg {
+        height: vw(28px, 360px);
+
+        @media screen and (min-width: 360px) {
+            height: 28px;
+        }
+
+        @media screen and (min-width: 500px) {
+            height: vw(28px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            height: vw(28px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            height: 28px;
+        }
+    }
+
+    &__formLabelText {
+        color: $white;
+
+        font-size: vw(12px, 360px);
+        line-height: vw(12px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 12px;
+            line-height: 12px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(12px, 360px);
+            line-height: vw(12px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(12px);
+            line-height: vw(12px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 12px;
+            line-height: 12px;
+        }
+    }
+
+    &__formInput {
+        background: none;
+        border: none;
+        width: 100%;
+        text-transform: uppercase;
+        outline: none;
+        color: $white;
+
+        font-size: vw(24px, 360px);
+        line-height: vw(24px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 24px;
+            line-height: 24px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(24px, 360px);
+            line-height: vw(24px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(24px);
+            line-height: vw(24px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        background: $black;
+        width: 100%;
+
+        gap: vw(24px, 360px);
+        padding: vw(14px, 360px);
+        border-radius: vw(10px, 360px);
+        margin-bottom: vw(30px, 360px);
+
+        @media screen and (min-width: 360px) {
+            gap: 24px;
+            padding: 14px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        @media screen and (min-width: 500px) {
+            gap: vw(24px, 360px);
+            padding: vw(14px, 360px);
+            border-radius: vw(10px, 360px);
+            margin-bottom: vw(30px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            gap: vw(24px);
+            padding: vw(14px);
+            border-radius: vw(10px);
+            margin-bottom: vw(30px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            gap: 24px;
+            padding: 14px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__infoRow {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: stretch;
+
+        gap: vw(8px, 360px);
+
+        @media screen and (min-width: 360px) {
+            gap: 8px;
+        }
+
+        @media screen and (min-width: 500px) {
+            gap: vw(8px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            gap: vw(8px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            gap: 8px;
+        }
+    }
+
+    &__infoName {
+        color: $white;
+        opacity: 0.5;
+        margin-right: auto;
+
+        font-size: vw(18px, 360px);
+        line-height: vw(21px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 18px;
+            line-height: 21px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(18px, 360px);
+            line-height: vw(21px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(18px);
+            line-height: vw(21px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+
+    &__infoValue {
+        color: $white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        text-align: right;
+
+        gap: vw(12px, 360px);
+        font-size: vw(18px, 360px);
+        line-height: vw(21px, 360px);
+
+        @media screen and (min-width: 360px) {
+            gap: 12px;
+            font-size: 18px;
+            line-height: 21px;
+        }
+
+        @media screen and (min-width: 500px) {
+            gap: vw(12px, 360px);
+            font-size: vw(18px, 360px);
+            line-height: vw(21px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            gap: vw(12px);
+            font-size: vw(18px);
+            line-height: vw(21px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            gap: 12px;
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+
+    &__infoArrow {
+        transform: rotate(-90deg);
+
+        height: vw(24px, 360px);
+
+        @media screen and (min-width: 360px) {
+            height: 24px;
+        }
+
+        @media screen and (min-width: 500px) {
+            height: vw(24px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            height: vw(24px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            height: 24px;
+        }
+    }
+
+    &__confirmButton {
+        width: 100%;
+        text-transform: uppercase;
+
+        font-size: vw(24px, 360px);
+        line-height: vw(24px, 360px);
+        height: vw(56px, 360px);
+
+        @media screen and (min-width: 360px) {
+            font-size: 24px;
+            line-height: 24px;
+            height: 56px;
+        }
+
+        @media screen and (min-width: 500px) {
+            font-size: vw(24px, 360px);
+            line-height: vw(24px, 360px);
+            height: vw(56px, 360px);
+        }
+
+        @media screen and (min-width: 920px) {
+            font-size: vw(24px);
+            line-height: vw(24px);
+            height: vw(56px);
+        }
+
+        @media screen and (min-width: 1600px) {
+            font-size: 24px;
+            line-height: 24px;
+            height: 56px;
+        }
+    }
+}
